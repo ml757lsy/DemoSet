@@ -12,7 +12,15 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        perform(#selector(toCell), with: nil, afterDelay: 1)
+    }
+    
+    func toCell() {
+        let cell = CellularAutomatonViewController()
+        present(cell, animated: true) { 
+            //
+        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -15,6 +15,8 @@
 		79A923FC1EEAA30D00D91121 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79A923FA1EEAA30D00D91121 /* LaunchScreen.storyboard */; };
 		79A924071EEAA30D00D91121 /* DemoSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A924061EEAA30D00D91121 /* DemoSetTests.swift */; };
 		79A924121EEAA30D00D91121 /* DemoSetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A924111EEAA30D00D91121 /* DemoSetUITests.swift */; };
+		79FB35061EEAA7190083ED79 /* CellularAutomatonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB35051EEAA7190083ED79 /* CellularAutomatonViewController.swift */; };
+		79FB35091EEAAB850083ED79 /* Cellular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB35081EEAAB850083ED79 /* Cellular.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		79A9240D1EEAA30D00D91121 /* DemoSetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoSetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79A924111EEAA30D00D91121 /* DemoSetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoSetUITests.swift; sourceTree = "<group>"; };
 		79A924131EEAA30D00D91121 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79FB35051EEAA7190083ED79 /* CellularAutomatonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellularAutomatonViewController.swift; sourceTree = "<group>"; };
+		79FB35081EEAAB850083ED79 /* Cellular.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cellular.swift; sourceTree = "<group>"; };
 		B57CB0D8E15F346CDBC020A0 /* Pods_DemoSet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoSet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A1CA75BBE277C1087C48CB /* Pods-DemoSet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoSet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DemoSet/Pods-DemoSet.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				79FB35021EEAA5540083ED79 /* Base */,
+				79FB35031EEAA65D0083ED79 /* Business */,
 				79A923F11EEAA30D00D91121 /* AppDelegate.swift */,
 				79A923F31EEAA30D00D91121 /* ViewController.swift */,
 				79A923F51EEAA30D00D91121 /* Main.storyboard */,
@@ -138,6 +143,31 @@
 			children = (
 			);
 			name = Base;
+			sourceTree = "<group>";
+		};
+		79FB35031EEAA65D0083ED79 /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				79FB35071EEAA9D70083ED79 /* Sort */,
+				79FB35041EEAA6DA0083ED79 /* Cellularautomaton */,
+			);
+			name = Business;
+			sourceTree = "<group>";
+		};
+		79FB35041EEAA6DA0083ED79 /* Cellularautomaton */ = {
+			isa = PBXGroup;
+			children = (
+				79FB35051EEAA7190083ED79 /* CellularAutomatonViewController.swift */,
+				79FB35081EEAAB850083ED79 /* Cellular.swift */,
+			);
+			name = Cellularautomaton;
+			sourceTree = "<group>";
+		};
+		79FB35071EEAA9D70083ED79 /* Sort */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Sort;
 			sourceTree = "<group>";
 		};
 		7AFFC65A0DAFEE6C54CCEAC5 /* Frameworks */ = {
@@ -343,6 +373,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				79A923F41EEAA30D00D91121 /* ViewController.swift in Sources */,
+				79FB35091EEAAB850083ED79 /* Cellular.swift in Sources */,
+				79FB35061EEAA7190083ED79 /* CellularAutomatonViewController.swift in Sources */,
 				79A923F21EEAA30D00D91121 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
