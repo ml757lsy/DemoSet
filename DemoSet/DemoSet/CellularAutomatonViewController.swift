@@ -8,14 +8,16 @@
 
 import UIKit
 
-class CellularAutomatonViewController: UIViewController {
+class CellularAutomatonViewController: BaseViewController {
 
     // MARK: - 属性值private
     private var oldEnvironmental:[[Int]] = []//环境变量数组
     private var newEnvironmental:[[Int]] = []
-    private var width:Int = 10
-    private var height:Int = 10
+    private var width:Int = 50
+    private var height:Int = 50
     private var timer:Timer = Timer()
+    private let generationLabel:UILabel = UILabel()
+    private var generation:Int = 0
     
     // MARK: - 对外接口
     
@@ -37,20 +39,24 @@ class CellularAutomatonViewController: UIViewController {
     
     // MARK: - 界面布局
     func initCellularAutomationView() {
+        let cellWidth = (view.frame.size.width-20)/CGFloat(width)
+        
         for l in 0..<height {
             for w in 0..<width {
                 let v = UIView()
-                v.frame = CGRect.init(x: 20+w*10, y: 20+l*10, width: 10, height: 10)
+                v.frame = CGRect.init(x: 10+CGFloat(w)*cellWidth, y: 10+CGFloat(l)*cellWidth, width: cellWidth, height: cellWidth)
                 v.tag = l*1000+w+1024
                 v.backgroundColor = UIColor.red
                 view.addSubview(v)
             }
         }
+        view.addSubview(generationLabel)
+        generationLabel.frame = CGRect.init(x: 10, y: CGFloat(height)*cellWidth+10+20, width: 150, height: 20)
+        generationLabel.textColor = UIColor.white
     }
     
     func updateCellularAutomationView() {
         for l in 0..<height {
-            let line = newEnvironmental[l]
             for w in 0..<width {
                 let n = newEnvironmental[l][w]
                 let v = view.viewWithTag(l*1000+w+1024)
@@ -89,12 +95,14 @@ class CellularAutomatonViewController: UIViewController {
     }
     
     func startEvolution(){
-        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (timer) in
+        timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true, block: { (timer) in
             self.nextGeneration()
         })
     }
     
     func nextGeneration() {
+        generation += 1
+        generationLabel.text = "\(generation)代"
         for l in 0..<height {
             for w in 0..<width {
                 var count = 0

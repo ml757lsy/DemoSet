@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5029ECEC05CB68AC730AF2C3 /* Pods_DemoSet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B57CB0D8E15F346CDBC020A0 /* Pods_DemoSet.framework */; };
+		79584BBA1EEFDDDB003ABE05 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79584BB91EEFDDDB003ABE05 /* BaseViewController.swift */; };
+		795853B81EEF954700F214A5 /* SortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795853B71EEF954700F214A5 /* SortViewController.swift */; };
+		795853BA1EEFB58B00F214A5 /* SortColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795853B91EEFB58B00F214A5 /* SortColumn.swift */; };
+		795853BC1EEFBB4000F214A5 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795853BB1EEFBB4000F214A5 /* UIView+Extension.swift */; };
 		79A923F21EEAA30D00D91121 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A923F11EEAA30D00D91121 /* AppDelegate.swift */; };
 		79A923F41EEAA30D00D91121 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A923F31EEAA30D00D91121 /* ViewController.swift */; };
 		79A923F71EEAA30D00D91121 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79A923F51EEAA30D00D91121 /* Main.storyboard */; };
@@ -38,6 +42,10 @@
 
 /* Begin PBXFileReference section */
 		3A0DAFE85DDB291EF6D64925 /* Pods-DemoSet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoSet.release.xcconfig"; path = "Pods/Target Support Files/Pods-DemoSet/Pods-DemoSet.release.xcconfig"; sourceTree = "<group>"; };
+		79584BB91EEFDDDB003ABE05 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		795853B71EEF954700F214A5 /* SortViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortViewController.swift; sourceTree = "<group>"; };
+		795853B91EEFB58B00F214A5 /* SortColumn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortColumn.swift; sourceTree = "<group>"; };
+		795853BB1EEFBB4000F214A5 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		79A923EE1EEAA30D00D91121 /* DemoSet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoSet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79A923F11EEAA30D00D91121 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79A923F31EEAA30D00D91121 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +149,8 @@
 		79FB35021EEAA5540083ED79 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				795853BB1EEFBB4000F214A5 /* UIView+Extension.swift */,
+				79584BB91EEFDDDB003ABE05 /* BaseViewController.swift */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -166,6 +176,8 @@
 		79FB35071EEAA9D70083ED79 /* Sort */ = {
 			isa = PBXGroup;
 			children = (
+				795853B71EEF954700F214A5 /* SortViewController.swift */,
+				795853B91EEFB58B00F214A5 /* SortColumn.swift */,
 			);
 			name = Sort;
 			sourceTree = "<group>";
@@ -372,10 +384,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				795853B81EEF954700F214A5 /* SortViewController.swift in Sources */,
+				795853BC1EEFBB4000F214A5 /* UIView+Extension.swift in Sources */,
 				79A923F41EEAA30D00D91121 /* ViewController.swift in Sources */,
 				79FB35091EEAAB850083ED79 /* Cellular.swift in Sources */,
 				79FB35061EEAA7190083ED79 /* CellularAutomatonViewController.swift in Sources */,
+				79584BBA1EEFDDDB003ABE05 /* BaseViewController.swift in Sources */,
 				79A923F21EEAA30D00D91121 /* AppDelegate.swift in Sources */,
+				795853BA1EEFB58B00F214A5 /* SortColumn.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

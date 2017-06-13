@@ -9,17 +9,50 @@
 import UIKit
 
 class ViewController: UIViewController {
+    private var list:[String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        perform(#selector(toCell), with: nil, afterDelay: 1)
+        edgesForExtendedLayout = .init(rawValue: 0)
+        initMainView()
     }
     
-    func toCell() {
-        let cell = CellularAutomatonViewController()
-        present(cell, animated: true) { 
+    func initMainView() {
+        list.append("Cell")
+        list.append("Sort")
+        
+        let column:Int = 3
+        let spec:CGFloat = 20
+        let btnWidth:CGFloat = (view.width-CGFloat(column+1)*spec)/CGFloat(column)
+        let btnHeight:CGFloat = 40
+        
+        for i in 0..<list.count {
+            let title = list[i]
+            
+            let button = UIButton()
+            button.frame = CGRect.init(x: spec+(btnWidth+spec)*CGFloat(i%column), y: 20+(btnHeight+spec)*CGFloat(i/column), width: btnWidth, height: btnHeight)
+            button.setTitle(title, for: .normal)
+            button.tag = i
+            button.setTitleColor(UIColor.orange, for: .normal)
+            button.addTarget(self, action: #selector(buttonClick(button:)), for: .touchUpInside)
+            view.addSubview(button)
+        }
+    }
+    
+    func buttonClick(button:UIButton){
+        switch button.tag {
+        case 0:
             //
+            let cell = CellularAutomatonViewController()
+            navigationController?.pushViewController(cell, animated: true)
+            break
+        case 1:
+            //
+            let sort = SortViewController()
+            navigationController?.pushViewController(sort, animated: true)
+            break
+        default:
+            break
         }
     }
 
