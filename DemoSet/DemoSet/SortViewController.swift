@@ -12,11 +12,10 @@ class SortViewController: BaseViewController {
     // MARK: - 属性值private
     private var list:[Int] = []
     private var columns:[SortColumn] = []
-    private var left:Int = 0
-    private var right:Int = 0
-    private var timer:Timer = Timer()
+    
     private var secV:UIView = UIView()
     private var aimV:UIView = UIView()
+    private var breakSort:Bool = false
     
     // MARK: - 对外接口
     
@@ -52,17 +51,23 @@ class SortViewController: BaseViewController {
         aimV.layer.borderWidth = 1
         aimV.layer.borderColor = UIColor.blue.cgColor
         
-        let start = UIButton()
-        view.addSubview(start)
-        start.frame = CGRect.init(x: 20, y: 20+400+40, width: 60, height: 40)
-        start.setTitle("Start", for: .normal)
-        start.addTarget(self, action: #selector(popsort), for: .touchUpInside)
+        let insert = UIButton()
+        view.addSubview(insert)
+        insert.frame = CGRect.init(x: 20, y: 20+400+40, width: 60, height: 40)
+        insert.setTitle("Insert", for: .normal)
+        insert.addTarget(self, action: #selector(insertSort), for: .touchUpInside)
         
         let compare = UIButton()
         view.addSubview(compare)
         compare.frame = CGRect.init(x: 20, y: 60+400+40, width: 60, height: 40)
         compare.setTitle("compare", for: .normal)
         compare.addTarget(self, action: #selector(compareSort), for: .touchUpInside)
+        
+        let quick = UIButton()
+        view.addSubview(quick)
+        quick.frame = CGRect.init(x: 20, y: 100+400+40, width: 60, height: 40)
+        quick.setTitle("quickSort", for: .normal)
+        quick.addTarget(self, action: #selector(quickSort), for: .touchUpInside)
     }
     
     // MARK: - 功能函数
@@ -90,64 +95,69 @@ class SortViewController: BaseViewController {
         }
     }
     
-    func popsort() {
-        timer.invalidate()
-        left = 0
-        right = 0
-        random()
+    func insertSort() {
         
-        timer = Timer.scheduledTimer(timeInterval: 0.03, target: self, selector: #selector(sort), userInfo: nil, repeats: true)
+        DispatchQueue.global().async {
+            for i in 0..<self.list.count {
+                for j in i..<self.list.count {
+                    
+                    if self.breakSort {//中断
+                        return
+                    }
+                    
+                    if self.list[i] > self.list[j] {
+                        let temp = self.list[i]
+                        self.list[i] = self.list[j]
+                        self.list[j] = temp
+                    }
+                    Thread.sleep(forTimeInterval: 0.04)//延时表示
+                    DispatchQueue.main.async {
+                        self.secV.frame = self.columns[i].frame
+                        self.aimV.frame = self.columns[j].frame
+                        self.columns[i].sortValue = self.list[i]
+                        self.columns[j].sortValue = self.list[j]
+                    }
+                }
+            }
+            self.breakSort = false
+        }
     }
+    
     func compareSort() {
-        timer.invalidate()
-        left = 0
-        right = 0
-        random()
-        
-        timer = Timer.scheduledTimer(timeInterval: 0.03, target: self, selector: #selector(compare), userInfo: nil, repeats: true)
+    }
+    func quickSort() {
+        startquickSort(from: 0, to: list.count-1)
     }
     
-    func sort(){
-        right += 1
-        if right >= list.count {
-            right = left+1
-            left += 1
-        }
-        if left >= list.count {
-            timer.invalidate()
-            return
-        }
-        secV.frame = columns[left].frame
-        aimV.frame = columns[right].frame
-        
-        if list[left]>list[right] {
-            let n = list[left]
-            list[left] = list[right]
-            list[right] = Int(n)
-            columns[left].sortValue = list[left]
-            columns[right].sortValue = list[right]
-        }
-    }
-    
-    func compare() {
-        right += 1
-        if right >= list.count-1 {
-            right = 0
-            left += 1
-        }
-        if left >= list.count {
-            timer.invalidate()
-            return
-        }
-        secV.frame = columns[right].frame
-        aimV.frame = columns[right+1].frame
-        
-        if list[right]>list[right+1] {
-            let n = list[right]
-            list[right] = list[right+1]
-            list[right+1] = Int(n)
-            columns[right].sortValue = list[right]
-            columns[right+1].sortValue = list[right+1]
+    func startquickSort(from:Int, to end:Int) {
+        print("\(from)--\(end)")
+        DispatchQueue.global().async {
+            if end-from <= 0 {
+                return
+            }else{
+                let key = self.list[from]
+                var index = from
+                
+                for i in from+1...end {
+                    if self.list[i] < key {
+                        self.list.insert(self.list[i], at: from)
+                        self.list.remove(at: i+1)
+                        index += 1
+                        
+                        Thread.sleep(forTimeInterval: 0.04)//延时表示
+                        DispatchQueue.main.async {
+                            self.secV.frame = self.columns[from].frame
+                            self.aimV.frame = self.columns[i].frame
+                            
+                        }
+                        print(self.list)
+                    }
+                    self.secV.frame = self.columns[from].frame
+                }
+                
+                self.startquickSort(from: Int(from), to: Int(index-1))
+                self.startquickSort(from: Int(index+1), to: Int(end))
+            }
         }
     }
     
