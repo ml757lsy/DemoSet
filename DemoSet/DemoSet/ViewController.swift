@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     func initMainView() {
         list.append("Cell")
         list.append("Sort")
+        list.append("Numberboard")
         
         let column:Int = 3
         let spec:CGFloat = 20
@@ -50,6 +51,11 @@ class ViewController: UIViewController {
             //
             let sort = SortViewController()
             navigationController?.pushViewController(sort, animated: true)
+            break
+        case 2:
+            //
+            let num = NumberboardViewController()
+            navigationController?.pushViewController(num, animated: true)
             break
         default:
             break
