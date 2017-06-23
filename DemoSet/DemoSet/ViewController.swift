@@ -35,6 +35,9 @@ class ViewController: UIViewController {
             button.setTitle(title, for: .normal)
             button.tag = i
             button.setTitleColor(UIColor.orange, for: .normal)
+            button.layer.borderWidth = 2
+            button.layer.borderColor = UIColor.orange.cgColor
+            button.layer.cornerRadius = 4
             button.addTarget(self, action: #selector(buttonClick(button:)), for: .touchUpInside)
             view.addSubview(button)
         }
