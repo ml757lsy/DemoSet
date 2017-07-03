@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         list.append("Cell")
         list.append("Sort")
         list.append("Numberboard")
+        list.append("Animation")
         
         let column:Int = 3
         let spec:CGFloat = 20
@@ -59,6 +60,11 @@ class ViewController: UIViewController {
             //
             let num = NumberboardViewController()
             navigationController?.pushViewController(num, animated: true)
+            break
+        case 3:
+            //
+            let ani = AnimationViewController()
+            navigationController?.pushViewController(ani, animated: true)
             break
         default:
             break
