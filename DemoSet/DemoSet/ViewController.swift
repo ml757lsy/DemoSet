@@ -22,6 +22,7 @@ class ViewController: UIViewController {
         list.append("Sort")
         list.append("Numberboard")
         list.append("Animation")
+        list.append("FGO")
         
         let column:Int = 3
         let spec:CGFloat = 20
@@ -65,6 +66,11 @@ class ViewController: UIViewController {
             //
             let ani = AnimationViewController()
             navigationController?.pushViewController(ani, animated: true)
+            break
+        case 4:
+            //
+            let fgo = FGOViewController()
+            navigationController?.pushViewController(fgo, animated: true)
             break
         default:
             break

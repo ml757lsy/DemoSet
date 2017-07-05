@@ -12,6 +12,28 @@ import UIKit
 class MysticCodeModel: FGOModel {
 
     var mysticcodeId:Int = 0
-    var attack:Int = 0
-    var hp:Int = 0
+    var name:String = ""
+    var icon:String = ""
+    var info:String = ""
+    
+    var attack:Int{
+        get{
+            return baseAttack + attackGrow * level
+        }
+    }
+    
+    var HP:Int{
+        get{
+            return baseHP + HPGrow * level
+        }
+    }
+    var level:Int = 0
+    
+    var baseAttack:Int = 0
+    var attackGrow:Int = 0
+    
+    var baseHP:Int = 0
+    var HPGrow:Int = 0
+    
+    var buffers:[BufferModel] = []
 }

@@ -30,6 +30,7 @@
 		79B26A941F0A453C00B54EC2 /* AttackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B26A931F0A453C00B54EC2 /* AttackModel.swift */; };
 		79B26A961F0A45CD00B54EC2 /* NoblePhantasmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B26A951F0A45CD00B54EC2 /* NoblePhantasmModel.swift */; };
 		79B26A981F0A513D00B54EC2 /* BufferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B26A971F0A513D00B54EC2 /* BufferModel.swift */; };
+		79B26AA01F0CFAB500B54EC2 /* ProbabilityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B26A9F1F0CFAB500B54EC2 /* ProbabilityModel.swift */; };
 		79FB35061EEAA7190083ED79 /* CellularAutomatonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB35051EEAA7190083ED79 /* CellularAutomatonViewController.swift */; };
 		79FB35091EEAAB850083ED79 /* Cellular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB35081EEAAB850083ED79 /* Cellular.swift */; };
 /* End PBXBuildFile section */
@@ -81,6 +82,7 @@
 		79B26A931F0A453C00B54EC2 /* AttackModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttackModel.swift; sourceTree = "<group>"; };
 		79B26A951F0A45CD00B54EC2 /* NoblePhantasmModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoblePhantasmModel.swift; sourceTree = "<group>"; };
 		79B26A971F0A513D00B54EC2 /* BufferModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferModel.swift; sourceTree = "<group>"; };
+		79B26A9F1F0CFAB500B54EC2 /* ProbabilityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbabilityModel.swift; sourceTree = "<group>"; };
 		79FB35051EEAA7190083ED79 /* CellularAutomatonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellularAutomatonViewController.swift; sourceTree = "<group>"; };
 		79FB35081EEAAB850083ED79 /* Cellular.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cellular.swift; sourceTree = "<group>"; };
 		B57CB0D8E15F346CDBC020A0 /* Pods_DemoSet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoSet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +198,7 @@
 				79B26A971F0A513D00B54EC2 /* BufferModel.swift */,
 				79B26A931F0A453C00B54EC2 /* AttackModel.swift */,
 				79B26A951F0A45CD00B54EC2 /* NoblePhantasmModel.swift */,
+				79B26A9F1F0CFAB500B54EC2 /* ProbabilityModel.swift */,
 			);
 			name = FGO;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				79A923F21EEAA30D00D91121 /* AppDelegate.swift in Sources */,
 				795853BA1EEFB58B00F214A5 /* SortColumn.swift in Sources */,
 				79B26A8C1F0A427000B54EC2 /* FGOViewController.swift in Sources */,
+				79B26AA01F0CFAB500B54EC2 /* ProbabilityModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
