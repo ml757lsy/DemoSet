@@ -115,9 +115,8 @@ class CellularAutomatonViewController: BaseViewController {
     }
     
     func startEvolution(){
-        timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true, block: { (timer) in
-            self.nextGeneration()
-        })
+
+        timer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(nextGeneration), userInfo: nil, repeats: true)
     }
     
     func nextGeneration() {

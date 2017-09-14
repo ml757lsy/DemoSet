@@ -16,6 +16,8 @@ class FGOViewController: BaseViewController {
         super.viewDidLoad()
 
         base()
+        
+        scure()
     }
 
     func base(){
@@ -69,6 +71,37 @@ class FGOViewController: BaseViewController {
     }
     
     func saveServent() {
+    }
+    
+    func scure() {
+        /*
+         Pt = (K*P0*e^rt)/(K+P0*(e^rt-1))
+         y=K/(1+Exp(a-bx))
+         y=K*Exp(a+bx)/(Exp(a+bx)+1)
+         */
+        
+        let k:CGFloat = 103.2
+        let po:CGFloat = 16.5
+        let r:CGFloat = 0.07
+        //y = 0.0463x3 - 5.7999x2 + 289.32x + 895.4
+        let a:CGFloat = -10
+        let b:CGFloat = -2*a/80
+
+        for i in 1...80 {
+            let x = CGFloat(i)
+            let top = exp(a+b*x)
+            let bottom = 1+exp(a+b*x)
+            let t = k*top/bottom
+            let point = CGPoint.init(x: CGFloat(i+100), y: 300-t)
+            
+            let v = UIView()
+            v.frame = CGRect.init(x: 0, y: 0, width: 2, height: 2)
+            v.backgroundColor = UIColor.red
+            v.center = point
+            view.addSubview(v)
+            print("\(i)-\(t)")
+        }
+        
     }
 
 }

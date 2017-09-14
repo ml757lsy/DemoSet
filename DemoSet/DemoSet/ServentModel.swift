@@ -90,6 +90,14 @@ enum DDCamp:Int {
     case evil       = 3
 }
 
+enum GrowCurve:Int {
+    case inverseSHeight
+    case inverseS
+    case line
+    case positiveS
+    case positiveSHeight
+}
+
 
 
 /// 从者模型
@@ -134,11 +142,31 @@ class ServentModel: FGOModel {
     var npp:CGFloat = 0.0071//宝具np获取率
     var nph:CGFloat = 0.04//受伤np获取率
 
+    //
+    var exp:CGFloat = 0
+    
+    var expLevel:[CGFloat] = []
     
     //其他
     
     var mysticCode:MysticCodeModel = MysticCodeModel()
     
     var buffers:[BufferModel] = []
+    
+    
+    private func attack(with level:Int) -> CGFloat{
+        
+        return 0
+    }
+    
+    private func hp(with level:Int) -> CGFloat{
+        return 0
+    }
+    /*
+     Pt = (K*P0*e^rt)/(K+P0*(e^rt-1))
+     k 终值
+     p0 初始值
+     r 曲度
+     */
 }
 

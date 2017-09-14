@@ -30,8 +30,17 @@ class NoblePhantasmModel: FGOModel {
         let cardRate:CGFloat = cardcorrect.cardcorrect(with: from.noplePhantasmType)
         //计算卡牌类型加成
         var cardb:CGFloat = 0
+        var bufftype:BuffType = .busterCardBuff
+        if from.noplePhantasmType == .buster {
+            bufftype = .busterCardBuff
+        }else
+            if from.noplePhantasmType == .arts {
+                bufftype = .artsCardBuff
+            }else{
+                bufftype = .quickCardBuff
+        }
         for buff in from.buffers {
-            if buff.buffType == .cardBuff {
+            if buff.buffType == bufftype {
                 cardb += buff.value
             }
         }
@@ -185,10 +194,10 @@ class NoblePhantasmModel: FGOModel {
  ③宝具特攻：
  “宝具特攻”与“特攻”的区别在于前者只加成宝具本身，作为宝具特效存在；后者是状态附加，持续时间内任何攻击都受加成。
  
+ ------
  隐性阵营，也称天地人星兽阵营。阵营是从者和怪物的隐藏属性，有些阵营间会有部分的克制关系，这个隐藏属性也是影响伤害的因素之一。
  
   
- 
  隐性阵营一共有五个，分别为「天」，「地」，「人」，「星」，「兽」。
  
  「天」一般为拥有神之血统的人类和怪物。
@@ -205,56 +214,13 @@ class NoblePhantasmModel: FGOModel {
  
  天地人星兽阵营克制关系如下——
  
+ 攻击／防御    天     地       人       星        兽
  
- 
- 
- 攻击／防御
- 
- 天
- 地
- 人
- 星
- 兽
- 
- 天
- 
- 1.0
- 1.1
- 0.9
- 1.0
- 1.0
- 
- 地
- 
- 0.9
- 1.0
- 1.1
- 1.0
- 1.0
- 
- 人
- 
- 1.1
- 0.9
- 1.0
- 1.0
- 1.0
- 
- 星
- 
- 1.0
- 1.0
- 1.0
- 1.0
- 1.1
- 
- 兽
- 
- 1.0
- 1.0
- 1.0
- 1.1
- 0.0
+ 天          1.0     0.9     1.1     1.0     1.0
+ 地          1.1     1.0     0.9     1.0     1.0
+ 人          0.9     1.1     1.0     1.0     1.0
+ 星          1.0     1.0     1.0     1.0     1.1
+ 兽          1.0     1.0     1.0     1.1     1.0
  
  
 

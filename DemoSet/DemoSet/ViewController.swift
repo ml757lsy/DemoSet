@@ -23,6 +23,9 @@ class ViewController: UIViewController {
         list.append("Numberboard")
         list.append("Animation")
         list.append("FGO")
+        list.append("IconChange")
+        list.append("ImageCrawler")
+        list.append("PointLine")
         
         let column:Int = 3
         let spec:CGFloat = 20
@@ -71,6 +74,18 @@ class ViewController: UIViewController {
             //
             let fgo = FGOViewController()
             navigationController?.pushViewController(fgo, animated: true)
+            break
+        case 5:
+            let changeiocn = IconChangeViewController()
+            navigationController?.pushViewController(changeiocn, animated: true)
+            break
+        case 6:
+            let crawler = ImageCrawlerViewController()
+            navigationController?.pushViewController(crawler, animated: true)
+            break
+        case 7:
+            let pline = PointLineViewController()
+            navigationController?.pushViewController(pline, animated: true)
             break
         default:
             break

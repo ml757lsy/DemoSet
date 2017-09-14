@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigation.viewControllers.append(ViewController())
         window?.rootViewController = navigation
         
+        NotificationModule.registNotification()
+        
         // Override point for customization after application launch.
         return true
     }
