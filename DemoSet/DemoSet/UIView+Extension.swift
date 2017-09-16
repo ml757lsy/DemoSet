@@ -73,4 +73,30 @@ extension UIView{
             return self.center.y
         }
     }
+    
+    /// 复制视图
+    ///
+    /// - Returns: view
+    func copyView<T: UIView>() -> T {
+        return NSKeyedUnarchiver.unarchiveObject(with: NSKeyedArchiver.archivedData(withRootObject: self)) as! T
+    }
+    
+    func reflection() -> UIView {
+        let copylayer = self.copyView().layer
+        copylayer.transform = CATransform3DMakeRotation(CGFloat.pi, 1, 0, 0)
+        copylayer.frame = copylayer.bounds
+        
+        let gra = CAGradientLayer()
+        gra.frame = copylayer.bounds
+        gra.startPoint = CGPoint.init(x: 0.5, y: 0)
+        gra.endPoint = CGPoint.init(x: 0.5, y: 1)
+        gra.colors = [UIColor.white.cgColor,UIColor.clear.cgColor]
+        gra.locations = [0.5]
+        copylayer.addSublayer(gra)
+        
+        let view = UIView.init(frame: self.bounds)
+        view.layer.addSublayer(copylayer)
+        
+        return view
+    }
 }

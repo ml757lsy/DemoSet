@@ -26,6 +26,8 @@ class ViewController: UIViewController {
         list.append("IconChange")
         list.append("ImageCrawler")
         list.append("PointLine")
+        list.append("QRCode")
+        list.append("Face")
         
         let column:Int = 3
         let spec:CGFloat = 20
@@ -86,6 +88,14 @@ class ViewController: UIViewController {
         case 7:
             let pline = PointLineViewController()
             navigationController?.pushViewController(pline, animated: true)
+            break
+        case 8:
+            let qrcode = QRCodeViewController()
+            navigationController?.pushViewController(qrcode, animated: true)
+            break
+        case 9:
+            let face = FaceRecognitionViewController()
+            navigationController?.pushViewController(face, animated: true)
             break
         default:
             break

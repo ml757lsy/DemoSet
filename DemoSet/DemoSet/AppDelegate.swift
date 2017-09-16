@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navigation
         
         NotificationModule.registNotification()
+        NotificationModule.addHomeNotification()
         
         // Override point for customization after application launch.
         return true

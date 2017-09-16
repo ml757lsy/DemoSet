@@ -15,6 +15,7 @@ class BaseViewController: UIViewController {
 
         edgesForExtendedLayout = .init(rawValue: 0)
         // Do any additional setup after loading the view.
+        view.backgroundColor = UIColor.white
     }
 
     override func didReceiveMemoryWarning() {

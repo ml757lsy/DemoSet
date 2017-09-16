@@ -16,6 +16,8 @@ enum LocationPreset {
 
 class LocationModule: NSObject {
     
+    public static let module = LocationModule()
+    private let manager = CLLocationManager()
     
     /// 位置区域
     ///
@@ -45,6 +47,11 @@ class LocationModule: NSObject {
             return region(latitude: 116.45673, longitude: 40.041266, radius: 50)
         default:
             return region(latitude: 116.360544, longitude: 40.053079, radius: 50)
+        }
+    }
+    
+    func ll() {
+        if CLLocationManager.locationServicesEnabled() {
         }
     }
 

@@ -13,11 +13,21 @@ class IconChangeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = UIColor.orange
         // Do any additional setup after loading the view.
         let button = UIButton.init(frame: CGRect.init(x: 30, y: 30, width: 100, height: 40))
         button.setTitle("图标转变", for: .normal)
         view.addSubview(button)
         button.addTarget(self, action: #selector(changeIcon), for: .touchUpInside)
+        
+        let imageView = UIImageView.init(frame: CGRect.init(x: 30, y: 100, width: 100, height: 100))
+        imageView.image = UIImage.init(named: "testImage")
+        view.addSubview(imageView)
+        
+        let c = imageView.reflection()
+        c.frame = CGRect.init(x: 30, y: 200, width: 100, height: 100)
+        c.y = 200
+        view.addSubview(c)
     }
     
     func changeIcon() {

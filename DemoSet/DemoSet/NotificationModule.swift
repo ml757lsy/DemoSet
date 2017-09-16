@@ -13,17 +13,18 @@ import CoreLocation
 class NotificationModule: NSObject {
     
     
+    /// 注册通知
     class func registNotification() {
         let ver = UIDevice.current.systemVersion
         let result = ver.compare("10.0.0")
         
         if result == .orderedAscending {
-            let setting = UIUserNotificationSettings.init(types: .init(rawValue: 2), categories: nil)
+            let setting = UIUserNotificationSettings.init(types: [.badge,.alert,.sound], categories: nil)
             UIApplication.shared.registerUserNotificationSettings(setting)
         }else{
             if #available(iOS 10.0, *) {
                 let center = UNUserNotificationCenter.current()
-                center.requestAuthorization(options: .init(rawValue: 2), completionHandler: { (succ, error) in
+                center.requestAuthorization(options: [.badge,.alert,.sound], completionHandler: { (succ, error) in
                     //
                 })
             } else {
@@ -71,6 +72,55 @@ class NotificationModule: NSObject {
             let request = UNNotificationRequest.init(identifier: identifier, content: content, trigger: trigger)
             center.add(request, withCompletionHandler: { (error) in
                 //
+            })
+        } else {
+            // Fallback on earlier versions
+        }
+    }
+    
+    class func addHomeNotification() {
+        if #available(iOS 10.0, *) {
+            let content = UNMutableNotificationContent()
+            content.title = "Yo~"
+            content.subtitle = "提示"
+            content.body = "已经在家附近了"
+            
+            let trigger = UNLocationNotificationTrigger.init(region: LocationModule.region(with: .home), repeats: true)
+            
+            let request = UNNotificationRequest.init(identifier: "home", content: content, trigger: trigger)
+            
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: { (error) in
+                print(error)
+            })
+        } else {
+            // Fallback on earlier versions
+        }
+    }
+
+    
+    class func addNotification(preset:LocationPreset){
+        if #available(iOS 10.0, *) {
+            let content = UNMutableNotificationContent()
+            content.title = "Yo~"
+            content.subtitle = "提示"
+            content.body = "已经在家附近了"
+            switch preset {
+            case .home:
+                content.body = "已经在家附近了~"
+                break
+            case .company:
+                content.body = "到公司了~"
+                break
+            default:
+                break
+            }
+            
+            let trigger = UNLocationNotificationTrigger.init(region: LocationModule.region(with: preset), repeats: true)
+            
+            let request = UNNotificationRequest.init(identifier: "home", content: content, trigger: trigger)
+            
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: { (error) in
+                print(error)
             })
         } else {
             // Fallback on earlier versions

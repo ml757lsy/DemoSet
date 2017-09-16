@@ -42,6 +42,11 @@
 		79DCC1681F6A50B600D6A6CE /* NotificationModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DCC1671F6A50B600D6A6CE /* NotificationModule.swift */; };
 		79DCC16B1F6A69E400D6A6CE /* LocationModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DCC16A1F6A69E400D6A6CE /* LocationModule.swift */; };
 		79DCC16D1F6A72F300D6A6CE /* Second.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79DCC16C1F6A72F300D6A6CE /* Second.storyboard */; };
+		79DCC1701F6CC81200D6A6CE /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DCC16F1F6CC81200D6A6CE /* UIImage+Extension.swift */; };
+		79DCC1731F6D0D1F00D6A6CE /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DCC1721F6D0D1F00D6A6CE /* QRCodeViewController.swift */; };
+		79DCC1751F6D0D3100D6A6CE /* QRCodeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DCC1741F6D0D3100D6A6CE /* QRCodeModule.swift */; };
+		79DCC1771F6D18E400D6A6CE /* AlertModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DCC1761F6D18E400D6A6CE /* AlertModule.swift */; };
+		79DCC17A1F6D2EF900D6A6CE /* FaceRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DCC1791F6D2EF900D6A6CE /* FaceRecognitionViewController.swift */; };
 		79FB35061EEAA7190083ED79 /* CellularAutomatonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB35051EEAA7190083ED79 /* CellularAutomatonViewController.swift */; };
 		79FB35091EEAAB850083ED79 /* Cellular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB35081EEAAB850083ED79 /* Cellular.swift */; };
 /* End PBXBuildFile section */
@@ -105,6 +110,11 @@
 		79DCC1671F6A50B600D6A6CE /* NotificationModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationModule.swift; sourceTree = "<group>"; };
 		79DCC16A1F6A69E400D6A6CE /* LocationModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationModule.swift; sourceTree = "<group>"; };
 		79DCC16C1F6A72F300D6A6CE /* Second.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Second.storyboard; sourceTree = "<group>"; };
+		79DCC16F1F6CC81200D6A6CE /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		79DCC1721F6D0D1F00D6A6CE /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		79DCC1741F6D0D3100D6A6CE /* QRCodeModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeModule.swift; sourceTree = "<group>"; };
+		79DCC1761F6D18E400D6A6CE /* AlertModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertModule.swift; sourceTree = "<group>"; };
+		79DCC1791F6D2EF900D6A6CE /* FaceRecognitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceRecognitionViewController.swift; sourceTree = "<group>"; };
 		79FB35051EEAA7190083ED79 /* CellularAutomatonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellularAutomatonViewController.swift; sourceTree = "<group>"; };
 		79FB35081EEAAB850083ED79 /* Cellular.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cellular.swift; sourceTree = "<group>"; };
 		B57CB0D8E15F346CDBC020A0 /* Pods_DemoSet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoSet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -278,11 +288,30 @@
 			name = Evolution;
 			sourceTree = "<group>";
 		};
+		79DCC1711F6D0D0300D6A6CE /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				79DCC1721F6D0D1F00D6A6CE /* QRCodeViewController.swift */,
+				79DCC1741F6D0D3100D6A6CE /* QRCodeModule.swift */,
+			);
+			name = QRCode;
+			sourceTree = "<group>";
+		};
+		79DCC1781F6D2EC800D6A6CE /* Face */ = {
+			isa = PBXGroup;
+			children = (
+				79DCC1791F6D2EF900D6A6CE /* FaceRecognitionViewController.swift */,
+			);
+			name = Face;
+			sourceTree = "<group>";
+		};
 		79FB35021EEAA5540083ED79 /* Base */ = {
 			isa = PBXGroup;
 			children = (
 				795853BB1EEFBB4000F214A5 /* UIView+Extension.swift */,
 				79584BB91EEFDDDB003ABE05 /* BaseViewController.swift */,
+				79DCC16F1F6CC81200D6A6CE /* UIImage+Extension.swift */,
+				79DCC1761F6D18E400D6A6CE /* AlertModule.swift */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -290,6 +319,8 @@
 		79FB35031EEAA65D0083ED79 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				79DCC1781F6D2EC800D6A6CE /* Face */,
+				79DCC1711F6D0D0300D6A6CE /* QRCode */,
 				79DCC16E1F6A738A00D6A6CE /* Evolution */,
 				79DCC1691F6A69CE00D6A6CE /* Location */,
 				79DCC1661F6A4A2300D6A6CE /* Notification */,
@@ -411,6 +442,7 @@
 				TargetAttributes = {
 					79A923ED1EEAA30D00D91121 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = K6A68WLZ9D;
 						ProvisioningStyle = Automatic;
 					};
 					79A924011EEAA30D00D91121 = {
@@ -546,9 +578,11 @@
 				795853BC1EEFBB4000F214A5 /* UIView+Extension.swift in Sources */,
 				79DCC1621F692E8600D6A6CE /* PointLineView.swift in Sources */,
 				79B26ABB1F185FC800B54EC2 /* IconChangeViewController.swift in Sources */,
+				79DCC1771F6D18E400D6A6CE /* AlertModule.swift in Sources */,
 				79B26A921F0A43AE00B54EC2 /* MysticCodeModel.swift in Sources */,
 				79DCC1681F6A50B600D6A6CE /* NotificationModule.swift in Sources */,
 				79B26A901F0A431100B54EC2 /* ServentModel.swift in Sources */,
+				79DCC17A1F6D2EF900D6A6CE /* FaceRecognitionViewController.swift in Sources */,
 				79A923F41EEAA30D00D91121 /* ViewController.swift in Sources */,
 				79FB35091EEAAB850083ED79 /* Cellular.swift in Sources */,
 				798806701F4FB944001FB972 /* ImageCrawlerViewController.swift in Sources */,
@@ -558,7 +592,10 @@
 				79B26A941F0A453C00B54EC2 /* AttackModel.swift in Sources */,
 				79B26A8E1F0A428800B54EC2 /* FGOModel.swift in Sources */,
 				79A923F21EEAA30D00D91121 /* AppDelegate.swift in Sources */,
+				79DCC1701F6CC81200D6A6CE /* UIImage+Extension.swift in Sources */,
+				79DCC1751F6D0D3100D6A6CE /* QRCodeModule.swift in Sources */,
 				79DCC16B1F6A69E400D6A6CE /* LocationModule.swift in Sources */,
+				79DCC1731F6D0D1F00D6A6CE /* QRCodeViewController.swift in Sources */,
 				79B26AA21F0DD9BE00B54EC2 /* SkillModel.swift in Sources */,
 				79DCC1651F6A4A1D00D6A6CE /* NotificationViewController.swift in Sources */,
 				795853BA1EEFB58B00F214A5 /* SortColumn.swift in Sources */,
@@ -714,6 +751,7 @@
 			baseConfigurationReference = D0A1CA75BBE277C1087C48CB /* Pods-DemoSet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = K6A68WLZ9D;
 				INFOPLIST_FILE = DemoSet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -728,6 +766,7 @@
 			baseConfigurationReference = 3A0DAFE85DDB291EF6D64925 /* Pods-DemoSet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = K6A68WLZ9D;
 				INFOPLIST_FILE = DemoSet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
