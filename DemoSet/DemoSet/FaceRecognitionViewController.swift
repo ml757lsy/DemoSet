@@ -12,6 +12,7 @@ import AVFoundation
 class FaceRecognitionViewController: BaseViewController,AVCaptureMetadataOutputObjectsDelegate,AVCaptureVideoDataOutputSampleBufferDelegate {
 
     private let session = AVCaptureSession()
+    private let face = UIImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,11 @@ class FaceRecognitionViewController: BaseViewController,AVCaptureMetadataOutputO
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func initView() {
+        view.addSubview(face)
+        face.frame = CGRect.init(x: 30, y: 0, width: 100, height: 100)
     }
     
 
@@ -65,6 +71,8 @@ class FaceRecognitionViewController: BaseViewController,AVCaptureMetadataOutputO
             
             let metadata = metadataObjects[0] as! AVMetadataFaceObject
             print(metadata.faceID)
+            
+            face.image = view.toImage()
             
         }
     }

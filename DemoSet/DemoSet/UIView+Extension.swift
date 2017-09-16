@@ -99,4 +99,18 @@ extension UIView{
         
         return view
     }
+    
+    /// 转换为图片
+    ///
+    /// - Returns: 图片
+    func toImage() -> UIImage {
+        var image = UIImage()
+        let size = self.bounds.size
+        // 下面方法，第一个参数表示区域大小。第二个参数表示是否是非透明的。如果需要显示半透明效果，需要传NO，否则传YES。第三个参数就是屏幕密度了
+        UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
+        self.layer.render(in: UIGraphicsGetCurrentContext()!)
+        image = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return image
+    }
 }
