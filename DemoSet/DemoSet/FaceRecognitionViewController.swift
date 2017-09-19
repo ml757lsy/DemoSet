@@ -16,8 +16,10 @@ class FaceRecognitionViewController: BaseViewController,AVCaptureMetadataOutputO
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        initView()
 
-        start()
+        //start()
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,7 +29,10 @@ class FaceRecognitionViewController: BaseViewController,AVCaptureMetadataOutputO
     
     func initView() {
         view.addSubview(face)
-        face.frame = CGRect.init(x: 30, y: 0, width: 100, height: 100)
+        face.frame = CGRect.init(x: 30, y: 0, width: 290, height: 165)
+        
+        let i = UIImage.init(named: "testImage2")?.binaryzation()
+        face.image = i
     }
     
 

@@ -28,6 +28,7 @@ class ViewController: UIViewController {
         list.append("PointLine")
         list.append("QRCode")
         list.append("Face")
+        list.append("Wave")
         
         let column:Int = 3
         let spec:CGFloat = 20
@@ -96,6 +97,10 @@ class ViewController: UIViewController {
         case 9:
             let face = FaceRecognitionViewController()
             navigationController?.pushViewController(face, animated: true)
+            break
+        case 10:
+            let wave = WaveViewController()
+            navigationController?.pushViewController(wave, animated: true)
             break
         default:
             break

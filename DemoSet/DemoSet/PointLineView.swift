@@ -17,10 +17,13 @@ class Point:NSObject {
 
 class PointLineView: UIView {
     var points:[Point] = []
+    var lines:[[UIBezierPath]] = []
+    var notes:[UIBezierPath] = []
     var timer:Timer = Timer()
+    var maxPoint:Int = 10
     
-    private var minLength:CGFloat = 20//最短
-    private var maxLength:CGFloat = 50//最长
+    private var minLength:CGFloat = 30//最短
+    private var maxLength:CGFloat = 80//最长
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,18 +36,34 @@ class PointLineView: UIView {
     }
     
     func initPoint() {
-        for _ in 0..<1 {
+        //point
+        for _ in 0..<maxPoint{
             var point = Point()
             point.position = CGPoint.init(x: CGFloat(arc4random()%500), y: CGFloat(arc4random()%500))
             point.direction = Double.pi * Double(arc4random()%100)/100
             points.append(point)
+        }
+        //line
+        for i in 0..<maxPoint {
+            var li:[UIBezierPath] = []
+            for j in i..<maxPoint {
+                let path = UIBezierPath.init()
+                path.lineWidth = 1
+                li.append(path)
+            }
+            lines.append(li)
+        }
+        //notes
+        for _ in 0..<maxPoint {
+            let path = UIBezierPath.init()
+            notes.append(path)
         }
     }
     
     //
     func initTimer() {
         timer.invalidate()
-        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateView), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateView), userInfo: nil, repeats: true)
     }
     
     func updateView() {
@@ -89,46 +108,53 @@ class PointLineView: UIView {
         return CGFloat(z)
     }
     
+    func lineAlpha(with length:CGFloat) -> CGFloat{
+        
+        if length <= minLength {
+            return 1
+        }
+        if length >= maxLength {
+            return 0
+        }
+        
+        return (length - minLength)/(maxLength - minLength)
+    }
+    
     func nextPoint(from current:CGPoint, with speed:CGFloat){
         
+    }
+    
+    func animation() {
+        //line
+        for i in 0..<lines.count {
+            let li = lines[i]
+            let p1 = points[i]
+            for j in 0..<li.count {
+                let path = li[j]
+                let p2 = points[i+j]
+                path.removeAllPoints()
+                path.move(to: p1.position)
+                path.addLine(to: p2.position)
+                let alpha = lineAlpha(with: length(from: p1.position, to: p2.position))
+                UIColor.init(white: 1, alpha: alpha).set()
+                path.stroke()
+            }
+        }
+        //point
+        for i in 0..<notes.count {
+            let note = notes[i]
+            let p  = points[i]
+            note.removeAllPoints()
+            note.move(to: p.position)
+            UIColor.darkGray.set()
+            note.addArc(withCenter: p.position, radius: 2, startAngle: 0, endAngle: CGFloat(Double.pi*2), clockwise: true)
+            note.fill()
+        }
     }
 
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
-        for i in 0..<points.count {
-            let point1 = points[i]
-            let p1 = UIBezierPath()
-            UIColor.lightGray.set()
-            p1.move(to: point1.position)
-            p1.addArc(withCenter: point1.position, radius: 2, startAngle: 0, endAngle: CGFloat(Double.pi*2), clockwise: true)
-            p1.fill()
-            
-            for j in i..<points.count {
-                let point2 = points[j]
-                
-                let p2 = UIBezierPath()
-                p2.move(to: point2.position)
-                p2.addArc(withCenter: point2.position, radius: 2, startAngle: 0, endAngle: CGFloat(Double.pi*2), clockwise: true)
-                p2.fill()
-                
-                let l = length(from: point1.position, to: point2.position)
-                if l < maxLength {
-                    var alpha = (maxLength - l)/(maxLength - minLength)
-                    if l < minLength {
-                        alpha = 1
-                    }
-                    
-                    UIColor.init(colorLiteralRed: 1, green: 1, blue: 1, alpha: Float(alpha)).set()
-                    
-                    let path = UIBezierPath()
-                    path.move(to: point1.position)
-                    path.addLine(to: point2.position)
-                    path.lineWidth = 1
-                    path.stroke()
-                    
-                }
-            }
-        }
+        animation()
     }
 }

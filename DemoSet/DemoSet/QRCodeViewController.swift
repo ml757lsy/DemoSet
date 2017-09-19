@@ -17,7 +17,7 @@ class QRCodeViewController: BaseViewController,AVCaptureMetadataOutputObjectsDel
     override func viewDidLoad() {
         super.viewDidLoad()
         creat()
-        start()
+        //start()
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,9 +27,10 @@ class QRCodeViewController: BaseViewController,AVCaptureMetadataOutputObjectsDel
     
     func creat() {
         
-        let image = UIImageView.init(frame: CGRect.init(x: 0, y: 0, width: 100, height: 100))
+        let image = UIImageView.init(frame: CGRect.init(x: 0, y: 0, width: 162, height: 162))
         image.image = QRCodeModule.initQRCode()
         view.addSubview(image)
+        QRCodeModule.data(with: image.image!)
     }
     
     func start() {

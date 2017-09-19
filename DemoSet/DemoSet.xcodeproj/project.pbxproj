@@ -36,6 +36,8 @@
 		79B26AB61F185EF600B54EC2 /* Icon2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79B26AB51F185EF600B54EC2 /* Icon2@2x.png */; };
 		79B26AB81F185F0300B54EC2 /* Icon2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79B26AB71F185F0300B54EC2 /* Icon2@3x.png */; };
 		79B26ABB1F185FC800B54EC2 /* IconChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B26ABA1F185FC800B54EC2 /* IconChangeViewController.swift */; };
+		79DB4BB91F70A8D40014CA2D /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB4BB81F70A8D40014CA2D /* WaveView.swift */; };
+		79DB4BBB1F70B1B00014CA2D /* WaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB4BBA1F70B1B00014CA2D /* WaveViewController.swift */; };
 		79DCC1601F67ECE100D6A6CE /* PointLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DCC15F1F67ECE100D6A6CE /* PointLineViewController.swift */; };
 		79DCC1621F692E8600D6A6CE /* PointLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DCC1611F692E8600D6A6CE /* PointLineView.swift */; };
 		79DCC1651F6A4A1D00D6A6CE /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DCC1641F6A4A1D00D6A6CE /* NotificationViewController.swift */; };
@@ -104,6 +106,8 @@
 		79B26AB51F185EF600B54EC2 /* Icon2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon2@2x.png"; sourceTree = "<group>"; };
 		79B26AB71F185F0300B54EC2 /* Icon2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon2@3x.png"; sourceTree = "<group>"; };
 		79B26ABA1F185FC800B54EC2 /* IconChangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconChangeViewController.swift; sourceTree = "<group>"; };
+		79DB4BB81F70A8D40014CA2D /* WaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
+		79DB4BBA1F70B1B00014CA2D /* WaveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveViewController.swift; sourceTree = "<group>"; };
 		79DCC15F1F67ECE100D6A6CE /* PointLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointLineViewController.swift; sourceTree = "<group>"; };
 		79DCC1611F692E8600D6A6CE /* PointLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointLineView.swift; sourceTree = "<group>"; };
 		79DCC1641F6A4A1D00D6A6CE /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
@@ -255,6 +259,15 @@
 			name = IconChange;
 			sourceTree = "<group>";
 		};
+		79DB4BB71F70A8AD0014CA2D /* WaveView */ = {
+			isa = PBXGroup;
+			children = (
+				79DB4BBA1F70B1B00014CA2D /* WaveViewController.swift */,
+				79DB4BB81F70A8D40014CA2D /* WaveView.swift */,
+			);
+			name = WaveView;
+			sourceTree = "<group>";
+		};
 		79DCC15E1F67ECC000D6A6CE /* PointLine */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +332,7 @@
 		79FB35031EEAA65D0083ED79 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				79DB4BB71F70A8AD0014CA2D /* WaveView */,
 				79DCC1781F6D2EC800D6A6CE /* Face */,
 				79DCC1711F6D0D0300D6A6CE /* QRCode */,
 				79DCC16E1F6A738A00D6A6CE /* Evolution */,
@@ -575,6 +589,7 @@
 				79B26A961F0A45CD00B54EC2 /* NoblePhantasmModel.swift in Sources */,
 				795853B81EEF954700F214A5 /* SortViewController.swift in Sources */,
 				79B26A721F05065E00B54EC2 /* AnimationViewController.swift in Sources */,
+				79DB4BB91F70A8D40014CA2D /* WaveView.swift in Sources */,
 				795853BC1EEFBB4000F214A5 /* UIView+Extension.swift in Sources */,
 				79DCC1621F692E8600D6A6CE /* PointLineView.swift in Sources */,
 				79B26ABB1F185FC800B54EC2 /* IconChangeViewController.swift in Sources */,
@@ -595,6 +610,7 @@
 				79DCC1701F6CC81200D6A6CE /* UIImage+Extension.swift in Sources */,
 				79DCC1751F6D0D3100D6A6CE /* QRCodeModule.swift in Sources */,
 				79DCC16B1F6A69E400D6A6CE /* LocationModule.swift in Sources */,
+				79DB4BBB1F70B1B00014CA2D /* WaveViewController.swift in Sources */,
 				79DCC1731F6D0D1F00D6A6CE /* QRCodeViewController.swift in Sources */,
 				79B26AA21F0DD9BE00B54EC2 /* SkillModel.swift in Sources */,
 				79DCC1651F6A4A1D00D6A6CE /* NotificationViewController.swift in Sources */,

@@ -15,4 +15,20 @@ extension UIImage{
         
         return UIImage()
     }
+    
+    func binaryzation() -> UIImage {
+        let ci = self.ciImage
+        //4-53:CICategoryHalftoneEffect - CICircularScreen,CICMYKHalftone,CIDotScreen,CIHatchedScreen,CILineScreen
+        let filter = CIFilter(name: "CICircularScreen")
+        
+        //["inputImage", "inputCenter", "inputWidth", "inputSharpness"]
+        filter?.setValue(ci, forKey: "inputImage")
+        filter?.setValue(CGPoint.init(x: 290, y: 165), forKey: "inputCenter")
+        filter?.setValue(580, forKey: "inputWidth")
+        filter?.setValue(1, forKey: "inputSharpness")
+        
+        let out = filter?.outputImage
+        
+        return UIImage.init(ciImage: out!)
+    }
 }
