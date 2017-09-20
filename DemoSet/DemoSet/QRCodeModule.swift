@@ -12,7 +12,7 @@ import CoreGraphics
 /// QRCode模块
 class QRCodeModule: NSObject {
 
-    class func initQRCode() -> UIImage {
+    class func initQRCode(message:String) -> UIImage {
         
         /// 1. 实例化二维码滤镜
         let filter = CIFilter(name: "CIQRCodeGenerator")///二维码
@@ -21,7 +21,7 @@ class QRCodeModule: NSObject {
         filter?.setDefaults()
         
         /// 3. 将字符串转换成二进制数据，（生成二维码所需的数据）
-        let string = "哦哈哈，看我扫出来了什么\n像素种籽，耕耘想象\n有想象才有创造，能独立才能协作!"
+        let string = message
         let data = string.data(using: String.Encoding.utf8)///Swift 3.0
         
         /// 4. 通过KVO把二进制数据添加到滤镜inputMessage中
@@ -36,7 +36,14 @@ class QRCodeModule: NSObject {
         
         return QRCodeModule.resizeImage(image: image, quality: .none, rate: 1)//选低质量就不会虚了
     }
+
     
+    /// 图片缩放
+    ///
+    /// - Parameters:
+    ///   - width: width
+    ///   - image: image
+    /// - Returns: image
     class func scaleWithFixed(width:CGFloat, image:UIImage) -> UIImage{
         let newHeight = image.size.height * (width / image.size.width)
         let size = CGSize.init(width: width, height: newHeight)
@@ -58,6 +65,13 @@ class QRCodeModule: NSObject {
         return imageOut!
     }
     
+    /// 图片重绘
+    ///
+    /// - Parameters:
+    ///   - image: iamge
+    ///   - quality: quality
+    ///   - rate: rate
+    /// - Returns: image
     class func resizeImage(image:UIImage, quality:CGInterpolationQuality,rate:CGFloat) -> UIImage{
         var resized:UIImage
         let width:CGFloat = image.size.width * rate

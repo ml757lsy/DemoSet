@@ -36,6 +36,7 @@
 		79B26AB61F185EF600B54EC2 /* Icon2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79B26AB51F185EF600B54EC2 /* Icon2@2x.png */; };
 		79B26AB81F185F0300B54EC2 /* Icon2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79B26AB71F185F0300B54EC2 /* Icon2@3x.png */; };
 		79B26ABB1F185FC800B54EC2 /* IconChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B26ABA1F185FC800B54EC2 /* IconChangeViewController.swift */; };
+		79B647641F7263780002103E /* MessageFliterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B647631F7263780002103E /* MessageFliterViewController.swift */; };
 		79DB4BB91F70A8D40014CA2D /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB4BB81F70A8D40014CA2D /* WaveView.swift */; };
 		79DB4BBB1F70B1B00014CA2D /* WaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB4BBA1F70B1B00014CA2D /* WaveViewController.swift */; };
 		79DCC1601F67ECE100D6A6CE /* PointLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DCC15F1F67ECE100D6A6CE /* PointLineViewController.swift */; };
@@ -106,6 +107,7 @@
 		79B26AB51F185EF600B54EC2 /* Icon2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon2@2x.png"; sourceTree = "<group>"; };
 		79B26AB71F185F0300B54EC2 /* Icon2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon2@3x.png"; sourceTree = "<group>"; };
 		79B26ABA1F185FC800B54EC2 /* IconChangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconChangeViewController.swift; sourceTree = "<group>"; };
+		79B647631F7263780002103E /* MessageFliterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFliterViewController.swift; sourceTree = "<group>"; };
 		79DB4BB81F70A8D40014CA2D /* WaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
 		79DB4BBA1F70B1B00014CA2D /* WaveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveViewController.swift; sourceTree = "<group>"; };
 		79DCC15F1F67ECE100D6A6CE /* PointLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointLineViewController.swift; sourceTree = "<group>"; };
@@ -259,6 +261,14 @@
 			name = IconChange;
 			sourceTree = "<group>";
 		};
+		79B647651F72637D0002103E /* MessageFliter */ = {
+			isa = PBXGroup;
+			children = (
+				79B647631F7263780002103E /* MessageFliterViewController.swift */,
+			);
+			name = MessageFliter;
+			sourceTree = "<group>";
+		};
 		79DB4BB71F70A8AD0014CA2D /* WaveView */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +342,7 @@
 		79FB35031EEAA65D0083ED79 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				79B647651F72637D0002103E /* MessageFliter */,
 				79DB4BB71F70A8AD0014CA2D /* WaveView */,
 				79DCC1781F6D2EC800D6A6CE /* Face */,
 				79DCC1711F6D0D0300D6A6CE /* QRCode */,
@@ -584,6 +595,7 @@
 			files = (
 				79B26A981F0A513D00B54EC2 /* BufferModel.swift in Sources */,
 				79DCC1601F67ECE100D6A6CE /* PointLineViewController.swift in Sources */,
+				79B647641F7263780002103E /* MessageFliterViewController.swift in Sources */,
 				79B26A741F05068B00B54EC2 /* LeafView.swift in Sources */,
 				7992BF691EF3866E00AE829A /* NumberboardViewController.swift in Sources */,
 				79B26A961F0A45CD00B54EC2 /* NoblePhantasmModel.swift in Sources */,
