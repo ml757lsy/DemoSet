@@ -21,7 +21,7 @@ class QRCodeModule: NSObject {
         filter?.setDefaults()
         
         /// 3. 将字符串转换成二进制数据，（生成二维码所需的数据）
-        let string = "hello word"
+        let string = "哦哈哈，看我扫出来了什么\n像素种籽，耕耘想象\n有想象才有创造，能独立才能协作!"
         let data = string.data(using: String.Encoding.utf8)///Swift 3.0
         
         /// 4. 通过KVO把二进制数据添加到滤镜inputMessage中
@@ -31,16 +31,49 @@ class QRCodeModule: NSObject {
         /// 5. 获得滤镜输出的图像
         let outputImage = filter?.outputImage ///CIImage
         
-        let width = outputImage?.extent.width
+        let cg = CIContext.init().createCGImage(outputImage!, from: (outputImage?.extent)!)
+        let image = UIImage.init(cgImage: cg!, scale: 1, orientation: .up)
         
-        let s = QRCodeModule.createUIimageWithCGImage(ciImage: outputImage!, widthAndHeightValue: width!*3)
-        
-        /// 6. 将CIImage转换成UIImage，并放大显示
-        let originQRCodeImage = UIImage(ciImage: s, scale: 3, orientation: UIImageOrientation.up) ///原生二维码图片 ///这样将图片放大会变得模糊
-        
-        return originQRCodeImage
+        return QRCodeModule.resizeImage(image: image, quality: .none, rate: 1)//选低质量就不会虚了
     }
     
+    class func scaleWithFixed(width:CGFloat, image:UIImage) -> UIImage{
+        let newHeight = image.size.height * (width / image.size.width)
+        let size = CGSize.init(width: width, height: newHeight)
+        
+        UIGraphicsBeginImageContextWithOptions(size, false, 0);
+    
+        let context = UIGraphicsGetCurrentContext()!
+    
+        context.translateBy(x: 0.0, y: size.height)
+        context.scaleBy(x: 1.0, y: -1.0)
+    
+        context.setBlendMode(.copy)
+        context.draw(image.cgImage!, in: CGRect.init(x: 0, y: 0, width: width, height: newHeight))
+    
+        let imageOut = UIGraphicsGetImageFromCurrentImageContext()
+    
+        UIGraphicsEndImageContext();
+    
+        return imageOut!
+    }
+    
+    class func resizeImage(image:UIImage, quality:CGInterpolationQuality,rate:CGFloat) -> UIImage{
+        var resized:UIImage
+        let width:CGFloat = image.size.width * rate
+        let height:CGFloat = image.size.height * rate;
+    
+        UIGraphicsBeginImageContext(CGSize.init(width: width, height: height))
+        let context:CGContext = UIGraphicsGetCurrentContext()!
+        context.interpolationQuality = quality
+        image.draw(in: CGRect.init(x: 0, y: 0, width: width, height: height))
+        
+        resized = UIGraphicsGetImageFromCurrentImageContext()!;
+        UIGraphicsEndImageContext()
+        
+        return resized;
+    }
+
     class func createUIimageWithCGImage(ciImage image: CIImage, widthAndHeightValue wh: CGFloat) -> CIImage {
         let ciRect = image.extent.integral///根据容器得到适合的尺寸
         let scale = min(wh / ciRect.width, wh / ciRect.height)
@@ -74,97 +107,6 @@ class QRCodeModule: NSObject {
         return ciImage
     }
     
-    class func qrdata(image:CIImage) -> [[Int]]{
-        let ciRect = image.extent.integral///根据容器得到适合的尺寸
-        let scale:CGFloat = 1
-        
-        ///获取bitmap
-        let width  = size_t(ciRect.width * scale)
-        
-        let height  = size_t(ciRect.height * scale)
-        
-        let p = UnsafeMutableRawPointer.allocate(bytes: 27*27*4, alignedTo: 1)
-        
-        var imageData = Data()
-        
-        
-        let c = CGContext.init(data: &imageData, width: 27, height: 27, bitsPerComponent: 8, bytesPerRow: 4*27, space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: CGImageAlphaInfo.premultipliedFirst.rawValue)
-        
-        
-        
-        let cs = CGColorSpaceCreateDeviceGray()///灰度颜色通道 ///CGColorSpaceRef
-        
-        let info_UInt32 = CGImageAlphaInfo.none.rawValue
-        let bitmapRef = CGContext(data: nil, width: width, height: height, bitsPerComponent: 8, bytesPerRow: 0, space: cs, bitmapInfo: info_UInt32)
-        
-        let contex = CIContext(options: nil) ///  创建基于GPU的CIContext对象,性能和效果更好
-        let bitmapImageRef = contex.createCGImage(image, from: CGRect(x: ciRect.origin.x, y: ciRect.origin.y, width: ciRect.size.width, height: ciRect.size.height)) ///CGImageRef
-        
-        ///swift 3.0, 把全局方法改为了实例方法
-        bitmapRef!.interpolationQuality = CGInterpolationQuality.high///写入质量高，时间长
-        bitmapRef!.scaleBy(x: scale, y: scale) ///调整“画布”的缩放
-        bitmapRef?.draw(bitmapImageRef!, in: ciRect, byTiling: true)///绘制图片
-        
-        ///保存
-        let scaledImage = bitmapRef!.makeImage() ///cgimage
-        
-        ///bitmapRef和bitmapImageRef不用主动释放，Core Foundation自动管理
-        //let originImage = UIImage(CGImage: scaledImage!) ///原生灰度图片（灰色）
-        
-        let ciImage = CIImage(cgImage: scaledImage!) ///ciimage
-        //let newQRCodeImage = UIImage(cgImage: scaledImage!) ///uiimage
-        /*
-         - (UIImage*) imageBlackToTransparent:(UIImage*) image
-         {
-         // 分配内存
-         const int imageWidth = image.size.width;
-         const int imageHeight = image.size.height;
-         size_t      bytesPerRow = imageWidth * 4;
-         uint32_t* rgbImageBuf = (uint32_t*)malloc(bytesPerRow * imageHeight);
-         
-         // 创建context
-         CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-         CGContextRef context = CGBitmapContextCreate(rgbImageBuf, imageWidth, imageHeight, 8, bytesPerRow, colorSpace,kCGBitmapByteOrder32Little | kCGImageAlphaNoneSkipLast);
-         CGContextDrawImage(context, CGRectMake(0, 0, imageWidth, imageHeight), image.CGImage);
-         
-         // 遍历像素
-         int pixelNum = imageWidth * imageHeight;
-         uint32_t* pCurPtr = rgbImageBuf;
-         
-         for (int i = 0; i < pixelNum; i++, pCurPtr++)
-         {
-         if ((*pCurPtr & 0xFFFFFF00) == 0)    // 将黑色变成透明
-         {
-         uint8_t* ptr = (uint8_t*)pCurPtr;
-         
-         ptr[0] = 0;
-         ptr[1] = 0;
-         ptr[2] = 0;
-         ptr[3] = 0;
-         }
-         }
-         
-         // 将内存转成image
-         CGDataProviderRef dataProvider = CGDataProviderCreateWithData(NULL, rgbImageBuf, bytesPerRow * imageHeight,ProviderReleaseData);
-         CGImageRef imageRef = CGImageCreate(imageWidth, imageHeight, 8, 32, bytesPerRow, colorSpace,kCGImageAlphaLast | kCGBitmapByteOrder32Little, dataProvider,NULL, true, kCGRenderingIntentDefault);
-         
-         CGDataProviderRelease(dataProvider);
-         
-         UIImage* resultUIImage = [UIImage imageWithCGImage:imageRef];
-         
-         // 释放
-         CGImageRelease(imageRef);
-         CGContextRelease(context);
-         CGColorSpaceRelease(colorSpace);
-         
-         // free(rgbImageBuf) 创建dataProvider时已提供释放函数，这里不用free
-         return resultUIImage;
-         }
-         */
-        
-        return []
-    }
-    
     class func data(with image:UIImage) -> [[Int]]{
         // 分配内存
         let imageWidth:Int = Int(image.size.width)
@@ -175,30 +117,33 @@ class QRCodeModule: NSObject {
         // 创建context
         let colorSpace:CGColorSpace = CGColorSpaceCreateDeviceRGB()
         let context:CGContext = CGContext(data: rgbImageBuf, width: imageWidth, height: imageHeight, bitsPerComponent: 8, bytesPerRow: bytesPerRow, space: colorSpace,bitmapInfo: 1)!
-        
-        //context.draw(image.cgImage!, in: CGRect.init(x: 0, y: 0, width: image.size.width, height: image.size.height))
+
+        context.draw((image.cgImage)!, in: CGRect.init(x: 0, y: 0, width: image.size.width, height: image.size.height), byTiling: true)
         
         // 遍历像素
-        let pixelNum:Int = imageWidth * imageHeight;
         var pCurPtr = rgbImageBuf
         
-        for i in 0..<pixelNum {
-            //
-            let alpha = pCurPtr.load(fromByteOffset: 0, as: UInt8.self)
-            let red = pCurPtr.load(fromByteOffset: 1, as: UInt8.self)
-            let green = pCurPtr.load(fromByteOffset: 2, as: UInt8.self)
-            let blue = pCurPtr.load(fromByteOffset: 3, as: UInt8.self)
-            
-            if (red + green + blue)/3 < 128 {
-                print(0)
-            }else{
-                print(1)
+        var data:[[Int]] = []
+        for _ in 0..<imageHeight {
+            var line:[Int] = []
+            for _ in 0..<imageWidth {
+                let alpha = pCurPtr.load(fromByteOffset: 0, as: UInt8.self)
+                let red = pCurPtr.load(fromByteOffset: 1, as: UInt8.self)
+                let green = pCurPtr.load(fromByteOffset: 2, as: UInt8.self)
+                let blue = pCurPtr.load(fromByteOffset: 3, as: UInt8.self)
+                
+                pCurPtr += 4
+                var n = 0
+                if (Int(red) + Int(green) + Int(blue)) < 500 {
+                    n = 0
+                }else{
+                    n = 1
+                }
+                line.append(n)
             }
-            
-            pCurPtr += 1
+            data.append(line)
         }
-        
-        return []
+        return data
     }
     
     
