@@ -37,6 +37,8 @@
 		79B26AB81F185F0300B54EC2 /* Icon2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79B26AB71F185F0300B54EC2 /* Icon2@3x.png */; };
 		79B26ABB1F185FC800B54EC2 /* IconChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B26ABA1F185FC800B54EC2 /* IconChangeViewController.swift */; };
 		79B647641F7263780002103E /* MessageFliterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B647631F7263780002103E /* MessageFliterViewController.swift */; };
+		79B647871F7361D90002103E /* MessageFilterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B647861F7361D90002103E /* MessageFilterExtension.swift */; };
+		79B6478B1F7361D90002103E /* MessageFilterExt.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 79B647841F7361D90002103E /* MessageFilterExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		79DB4BB91F70A8D40014CA2D /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB4BB81F70A8D40014CA2D /* WaveView.swift */; };
 		79DB4BBB1F70B1B00014CA2D /* WaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB4BBA1F70B1B00014CA2D /* WaveViewController.swift */; };
 		79DCC1601F67ECE100D6A6CE /* PointLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DCC15F1F67ECE100D6A6CE /* PointLineViewController.swift */; };
@@ -69,7 +71,28 @@
 			remoteGlobalIDString = 79A923ED1EEAA30D00D91121;
 			remoteInfo = DemoSet;
 		};
+		79B647891F7361D90002103E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 79A923E61EEAA30D00D91121 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 79B647831F7361D90002103E;
+			remoteInfo = MessageFilterExt;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		79B6477F1F7359BB0002103E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				79B6478B1F7361D90002103E /* MessageFilterExt.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3A0DAFE85DDB291EF6D64925 /* Pods-DemoSet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoSet.release.xcconfig"; path = "Pods/Target Support Files/Pods-DemoSet/Pods-DemoSet.release.xcconfig"; sourceTree = "<group>"; };
@@ -108,6 +131,10 @@
 		79B26AB71F185F0300B54EC2 /* Icon2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon2@3x.png"; sourceTree = "<group>"; };
 		79B26ABA1F185FC800B54EC2 /* IconChangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconChangeViewController.swift; sourceTree = "<group>"; };
 		79B647631F7263780002103E /* MessageFliterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFliterViewController.swift; sourceTree = "<group>"; };
+		79B6476E1F7359BB0002103E /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		79B647841F7361D90002103E /* MessageFilterExt.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MessageFilterExt.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		79B647861F7361D90002103E /* MessageFilterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFilterExtension.swift; sourceTree = "<group>"; };
+		79B647881F7361D90002103E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79DB4BB81F70A8D40014CA2D /* WaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
 		79DB4BBA1F70B1B00014CA2D /* WaveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveViewController.swift; sourceTree = "<group>"; };
 		79DCC15F1F67ECE100D6A6CE /* PointLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointLineViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +177,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		79B647811F7361D90002103E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -176,6 +210,7 @@
 				79A923F01EEAA30D00D91121 /* DemoSet */,
 				79A924051EEAA30D00D91121 /* DemoSetTests */,
 				79A924101EEAA30D00D91121 /* DemoSetUITests */,
+				79B647851F7361D90002103E /* MessageFilterExt */,
 				79A923EF1EEAA30D00D91121 /* Products */,
 				BD0BEA95B308EEF73D3F467E /* Pods */,
 				7AFFC65A0DAFEE6C54CCEAC5 /* Frameworks */,
@@ -188,6 +223,7 @@
 				79A923EE1EEAA30D00D91121 /* DemoSet.app */,
 				79A924021EEAA30D00D91121 /* DemoSetTests.xctest */,
 				79A9240D1EEAA30D00D91121 /* DemoSetUITests.xctest */,
+				79B647841F7361D90002103E /* MessageFilterExt.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -267,6 +303,15 @@
 				79B647631F7263780002103E /* MessageFliterViewController.swift */,
 			);
 			name = MessageFliter;
+			sourceTree = "<group>";
+		};
+		79B647851F7361D90002103E /* MessageFilterExt */ = {
+			isa = PBXGroup;
+			children = (
+				79B647861F7361D90002103E /* MessageFilterExtension.swift */,
+				79B647881F7361D90002103E /* Info.plist */,
+			);
+			path = MessageFilterExt;
 			sourceTree = "<group>";
 		};
 		79DB4BB71F70A8AD0014CA2D /* WaveView */ = {
@@ -383,6 +428,7 @@
 			isa = PBXGroup;
 			children = (
 				B57CB0D8E15F346CDBC020A0 /* Pods_DemoSet.framework */,
+				79B6476E1F7359BB0002103E /* Messages.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -409,10 +455,12 @@
 				79A923EC1EEAA30D00D91121 /* Resources */,
 				752D454E9087923DEBC04709 /* [CP] Embed Pods Frameworks */,
 				6181AD5524F65F2810F31D62 /* [CP] Copy Pods Resources */,
+				79B6477F1F7359BB0002103E /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				79B6478A1F7361D90002103E /* PBXTargetDependency */,
 			);
 			name = DemoSet;
 			productName = DemoSet;
@@ -455,13 +503,30 @@
 			productReference = 79A9240D1EEAA30D00D91121 /* DemoSetUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		79B647831F7361D90002103E /* MessageFilterExt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79B6478C1F7361D90002103E /* Build configuration list for PBXNativeTarget "MessageFilterExt" */;
+			buildPhases = (
+				79B647801F7361D90002103E /* Sources */,
+				79B647811F7361D90002103E /* Frameworks */,
+				79B647821F7361D90002103E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MessageFilterExt;
+			productName = MessageFilterExt;
+			productReference = 79B647841F7361D90002103E /* MessageFilterExt.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		79A923E61EEAA30D00D91121 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
+				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Far;
 				TargetAttributes = {
@@ -479,6 +544,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 79A923ED1EEAA30D00D91121;
+					};
+					79B647831F7361D90002103E = {
+						CreatedOnToolsVersion = 9.0;
+						DevelopmentTeam = K6A68WLZ9D;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -498,6 +568,7 @@
 				79A923ED1EEAA30D00D91121 /* DemoSet */,
 				79A924011EEAA30D00D91121 /* DemoSetTests */,
 				79A9240C1EEAA30D00D91121 /* DemoSetUITests */,
+				79B647831F7361D90002103E /* MessageFilterExt */,
 			);
 		};
 /* End PBXProject section */
@@ -524,6 +595,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		79A9240B1EEAA30D00D91121 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79B647821F7361D90002103E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -648,6 +726,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		79B647801F7361D90002103E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79B647871F7361D90002103E /* MessageFilterExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -660,6 +746,11 @@
 			isa = PBXTargetDependency;
 			target = 79A923ED1EEAA30D00D91121 /* DemoSet */;
 			targetProxy = 79A9240E1EEAA30D00D91121 /* PBXContainerItemProxy */;
+		};
+		79B6478A1F7361D90002103E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 79B647831F7361D90002103E /* MessageFilterExt */;
+			targetProxy = 79B647891F7361D90002103E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -778,7 +869,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D0A1CA75BBE277C1087C48CB /* Pods-DemoSet.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = K6A68WLZ9D;
 				INFOPLIST_FILE = DemoSet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -793,7 +886,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A0DAFE85DDB291EF6D64925 /* Pods-DemoSet.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = K6A68WLZ9D;
 				INFOPLIST_FILE = DemoSet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -858,6 +953,60 @@
 			};
 			name = Release;
 		};
+		79B6478D1F7361D90002103E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K6A68WLZ9D;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = MessageFilterExt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.my.DemoSet.MessageFilterExt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		79B6478E1F7361D90002103E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K6A68WLZ9D;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = MessageFilterExt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.my.DemoSet.MessageFilterExt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -893,6 +1042,15 @@
 			buildConfigurations = (
 				79A9241D1EEAA30D00D91121 /* Debug */,
 				79A9241E1EEAA30D00D91121 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79B6478C1F7361D90002103E /* Build configuration list for PBXNativeTarget "MessageFilterExt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79B6478D1F7361D90002103E /* Debug */,
+				79B6478E1F7361D90002103E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         list.append("QRCode")
         list.append("Face")
         list.append("Wave")
+        list.append("MessageFilter")
         
         let column:Int = 3
         let spec:CGFloat = 20
@@ -101,6 +102,10 @@ class ViewController: UIViewController {
         case 10:
             let wave = WaveViewController()
             navigationController?.pushViewController(wave, animated: true)
+            break
+        case 11:
+            let filter = MessageFliterViewController()
+            navigationController?.pushViewController(filter, animated: true)
             break
         default:
             break

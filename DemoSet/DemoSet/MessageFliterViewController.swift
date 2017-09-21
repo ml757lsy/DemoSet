@@ -13,16 +13,6 @@ class MessageFliterViewController: BaseViewController,ILMessageFilterQueryHandli
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        if #available(iOS 11.0, *) {
-            let action = ILMessageFilterAction.allow
-            
-            
-            let fliter = ILMessageFilterExtension.init()
-        } else {
-            // Fallback on earlier versions
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,22 +23,24 @@ class MessageFliterViewController: BaseViewController,ILMessageFilterQueryHandli
     @available(iOS 11.0, *)
     func handle(_ queryRequest: ILMessageFilterQueryRequest, context: ILMessageFilterExtensionContext, completion: @escaping (ILMessageFilterQueryResponse) -> Void) {
         
+        //
         let response = ILMessageFilterQueryResponse.init()
+        response.action = .none
         
+        //消息内容过滤
+        let messageContent:String = queryRequest.messageBody!
+        if messageContent.contains("") {
+            //
+            response.action = .filter
+        }
+        //消息发送者过滤
+        let sender = queryRequest.sender!
+        if sender.contains("") {
+            //
+            response.action = .filter
+        }
+    
         completion(response)
-        
     }
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
