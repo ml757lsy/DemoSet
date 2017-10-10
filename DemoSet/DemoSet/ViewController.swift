@@ -15,6 +15,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         edgesForExtendedLayout = .init(rawValue: 0)
         initMainView()
+        other()
     }
     
     func initMainView() {
@@ -30,6 +31,7 @@ class ViewController: UIViewController {
         list.append("Face")
         list.append("Wave")
         list.append("MessageFilter")
+        list.append("NFC")
         
         let column:Int = 3
         let spec:CGFloat = 20
@@ -107,9 +109,23 @@ class ViewController: UIViewController {
             let filter = MessageFliterViewController()
             navigationController?.pushViewController(filter, animated: true)
             break
+        case 12:
+            if #available(iOS 11.0, *) {
+                let nfc = NFCViewController()
+                navigationController?.pushViewController(nfc, animated: true)
+            } else {
+                // Fallback on earlier versions
+            }
+            
+            break
         default:
             break
         }
+    }
+    
+    func other() {
+        let name = UIDevice.current.modelName
+        print(name)
     }
 
     override func didReceiveMemoryWarning() {

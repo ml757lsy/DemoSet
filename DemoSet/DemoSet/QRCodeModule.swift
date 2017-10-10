@@ -121,6 +121,10 @@ class QRCodeModule: NSObject {
         return ciImage
     }
     
+    /// 图片生成二维码包含的数据
+    ///
+    /// - Parameter image: 图片
+    /// - Returns: 二维数据数组
     class func data(with image:UIImage) -> [[Int]]{
         // 分配内存
         let imageWidth:Int = Int(image.size.width)

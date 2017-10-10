@@ -27,7 +27,7 @@ class QRCodeViewController: BaseViewController,AVCaptureMetadataOutputObjectsDel
     
     func creat() {
         
-        let qrcodimage = QRCodeModule.initQRCode(message: "大佬您脚下的圣晶石碎片要不要啊，不要的话我能捡走吗")
+        let qrcodimage = QRCodeModule.initQRCode(message: "哈哈哈哈哈哈嗝···")
         
         let image = UIImageView.init(frame: CGRect.init(x: 0, y: 0, width: 162, height: 162))
         image.image = qrcodimage

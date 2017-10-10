@@ -39,6 +39,8 @@
 		79B647641F7263780002103E /* MessageFliterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B647631F7263780002103E /* MessageFliterViewController.swift */; };
 		79B647871F7361D90002103E /* MessageFilterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B647861F7361D90002103E /* MessageFilterExtension.swift */; };
 		79B6478B1F7361D90002103E /* MessageFilterExt.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 79B647841F7361D90002103E /* MessageFilterExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		79B647D11F74DE8A0002103E /* UIDevide+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B647D01F74DE8A0002103E /* UIDevide+Extension.swift */; };
+		79B647D41F7899FD0002103E /* NFCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B647D31F7899FD0002103E /* NFCViewController.swift */; };
 		79DB4BB91F70A8D40014CA2D /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB4BB81F70A8D40014CA2D /* WaveView.swift */; };
 		79DB4BBB1F70B1B00014CA2D /* WaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB4BBA1F70B1B00014CA2D /* WaveViewController.swift */; };
 		79DCC1601F67ECE100D6A6CE /* PointLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DCC15F1F67ECE100D6A6CE /* PointLineViewController.swift */; };
@@ -135,6 +137,9 @@
 		79B647841F7361D90002103E /* MessageFilterExt.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MessageFilterExt.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		79B647861F7361D90002103E /* MessageFilterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFilterExtension.swift; sourceTree = "<group>"; };
 		79B647881F7361D90002103E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79B647D01F74DE8A0002103E /* UIDevide+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevide+Extension.swift"; sourceTree = "<group>"; };
+		79B647D31F7899FD0002103E /* NFCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCViewController.swift; sourceTree = "<group>"; };
+		79B647D51F78AFA90002103E /* DemoSet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DemoSet.entitlements; sourceTree = "<group>"; };
 		79DB4BB81F70A8D40014CA2D /* WaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
 		79DB4BBA1F70B1B00014CA2D /* WaveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveViewController.swift; sourceTree = "<group>"; };
 		79DCC15F1F67ECE100D6A6CE /* PointLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointLineViewController.swift; sourceTree = "<group>"; };
@@ -231,6 +236,7 @@
 		79A923F01EEAA30D00D91121 /* DemoSet */ = {
 			isa = PBXGroup;
 			children = (
+				79B647D51F78AFA90002103E /* DemoSet.entitlements */,
 				79FB35021EEAA5540083ED79 /* Base */,
 				79FB35031EEAA65D0083ED79 /* Business */,
 				79A923F11EEAA30D00D91121 /* AppDelegate.swift */,
@@ -314,6 +320,14 @@
 			path = MessageFilterExt;
 			sourceTree = "<group>";
 		};
+		79B647D21F7899D40002103E /* NFC */ = {
+			isa = PBXGroup;
+			children = (
+				79B647D31F7899FD0002103E /* NFCViewController.swift */,
+			);
+			name = NFC;
+			sourceTree = "<group>";
+		};
 		79DB4BB71F70A8AD0014CA2D /* WaveView */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,6 +394,7 @@
 				79584BB91EEFDDDB003ABE05 /* BaseViewController.swift */,
 				79DCC16F1F6CC81200D6A6CE /* UIImage+Extension.swift */,
 				79DCC1761F6D18E400D6A6CE /* AlertModule.swift */,
+				79B647D01F74DE8A0002103E /* UIDevide+Extension.swift */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -387,6 +402,7 @@
 		79FB35031EEAA65D0083ED79 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				79B647D21F7899D40002103E /* NFC */,
 				79B647651F72637D0002103E /* MessageFliter */,
 				79DB4BB71F70A8AD0014CA2D /* WaveView */,
 				79DCC1781F6D2EC800D6A6CE /* Face */,
@@ -532,22 +548,29 @@
 				TargetAttributes = {
 					79A923ED1EEAA30D00D91121 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = K6A68WLZ9D;
+						DevelopmentTeam = WUWMJYLBP4;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.NearFieldCommunicationTagReading = {
+								enabled = 1;
+							};
+						};
 					};
 					79A924011EEAA30D00D91121 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = WUWMJYLBP4;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 79A923ED1EEAA30D00D91121;
 					};
 					79A9240C1EEAA30D00D91121 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = WUWMJYLBP4;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 79A923ED1EEAA30D00D91121;
 					};
 					79B647831F7361D90002103E = {
 						CreatedOnToolsVersion = 9.0;
-						DevelopmentTeam = K6A68WLZ9D;
+						DevelopmentTeam = WUWMJYLBP4;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -678,6 +701,7 @@
 				7992BF691EF3866E00AE829A /* NumberboardViewController.swift in Sources */,
 				79B26A961F0A45CD00B54EC2 /* NoblePhantasmModel.swift in Sources */,
 				795853B81EEF954700F214A5 /* SortViewController.swift in Sources */,
+				79B647D11F74DE8A0002103E /* UIDevide+Extension.swift in Sources */,
 				79B26A721F05065E00B54EC2 /* AnimationViewController.swift in Sources */,
 				79DB4BB91F70A8D40014CA2D /* WaveView.swift in Sources */,
 				795853BC1EEFBB4000F214A5 /* UIView+Extension.swift in Sources */,
@@ -698,6 +722,7 @@
 				79B26A8E1F0A428800B54EC2 /* FGOModel.swift in Sources */,
 				79A923F21EEAA30D00D91121 /* AppDelegate.swift in Sources */,
 				79DCC1701F6CC81200D6A6CE /* UIImage+Extension.swift in Sources */,
+				79B647D41F7899FD0002103E /* NFCViewController.swift in Sources */,
 				79DCC1751F6D0D3100D6A6CE /* QRCodeModule.swift in Sources */,
 				79DCC16B1F6A69E400D6A6CE /* LocationModule.swift in Sources */,
 				79DB4BBB1F70B1B00014CA2D /* WaveViewController.swift in Sources */,
@@ -814,7 +839,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -857,7 +882,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -871,12 +896,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DemoSet/DemoSet.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = K6A68WLZ9D;
+				DEVELOPMENT_TEAM = WUWMJYLBP4;
 				INFOPLIST_FILE = DemoSet/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.my.DemoSet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ml.myapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -888,12 +914,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DemoSet/DemoSet.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = K6A68WLZ9D;
+				DEVELOPMENT_TEAM = WUWMJYLBP4;
 				INFOPLIST_FILE = DemoSet/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.my.DemoSet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ml.myapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -904,6 +931,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = WUWMJYLBP4;
 				INFOPLIST_FILE = DemoSetTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.my.DemoSetTests;
@@ -918,6 +946,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = WUWMJYLBP4;
 				INFOPLIST_FILE = DemoSetTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.my.DemoSetTests;
@@ -931,6 +960,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = WUWMJYLBP4;
 				INFOPLIST_FILE = DemoSetUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.my.DemoSetUITests;
@@ -944,6 +974,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = WUWMJYLBP4;
 				INFOPLIST_FILE = DemoSetUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.my.DemoSetUITests;
@@ -967,12 +998,12 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K6A68WLZ9D;
+				DEVELOPMENT_TEAM = WUWMJYLBP4;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = MessageFilterExt/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.my.DemoSet.MessageFilterExt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ml.myapp.MessageFilterExt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -994,12 +1025,12 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K6A68WLZ9D;
+				DEVELOPMENT_TEAM = WUWMJYLBP4;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = MessageFilterExt/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.my.DemoSet.MessageFilterExt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ml.myapp.MessageFilterExt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
