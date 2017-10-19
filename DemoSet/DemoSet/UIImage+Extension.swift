@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MobileCoreServices
 
 extension UIImage{
     func reflection(present:CGFloat) -> UIImage{
@@ -97,5 +98,75 @@ extension UIImage{
 
         
         return data
+    }
+    
+    func creatGIF(imgs:[UIImage], duration:CGFloat){
+        //路径
+        let path = "/Users/lishiyuan/Desktop/102.gif"
+        
+        let url = CFURLCreateWithFileSystemPath(kCFAllocatorDefault, path as CFString, CFURLPathStyle.cfurlposixPathStyle, false)
+        
+        //图像目标
+        let destination:CGImageDestination = CGImageDestinationCreateWithURL(url!, kUTTypeGIF, imgs.count, nil)!
+        
+        //设置GIF信息
+        //时长
+        let durationTime = NSDictionary.init(object: duration/CGFloat(imgs.count), forKey: kCGImagePropertyGIFDelayTime as! NSCopying)
+        let frameProperties:NSDictionary = NSDictionary.init(object: durationTime, forKey: kCGImagePropertyGIFDictionary as! NSCopying)
+        //
+        let dic = NSMutableDictionary()
+        dic.setObject(true, forKey: kCGImagePropertyGIFHasGlobalColorMap as! NSCopying)
+        dic.setObject(kCGImagePropertyColorModelRGB, forKey: kCGImagePropertyColorModel as! NSCopying)
+        dic.setObject(8, forKey: kCGImagePropertyDepth as! NSCopying)
+        dic.setObject(0, forKey: kCGImagePropertyGIFLoopCount as! NSCopying)//应该是循环次数
+        //基本信息
+        let gifProperties = NSDictionary.init(object: dic, forKey: kCGImagePropertyGIFDictionary as! NSCopying)
+        
+        for image in imgs {
+            CGImageDestinationAddImage(destination, image.cgImage!, frameProperties)
+        }
+        CGImageDestinationSetProperties(destination, gifProperties)
+        CGImageDestinationFinalize(destination)
+    }
+    
+    /// 动图转换成图片
+    ///
+    /// - Parameter gifPath: 路径
+    /// - Returns: 图片数组
+    func gifToImages(gifPath:String) -> [UIImage] {
+        
+        if !FileManager.default.fileExists(atPath: gifPath) {
+            print("gif path not exist")
+            return []
+        }
+        
+        var imgs:[UIImage] = []
+        
+        let url = URL.init(fileURLWithPath: gifPath)
+        
+        do {
+            let data = try Data.init(contentsOf: url, options: .alwaysMapped)
+            
+            let source = CGImageSourceCreateWithData(data as CFData, nil)
+            
+            let count = CGImageSourceGetCount(source!)
+            
+            for i in 0..<count {
+                //获取图像
+                let imageRef = CGImageSourceCreateImageAtIndex(source!, i, nil)
+                
+                //生成image
+                let image = UIImage.init(cgImage: imageRef!, scale: UIScreen.main.scale, orientation: UIImageOrientation.up)
+                
+                imgs.append(image)
+            }
+            
+            return imgs
+            
+        } catch let error {
+            print(error)
+        }
+        
+        return imgs
     }
 }

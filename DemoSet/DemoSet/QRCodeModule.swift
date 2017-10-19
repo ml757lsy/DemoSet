@@ -164,7 +164,71 @@ class QRCodeModule: NSObject {
         return data
     }
     
+    /// 生成某个颜色的二维码
+    ///
+    /// - Parameters:
+    ///   - color: 颜色
+    ///   - message: 信息
+    /// - Returns: 二维码图片
+    class func qrcode(color:UIColor,message:String) -> UIImage {
+        let qr = QRCodeModule.initQRCode(message: message)
+        let data = QRCodeModule.data(with: qr)
+        let view = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 200, height: 200))
+        let size:CGFloat = 200/CGFloat(data.count)
+        
+        for l in 0..<data.count {
+            let line = data[l]
+            for n in 0..<line.count {
+                let da = line[n]
+                let v = UIView.init(frame: CGRect.init(x: CGFloat(n)*size, y: CGFloat(l)*size, width: size, height: size))
+                view.addSubview(v)
+                if da == 1 {
+                    v.backgroundColor = UIColor.white
+                }else{
+                    v.backgroundColor = color
+                }
+            }
+        }
+        
+        return view.toImage()
+    }
     
+    class func qrcode(type:Int,message:String) -> UIImage {
+        let qr = QRCodeModule.initQRCode(message: message)
+        let data = QRCodeModule.data(with: qr)
+        let view = QRCodeView.init(frame: CGRect.init(x: 0, y: 0, width: 200, height: 200))
+        view.backgroundColor = UIColor.red
+        let size:CGFloat = 200/CGFloat(data.count)
+        
+        let path = UIBezierPath.init(rect: view.frame)
+        path.lineWidth = size
+        path.lineJoinStyle = .round
+        for l in 0..<data.count {
+            let line = data[l]
+            for n in 0..<line.count {
+                let da = line[n]
+
+                if da == 1 {
+                }else{
+                    path.move(to: CGPoint.init(x: CGFloat(n)*size, y: CGFloat(l)*size))
+                }
+            }
+        }
+        path.stroke()
+        let mask = CAShapeLayer.init()
+        mask.frame = view.bounds
+        mask.fillColor = UIColor.gray.cgColor
+        mask.strokeColor = UIColor.green.cgColor
+        mask.lineWidth = size
+        mask.lineJoin = "round"
+        mask.path = path.cgPath
+        view.layer.mask = mask
+        
+        return view.toImage()
+    }
+    
+    
+    //MARK:-
     class func other() {
         let categorys = [kCICategoryDistortionEffect,
                          kCICategoryGeometryAdjustment,

@@ -8,10 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		5029ECEC05CB68AC730AF2C3 /* Pods_DemoSet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B57CB0D8E15F346CDBC020A0 /* Pods_DemoSet.framework */; };
+		7955CEEC1F8C729A007F6DC2 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955CEEB1F8C729A007F6DC2 /* QRCodeView.swift */; };
+		7955CEEE1F8C730D007F6DC2 /* QRCodeMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955CEED1F8C730D007F6DC2 /* QRCodeMaskView.swift */; };
+		7955CEF11F8CBA25007F6DC2 /* BluetoothConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955CEF01F8CBA25007F6DC2 /* BluetoothConnectionViewController.swift */; };
+		7955CF171F9092C9007F6DC2 /* StringModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955CF161F9092C8007F6DC2 /* StringModel.swift */; };
 		79584BBA1EEFDDDB003ABE05 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79584BB91EEFDDDB003ABE05 /* BaseViewController.swift */; };
 		795853B81EEF954700F214A5 /* SortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795853B71EEF954700F214A5 /* SortViewController.swift */; };
 		795853BA1EEFB58B00F214A5 /* SortColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795853B91EEFB58B00F214A5 /* SortColumn.swift */; };
 		795853BC1EEFBB4000F214A5 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795853BB1EEFBB4000F214A5 /* UIView+Extension.swift */; };
+		796468101F9843E30091D671 /* MathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7964680F1F9843E30091D671 /* MathViewController.swift */; };
 		798806701F4FB944001FB972 /* ImageCrawlerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988066F1F4FB944001FB972 /* ImageCrawlerViewController.swift */; };
 		7992BF691EF3866E00AE829A /* NumberboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7992BF681EF3866E00AE829A /* NumberboardViewController.swift */; };
 		7992BF6B1EF3869E00AE829A /* Numberboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7992BF6A1EF3869E00AE829A /* Numberboard.swift */; };
@@ -41,6 +46,12 @@
 		79B6478B1F7361D90002103E /* MessageFilterExt.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 79B647841F7361D90002103E /* MessageFilterExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		79B647D11F74DE8A0002103E /* UIDevide+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B647D01F74DE8A0002103E /* UIDevide+Extension.swift */; };
 		79B647D41F7899FD0002103E /* NFCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B647D31F7899FD0002103E /* NFCViewController.swift */; };
+		79CB226F1F94B0C500C9FE1E /* MaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CB226E1F94B0C500C9FE1E /* MaskViewController.swift */; };
+		79CB22711F94B0D900C9FE1E /* MaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CB22701F94B0D900C9FE1E /* MaskView.swift */; };
+		79CB22741F95EBCA00C9FE1E /* LotteryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CB22731F95EBCA00C9FE1E /* LotteryViewController.swift */; };
+		79CB22771F97032000C9FE1E /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CB22761F97032000C9FE1E /* BannerViewController.swift */; };
+		79CB22791F97287A00C9FE1E /* BaseBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CB22781F97287A00C9FE1E /* BaseBannerView.swift */; };
+		79CB227B1F9744FB00C9FE1E /* GyroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CB227A1F9744FB00C9FE1E /* GyroManager.swift */; };
 		79DB4BB91F70A8D40014CA2D /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB4BB81F70A8D40014CA2D /* WaveView.swift */; };
 		79DB4BBB1F70B1B00014CA2D /* WaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB4BBA1F70B1B00014CA2D /* WaveViewController.swift */; };
 		79DCC1601F67ECE100D6A6CE /* PointLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DCC15F1F67ECE100D6A6CE /* PointLineViewController.swift */; };
@@ -98,10 +109,15 @@
 
 /* Begin PBXFileReference section */
 		3A0DAFE85DDB291EF6D64925 /* Pods-DemoSet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoSet.release.xcconfig"; path = "Pods/Target Support Files/Pods-DemoSet/Pods-DemoSet.release.xcconfig"; sourceTree = "<group>"; };
+		7955CEEB1F8C729A007F6DC2 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
+		7955CEED1F8C730D007F6DC2 /* QRCodeMaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeMaskView.swift; sourceTree = "<group>"; };
+		7955CEF01F8CBA25007F6DC2 /* BluetoothConnectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothConnectionViewController.swift; sourceTree = "<group>"; };
+		7955CF161F9092C8007F6DC2 /* StringModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringModel.swift; sourceTree = "<group>"; };
 		79584BB91EEFDDDB003ABE05 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		795853B71EEF954700F214A5 /* SortViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortViewController.swift; sourceTree = "<group>"; };
 		795853B91EEFB58B00F214A5 /* SortColumn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortColumn.swift; sourceTree = "<group>"; };
 		795853BB1EEFBB4000F214A5 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		7964680F1F9843E30091D671 /* MathViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathViewController.swift; sourceTree = "<group>"; };
 		7988066F1F4FB944001FB972 /* ImageCrawlerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCrawlerViewController.swift; sourceTree = "<group>"; };
 		7992BF681EF3866E00AE829A /* NumberboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberboardViewController.swift; sourceTree = "<group>"; };
 		7992BF6A1EF3869E00AE829A /* Numberboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Numberboard.swift; sourceTree = "<group>"; };
@@ -140,6 +156,12 @@
 		79B647D01F74DE8A0002103E /* UIDevide+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevide+Extension.swift"; sourceTree = "<group>"; };
 		79B647D31F7899FD0002103E /* NFCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCViewController.swift; sourceTree = "<group>"; };
 		79B647D51F78AFA90002103E /* DemoSet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DemoSet.entitlements; sourceTree = "<group>"; };
+		79CB226E1F94B0C500C9FE1E /* MaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskViewController.swift; sourceTree = "<group>"; };
+		79CB22701F94B0D900C9FE1E /* MaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskView.swift; sourceTree = "<group>"; };
+		79CB22731F95EBCA00C9FE1E /* LotteryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryViewController.swift; sourceTree = "<group>"; };
+		79CB22761F97032000C9FE1E /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
+		79CB22781F97287A00C9FE1E /* BaseBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBannerView.swift; sourceTree = "<group>"; };
+		79CB227A1F9744FB00C9FE1E /* GyroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyroManager.swift; sourceTree = "<group>"; };
 		79DB4BB81F70A8D40014CA2D /* WaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
 		79DB4BBA1F70B1B00014CA2D /* WaveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveViewController.swift; sourceTree = "<group>"; };
 		79DCC15F1F67ECE100D6A6CE /* PointLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointLineViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +214,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7955CEEF1F8CBA02007F6DC2 /* BluetoothConnection */ = {
+			isa = PBXGroup;
+			children = (
+				7955CEF01F8CBA25007F6DC2 /* BluetoothConnectionViewController.swift */,
+			);
+			name = BluetoothConnection;
+			sourceTree = "<group>";
+		};
+		7964680E1F9843CF0091D671 /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				7964680F1F9843E30091D671 /* MathViewController.swift */,
+			);
+			name = Math;
+			sourceTree = "<group>";
+		};
 		7988066E1F4FB90A001FB972 /* ImageCrawler */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +366,32 @@
 			name = NFC;
 			sourceTree = "<group>";
 		};
+		79CB226D1F94B0AB00C9FE1E /* MaskView */ = {
+			isa = PBXGroup;
+			children = (
+				79CB226E1F94B0C500C9FE1E /* MaskViewController.swift */,
+				79CB22701F94B0D900C9FE1E /* MaskView.swift */,
+			);
+			name = MaskView;
+			sourceTree = "<group>";
+		};
+		79CB22721F95EB7700C9FE1E /* Lottery */ = {
+			isa = PBXGroup;
+			children = (
+				79CB22731F95EBCA00C9FE1E /* LotteryViewController.swift */,
+			);
+			name = Lottery;
+			sourceTree = "<group>";
+		};
+		79CB22751F97031100C9FE1E /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				79CB22761F97032000C9FE1E /* BannerViewController.swift */,
+				79CB22781F97287A00C9FE1E /* BaseBannerView.swift */,
+			);
+			name = Banner;
+			sourceTree = "<group>";
+		};
 		79DB4BB71F70A8AD0014CA2D /* WaveView */ = {
 			isa = PBXGroup;
 			children = (
@@ -375,6 +439,8 @@
 			children = (
 				79DCC1721F6D0D1F00D6A6CE /* QRCodeViewController.swift */,
 				79DCC1741F6D0D3100D6A6CE /* QRCodeModule.swift */,
+				7955CEEB1F8C729A007F6DC2 /* QRCodeView.swift */,
+				7955CEED1F8C730D007F6DC2 /* QRCodeMaskView.swift */,
 			);
 			name = QRCode;
 			sourceTree = "<group>";
@@ -395,6 +461,8 @@
 				79DCC16F1F6CC81200D6A6CE /* UIImage+Extension.swift */,
 				79DCC1761F6D18E400D6A6CE /* AlertModule.swift */,
 				79B647D01F74DE8A0002103E /* UIDevide+Extension.swift */,
+				7955CF161F9092C8007F6DC2 /* StringModel.swift */,
+				79CB227A1F9744FB00C9FE1E /* GyroManager.swift */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -402,6 +470,11 @@
 		79FB35031EEAA65D0083ED79 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				7964680E1F9843CF0091D671 /* Math */,
+				79CB22751F97031100C9FE1E /* Banner */,
+				79CB22721F95EB7700C9FE1E /* Lottery */,
+				79CB226D1F94B0AB00C9FE1E /* MaskView */,
+				7955CEEF1F8CBA02007F6DC2 /* BluetoothConnection */,
 				79B647D21F7899D40002103E /* NFC */,
 				79B647651F72637D0002103E /* MessageFliter */,
 				79DB4BB71F70A8AD0014CA2D /* WaveView */,
@@ -706,12 +779,15 @@
 				79DB4BB91F70A8D40014CA2D /* WaveView.swift in Sources */,
 				795853BC1EEFBB4000F214A5 /* UIView+Extension.swift in Sources */,
 				79DCC1621F692E8600D6A6CE /* PointLineView.swift in Sources */,
+				7955CEEE1F8C730D007F6DC2 /* QRCodeMaskView.swift in Sources */,
 				79B26ABB1F185FC800B54EC2 /* IconChangeViewController.swift in Sources */,
 				79DCC1771F6D18E400D6A6CE /* AlertModule.swift in Sources */,
 				79B26A921F0A43AE00B54EC2 /* MysticCodeModel.swift in Sources */,
 				79DCC1681F6A50B600D6A6CE /* NotificationModule.swift in Sources */,
 				79B26A901F0A431100B54EC2 /* ServentModel.swift in Sources */,
 				79DCC17A1F6D2EF900D6A6CE /* FaceRecognitionViewController.swift in Sources */,
+				7955CEEC1F8C729A007F6DC2 /* QRCodeView.swift in Sources */,
+				79CB22711F94B0D900C9FE1E /* MaskView.swift in Sources */,
 				79A923F41EEAA30D00D91121 /* ViewController.swift in Sources */,
 				79FB35091EEAAB850083ED79 /* Cellular.swift in Sources */,
 				798806701F4FB944001FB972 /* ImageCrawlerViewController.swift in Sources */,
@@ -719,18 +795,26 @@
 				79FB35061EEAA7190083ED79 /* CellularAutomatonViewController.swift in Sources */,
 				79584BBA1EEFDDDB003ABE05 /* BaseViewController.swift in Sources */,
 				79B26A941F0A453C00B54EC2 /* AttackModel.swift in Sources */,
+				796468101F9843E30091D671 /* MathViewController.swift in Sources */,
 				79B26A8E1F0A428800B54EC2 /* FGOModel.swift in Sources */,
 				79A923F21EEAA30D00D91121 /* AppDelegate.swift in Sources */,
 				79DCC1701F6CC81200D6A6CE /* UIImage+Extension.swift in Sources */,
+				79CB226F1F94B0C500C9FE1E /* MaskViewController.swift in Sources */,
+				7955CF171F9092C9007F6DC2 /* StringModel.swift in Sources */,
 				79B647D41F7899FD0002103E /* NFCViewController.swift in Sources */,
+				79CB22771F97032000C9FE1E /* BannerViewController.swift in Sources */,
+				79CB22741F95EBCA00C9FE1E /* LotteryViewController.swift in Sources */,
 				79DCC1751F6D0D3100D6A6CE /* QRCodeModule.swift in Sources */,
+				7955CEF11F8CBA25007F6DC2 /* BluetoothConnectionViewController.swift in Sources */,
 				79DCC16B1F6A69E400D6A6CE /* LocationModule.swift in Sources */,
 				79DB4BBB1F70B1B00014CA2D /* WaveViewController.swift in Sources */,
+				79CB227B1F9744FB00C9FE1E /* GyroManager.swift in Sources */,
 				79DCC1731F6D0D1F00D6A6CE /* QRCodeViewController.swift in Sources */,
 				79B26AA21F0DD9BE00B54EC2 /* SkillModel.swift in Sources */,
 				79DCC1651F6A4A1D00D6A6CE /* NotificationViewController.swift in Sources */,
 				795853BA1EEFB58B00F214A5 /* SortColumn.swift in Sources */,
 				79B26A8C1F0A427000B54EC2 /* FGOViewController.swift in Sources */,
+				79CB22791F97287A00C9FE1E /* BaseBannerView.swift in Sources */,
 				79B26AA01F0CFAB500B54EC2 /* ProbabilityModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     private var list:[String] = []
+    
+    private let backImage = UIImageView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +21,39 @@ class ViewController: UIViewController {
     }
     
     func initMainView() {
+        backImage.frame = CGRect.init(x: -100, y: -100, width: view.width+200, height: view.height+200)
+        view.addSubview(backImage)
+        backImage.image = UIImage.init(named: "backGround")
+        backImage.contentMode = UIViewContentMode.scaleAspectFill
+        
+        let speed:CGFloat = 1
+        GyroManager.manager.updateInterval = 0.1
+        GyroManager.manager.startDeviceMotion { (x, y, z) in
+            //
+            DispatchQueue.main.async {
+                var lx:CGFloat = self.backImage.x + speed*y
+                if self.backImage.x < -200{
+                    lx = -200
+                }
+                if self.backImage.x > 0{
+                    lx = 0
+                }
+                
+                var ly:CGFloat = self.backImage.y + speed*x
+                if self.backImage.y < -200{
+                    ly = -200
+                }
+                if self.backImage.y > 0{
+                    ly = 0
+                }
+                
+                UIView.animate(withDuration: 0.1, animations: {
+                    self.backImage.frame = CGRect.init(x: lx, y: ly, width: self.backImage.width, height: self.backImage.height)
+                })
+            }
+        }
+        
+        //
         list.append("Cell")
         list.append("Sort")
         list.append("Numberboard")
@@ -32,6 +67,10 @@ class ViewController: UIViewController {
         list.append("Wave")
         list.append("MessageFilter")
         list.append("NFC")
+        list.append("Bluetooth")
+        list.append("MaskView")
+        list.append("Lottery")
+        list.append("Math")
         
         let column:Int = 3
         let spec:CGFloat = 20
@@ -116,7 +155,20 @@ class ViewController: UIViewController {
             } else {
                 // Fallback on earlier versions
             }
-            
+        case 13:
+            let blu = BluetoothConnectionViewController()
+            navigationController?.pushViewController(blu, animated: true)
+            break
+        case 14:
+            let mask = MaskViewController()
+            navigationController?.pushViewController(mask, animated: true)
+            break
+        case 15:
+            let lottery = LotteryViewController()
+            navigationController?.pushViewController(lottery, animated: true)
+        case 16:
+            let math = MathViewController()
+            navigationController?.pushViewController(math, animated: true)
             break
         default:
             break

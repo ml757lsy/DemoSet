@@ -13,11 +13,14 @@ import AVFoundation
 class QRCodeViewController: BaseViewController,AVCaptureMetadataOutputObjectsDelegate {
 
     private let session = AVCaptureSession()
+    private var data:[[Int]] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         creat()
         //start()
+        qrcode(color: UIColor.purple)
+        qrcode(type: 0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,8 +36,10 @@ class QRCodeViewController: BaseViewController,AVCaptureMetadataOutputObjectsDel
         image.image = qrcodimage
         view.addSubview(image)
         
+        qrcodimage.creatGIF(imgs: [UIImage.init(named: "testImage")!,UIImage.init(named: "testImage2")!], duration: 1)
         
-        let data = QRCodeModule.data(with: qrcodimage)
+        
+        data = QRCodeModule.data(with: qrcodimage)
         /*
         for i in 0..<data.count{
             let line = data[i]
@@ -139,15 +144,15 @@ class QRCodeViewController: BaseViewController,AVCaptureMetadataOutputObjectsDel
                         //
                         sta = true
                     }else
-                        if l <= 8 && i <= 8 {
+                        if l <= 7 && i <= 7 {
                             //
                             sta = true
                         }else
-                            if i >= data.count - 9 && l <= 8 {
+                            if i >= data.count - 8 && l <= 7 {
                                 //
                                 sta = true
                             }else
-                                if i <= 8 && l >= data.count - 9 {
+                                if i <= 7 && l >= data.count - 8 {
                                     //
                                     sta = true
                                 }else
@@ -173,6 +178,25 @@ class QRCodeViewController: BaseViewController,AVCaptureMetadataOutputObjectsDel
                 
             }
         }
+    }
+    
+    /// 带颜色的二维码
+    ///
+    /// - Parameter color: 颜色
+    func qrcode(color:UIColor){
+        let colorQR = UIImageView.init(frame: CGRect.init(x: 180, y: 360, width: 200, height: 200))
+        view.addSubview(colorQR)
+        colorQR.image = QRCodeModule.qrcode(color: color, message: "测试的内容")
+    }
+    
+    func qrcode(type:Int){
+        let colorQR = UIImageView.init(frame: CGRect.init(x: 10, y: 360, width: 200, height: 200))
+        view.addSubview(colorQR)
+        colorQR.image = QRCodeModule.qrcode(type: 0, message: "cessssss")
+        
+        let mask = QRCodeMaskView.init(frame: CGRect.init(x: 10, y: 560, width: 200, height: 200))
+        mask.backgroundColor = UIColor.yellow
+        view.addSubview(mask)
     }
     
     func start() {
