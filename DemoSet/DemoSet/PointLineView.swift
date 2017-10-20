@@ -11,7 +11,7 @@ import UIKit
 class Point:NSObject {
     
     var position:CGPoint = CGPoint.zero
-    var direction:Double = Double.pi
+    var direction:CGPoint = CGPoint.zero
     var speed:CGFloat = 3
 }
 
@@ -20,7 +20,7 @@ class PointLineView: UIView {
     var lines:[[UIBezierPath]] = []
     var notes:[UIBezierPath] = []
     var timer:Timer = Timer()
-    var maxPoint:Int = 10
+    var maxPoint:Int = 40
     
     private var minLength:CGFloat = 30//最短
     private var maxLength:CGFloat = 80//最长
@@ -40,7 +40,8 @@ class PointLineView: UIView {
         for _ in 0..<maxPoint{
             var point = Point()
             point.position = CGPoint.init(x: CGFloat(arc4random()%500), y: CGFloat(arc4random()%500))
-            point.direction = Double.pi * Double(arc4random()%100)/100
+            point.direction = CGPoint.init(x: CGFloat(arc4random()%10+1), y: CGFloat(arc4random()%10+1))
+            point.speed = CGFloat(arc4random()%5+1)
             points.append(point)
         }
         //line
@@ -63,37 +64,40 @@ class PointLineView: UIView {
     //
     func initTimer() {
         timer.invalidate()
-        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateView), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateView), userInfo: nil, repeats: true)
     }
     
     func updateView() {
-        self.setNeedsDisplay()
         
         for point in points {
-            let x = point.position.x + CGFloat(sin(point.direction)) * point.speed
-            if x <= 0 {
-                point.position.x = -x
-                point.direction = Double.pi - point.direction
-            }else
-            if x >= width {
-                point.position.x = width - x
-                point.direction = Double.pi - point.direction
-            }else{
-                point.position.x = x
+            
+            var l = point.direction.x*point.direction.x+point.direction.y*point.direction.y
+            l = CGFloat(sqrtf(Float(l)))
+            
+            let x = point.direction.x/l*point.speed
+            let y = point.direction.y/l*point.speed
+            
+            point.position.x += x
+            point.position.y += y
+            
+            if point.position.x < 0 {
+                point.position.x = -point.position.x
+                point.direction.x = -point.direction.x
+            }else if point.position.x > frame.size.width{
+                point.position.x = frame.size.width*2-point.position.x
+                point.direction.x = -point.direction.x
             }
-            //
-            let y = point.position.y + CGFloat(cos(point.direction)) * point.speed
-            if y <= 0 {
-                point.position.y = -y
-                point.direction = Double.pi/2 + point.direction
-            }else
-            if y >= height {
-                point.position.y = height - y
-                point.direction = Double.pi*2 - point.direction
-            }else{
-                point.position.y = y
+            
+            if point.position.y < 0 {
+                point.position.y = -point.position.y
+                point.direction.y = -point.direction.y
+            }else if point.position.y > frame.size.height{
+                point.position.y = frame.size.height*2-point.position.y
+                point.direction.y = -point.direction.y
             }
         }
+        
+        animation()
     }
     
     func length(from point:CGPoint, to point2:CGPoint)-> CGFloat{
@@ -117,14 +121,13 @@ class PointLineView: UIView {
             return 0
         }
         
-        return (length - minLength)/(maxLength - minLength)
+        let alpha:CGFloat = (length - minLength)/(maxLength - minLength)
+        return 1 - alpha
     }
     
-    func nextPoint(from current:CGPoint, with speed:CGFloat){
-        
-    }
     
     func animation() {
+        layer.sublayers?.removeAll()
         //line
         for i in 0..<lines.count {
             let li = lines[i]
@@ -136,8 +139,13 @@ class PointLineView: UIView {
                 path.move(to: p1.position)
                 path.addLine(to: p2.position)
                 let alpha = lineAlpha(with: length(from: p1.position, to: p2.position))
-                UIColor.init(white: 1, alpha: alpha).set()
-                path.stroke()
+
+                
+                let line = CAShapeLayer.init()
+                line.path = path.cgPath
+                line.lineWidth = 1
+                line.strokeColor = UIColor.init(red: 0.3, green: 0.3, blue: 0.3, alpha: alpha).cgColor
+                layer.addSublayer(line)
             }
         }
         //point
@@ -146,15 +154,12 @@ class PointLineView: UIView {
             let p  = points[i]
             note.removeAllPoints()
             note.move(to: p.position)
-            UIColor.darkGray.set()
-            note.addArc(withCenter: p.position, radius: 2, startAngle: 0, endAngle: CGFloat(Double.pi*2), clockwise: true)
-            note.fill()
+            note.addArc(withCenter: p.position, radius: 4, startAngle: 0, endAngle: CGFloat(Double.pi*2), clockwise: true)
+            
+            let point = CAShapeLayer.init()
+            point.path = note.cgPath
+            point.fillColor = UIColor.darkGray.cgColor
+            layer.addSublayer(point)
         }
-    }
-
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-        
-        animation()
     }
 }

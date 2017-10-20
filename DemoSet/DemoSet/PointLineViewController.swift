@@ -34,6 +34,7 @@ class PointLineViewController: BaseViewController {
         //
         view.backgroundColor = UIColor.white
         let v = PointLineView.init(frame: CGRect.init(x: 10, y: 10, width: view.width-20, height: 600))
+        v.backgroundColor = UIColor.init(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
         view.addSubview(v)
     }
     
