@@ -17,6 +17,7 @@
 		795853BA1EEFB58B00F214A5 /* SortColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795853B91EEFB58B00F214A5 /* SortColumn.swift */; };
 		795853BC1EEFBB4000F214A5 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795853BB1EEFBB4000F214A5 /* UIView+Extension.swift */; };
 		796468101F9843E30091D671 /* MathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7964680F1F9843E30091D671 /* MathViewController.swift */; };
+		796468121F99CF6E0091D671 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796468111F99CF6E0091D671 /* UIColor+Extension.swift */; };
 		798806701F4FB944001FB972 /* ImageCrawlerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988066F1F4FB944001FB972 /* ImageCrawlerViewController.swift */; };
 		7992BF691EF3866E00AE829A /* NumberboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7992BF681EF3866E00AE829A /* NumberboardViewController.swift */; };
 		7992BF6B1EF3869E00AE829A /* Numberboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7992BF6A1EF3869E00AE829A /* Numberboard.swift */; };
@@ -118,6 +119,7 @@
 		795853B91EEFB58B00F214A5 /* SortColumn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortColumn.swift; sourceTree = "<group>"; };
 		795853BB1EEFBB4000F214A5 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		7964680F1F9843E30091D671 /* MathViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathViewController.swift; sourceTree = "<group>"; };
+		796468111F99CF6E0091D671 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		7988066F1F4FB944001FB972 /* ImageCrawlerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCrawlerViewController.swift; sourceTree = "<group>"; };
 		7992BF681EF3866E00AE829A /* NumberboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberboardViewController.swift; sourceTree = "<group>"; };
 		7992BF6A1EF3869E00AE829A /* Numberboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Numberboard.swift; sourceTree = "<group>"; };
@@ -461,6 +463,7 @@
 				79DCC16F1F6CC81200D6A6CE /* UIImage+Extension.swift */,
 				79DCC1761F6D18E400D6A6CE /* AlertModule.swift */,
 				79B647D01F74DE8A0002103E /* UIDevide+Extension.swift */,
+				796468111F99CF6E0091D671 /* UIColor+Extension.swift */,
 				7955CF161F9092C8007F6DC2 /* StringModel.swift */,
 				79CB227A1F9744FB00C9FE1E /* GyroManager.swift */,
 			);
@@ -776,6 +779,7 @@
 				795853B81EEF954700F214A5 /* SortViewController.swift in Sources */,
 				79B647D11F74DE8A0002103E /* UIDevide+Extension.swift in Sources */,
 				79B26A721F05065E00B54EC2 /* AnimationViewController.swift in Sources */,
+				796468121F99CF6E0091D671 /* UIColor+Extension.swift in Sources */,
 				79DB4BB91F70A8D40014CA2D /* WaveView.swift in Sources */,
 				795853BC1EEFBB4000F214A5 /* UIView+Extension.swift in Sources */,
 				79DCC1621F692E8600D6A6CE /* PointLineView.swift in Sources */,

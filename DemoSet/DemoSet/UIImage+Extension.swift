@@ -100,7 +100,7 @@ extension UIImage{
         return data
     }
     
-    func creatGIF(imgs:[UIImage], duration:CGFloat){
+    func creatGIF(imgs:[UIImage], duration:CGFloat, isRepeat:Bool){
         //路径
         let path = "/Users/lishiyuan/Desktop/102.gif"
         
@@ -118,7 +118,11 @@ extension UIImage{
         dic.setObject(true, forKey: kCGImagePropertyGIFHasGlobalColorMap as! NSCopying)
         dic.setObject(kCGImagePropertyColorModelRGB, forKey: kCGImagePropertyColorModel as! NSCopying)
         dic.setObject(8, forKey: kCGImagePropertyDepth as! NSCopying)
-        dic.setObject(0, forKey: kCGImagePropertyGIFLoopCount as! NSCopying)//应该是循环次数
+        var repeatCount = 1
+        if isRepeat {
+            repeatCount = 0
+        }
+        dic.setObject(repeatCount, forKey: kCGImagePropertyGIFLoopCount as! NSCopying)//应该是循环次数
         //基本信息
         let gifProperties = NSDictionary.init(object: dic, forKey: kCGImagePropertyGIFDictionary as! NSCopying)
         

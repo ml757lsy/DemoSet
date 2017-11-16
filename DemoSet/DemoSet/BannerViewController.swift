@@ -15,6 +15,9 @@ class BannerViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let banner = BaseBannerView.init(frame: CGRect.init(x: 10, y: 10, width: view.frame.size.width-20, height: 200))
+        banner.images = ["banner1","banner2","banner3","banner4","banner5","banner6",]
+        view.addSubview(banner)
     }
 
     override func didReceiveMemoryWarning() {

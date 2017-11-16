@@ -36,7 +36,7 @@ class QRCodeViewController: BaseViewController,AVCaptureMetadataOutputObjectsDel
         image.image = qrcodimage
         view.addSubview(image)
         
-        qrcodimage.creatGIF(imgs: [UIImage.init(named: "testImage")!,UIImage.init(named: "testImage2")!], duration: 1)
+        qrcodimage.creatGIF(imgs: [UIImage.init(named: "testImage")!,UIImage.init(named: "testImage2")!], duration: 0.5,isRepeat: false)
         
         
         data = QRCodeModule.data(with: qrcodimage)

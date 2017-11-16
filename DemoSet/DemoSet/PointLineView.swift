@@ -125,7 +125,14 @@ class PointLineView: UIView {
         return 1 - alpha
     }
     
+    /// 触碰某点
+    ///
+    /// - Parameter point: 点
+    func touch(point:CGPoint) {
+        //以点为聚集处
+    }
     
+    /// 动画
     func animation() {
         layer.sublayers?.removeAll()
         //line

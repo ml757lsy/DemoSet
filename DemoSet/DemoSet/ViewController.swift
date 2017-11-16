@@ -71,6 +71,7 @@ class ViewController: UIViewController {
         list.append("MaskView")
         list.append("Lottery")
         list.append("Math")
+        list.append("Banner")
         
         let column:Int = 3
         let spec:CGFloat = 20
@@ -169,6 +170,10 @@ class ViewController: UIViewController {
         case 16:
             let math = MathViewController()
             navigationController?.pushViewController(math, animated: true)
+            break
+        case 17:
+            let banner = BannerViewController()
+            navigationController?.pushViewController(banner, animated: true)
             break
         default:
             break
