@@ -15,6 +15,7 @@ class MaskViewController: BaseViewController {
         view.backgroundColor = UIColor.yellow//绿色背景
 
         initMaskView()
+        image()
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,6 +92,42 @@ class MaskViewController: BaseViewController {
         back.mask = UIView.init(frame: back.frame)
         back.backgroundColor = UIColor.blue
         back.layer.mask = shap
+        
+    }
+    
+    func image() {
+        let earth = UIImage()
+        let m = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 10, height: 10))
+        m.backgroundColor = UIColor.brown
+        let moton =  m.toImage()
+        
+        let l = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 10, height: 10))
+        l.backgroundColor = UIColor.blue
+        let low = l.toImage()
+        
+        let d = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 10, height: 10))
+        d.backgroundColor = UIColor.black
+        let dong = d.toImage()
+     
+        var resized = UIImage()
+        
+        UIGraphicsBeginImageContext(CGSize.init(width: 30, height: 12756+9))
+        let context:CGContext = UIGraphicsGetCurrentContext()!
+        context.interpolationQuality = .low
+        moton.draw(in: CGRect.init(x: 0, y: 0, width: 10, height: 9))
+        earth.draw(in: CGRect.init(x: 0, y: 9, width: 30, height: 12756))
+        low.draw(in: CGRect.init(x: 10, y: 9, width: 10, height: 11))
+        dong.draw(in: CGRect.init(x: 20, y: 9, width: 10, height: 12.5))
+        
+        resized = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        let data = UIImageJPEGRepresentation(resized, 1.0)
+        do {
+            try data?.write(to: URL.init(fileURLWithPath: "/Users/lishiyuan/Desktop/long.jpg"))
+        } catch let error {
+            //
+        }
         
     }
 

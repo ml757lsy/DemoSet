@@ -48,10 +48,10 @@ extension UIImage{
         context.interpolationQuality = quality
         self.draw(in: CGRect.init(x: 0, y: 0, width: width, height: height))
         
-        resized = UIGraphicsGetImageFromCurrentImageContext()!;
+        resized = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
-        return resized;
+        return resized
 
     }
     

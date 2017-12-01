@@ -28,6 +28,16 @@ class QRCodeViewController: BaseViewController,AVCaptureMetadataOutputObjectsDel
         
     }
     
+    func customNavigationBar() {
+        let creatButton = UIButton.init(type: .custom)
+        creatButton.setTitle("生成", for: .normal)
+        creatButton.addTarget(self, action: #selector(creat), for: .touchUpInside)
+        
+        let right = UIBarButtonItem.init(customView: creatButton)
+        navigationItem.rightBarButtonItem = right
+    }
+    
+    
     func creat() {
         
         let qrcodimage = QRCodeModule.initQRCode(message: "哈哈哈哈哈哈嗝···")
@@ -40,18 +50,6 @@ class QRCodeViewController: BaseViewController,AVCaptureMetadataOutputObjectsDel
         
         
         data = QRCodeModule.data(with: qrcodimage)
-        /*
-        for i in 0..<data.count{
-            let line = data[i]
-            for j in 0..<line.count {
-                if line[j] == 0 {
-                    let v = UIView.init(frame: CGRect.init(x: CGFloat(j)*6, y: CGFloat(i)*6+180, width: 6, height: 6))
-                    v.backgroundColor = UIColor.black
-                    view.addSubview(v)
-                }
-            }
-        }
- */
         
         
         let header = UIImage.init(named: "testImage3")
