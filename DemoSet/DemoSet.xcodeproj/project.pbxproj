@@ -23,6 +23,7 @@
 		7992BF6B1EF3869E00AE829A /* Numberboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7992BF6A1EF3869E00AE829A /* Numberboard.swift */; };
 		79A4F59D1FCD7119001E9A37 /* SRPGViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A4F59C1FCD7119001E9A37 /* SRPGViewController.swift */; };
 		79A4F59F1FCD712F001E9A37 /* RoleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A4F59E1FCD712F001E9A37 /* RoleModel.swift */; };
+		79A4F5A11FD55567001E9A37 /* BaseBannerPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A4F5A01FD55567001E9A37 /* BaseBannerPointView.swift */; };
 		79A923F21EEAA30D00D91121 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A923F11EEAA30D00D91121 /* AppDelegate.swift */; };
 		79A923F41EEAA30D00D91121 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A923F31EEAA30D00D91121 /* ViewController.swift */; };
 		79A923F71EEAA30D00D91121 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79A923F51EEAA30D00D91121 /* Main.storyboard */; };
@@ -127,6 +128,7 @@
 		7992BF6A1EF3869E00AE829A /* Numberboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Numberboard.swift; sourceTree = "<group>"; };
 		79A4F59C1FCD7119001E9A37 /* SRPGViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRPGViewController.swift; sourceTree = "<group>"; };
 		79A4F59E1FCD712F001E9A37 /* RoleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleModel.swift; sourceTree = "<group>"; };
+		79A4F5A01FD55567001E9A37 /* BaseBannerPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBannerPointView.swift; sourceTree = "<group>"; };
 		79A923EE1EEAA30D00D91121 /* DemoSet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoSet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79A923F11EEAA30D00D91121 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79A923F31EEAA30D00D91121 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -403,6 +405,7 @@
 			children = (
 				79CB22761F97032000C9FE1E /* BannerViewController.swift */,
 				79CB22781F97287A00C9FE1E /* BaseBannerView.swift */,
+				79A4F5A01FD55567001E9A37 /* BaseBannerPointView.swift */,
 			);
 			name = Banner;
 			sourceTree = "<group>";
@@ -812,6 +815,7 @@
 				79B26A921F0A43AE00B54EC2 /* MysticCodeModel.swift in Sources */,
 				79DCC1681F6A50B600D6A6CE /* NotificationModule.swift in Sources */,
 				79B26A901F0A431100B54EC2 /* ServentModel.swift in Sources */,
+				79A4F5A11FD55567001E9A37 /* BaseBannerPointView.swift in Sources */,
 				79DCC17A1F6D2EF900D6A6CE /* FaceRecognitionViewController.swift in Sources */,
 				79A4F59F1FCD712F001E9A37 /* RoleModel.swift in Sources */,
 				7955CEEC1F8C729A007F6DC2 /* QRCodeView.swift in Sources */,

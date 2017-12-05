@@ -12,7 +12,7 @@ class Point:NSObject {
     
     var position:CGPoint = CGPoint.zero
     var direction:CGPoint = CGPoint.zero
-    var speed:CGFloat = 3
+    var speed:CGFloat = 2
 }
 
 class PointLineView: UIView {
@@ -64,7 +64,7 @@ class PointLineView: UIView {
     //
     func initTimer() {
         timer.invalidate()
-        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateView), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.06, target: self, selector: #selector(updateView), userInfo: nil, repeats: true)
     }
     
     func updateView() {

@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import WebKit
 
 class BaseBannerView: UIView,UIScrollViewDelegate {
     
-    private var loaclImages:[String] = []//本地图片名称
+    private var localImages:[String] = []//本地图片名称
     private var onlineImages:[String] = []//在线图片地址
     private var maxNum:Int = 5//至少是3，最好是奇数
+    private var index:Int = -2//中间
+    private var imageviews:[UIImageView] = []
+    var point = BaseBannerPointView()
     
     var bannerScroll = UIScrollView()
     
@@ -23,10 +27,10 @@ class BaseBannerView: UIView,UIScrollViewDelegate {
     /// 图片名称
     var images:[String] {
         get{
-            return loaclImages
+            return localImages
         }
         set(newValue) {
-            loaclImages = images
+            localImages = newValue
             updateImages()
         }
     }
@@ -34,6 +38,7 @@ class BaseBannerView: UIView,UIScrollViewDelegate {
     override init(frame: CGRect) {
         super.init(frame: frame)
         initView()
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -50,17 +55,41 @@ class BaseBannerView: UIView,UIScrollViewDelegate {
         bannerScroll.isPagingEnabled = true
         bannerScroll.contentSize = CGSize.init(width: frame.size.width*CGFloat(maxNum), height: frame.size.height)
         bannerScroll.delegate = self
-        bannerScroll.backgroundColor = UIColor.yellow
+        bannerScroll.showsVerticalScrollIndicator = false
+        bannerScroll.showsHorizontalScrollIndicator = false
         
         for i in 0..<maxNum {
             let imageView = UIImageView.init(frame: CGRect.init(x: CGFloat(i)*bannerScroll.frame.size.width+(bannerScroll.frame.size.width-imageWidth)/2, y: (bannerScroll.frame.size.height-imageHeight)/2, width: imageWidth, height: imageHeight))
-            imageView.backgroundColor = UIColor.randomColor()
             bannerScroll.addSubview(imageView)
+            imageviews.append(imageView)
         }
+        
+        point = BaseBannerPointView.init(frame: CGRect.init(x: width-150, y: height-10, width: 150, height: 10))
+        addSubview(point)
     }
     
     private func updateImages() {
-        
+        bannerScroll.contentOffset.x = CGFloat(maxNum/2)*bannerScroll.width
+
+        for i in 0..<imageviews.count {
+            let imageview = imageviews[i]
+            var n = i + index
+            if n < 0 {
+                n = images.count + n%maxNum
+            }
+            if n >= localImages.count {
+                n = n%localImages.count
+            }
+            let name = localImages[n]
+            imageview.image = UIImage.init(named: name)
+        }
+        //
+        point.count = images.count
+        var current = (index + 2)%images.count
+        if current < 0 {
+            current += images.count
+        }
+        point.changeTo(index: current)
     }
     
     //MARK: - scroll delegate
@@ -69,12 +98,14 @@ class BaseBannerView: UIView,UIScrollViewDelegate {
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.x <= CGFloat(maxNum/2)*scrollView.frame.size.width {
-            //left
-            print("left")
-        }else if scrollView.contentOffset.x >= (CGFloat(maxNum/2)+1)*scrollView.frame.size.width {
-            //right
-            print("Right")
+        let p = Int(scrollView.contentOffset.x/scrollView.frame.size.width)
+        if p < (maxNum-1)/2{
+            index -= 1
+            updateImages()
+        }
+        if p >= (maxNum+1)/2{
+            index += 1
+            updateImages()
         }
     }
 }
