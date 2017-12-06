@@ -72,6 +72,7 @@ class ViewController: UIViewController {
         list.append("Lottery")
         list.append("Math")
         list.append("Banner")
+        list.append("AppStore")
         
         let column:Int = 3
         let spec:CGFloat = 20
@@ -175,6 +176,11 @@ class ViewController: UIViewController {
             let banner = BannerViewController()
             navigationController?.pushViewController(banner, animated: true)
             break
+        case 18:
+            let appstore = AppStoreViewController()
+            navigationController?.pushViewController(appstore, animated: true)
+            break
+            
         default:
             break
         }

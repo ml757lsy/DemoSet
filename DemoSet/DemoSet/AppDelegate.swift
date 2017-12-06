@@ -17,8 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         let navigation = UINavigationController()
+        navigation.tabBarItem = UITabBarItem.init(title: "111", image: nil, tag: 1)
         navigation.viewControllers.append(ViewController())
-        window?.rootViewController = navigation
+        
+                
+        let tab = BaseTabBarViewController()
+        tab.viewControllers = [navigation,AppStoreViewController()]
+        
+        window?.rootViewController = tab
         
         NotificationModule.registNotification()
         NotificationModule.addHomeNotification()
