@@ -35,6 +35,14 @@ class MathViewController: BaseViewController {
         view.addSubview(FibonacciLabel)
         FibonacciLabel.frame = CGRect.init(x: 20, y: 100, width: 200, height: 200)
         FibonacciLabel.numberOfLines = 0
+        
+        //
+        let PalindromeNum = UIButton.init(type: .custom)
+        PalindromeNum.frame = CGRect.init(x: 120, y: 60, width: 100, height: 40)
+        PalindromeNum.setTitle("Palindrome", for: .normal)
+        PalindromeNum.setTitleColor(UIColor.orange, for: .normal)
+        PalindromeNum.addTarget(self, action: #selector(PalindromeNumClick), for: .touchUpInside)
+        view.addSubview(PalindromeNum)
     }
     
     /// 大数相关
@@ -80,6 +88,91 @@ class MathViewController: BaseViewController {
             return 1
         }
         return getFibonacciNum(at:index-1) + getFibonacciNum(at:index-2)
+    }
+    
+    
+    //
+    func PalindromeNumClick() {
+        let alert = UIAlertController.init(title: "", message: "输入初始数字", preferredStyle: .alert)
+        
+        alert.addTextField { (textfiled) in
+        }
+        
+        let commit = UIAlertAction.init(title: "ji", style: .default) { (action) in
+            if (alert.textFields?.count)! > 0 {
+                let text = alert.textFields![0]
+                self.palindrimeNumComit(num: text.text!,time: 1)
+            }
+            
+            alert.dismiss(animated: true, completion: {
+                //
+            })
+        }
+        
+        alert.addAction(commit)
+        
+        present(alert, animated: true) {
+            //
+        }
+    }
+    
+    func palindrimeNumComit(num:String, time:Int){
+        
+        let seriation = num as NSString
+        var count:String = ""
+        
+        var add:Int = 0
+        for i in 0..<seriation.length {
+            let c1 = seriation.character(at: i) - 48
+            let c2 = seriation.character(at: seriation.length-1-i) - 48
+            
+            var c = c1 + c2 + add
+            if c >= 10 {
+                c -= 10
+                add = 1
+            }else{
+                add = 0
+            }
+            count = "\(c)"+count
+        }
+        
+        if add == 1{
+            count = "1"+count
+            add = 0
+        }
+        
+        if checkPalindrime(num: count) {
+
+            let alert = UIAlertController.init(title: "成功", message: "回文数字为"+count+"\n\(time)次计算", preferredStyle: .alert)
+            present(alert, animated: true, completion: {
+                //
+            })
+            let close = UIAlertAction.init(title: "确定", style: .default, handler: { (action) in
+                alert.dismiss(animated: true, completion: {
+                    //
+                })
+            })
+            alert.addAction(close)
+        }else{
+            print(count+" not Palindrime")
+            palindrimeNumComit(num: count,time: time+1)
+        }
+        
+        
+    }
+    
+    func checkPalindrime(num:String) -> Bool {
+        let numstring = num as NSString
+        let count = numstring.length
+        for i in 0..<count {
+            let c1 = numstring.character(at: i)
+            let c2 = numstring.character(at: count-1-i)
+            if c1 != c2 {
+                return false
+            }
+        }
+        
+        return true
     }
 
 }

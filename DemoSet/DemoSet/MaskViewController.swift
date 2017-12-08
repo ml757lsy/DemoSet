@@ -15,7 +15,6 @@ class MaskViewController: BaseViewController {
         view.backgroundColor = UIColor.yellow//绿色背景
 
         initMaskView()
-        image()
     }
 
     override func didReceiveMemoryWarning() {

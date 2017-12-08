@@ -25,6 +25,10 @@ class BannerViewController: BaseViewController {
             v.image = UIImage.init(named: banner.images[i])
             view.addSubview(v)
         }
+        
+        let gifimage = UIImageView.init(frame: CGRect.init(x: 10, y: 220+w, width: 580/2, height: 329/2))
+        gifimage.loadgif(url: URL.init(fileURLWithPath: "/Users/lishiyuan/Desktop/102.gif"))
+        view.addSubview(gifimage)
     }
 
     override func didReceiveMemoryWarning() {
