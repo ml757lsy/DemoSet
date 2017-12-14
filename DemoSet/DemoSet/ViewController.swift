@@ -189,6 +189,12 @@ class ViewController: UIViewController {
     func other() {
         let name = UIDevice.current.modelName
         print(name)
+        
+        if true {
+            print("Hello")
+        }else{
+            print("World")
+        }
     }
 
     override func didReceiveMemoryWarning() {

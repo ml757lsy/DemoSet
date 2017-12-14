@@ -43,6 +43,14 @@ class MathViewController: BaseViewController {
         PalindromeNum.setTitleColor(UIColor.orange, for: .normal)
         PalindromeNum.addTarget(self, action: #selector(PalindromeNumClick), for: .touchUpInside)
         view.addSubview(PalindromeNum)
+        
+        //
+        let binarytree = UIButton.init(type: .custom)
+        binarytree.frame = CGRect.init(x: 240, y: 60, width: 100, height: 40)
+        binarytree.setTitle("BinaryTree", for: .normal)
+        binarytree.setTitleColor(UIColor.orange, for: .normal)
+        binarytree.addTarget(self, action: #selector(binaryTreeClick), for: .touchUpInside)
+        view.addSubview(binarytree)
     }
     
     /// 大数相关
@@ -173,6 +181,12 @@ class MathViewController: BaseViewController {
         }
         
         return true
+    }
+    
+    //
+    func binaryTreeClick() {
+        let bin = BinaryTreeViewController()
+        navigationController?.pushViewController(bin, animated: true)
     }
 
 }

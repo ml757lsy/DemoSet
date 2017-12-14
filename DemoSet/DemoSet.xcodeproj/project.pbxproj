@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5029ECEC05CB68AC730AF2C3 /* Pods_DemoSet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B57CB0D8E15F346CDBC020A0 /* Pods_DemoSet.framework */; };
+		7907B25E1FDE8D4600BB9CD3 /* BinaryTreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7907B25D1FDE8D4600BB9CD3 /* BinaryTreeViewController.swift */; };
+		7907B2601FDE8D7700BB9CD3 /* BinaryTreeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7907B25F1FDE8D7700BB9CD3 /* BinaryTreeModel.swift */; };
 		7924D1C91FD9364100CEECB6 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7924D1C81FD9364100CEECB6 /* UIImageView+Extension.swift */; };
 		7955CEEC1F8C729A007F6DC2 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955CEEB1F8C729A007F6DC2 /* QRCodeView.swift */; };
 		7955CEEE1F8C730D007F6DC2 /* QRCodeMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955CEED1F8C730D007F6DC2 /* QRCodeMaskView.swift */; };
@@ -119,6 +121,8 @@
 
 /* Begin PBXFileReference section */
 		3A0DAFE85DDB291EF6D64925 /* Pods-DemoSet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoSet.release.xcconfig"; path = "Pods/Target Support Files/Pods-DemoSet/Pods-DemoSet.release.xcconfig"; sourceTree = "<group>"; };
+		7907B25D1FDE8D4600BB9CD3 /* BinaryTreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTreeViewController.swift; sourceTree = "<group>"; };
+		7907B25F1FDE8D7700BB9CD3 /* BinaryTreeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTreeModel.swift; sourceTree = "<group>"; };
 		7924D1C81FD9364100CEECB6 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		7955CEEB1F8C729A007F6DC2 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
 		7955CEED1F8C730D007F6DC2 /* QRCodeMaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeMaskView.swift; sourceTree = "<group>"; };
@@ -234,6 +238,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7924D1CA1FDA672000CEECB6 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				795853BB1EEFBB4000F214A5 /* UIView+Extension.swift */,
+				79DCC16F1F6CC81200D6A6CE /* UIImage+Extension.swift */,
+				7924D1C81FD9364100CEECB6 /* UIImageView+Extension.swift */,
+				79B647D01F74DE8A0002103E /* UIDevide+Extension.swift */,
+				796468111F99CF6E0091D671 /* UIColor+Extension.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
 		7955CEEF1F8CBA02007F6DC2 /* BluetoothConnection */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +262,8 @@
 			isa = PBXGroup;
 			children = (
 				7964680F1F9843E30091D671 /* MathViewController.swift */,
+				7907B25D1FDE8D4600BB9CD3 /* BinaryTreeViewController.swift */,
+				7907B25F1FDE8D7700BB9CD3 /* BinaryTreeModel.swift */,
 			);
 			name = Math;
 			sourceTree = "<group>";
@@ -503,15 +521,11 @@
 		79FB35021EEAA5540083ED79 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				795853BB1EEFBB4000F214A5 /* UIView+Extension.swift */,
+				7924D1CA1FDA672000CEECB6 /* Extension */,
 				79A4F5AB1FD7C290001E9A37 /* BaseConstFile.swift */,
 				79A4F5A71FD791A2001E9A37 /* BaseTabBarViewController.swift */,
 				79584BB91EEFDDDB003ABE05 /* BaseViewController.swift */,
-				79DCC16F1F6CC81200D6A6CE /* UIImage+Extension.swift */,
-				7924D1C81FD9364100CEECB6 /* UIImageView+Extension.swift */,
 				79DCC1761F6D18E400D6A6CE /* AlertModule.swift */,
-				79B647D01F74DE8A0002103E /* UIDevide+Extension.swift */,
-				796468111F99CF6E0091D671 /* UIColor+Extension.swift */,
 				7955CF161F9092C8007F6DC2 /* StringModel.swift */,
 				79CB227A1F9744FB00C9FE1E /* GyroManager.swift */,
 			);
@@ -854,10 +868,12 @@
 				798806701F4FB944001FB972 /* ImageCrawlerViewController.swift in Sources */,
 				7924D1C91FD9364100CEECB6 /* UIImageView+Extension.swift in Sources */,
 				7992BF6B1EF3869E00AE829A /* Numberboard.swift in Sources */,
+				7907B25E1FDE8D4600BB9CD3 /* BinaryTreeViewController.swift in Sources */,
 				79FB35061EEAA7190083ED79 /* CellularAutomatonViewController.swift in Sources */,
 				79584BBA1EEFDDDB003ABE05 /* BaseViewController.swift in Sources */,
 				79B26A941F0A453C00B54EC2 /* AttackModel.swift in Sources */,
 				796468101F9843E30091D671 /* MathViewController.swift in Sources */,
+				7907B2601FDE8D7700BB9CD3 /* BinaryTreeModel.swift in Sources */,
 				79B26A8E1F0A428800B54EC2 /* FGOModel.swift in Sources */,
 				79A4F5A61FD6A1B7001E9A37 /* AppStoreContentViewController.swift in Sources */,
 				79A923F21EEAA30D00D91121 /* AppDelegate.swift in Sources */,
