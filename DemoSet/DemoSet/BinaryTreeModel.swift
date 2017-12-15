@@ -409,8 +409,18 @@ class BinaryTreeNode: NSObject {
     ///
     /// - Parameter node: 树
     /// - Returns: AVL
-    class func transformAVLTree(node:BinaryTreeNode) -> BinaryTreeNode {
+    class func AVLtransFormTree(node:BinaryTreeNode) -> BinaryTreeNode {
         
+        var queueArray:[BinaryTreeNode] = []
+        queueArray.append(node)
+        
+        while queueArray.count > 0 {
+            let sub = queueArray[0]
+            queueArray.remove(at: 0)
+            
+            let l = BinaryTreeNode.depthOfTree(node: sub.left)
+            let r = BinaryTreeNode.depthOfTree(node: sub.right)
+        }
         
         return BinaryTreeNode()
     }
@@ -422,11 +432,26 @@ class BinaryTreeNode: NSObject {
     class func leftRoteTree(node:BinaryTreeNode) -> BinaryTreeNode {
         //根右子树为新根
         //右子树的左子树为根的右子树
-        //根为左子树
         let r = node.right
         let rl = node.right?.left
         r?.left = node
         node.right = rl
+        
+        return node
+    }
+    
+    /// 右旋
+    ///
+    /// - Parameter node: 树
+    /// - Returns: 树
+    class func rightRoteTree(node:BinaryTreeNode) -> BinaryTreeNode {
+        //根左子树为新根
+        //左子树的右子树为根的左子树
+        
+        let l = node.left
+        let lr = node.left?.right
+        l?.right = node
+        node.left = lr
         
         return node
     }

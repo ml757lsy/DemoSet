@@ -119,6 +119,10 @@ class BinaryTreeViewController: BaseViewController {
             isc = "不"
         }
         print(isc+"是完全二叉树")
+        
+        //
+        let avl = BinaryTreeNode.AVLtransFormTree(node: tree)
+        
     }
     
 
