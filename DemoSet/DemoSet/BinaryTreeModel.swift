@@ -432,6 +432,7 @@ class BinaryTreeNode: NSObject {
     class func leftRoteTree(node:BinaryTreeNode) -> BinaryTreeNode {
         //根右子树为新根
         //右子树的左子树为根的右子树
+        
         let r = node.right
         let rl = node.right?.left
         r?.left = node

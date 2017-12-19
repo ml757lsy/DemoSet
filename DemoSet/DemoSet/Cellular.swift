@@ -12,6 +12,7 @@ enum CellularType:Int {
     case null = 0
     case ground = 1
     case cell = 2
+    case newcell = 3
     
 }
 
@@ -40,7 +41,7 @@ struct Cellular {
     var range:Int = 1
     
     /// 最新生存需求
-    var minSuport:Int = 2
+    var minSuport:Int = 3
     
     /// 最大生存限制
     var maxSuport:Int = 5

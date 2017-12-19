@@ -29,12 +29,16 @@ class CellularAutomatonViewController: BaseViewController {
         initCellularAutomationView()
         setStart()
         startEvolution()
-        view.backgroundColor = UIColor.green
+        view.backgroundColor = UIColor.lightGray
         
         let set = UIButton()
         set.frame = CGRect.init(x: view.frame.size.width-100, y: 20, width: 60, height: 40)
         set.setTitle("设置", for: .normal)
         set.addTarget(self, action: #selector(setStart), for: .touchUpInside)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        timer.invalidate()
     }
     
     // MARK: - 界面布局
@@ -78,6 +82,9 @@ class CellularAutomatonViewController: BaseViewController {
                     }
                     
                     break
+                case .newcell:
+                    v?.backgroundColor = UIColor.orange
+                    break
                 default:
                     v?.backgroundColor = UIColor.black
                     break
@@ -102,21 +109,28 @@ class CellularAutomatonViewController: BaseViewController {
     }
     
     func setStart() {
-        oldEnvironmental[4][4].type = .cell
-        oldEnvironmental[4][5].type = .cell
-        oldEnvironmental[4][6].type = .cell
-        oldEnvironmental[5][4].type = .cell
-        oldEnvironmental[5][5].type = .cell
-        oldEnvironmental[5][6].type = .cell
-        oldEnvironmental[6][4].type = .cell
-        oldEnvironmental[6][5].type = .cell
-        oldEnvironmental[6][6].type = .cell
+        
+        //
+        for i in 0..<oldEnvironmental.count {
+            for j in 0..<oldEnvironmental[0].count {
+                oldEnvironmental[i][j].type = .cell
+                oldEnvironmental[i][j].liveState = .die
+            }
+        }
+        
+
+        for _ in 0..<500 {
+            let l = Int(arc4random())%height
+            let w = Int(arc4random())%width
+            oldEnvironmental[l][w].liveState = .live
+        }
+        
         updateCellularAutomationView()
     }
     
     func startEvolution(){
 
-        timer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(nextGeneration), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.15, target: self, selector: #selector(nextGeneration), userInfo: nil, repeats: true)
     }
     
     func nextGeneration() {
@@ -211,13 +225,7 @@ class CellularAutomatonViewController: BaseViewController {
     func check(line:Int, wid:Int) {
         //检测对象
         var cell = oldEnvironmental[line][wid]
-        if cell.type == .cell {
-            if cell.liveState == .die {//已死的重新轮回
-                cell.type = .ground
-                cell.liveState = .live
-                return
-            }
-        }
+        
         //划定检测范围
         var lmin = line - cell.range
         if lmin < 0 {
@@ -235,34 +243,82 @@ class CellularAutomatonViewController: BaseViewController {
         if wmax >= width {
             wmax = width - 1
         }
-        //统计数据
-        var similar = 0//同类
-        var food = 0
         
-        for l in lmin...lmax {
-            for w in wmin...wmax {
-                if l == line && w == wid {
-                    continue//忽略自己
+        if cell.type == .cell{
+            if cell.liveState == .die {//已死的重新轮回
+                cell.type = .ground
+                cell.liveState = .live
+                newWith(cell: cell, line: line, wid: wid)
+            }else{
+                //生物环境统计
+                var similar = 0//同类
+                var food = 0
+                
+                for l in lmin...lmax {
+                    for w in wmin...wmax {
+                        if l == line && w == wid {
+                            continue//忽略自己
+                        }
+                        let c = oldEnvironmental[l][w]
+                        //具体操作
+                        if c.type == cell.type && c.liveState != .die {
+                            similar += 1
+                        }else
+                            if c.type == .newcell {
+                                similar += 1
+                        }
+                        
+                    }
                 }
-                let c = oldEnvironmental[l][w]
-                //具体操作
-                if c.type == cell.type && c.liveState != .die {
-                    similar += 1
+                if similar > cell.maxSuport {
+                    //die
+                    cell.liveState = .die
+                }
+                if similar < cell.minSuport {
+                    //die
+                    cell.liveState = .die
                 }
                 
+                newWith(cell: cell, line: line, wid: wid)
             }
-        }
-        if similar > cell.maxSuport {
-            //die
-            cell.liveState = .die
-        }
-        if similar < cell.minSuport {
-            //die
-            cell.liveState = .die
+        }else if cell.type == .ground {
+            //生成新的
+            //至少2 至多4
+            //附近无新生
+            var cellnum = 0
+            for l in lmin...lmax {
+                for w in wmin...wmax {
+                    let c = oldEnvironmental[l][w]
+                    //具体操作
+                    if c.type == .cell && c.liveState != .die {
+                        cellnum += 1
+                    }else
+                    if c.type == .newcell {
+                        cellnum += 5
+                    }
+                }
+            }
+            
+            if cellnum >= 2 && cellnum <= 4 {
+                cell.type = .newcell
+                cell.liveState = .live
+                
+                newWith(cell: cell, line: line, wid: wid)
+            }
+            
+        }else if cell.type == .newcell {
+            cell.type = .cell
+            cell.liveState = .live
+            newWith(cell: cell, line: line, wid: wid)
         }
         
+        
+    }
+    
+    func newWith(cell:Cellular, line:Int, wid:Int) {
         //判断完的赋值给新的
         newEnvironmental[line][wid].type = cell.type
+        newEnvironmental[line][wid].liveState = cell.liveState
     }
     
     // MARK: - 代理方法
