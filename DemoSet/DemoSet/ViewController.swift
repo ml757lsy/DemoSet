@@ -73,6 +73,7 @@ class ViewController: UIViewController {
         list.append("Math")
         list.append("Banner")
         list.append("AppStore")
+        list.append("Runtime")
         
         let column:Int = 3
         let spec:CGFloat = 20
@@ -180,6 +181,10 @@ class ViewController: UIViewController {
             let appstore = AppStoreViewController()
             navigationController?.pushViewController(appstore, animated: true)
             break
+        case 19:
+            let runtime = RuntimeViewController()
+            navigationController?.pushViewController(runtime, animated: true)
+            break
             
         default:
             break
@@ -189,12 +194,8 @@ class ViewController: UIViewController {
     func other() {
         let name = UIDevice.current.modelName
         print(name)
-        
-        if true {
-            print("Hello")
-        }else{
-            print("World")
-        }
+        let b = UIDevice.current.batteryLevel
+        let s = UIDevice.current.batteryState
     }
 
     override func didReceiveMemoryWarning() {

@@ -41,10 +41,10 @@ struct Cellular {
     var range:Int = 1
     
     /// 最新生存需求
-    var minSuport:Int = 3
+    var minSuport:Int = 2
     
     /// 最大生存限制
-    var maxSuport:Int = 5
+    var maxSuport:Int = 3
     
     //其他信息
     var liveState:CellLiveState = .live

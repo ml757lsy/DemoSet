@@ -77,6 +77,7 @@
 		79DCC1751F6D0D3100D6A6CE /* QRCodeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DCC1741F6D0D3100D6A6CE /* QRCodeModule.swift */; };
 		79DCC1771F6D18E400D6A6CE /* AlertModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DCC1761F6D18E400D6A6CE /* AlertModule.swift */; };
 		79DCC17A1F6D2EF900D6A6CE /* FaceRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DCC1791F6D2EF900D6A6CE /* FaceRecognitionViewController.swift */; };
+		79E29D771FECD7B400EC4577 /* RuntimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E29D761FECD7B400EC4577 /* RuntimeViewController.swift */; };
 		79FB35061EEAA7190083ED79 /* CellularAutomatonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB35051EEAA7190083ED79 /* CellularAutomatonViewController.swift */; };
 		79FB35091EEAAB850083ED79 /* Cellular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB35081EEAAB850083ED79 /* Cellular.swift */; };
 /* End PBXBuildFile section */
@@ -199,6 +200,7 @@
 		79DCC1741F6D0D3100D6A6CE /* QRCodeModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeModule.swift; sourceTree = "<group>"; };
 		79DCC1761F6D18E400D6A6CE /* AlertModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertModule.swift; sourceTree = "<group>"; };
 		79DCC1791F6D2EF900D6A6CE /* FaceRecognitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceRecognitionViewController.swift; sourceTree = "<group>"; };
+		79E29D761FECD7B400EC4577 /* RuntimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeViewController.swift; sourceTree = "<group>"; };
 		79FB35051EEAA7190083ED79 /* CellularAutomatonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellularAutomatonViewController.swift; sourceTree = "<group>"; };
 		79FB35081EEAAB850083ED79 /* Cellular.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cellular.swift; sourceTree = "<group>"; };
 		B57CB0D8E15F346CDBC020A0 /* Pods_DemoSet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoSet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -511,6 +513,14 @@
 			name = Face;
 			sourceTree = "<group>";
 		};
+		79E29D751FECD79500EC4577 /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+				79E29D761FECD7B400EC4577 /* RuntimeViewController.swift */,
+			);
+			name = Runtime;
+			sourceTree = "<group>";
+		};
 		79F7E1F31FC414B9003791B0 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
@@ -535,6 +545,7 @@
 		79FB35031EEAA65D0083ED79 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				79E29D751FECD79500EC4577 /* Runtime */,
 				79A4F5A21FD6A168001E9A37 /* AppStoreList */,
 				79A4F59B1FCD70DB001E9A37 /* SRPG */,
 				79F7E1F31FC414B9003791B0 /* Animation */,
@@ -882,6 +893,7 @@
 				7955CF171F9092C9007F6DC2 /* StringModel.swift in Sources */,
 				79B647D41F7899FD0002103E /* NFCViewController.swift in Sources */,
 				79CB22771F97032000C9FE1E /* BannerViewController.swift in Sources */,
+				79E29D771FECD7B400EC4577 /* RuntimeViewController.swift in Sources */,
 				79A4F5A41FD6A18D001E9A37 /* AppStoreViewController.swift in Sources */,
 				79CB22741F95EBCA00C9FE1E /* LotteryViewController.swift in Sources */,
 				79DCC1751F6D0D3100D6A6CE /* QRCodeModule.swift in Sources */,
