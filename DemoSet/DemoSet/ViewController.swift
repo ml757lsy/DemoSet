@@ -74,6 +74,7 @@ class ViewController: UIViewController {
         list.append("Banner")
         list.append("AppStore")
         list.append("Runtime")
+        list.append("Casino")
         
         let column:Int = 3
         let spec:CGFloat = 20
@@ -185,6 +186,10 @@ class ViewController: UIViewController {
             let runtime = RuntimeViewController()
             navigationController?.pushViewController(runtime, animated: true)
             break
+        case 20:
+            let casino = CasinoViewController()
+            navigationController?.pushViewController(casino, animated: true)
+            break
             
         default:
             break
@@ -194,8 +199,11 @@ class ViewController: UIViewController {
     func other() {
         let name = UIDevice.current.modelName
         print(name)
+        
         let b = UIDevice.current.batteryLevel
+        print(b)
         let s = UIDevice.current.batteryState
+        print(s.rawValue)
     }
 
     override func didReceiveMemoryWarning() {

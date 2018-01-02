@@ -17,6 +17,7 @@ class IconChangeViewController: BaseViewController {
         // Do any additional setup after loading the view.
         let button = UIButton.init(frame: CGRect.init(x: 30, y: 30, width: 100, height: 40))
         button.setTitle("图标转变", for: .normal)
+        button.setImage(UIImage.init(named: ""), for: .normal)
         view.addSubview(button)
         button.addTarget(self, action: #selector(changeIcon), for: .touchUpInside)
         
@@ -40,6 +41,7 @@ class IconChangeViewController: BaseViewController {
             }
         } else {
             // Fallback on earlier versions
+            print("iOS 10.3 or later")
         }
         
     }
