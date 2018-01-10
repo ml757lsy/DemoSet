@@ -204,6 +204,14 @@ class ViewController: UIViewController {
         print(b)
         let s = UIDevice.current.batteryState
         print(s.rawValue)
+         
+        let selector = NSSelectorFromString("selectorTest")
+        perform(selector, with: nil, afterDelay: 0.1)
+        
+    }
+    
+    func selectorTest() {
+        print("Selector Test")
     }
 
     override func didReceiveMemoryWarning() {

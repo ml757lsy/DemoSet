@@ -158,6 +158,10 @@ class QRCodeViewController: BaseViewController,AVCaptureMetadataOutputObjectsDel
                                         //
                                         sta = true
                 }
+                //其他设定
+                //
+                
+                
                 let v = UIView()
                 if sta {
                     //大点

@@ -16,6 +16,8 @@
 		7955CEEE1F8C730D007F6DC2 /* QRCodeMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955CEED1F8C730D007F6DC2 /* QRCodeMaskView.swift */; };
 		7955CEF11F8CBA25007F6DC2 /* BluetoothConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955CEF01F8CBA25007F6DC2 /* BluetoothConnectionViewController.swift */; };
 		7955CF171F9092C9007F6DC2 /* StringModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955CF161F9092C8007F6DC2 /* StringModel.swift */; };
+		795714251FFE242D0007078A /* SRPGSkillModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795714241FFE242D0007078A /* SRPGSkillModel.swift */; };
+		795714271FFE24430007078A /* SRPGRoleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795714261FFE24430007078A /* SRPGRoleModel.swift */; };
 		79584BBA1EEFDDDB003ABE05 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79584BB91EEFDDDB003ABE05 /* BaseViewController.swift */; };
 		795853B81EEF954700F214A5 /* SortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795853B71EEF954700F214A5 /* SortViewController.swift */; };
 		795853BA1EEFB58B00F214A5 /* SortColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795853B91EEFB58B00F214A5 /* SortColumn.swift */; };
@@ -131,6 +133,8 @@
 		7955CEED1F8C730D007F6DC2 /* QRCodeMaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeMaskView.swift; sourceTree = "<group>"; };
 		7955CEF01F8CBA25007F6DC2 /* BluetoothConnectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothConnectionViewController.swift; sourceTree = "<group>"; };
 		7955CF161F9092C8007F6DC2 /* StringModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringModel.swift; sourceTree = "<group>"; };
+		795714241FFE242D0007078A /* SRPGSkillModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRPGSkillModel.swift; sourceTree = "<group>"; };
+		795714261FFE24430007078A /* SRPGRoleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRPGRoleModel.swift; sourceTree = "<group>"; };
 		79584BB91EEFDDDB003ABE05 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		795853B71EEF954700F214A5 /* SortViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortViewController.swift; sourceTree = "<group>"; };
 		795853B91EEFB58B00F214A5 /* SortColumn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortColumn.swift; sourceTree = "<group>"; };
@@ -302,6 +306,8 @@
 			children = (
 				79A4F59C1FCD7119001E9A37 /* SRPGViewController.swift */,
 				79A4F59E1FCD712F001E9A37 /* RoleModel.swift */,
+				795714241FFE242D0007078A /* SRPGSkillModel.swift */,
+				795714261FFE24430007078A /* SRPGRoleModel.swift */,
 			);
 			name = SRPG;
 			sourceTree = "<group>";
@@ -435,6 +441,13 @@
 			name = NFC;
 			sourceTree = "<group>";
 		};
+		79B9DE881FFB8F980088702D /* OC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = OC;
+			sourceTree = "<group>";
+		};
 		79CB226D1F94B0AB00C9FE1E /* MaskView */ = {
 			isa = PBXGroup;
 			children = (
@@ -555,6 +568,7 @@
 		79FB35031EEAA65D0083ED79 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				79B9DE881FFB8F980088702D /* OC */,
 				792E5E8E1FF0F51C007E7605 /* Casino */,
 				79E29D751FECD79500EC4577 /* Runtime */,
 				79A4F5A21FD6A168001E9A37 /* AppStoreList */,
@@ -857,6 +871,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				795714271FFE24430007078A /* SRPGRoleModel.swift in Sources */,
 				79A4F5AC1FD7C290001E9A37 /* BaseConstFile.swift in Sources */,
 				79B26A981F0A513D00B54EC2 /* BufferModel.swift in Sources */,
 				79DCC1601F67ECE100D6A6CE /* PointLineViewController.swift in Sources */,
@@ -899,6 +914,7 @@
 				7907B2601FDE8D7700BB9CD3 /* BinaryTreeModel.swift in Sources */,
 				79B26A8E1F0A428800B54EC2 /* FGOModel.swift in Sources */,
 				79A4F5A61FD6A1B7001E9A37 /* AppStoreContentViewController.swift in Sources */,
+				795714251FFE242D0007078A /* SRPGSkillModel.swift in Sources */,
 				79A923F21EEAA30D00D91121 /* AppDelegate.swift in Sources */,
 				79DCC1701F6CC81200D6A6CE /* UIImage+Extension.swift in Sources */,
 				79CB226F1F94B0C500C9FE1E /* MaskViewController.swift in Sources */,

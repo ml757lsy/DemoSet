@@ -23,6 +23,7 @@ class SortViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        edgesForExtendedLayout = .init(rawValue: 0)
         initSortView()
         initData()
     }
@@ -55,18 +56,21 @@ class SortViewController: BaseViewController {
         view.addSubview(insert)
         insert.frame = CGRect.init(x: 20, y: 20+400+40, width: 60, height: 40)
         insert.setTitle("Insert", for: .normal)
+        insert.setTitleColor(UIColor.orange, for: .normal)
         insert.addTarget(self, action: #selector(insertSort), for: .touchUpInside)
         
         let compare = UIButton()
         view.addSubview(compare)
-        compare.frame = CGRect.init(x: 20, y: 60+400+40, width: 60, height: 40)
+        compare.frame = CGRect.init(x: 100, y: 20+400+40, width: 60, height: 40)
         compare.setTitle("compare", for: .normal)
+        compare.setTitleColor(UIColor.orange, for: .normal)
         compare.addTarget(self, action: #selector(compareSort), for: .touchUpInside)
         
         let quick = UIButton()
         view.addSubview(quick)
-        quick.frame = CGRect.init(x: 20, y: 100+400+40, width: 60, height: 40)
+        quick.frame = CGRect.init(x: 180, y: 20+400+40, width: 60, height: 40)
         quick.setTitle("quickSort", for: .normal)
+        quick.setTitleColor(UIColor.orange, for: .normal)
         quick.addTarget(self, action: #selector(quickSort), for: .touchUpInside)
     }
     

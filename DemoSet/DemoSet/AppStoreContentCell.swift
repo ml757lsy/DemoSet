@@ -39,15 +39,22 @@ class AppStoreContentCell: UITableViewCell {
         addSubview(box)
     }
     
+    func small() {
+        self.transform = CGAffineTransform.init(scaleX: 0.93, y: 0.93)
+    }
+    
+    func normal() {
+        self.transform = CGAffineTransform.init(scaleX: 1, y: 1)
+    }
+    
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         UIView.animate(withDuration: 0.2) {
             if highlighted {
-                self.transform = CGAffineTransform.init(scaleX: 0.93, y: 0.93)
+                self.small()
             }else{
-                self.transform = CGAffineTransform.init(scaleX: 1, y: 1)
+                self.normal()
             }
         }
-        
     }
 
 }

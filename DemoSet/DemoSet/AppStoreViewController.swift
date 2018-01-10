@@ -56,6 +56,7 @@ class AppStoreViewController: BaseViewController,UITableViewDelegate,UITableView
         
         
         listTable.frame = CGRect.init(x: 20, y: 0, width: view.width-40, height: view.height)
+        listTable.separatorStyle = .none
         listTable.delegate = self
         listTable.dataSource = self
         view.addSubview(listTable)
@@ -109,6 +110,23 @@ class AppStoreViewController: BaseViewController,UITableViewDelegate,UITableView
         self.tabBarController?.setNeedsStatusBarAppearanceUpdate()
     }
     
+    func gotoNext(with cell:UITableViewCell?) {
+        cell?.setHighlighted(false, animated: true)
+        hidenTopAndBottom()
+        content.closeBlock = {
+            self.showTopAndBottom()
+            UIView.animate(withDuration: 0.2, animations: {
+                cell?.setHighlighted(true, animated: true)
+            }, completion: { (t) in
+                cell?.setHighlighted(false, animated: true)
+            })
+        }
+        
+        present(content, animated: false) {
+            self.hidenTopAndBottom()
+        }
+    }
+    
     //
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listData.count
@@ -133,14 +151,8 @@ class AppStoreViewController: BaseViewController,UITableViewDelegate,UITableView
         content.content.backgroundColor = cell?.backgroundColor
         content.fromFrame = tableView.convert(rect, to: view)
         content.modalPresentationStyle = .overCurrentContext
-        hidenTopAndBottom()
-        content.closeBlock = {
-            self.showTopAndBottom()
-        }
-
-        present(content, animated: false) {
-            self.hidenTopAndBottom()
-        }
+        cell?.setHighlighted(true, animated: true)
+        perform(#selector(gotoNext(with:)), with: cell, afterDelay: 0.2)
     }
 
 }

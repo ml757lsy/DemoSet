@@ -9,12 +9,17 @@
 import UIKit
 
 class LotteryViewController: BaseViewController {
+    
+    var top:CGFloat = 40
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+
         perform(#selector(getNum), with: nil, afterDelay: 0.1)
+        perform(#selector(getDoubleChromosphereNum), with: nil, afterDelay: 0.1)
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,12 +65,30 @@ class LotteryViewController: BaseViewController {
         return red + blue
     }
     
+    func getDoubleChromosphereNum() {
+        let max = 33
+        let m = 16
+        
+        var red:[Int] = []
+        while red.count < 6 {
+            let n = Int(arc4random())%max+1
+            if !red.contains(n) {
+                red.append(n)
+            }
+        }
+        red = sort(array: red)
+        
+        let b = Int(arc4random())%m+1
+        
+        updateView(red: red, blue: [b])
+    }
+    
     func updateView(red:[Int], blue:[Int]) {
         
         let ballWidth:CGFloat = 40
         let spec:CGFloat = 10
         for i in 0..<red.count {
-            let ball = UILabel.init(frame: CGRect.init(x: 10+(ballWidth+spec)*CGFloat(i), y: 40, width: ballWidth, height: ballWidth))
+            let ball = UILabel.init(frame: CGRect.init(x: 10+(ballWidth+spec)*CGFloat(i), y: top, width: ballWidth, height: ballWidth))
             view.addSubview(ball)
             ball.backgroundColor = UIColor.red
             ball.layer.cornerRadius = ballWidth/2
@@ -76,7 +99,7 @@ class LotteryViewController: BaseViewController {
             ball.text = "\(red[i])"
         }
         for i in 0..<blue.count {
-            let ball = UILabel.init(frame: CGRect.init(x: 10+(ballWidth+spec)*CGFloat(i+red.count), y: 40, width: ballWidth, height: ballWidth))
+            let ball = UILabel.init(frame: CGRect.init(x: 10+(ballWidth+spec)*CGFloat(i+red.count), y: top, width: ballWidth, height: ballWidth))
             view.addSubview(ball)
             ball.backgroundColor = UIColor.blue
             ball.layer.cornerRadius = ballWidth/2
@@ -86,6 +109,8 @@ class LotteryViewController: BaseViewController {
             ball.font = UIFont.boldSystemFont(ofSize: 20)
             ball.text = "\(blue[i])"
         }
+        
+        top += 60
     }
     
     /// 数组排序
