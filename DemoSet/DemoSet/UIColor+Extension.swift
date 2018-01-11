@@ -16,4 +16,5 @@ extension  UIColor {
     class func randomColor() ->UIColor {
         return UIColor.init(red: CGFloat(arc4random()%256)/255, green: CGFloat(arc4random()%256)/255, blue: CGFloat(arc4random()%256)/255, alpha: 1)
     }
+    
 }

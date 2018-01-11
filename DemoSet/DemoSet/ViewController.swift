@@ -75,6 +75,7 @@ class ViewController: UIViewController {
         list.append("AppStore")
         list.append("Runtime")
         list.append("Casino")
+        list.append("Subway")
         
         let column:Int = 3
         let spec:CGFloat = 20
@@ -189,6 +190,10 @@ class ViewController: UIViewController {
         case 20:
             let casino = CasinoViewController()
             navigationController?.pushViewController(casino, animated: true)
+            break
+        case 21:
+            let subway = SubwayViewController()
+            navigationController?.pushViewController(subway, animated: true)
             break
             
         default:

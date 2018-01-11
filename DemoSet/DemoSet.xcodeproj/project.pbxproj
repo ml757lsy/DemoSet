@@ -18,6 +18,11 @@
 		7955CF171F9092C9007F6DC2 /* StringModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955CF161F9092C8007F6DC2 /* StringModel.swift */; };
 		795714251FFE242D0007078A /* SRPGSkillModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795714241FFE242D0007078A /* SRPGSkillModel.swift */; };
 		795714271FFE24430007078A /* SRPGRoleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795714261FFE24430007078A /* SRPGRoleModel.swift */; };
+		7957142E2005C0F70007078A /* SubwayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795714292005C0F60007078A /* SubwayViewController.swift */; };
+		7957142F2005C0F70007078A /* StationData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7957142A2005C0F60007078A /* StationData.plist */; };
+		795714302005C0F70007078A /* LineData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7957142B2005C0F70007078A /* LineData.plist */; };
+		795714312005C0F70007078A /* SubwayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7957142C2005C0F70007078A /* SubwayData.swift */; };
+		795714322005C0F70007078A /* SubwayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7957142D2005C0F70007078A /* SubwayScene.swift */; };
 		79584BBA1EEFDDDB003ABE05 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79584BB91EEFDDDB003ABE05 /* BaseViewController.swift */; };
 		795853B81EEF954700F214A5 /* SortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795853B71EEF954700F214A5 /* SortViewController.swift */; };
 		795853BA1EEFB58B00F214A5 /* SortColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795853B91EEFB58B00F214A5 /* SortColumn.swift */; };
@@ -135,6 +140,11 @@
 		7955CF161F9092C8007F6DC2 /* StringModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringModel.swift; sourceTree = "<group>"; };
 		795714241FFE242D0007078A /* SRPGSkillModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRPGSkillModel.swift; sourceTree = "<group>"; };
 		795714261FFE24430007078A /* SRPGRoleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRPGRoleModel.swift; sourceTree = "<group>"; };
+		795714292005C0F60007078A /* SubwayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubwayViewController.swift; sourceTree = "<group>"; };
+		7957142A2005C0F60007078A /* StationData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = StationData.plist; sourceTree = "<group>"; };
+		7957142B2005C0F70007078A /* LineData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LineData.plist; sourceTree = "<group>"; };
+		7957142C2005C0F70007078A /* SubwayData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubwayData.swift; sourceTree = "<group>"; };
+		7957142D2005C0F70007078A /* SubwayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubwayScene.swift; sourceTree = "<group>"; };
 		79584BB91EEFDDDB003ABE05 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		795853B71EEF954700F214A5 /* SortViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortViewController.swift; sourceTree = "<group>"; };
 		795853B91EEFB58B00F214A5 /* SortColumn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortColumn.swift; sourceTree = "<group>"; };
@@ -272,6 +282,18 @@
 				7955CEF01F8CBA25007F6DC2 /* BluetoothConnectionViewController.swift */,
 			);
 			name = BluetoothConnection;
+			sourceTree = "<group>";
+		};
+		795714282005C0E10007078A /* Subway */ = {
+			isa = PBXGroup;
+			children = (
+				7957142B2005C0F70007078A /* LineData.plist */,
+				7957142A2005C0F60007078A /* StationData.plist */,
+				7957142C2005C0F70007078A /* SubwayData.swift */,
+				7957142D2005C0F70007078A /* SubwayScene.swift */,
+				795714292005C0F60007078A /* SubwayViewController.swift */,
+			);
+			name = Subway;
 			sourceTree = "<group>";
 		};
 		7964680E1F9843CF0091D671 /* Math */ = {
@@ -568,6 +590,7 @@
 		79FB35031EEAA65D0083ED79 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				795714282005C0E10007078A /* Subway */,
 				79B9DE881FFB8F980088702D /* OC */,
 				792E5E8E1FF0F51C007E7605 /* Casino */,
 				79E29D751FECD79500EC4577 /* Runtime */,
@@ -780,9 +803,11 @@
 			files = (
 				79DCC16D1F6A72F300D6A6CE /* Second.storyboard in Resources */,
 				79A923FC1EEAA30D00D91121 /* LaunchScreen.storyboard in Resources */,
+				795714302005C0F70007078A /* LineData.plist in Resources */,
 				79B26AB81F185F0300B54EC2 /* Icon2@3x.png in Resources */,
 				79A923F91EEAA30D00D91121 /* Assets.xcassets in Resources */,
 				79A923F71EEAA30D00D91121 /* Main.storyboard in Resources */,
+				7957142F2005C0F70007078A /* StationData.plist in Resources */,
 				79B26AB61F185EF600B54EC2 /* Icon2@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -916,8 +941,10 @@
 				79A4F5A61FD6A1B7001E9A37 /* AppStoreContentViewController.swift in Sources */,
 				795714251FFE242D0007078A /* SRPGSkillModel.swift in Sources */,
 				79A923F21EEAA30D00D91121 /* AppDelegate.swift in Sources */,
+				795714322005C0F70007078A /* SubwayScene.swift in Sources */,
 				79DCC1701F6CC81200D6A6CE /* UIImage+Extension.swift in Sources */,
 				79CB226F1F94B0C500C9FE1E /* MaskViewController.swift in Sources */,
+				795714312005C0F70007078A /* SubwayData.swift in Sources */,
 				7955CF171F9092C9007F6DC2 /* StringModel.swift in Sources */,
 				79B647D41F7899FD0002103E /* NFCViewController.swift in Sources */,
 				79CB22771F97032000C9FE1E /* BannerViewController.swift in Sources */,
@@ -932,6 +959,7 @@
 				79DCC1731F6D0D1F00D6A6CE /* QRCodeViewController.swift in Sources */,
 				79B26AA21F0DD9BE00B54EC2 /* SkillModel.swift in Sources */,
 				79DCC1651F6A4A1D00D6A6CE /* NotificationViewController.swift in Sources */,
+				7957142E2005C0F70007078A /* SubwayViewController.swift in Sources */,
 				795853BA1EEFB58B00F214A5 /* SortColumn.swift in Sources */,
 				79B26A8C1F0A427000B54EC2 /* FGOViewController.swift in Sources */,
 				79CB22791F97287A00C9FE1E /* BaseBannerView.swift in Sources */,
