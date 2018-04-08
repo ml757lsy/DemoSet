@@ -27,8 +27,11 @@ struct Station {
     /// 临近站距离
     var nextDistance = [CGFloat]()
     
-    /// 位置
+    /// 地图位置
     var position:CGPoint =  CGPoint.zero//默认的scence为中心
+    
+    /// 简化位置
+    var simplePostion:CGPoint = CGPoint.zero//
 }
 
 /// 线结构
@@ -254,6 +257,23 @@ class SubwayData {
         result([])
     }
     
+    func saveStation() {
+        return
+        let path = Bundle.main.path(forResource: "StationData", ofType: "plist")
+        
+        var s = NSMutableArray.init()
+        
+        for station in stations {
+            var dic = NSMutableDictionary.init()
+            dic.setValue(station.stationID, forKey: "stationID")
+            dic.setValue(station.name, forKey: "name")
+        }
+        
+        if s.write(toFile: path!, atomically: true) {
+            print("save success")
+        }
+        
+    }
     
     
     //MARK: - 线路算法
