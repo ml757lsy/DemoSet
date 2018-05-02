@@ -15,12 +15,27 @@ class ImageCrawlerViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        crawler()
+//        crawler()
+        loadMessage()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func loadMessage() {
+        let url:URL = URL.init(string: "http://byfar.cc/api.php")!
+        
+        Alamofire.request(url).responseString { (string) in
+            print(string.result.value)
+            print("1111")
+        }
+        
+        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseString { (string) in
+            print(string.result.value)
+        }
+        
     }
     
 

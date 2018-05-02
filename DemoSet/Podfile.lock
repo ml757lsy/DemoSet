@@ -15,15 +15,18 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - Alamofire (4.5.0)
+  - HandyJSON (1.8.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - Alamofire (~> 4.5.0)
+  - HandyJSON (~> 1.8.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  HandyJSON: edaaa3278bf4c4c96d6f7382b80d6b91c88d3bf5
 
-PODFILE CHECKSUM: f326a7d8caabca40c29b1f8984838be6082bf181
+PODFILE CHECKSUM: d87acf1d5d57a73e829913dcafe649752a75e579
 
-COCOAPODS: 1.3.0.beta.2
+COCOAPODS: 1.4.0
