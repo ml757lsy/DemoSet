@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import HandyJSON
 
 /// 爬图脚本
 class ImageCrawlerViewController: BaseViewController {
@@ -25,17 +26,17 @@ class ImageCrawlerViewController: BaseViewController {
     }
     
     func loadMessage() {
-        let url:URL = URL.init(string: "http://byfar.cc/api.php")!
+        let url:URL = URL.init(string: "http://byfar.cc/api.php?action=getusers")!
         
         Alamofire.request(url).responseString { (string) in
-            print(string.result.value)
-            print("1111")
+            print(string.result.value!)
         }
         
-        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseString { (string) in
-            print(string.result.value)
+        NetworkManager.requestModel(url: url, modeltype: UserList()) { (model) in
+            print(model.list.count)
+            let user = model.list[0]
+            print(user.name)
         }
-        
     }
     
 
@@ -99,3 +100,16 @@ class ImageCrawlerViewController: BaseViewController {
     }
 
 }
+
+class UserList:NetworkModel {
+    var list:[UserModel] = []
+}
+
+class UserModel:NetworkModel {
+    
+    var id:Int = 0
+    var name:String = ""
+    var type:Int = 0
+}
+
+

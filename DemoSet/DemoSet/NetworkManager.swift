@@ -16,15 +16,29 @@ class NetworkManager: NSObject {
     static let manager = NetworkManager()
     
     //class function
-    class func request(url:URLConvertible,responseString:@escaping (String)->Void) {
+    public class func request(url:URLConvertible,responseString:@escaping (String)->Void) {
         Alamofire.request(url).responseString { (string) in
             let str = string.result.value!
             responseString(str)
         }
     }
     
-    class func request(url:URLConvertible,responseModel:@escaping (String)->Void) {
+    public class func requestModel<T:HandyJSON>(url:URLConvertible,modeltype:T,responseModel:@escaping (_ model:T)->Void) {
         
+        NetworkManager.request(url: url) { (string) in
+            
+            if let mo = JSONDeserializer<T>.deserializeFrom(json: string) {
+                responseModel(mo)
+            }else{
+                responseModel(T())
+            }
+        }
     }
 
 }
+
+class NetworkModel:HandyJSON {
+    
+    required init() {}
+}
+
