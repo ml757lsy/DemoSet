@@ -34,6 +34,27 @@ class NetworkManager: NSObject {
             }
         }
     }
+    
+    public class func requestModel<T:HandyJSON>(url:URLConvertible,
+                                                method:HTTPMethod = HTTPMethod.get,
+                                                parameters:Parameters? = nil,
+                                                encodiong:ParameterEncoding = URLEncoding.default,
+                                                headers: HTTPHeaders? = nil,
+                                                modelType:T,
+                                                success:@escaping (_ model:T)->Void,
+                                                fail:@escaping(NSError)->Void) {
+        
+        Alamofire.request(url, method: method, parameters: parameters, encoding: encodiong, headers: headers).responseString { (string) in
+            
+            var error = NSError.init(domain: "", code: 0, userInfo: nil)
+            
+            if string.result.isFailure {
+                fail(error)
+            }
+            
+        }
+        
+    }
 
 }
 

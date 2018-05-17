@@ -31,6 +31,8 @@
 		796468121F99CF6E0091D671 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796468111F99CF6E0091D671 /* UIColor+Extension.swift */; };
 		798806701F4FB944001FB972 /* ImageCrawlerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988066F1F4FB944001FB972 /* ImageCrawlerViewController.swift */; };
 		798AE3E32099939A0019E38C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798AE3E22099939A0019E38C /* NetworkManager.swift */; };
+		798AE3E620A1EAFB0019E38C /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798AE3E520A1EAFB0019E38C /* ToDoViewController.swift */; };
+		798AE3E920A9A1C00019E38C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798AE3E820A9A1C00019E38C /* WebViewController.swift */; };
 		7992BF691EF3866E00AE829A /* NumberboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7992BF681EF3866E00AE829A /* NumberboardViewController.swift */; };
 		7992BF6B1EF3869E00AE829A /* Numberboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7992BF6A1EF3869E00AE829A /* Numberboard.swift */; };
 		79A4F59D1FCD7119001E9A37 /* SRPGViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A4F59C1FCD7119001E9A37 /* SRPGViewController.swift */; };
@@ -73,6 +75,7 @@
 		79CB22771F97032000C9FE1E /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CB22761F97032000C9FE1E /* BannerViewController.swift */; };
 		79CB22791F97287A00C9FE1E /* BaseBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CB22781F97287A00C9FE1E /* BaseBannerView.swift */; };
 		79CB227B1F9744FB00C9FE1E /* GyroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CB227A1F9744FB00C9FE1E /* GyroManager.swift */; };
+		79D650E720AD5C99009E27CF /* ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D650E620AD5C99009E27CF /* ReaderViewController.swift */; };
 		79DB4BB91F70A8D40014CA2D /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB4BB81F70A8D40014CA2D /* WaveView.swift */; };
 		79DB4BBB1F70B1B00014CA2D /* WaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB4BBA1F70B1B00014CA2D /* WaveViewController.swift */; };
 		79DCC1601F67ECE100D6A6CE /* PointLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DCC15F1F67ECE100D6A6CE /* PointLineViewController.swift */; };
@@ -154,6 +157,8 @@
 		796468111F99CF6E0091D671 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		7988066F1F4FB944001FB972 /* ImageCrawlerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCrawlerViewController.swift; sourceTree = "<group>"; };
 		798AE3E22099939A0019E38C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		798AE3E520A1EAFB0019E38C /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
+		798AE3E820A9A1C00019E38C /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		7992BF681EF3866E00AE829A /* NumberboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberboardViewController.swift; sourceTree = "<group>"; };
 		7992BF6A1EF3869E00AE829A /* Numberboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Numberboard.swift; sourceTree = "<group>"; };
 		79A4F59C1FCD7119001E9A37 /* SRPGViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRPGViewController.swift; sourceTree = "<group>"; };
@@ -205,6 +210,7 @@
 		79CB22761F97032000C9FE1E /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
 		79CB22781F97287A00C9FE1E /* BaseBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBannerView.swift; sourceTree = "<group>"; };
 		79CB227A1F9744FB00C9FE1E /* GyroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyroManager.swift; sourceTree = "<group>"; };
+		79D650E620AD5C99009E27CF /* ReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderViewController.swift; sourceTree = "<group>"; };
 		79DB4BB81F70A8D40014CA2D /* WaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
 		79DB4BBA1F70B1B00014CA2D /* WaveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveViewController.swift; sourceTree = "<group>"; };
 		79DCC15F1F67ECE100D6A6CE /* PointLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointLineViewController.swift; sourceTree = "<group>"; };
@@ -314,6 +320,22 @@
 				7988066F1F4FB944001FB972 /* ImageCrawlerViewController.swift */,
 			);
 			name = ImageCrawler;
+			sourceTree = "<group>";
+		};
+		798AE3E420A1EAD20019E38C /* ToDoEveryday */ = {
+			isa = PBXGroup;
+			children = (
+				798AE3E520A1EAFB0019E38C /* ToDoViewController.swift */,
+			);
+			name = ToDoEveryday;
+			sourceTree = "<group>";
+		};
+		798AE3E720A9A1B00019E38C /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				798AE3E820A9A1C00019E38C /* WebViewController.swift */,
+			);
+			name = WebView;
 			sourceTree = "<group>";
 		};
 		7992BF671EF3865500AE829A /* NumberBoard */ = {
@@ -499,6 +521,14 @@
 			name = Banner;
 			sourceTree = "<group>";
 		};
+		79D650E520AD5C89009E27CF /* Reader */ = {
+			isa = PBXGroup;
+			children = (
+				79D650E620AD5C99009E27CF /* ReaderViewController.swift */,
+			);
+			name = Reader;
+			sourceTree = "<group>";
+		};
 		79DB4BB71F70A8AD0014CA2D /* WaveView */ = {
 			isa = PBXGroup;
 			children = (
@@ -593,6 +623,9 @@
 		79FB35031EEAA65D0083ED79 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				79D650E520AD5C89009E27CF /* Reader */,
+				798AE3E720A9A1B00019E38C /* WebView */,
+				798AE3E420A1EAD20019E38C /* ToDoEveryday */,
 				795714282005C0E10007078A /* Subway */,
 				79B9DE881FFB8F980088702D /* OC */,
 				792E5E8E1FF0F51C007E7605 /* Casino */,
@@ -864,12 +897,14 @@
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -921,8 +956,10 @@
 				795853BC1EEFBB4000F214A5 /* UIView+Extension.swift in Sources */,
 				79DCC1621F692E8600D6A6CE /* PointLineView.swift in Sources */,
 				7955CEEE1F8C730D007F6DC2 /* QRCodeMaskView.swift in Sources */,
+				798AE3E620A1EAFB0019E38C /* ToDoViewController.swift in Sources */,
 				792E5E901FF0F530007E7605 /* CasinoViewController.swift in Sources */,
 				79B26ABB1F185FC800B54EC2 /* IconChangeViewController.swift in Sources */,
+				79D650E720AD5C99009E27CF /* ReaderViewController.swift in Sources */,
 				79DCC1771F6D18E400D6A6CE /* AlertModule.swift in Sources */,
 				79B26A921F0A43AE00B54EC2 /* MysticCodeModel.swift in Sources */,
 				79DCC1681F6A50B600D6A6CE /* NotificationModule.swift in Sources */,
@@ -957,6 +994,7 @@
 				79E29D771FECD7B400EC4577 /* RuntimeViewController.swift in Sources */,
 				79A4F5A41FD6A18D001E9A37 /* AppStoreViewController.swift in Sources */,
 				79CB22741F95EBCA00C9FE1E /* LotteryViewController.swift in Sources */,
+				798AE3E920A9A1C00019E38C /* WebViewController.swift in Sources */,
 				79DCC1751F6D0D3100D6A6CE /* QRCodeModule.swift in Sources */,
 				7955CEF11F8CBA25007F6DC2 /* BluetoothConnectionViewController.swift in Sources */,
 				79DCC16B1F6A69E400D6A6CE /* LocationModule.swift in Sources */,

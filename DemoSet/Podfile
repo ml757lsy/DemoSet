@@ -3,5 +3,6 @@ target 'DemoSet' do
 pod 'AFNetworking','~> 3.0'
 pod 'Alamofire','~> 4.5.0'
 pod 'HandyJSON','~> 1.8.0'
+pod 'SnapKit', '~> 3.2.0'
 use_frameworks!
 end

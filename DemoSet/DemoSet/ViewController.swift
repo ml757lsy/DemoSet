@@ -76,6 +76,9 @@ class ViewController: UIViewController {
         list.append("Runtime")
         list.append("Casino")
         list.append("Subway")
+        list.append("ToDoEveryday")
+        list.append("Web")
+        list.append("Reader")
         
         let column:Int = 3
         let spec:CGFloat = 20
@@ -194,6 +197,18 @@ class ViewController: UIViewController {
         case 21:
             let subway = SubwayViewController()
             navigationController?.pushViewController(subway, animated: true)
+            break
+        case 22:
+            let todo = ToDoViewController()
+            navigationController?.pushViewController(todo, animated: true)
+            break
+        case 23:
+            let web = WebViewController()
+            navigationController?.pushViewController(web, animated: true)
+            break
+        case 24:
+            let read = ReaderViewController()
+            navigationController?.pushViewController(read, animated: true)
             break
             
         default:
