@@ -10,6 +10,11 @@
 		5029ECEC05CB68AC730AF2C3 /* Pods_DemoSet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B57CB0D8E15F346CDBC020A0 /* Pods_DemoSet.framework */; };
 		7907B25E1FDE8D4600BB9CD3 /* BinaryTreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7907B25D1FDE8D4600BB9CD3 /* BinaryTreeViewController.swift */; };
 		7907B2601FDE8D7700BB9CD3 /* BinaryTreeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7907B25F1FDE8D7700BB9CD3 /* BinaryTreeModel.swift */; };
+		791FF81220B2743000AD6B2D /* EvolutionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791FF81120B2743000AD6B2D /* EvolutionViewController.swift */; };
+		791FF81420B2748900AD6B2D /* EvolutionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791FF81320B2748900AD6B2D /* EvolutionCell.swift */; };
+		791FF81620B274B500AD6B2D /* EvolutionGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791FF81520B274B500AD6B2D /* EvolutionGround.swift */; };
+		791FF81820B2753C00AD6B2D /* EvolutionGod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791FF81720B2753C00AD6B2D /* EvolutionGod.swift */; };
+		791FF81A20B2773200AD6B2D /* EvolutionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791FF81920B2773200AD6B2D /* EvolutionState.swift */; };
 		7924D1C91FD9364100CEECB6 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7924D1C81FD9364100CEECB6 /* UIImageView+Extension.swift */; };
 		792E5E901FF0F530007E7605 /* CasinoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792E5E8F1FF0F530007E7605 /* CasinoViewController.swift */; };
 		7955CEEC1F8C729A007F6DC2 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955CEEB1F8C729A007F6DC2 /* QRCodeView.swift */; };
@@ -136,6 +141,11 @@
 		3A0DAFE85DDB291EF6D64925 /* Pods-DemoSet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoSet.release.xcconfig"; path = "Pods/Target Support Files/Pods-DemoSet/Pods-DemoSet.release.xcconfig"; sourceTree = "<group>"; };
 		7907B25D1FDE8D4600BB9CD3 /* BinaryTreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTreeViewController.swift; sourceTree = "<group>"; };
 		7907B25F1FDE8D7700BB9CD3 /* BinaryTreeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTreeModel.swift; sourceTree = "<group>"; };
+		791FF81120B2743000AD6B2D /* EvolutionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolutionViewController.swift; sourceTree = "<group>"; };
+		791FF81320B2748900AD6B2D /* EvolutionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolutionCell.swift; sourceTree = "<group>"; };
+		791FF81520B274B500AD6B2D /* EvolutionGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolutionGround.swift; sourceTree = "<group>"; };
+		791FF81720B2753C00AD6B2D /* EvolutionGod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolutionGod.swift; sourceTree = "<group>"; };
+		791FF81920B2773200AD6B2D /* EvolutionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolutionState.swift; sourceTree = "<group>"; };
 		7924D1C81FD9364100CEECB6 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		792E5E8F1FF0F530007E7605 /* CasinoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasinoViewController.swift; sourceTree = "<group>"; };
 		7955CEEB1F8C729A007F6DC2 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
@@ -567,6 +577,11 @@
 		79DCC16E1F6A738A00D6A6CE /* Evolution */ = {
 			isa = PBXGroup;
 			children = (
+				791FF81120B2743000AD6B2D /* EvolutionViewController.swift */,
+				791FF81320B2748900AD6B2D /* EvolutionCell.swift */,
+				791FF81920B2773200AD6B2D /* EvolutionState.swift */,
+				791FF81520B274B500AD6B2D /* EvolutionGround.swift */,
+				791FF81720B2753C00AD6B2D /* EvolutionGod.swift */,
 			);
 			name = Evolution;
 			sourceTree = "<group>";
@@ -939,6 +954,7 @@
 				798AE3E32099939A0019E38C /* NetworkManager.swift in Sources */,
 				795714271FFE24430007078A /* SRPGRoleModel.swift in Sources */,
 				79A4F5AC1FD7C290001E9A37 /* BaseConstFile.swift in Sources */,
+				791FF81420B2748900AD6B2D /* EvolutionCell.swift in Sources */,
 				79B26A981F0A513D00B54EC2 /* BufferModel.swift in Sources */,
 				79DCC1601F67ECE100D6A6CE /* PointLineViewController.swift in Sources */,
 				79B647641F7263780002103E /* MessageFliterViewController.swift in Sources */,
@@ -951,6 +967,8 @@
 				79B647D11F74DE8A0002103E /* UIDevide+Extension.swift in Sources */,
 				79B26A721F05065E00B54EC2 /* AnimationViewController.swift in Sources */,
 				796468121F99CF6E0091D671 /* UIColor+Extension.swift in Sources */,
+				791FF81820B2753C00AD6B2D /* EvolutionGod.swift in Sources */,
+				791FF81220B2743000AD6B2D /* EvolutionViewController.swift in Sources */,
 				79A4F59D1FCD7119001E9A37 /* SRPGViewController.swift in Sources */,
 				79DB4BB91F70A8D40014CA2D /* WaveView.swift in Sources */,
 				795853BC1EEFBB4000F214A5 /* UIView+Extension.swift in Sources */,
@@ -987,6 +1005,7 @@
 				795714322005C0F70007078A /* SubwayScene.swift in Sources */,
 				79DCC1701F6CC81200D6A6CE /* UIImage+Extension.swift in Sources */,
 				79CB226F1F94B0C500C9FE1E /* MaskViewController.swift in Sources */,
+				791FF81A20B2773200AD6B2D /* EvolutionState.swift in Sources */,
 				795714312005C0F70007078A /* SubwayData.swift in Sources */,
 				7955CF171F9092C9007F6DC2 /* StringModel.swift in Sources */,
 				79B647D41F7899FD0002103E /* NFCViewController.swift in Sources */,
@@ -1001,6 +1020,7 @@
 				79DB4BBB1F70B1B00014CA2D /* WaveViewController.swift in Sources */,
 				79CB227B1F9744FB00C9FE1E /* GyroManager.swift in Sources */,
 				79DCC1731F6D0D1F00D6A6CE /* QRCodeViewController.swift in Sources */,
+				791FF81620B274B500AD6B2D /* EvolutionGround.swift in Sources */,
 				79B26AA21F0DD9BE00B54EC2 /* SkillModel.swift in Sources */,
 				79DCC1651F6A4A1D00D6A6CE /* NotificationViewController.swift in Sources */,
 				7957142E2005C0F70007078A /* SubwayViewController.swift in Sources */,
