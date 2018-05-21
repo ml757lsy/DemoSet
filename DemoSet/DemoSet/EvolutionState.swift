@@ -9,5 +9,9 @@
 import UIKit
 
 class EvolutionState: NSObject {
+    
+    var position:CGPoint = CGPoint.zero
+    var die:Bool = false
+    var reaction:CGFloat = 0.1
 
 }

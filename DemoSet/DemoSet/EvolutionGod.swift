@@ -23,6 +23,19 @@ class EvolutionGod: NSObject {
         grounds.removeAll()
         cells.removeAll()
         
+        for _ in 0..<cellnum {
+            let cell = EvolutionCell()
+            cells.append(cell)
+        }
+        
+        for w in 0..<groundwidth {
+            for h in 0..<height {
+                let ground = EvolutionGround()
+                grounds.append(ground)
+            }
+        }
+        print("World Created!")
+        
     }
     
     func startEvolution() {
@@ -43,12 +56,20 @@ class EvolutionGod: NSObject {
         
         for cell in cells {
             //
+            if cell.state.reaction > 0 {
+                //continue
+                cell.continueState()
+            }
         }
     }
     
     /// next -> now
     func updateCells() {
-        
+        print("Update")
+        for cell in cells {
+            cell.oldState = cell.state
+            cell.state = cell.nextState
+        }
     }
     
 }

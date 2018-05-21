@@ -79,6 +79,7 @@ class ViewController: UIViewController {
         list.append("ToDoEveryday")
         list.append("Web")
         list.append("Reader")
+        list.append("Evolution")
         
         let column:Int = 3
         let spec:CGFloat = 20
@@ -209,6 +210,10 @@ class ViewController: UIViewController {
         case 24:
             let read = ReaderViewController()
             navigationController?.pushViewController(read, animated: true)
+            break
+        case 25:
+            let evolu = EvolutionViewController()
+            navigationController?.pushViewController(evolu, animated: true)
             break
             
         default:
