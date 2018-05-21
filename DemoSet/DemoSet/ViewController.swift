@@ -8,10 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     private var list:[String] = []
     
     private let backImage = UIImageView()
+    
+    var collection = UICollectionView.init(frame: CGRect.init(), collectionViewLayout: UICollectionViewLayout.init())
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,29 +83,23 @@ class ViewController: UIViewController {
         list.append("Reader")
         list.append("Evolution")
         
-        let column:Int = 3
-        let spec:CGFloat = 20
-        let btnWidth:CGFloat = (view.width-CGFloat(column+1)*spec)/CGFloat(column)
-        let btnHeight:CGFloat = 40
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize.init(width: 100, height: 100)
         
-        for i in 0..<list.count {
-            let title = list[i]
-            
-            let button = UIButton()
-            button.frame = CGRect.init(x: spec+(btnWidth+spec)*CGFloat(i%column), y: 20+(btnHeight+spec)*CGFloat(i/column), width: btnWidth, height: btnHeight)
-            button.setTitle(title, for: .normal)
-            button.tag = i
-            button.setTitleColor(UIColor.orange, for: .normal)
-            button.layer.borderWidth = 2
-            button.layer.borderColor = UIColor.orange.cgColor
-            button.layer.cornerRadius = 4
-            button.addTarget(self, action: #selector(buttonClick(button:)), for: .touchUpInside)
-            view.addSubview(button)
+        collection = UICollectionView.init(frame: view.bounds, collectionViewLayout: layout)
+        collection.delegate = self
+        collection.dataSource = self
+        view.addSubview(collection)
+        collection.snp.makeConstraints { (make) in
+            make.left.top.bottom.right.equalTo(0)
         }
+        
+        collection.register(HomeCollectionCell.self, forCellWithReuseIdentifier: "Homecell")
+        
     }
     
-    func buttonClick(button:UIButton){
-        switch button.tag {
+    func cellClick(index:Int){
+        switch index {
         case 0:
             //
             let cell = CellularAutomatonViewController()
@@ -238,6 +234,38 @@ class ViewController: UIViewController {
     func selectorTest() {
         print("Selector Test")
     }
+    
+    /// MARK: - delegate
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return list.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell:HomeCollectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Homecell", for: indexPath) as! HomeCollectionCell
+        cell.backgroundColor = UIColor.randomColor()
+        cell.label.text = list[indexPath.row]
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize.init(width: 100, height: 80)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsetsMake(10, 10, 10, 10)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        cellClick(index: indexPath.row)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -245,5 +273,33 @@ class ViewController: UIViewController {
     }
 
 
+}
+
+class HomeCollectionCell: UICollectionViewCell {
+    //
+    let label:UILabel = UILabel()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        customInit()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func customInit() {
+        addSubview(label)
+        label.textColor = UIColor.orange
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.snp.makeConstraints { (make) in
+            make.left.top.equalTo(5)
+            make.right.equalTo(-5)
+            make.bottom.equalTo(-5)
+        }
+        
+    }
+    
 }
 
