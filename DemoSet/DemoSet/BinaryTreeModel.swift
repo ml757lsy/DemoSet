@@ -52,22 +52,59 @@ class BinaryTreeNode: NSObject {
             self.rect = CGRect.init(x: view.width/2, y: 10, width: view.width, height: 0)
         }
         
-        let label = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: 30, height: 20))
+        let label = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: 20, height: 20))
         label.text = "\(self.value)"
+        label.textAlignment = .center
         label.center = self.rect.origin
-        view.addSubview(label)
+        label.layer.cornerRadius = 10
+        label.clipsToBounds = true
+        label.backgroundColor = UIColor.randomColor()
         
         //
-        let h:CGFloat = 30
+        let h:CGFloat = 45
         
         if self.left != nil {
             self.left?.rect = CGRect.init(x: self.rect.origin.x - self.rect.size.width/4, y: self.rect.origin.y + h, width: self.rect.size.width/2, height: 0)
+            addLeftLine(view: view)
             self.left?.updateView(view: view)
         }
         if self.right != nil {
             self.right?.rect = CGRect.init(x: self.rect.origin.x + self.rect.size.width/4, y: self.rect.origin.y + h, width: self.rect.size.width/2, height: 0)
+            addRightLine(view: view)
             self.right?.updateView(view: view)
         }
+        
+        view.addSubview(label)
+    }
+    
+    func addLeftLine(view:UIView) {
+        let l = UIBezierPath.init()
+        l.lineWidth = 4
+        l.move(to: CGPoint.init(x: self.rect.origin.x, y: self.rect.origin.y))
+        l.addLine(to: CGPoint.init(x: self.rect.origin.x+1, y: self.rect.origin.y))
+        l.addLine(to: CGPoint.init(x: (self.left?.rect.origin.x)!+1, y: (self.left?.rect.origin.y)!))
+        l.addLine(to: CGPoint.init(x: (self.left?.rect.origin.x)!, y: (self.left?.rect.origin.y)!))
+        
+        let shap = CAShapeLayer.init()
+        shap.path = l.cgPath
+        shap.lineWidth = 4
+        shap.fillColor = UIColor.red.cgColor
+        view.layer.addSublayer(shap)
+    }
+    
+    func addRightLine(view:UIView) {
+        let l = UIBezierPath.init()
+        l.lineWidth = 4
+        l.move(to: CGPoint.init(x: self.rect.origin.x, y: self.rect.origin.y))
+        l.addLine(to: CGPoint.init(x: self.rect.origin.x+1, y: self.rect.origin.y))
+        l.addLine(to: CGPoint.init(x: (self.right?.rect.origin.x)!+1, y: (self.right?.rect.origin.y)!))
+        l.addLine(to: CGPoint.init(x: (self.right?.rect.origin.x)!, y: (self.right?.rect.origin.y)!))
+        
+        let shap = CAShapeLayer.init()
+        shap.path = l.cgPath
+        shap.lineWidth = 4
+        shap.fillColor = UIColor.red.cgColor
+        view.layer.addSublayer(shap)
     }
 
     
