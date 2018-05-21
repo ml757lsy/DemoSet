@@ -25,4 +25,9 @@ class EvolutionViewController: BaseViewController {
     func initEvolutionView() {
         
     }
+    
+    func initGod() {
+        let god = EvolutionGod.god
+        god.creatWorldwith(cellnum: 100, groundwidth: 100, height: 100, size: 1)
+    }
 }

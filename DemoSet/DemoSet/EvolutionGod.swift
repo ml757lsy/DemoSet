@@ -16,17 +16,39 @@ class EvolutionGod: NSObject {
     var grounds:[EvolutionGround] = []
     var cells:[EvolutionCell] = []
     
+    var timer:Timer = Timer()
     
-    func creatWorld(with cellnum:Int,ground width:Int,and height:Int, with size:CGFloat) {
+    
+    func creatWorldwith(cellnum:Int, groundwidth:Int, height:Int, size:CGFloat) {
         grounds.removeAll()
         cells.removeAll()
         
     }
     
-    func update(cells:[EvolutionCell]) {
+    func startEvolution() {
+        if timer.isValid {
+            timer.fireDate = Date.init()
+        }else{
+            timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(nextStep), userInfo: nil, repeats: true)
+        }
+    }
+    
+    func stopEvolution() {
+        timer.invalidate()
+    }
+    
+    /// get next
+    func nextStep() {
+        updateCells()
+        
         for cell in cells {
             //
         }
+    }
+    
+    /// next -> now
+    func updateCells() {
+        
     }
     
 }
