@@ -32,10 +32,11 @@ class BinaryTreeViewController: BaseViewController {
     func creatTree() {
         var values:[Int] = []
         
-        for i in 1..<20 {
+        for i in 1...20 {
             values.append(i)
         }
-        for _ in 0..<10 {
+        
+        for _ in 0..<10 {//random
             let index1 = Int(arc4random())%values.count
             var index2 = Int(arc4random())%values.count
             if index1 == index2 {

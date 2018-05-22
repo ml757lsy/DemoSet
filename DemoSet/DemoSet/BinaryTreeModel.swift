@@ -103,7 +103,7 @@ class BinaryTreeNode: NSObject {
         let shap = CAShapeLayer.init()
         shap.path = l.cgPath
         shap.lineWidth = 4
-        shap.fillColor = UIColor.red.cgColor
+        shap.fillColor = UIColor.blue.cgColor
         view.layer.addSublayer(shap)
     }
 
