@@ -10,6 +10,8 @@ import UIKit
 
 class MaskViewController: BaseViewController {
 
+    private let imageMaskView:UIView = UIView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.yellow//绿色背景
@@ -69,6 +71,29 @@ class MaskViewController: BaseViewController {
                 })
             })
         }
+        
+        //
+        let longtap = UIPanGestureRecognizer.init(target: self, action: #selector(longTapHandler(with:)))
+        view.addGestureRecognizer(longtap)
+        
+        let image1 = UIImage.init(named: "banner1")
+        let image2 = UIImage.init(named: "banner5")
+        
+        let img1 = UIImageView.init(frame: CGRect.init(x: 10, y: 300, width: 300, height: 300))
+        img1.image = image1
+        img1.clipsToBounds = true
+        view.addSubview(img1)
+        
+        let img2 = UIImageView.init(frame: CGRect.init(x: 10, y: 300, width: 300, height: 300))
+        img2.image = image2
+        img2.clipsToBounds = true
+        view.addSubview(img2)
+        
+        img2.mask = imageMaskView
+        imageMaskView.backgroundColor = UIColor.white
+        imageMaskView.frame = CGRect.init(x: 0, y: 0, width: 80, height: 80)
+        
+        
         return
         //
         let back = UIView.init(frame: CGRect.init(x: 20, y: 140, width: 100, height: 100))
@@ -92,6 +117,11 @@ class MaskViewController: BaseViewController {
         back.backgroundColor = UIColor.blue
         back.layer.mask = shap
         
+    }
+    
+    func longTapHandler(with tap:UIPanGestureRecognizer) {
+        let p = tap.location(in: view)
+        imageMaskView.center = CGPoint.init(x: p.x-10, y: p.y-300)
     }
     
     func image() {
