@@ -16,6 +16,9 @@
 		791FF81820B2753C00AD6B2D /* EvolutionGod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791FF81720B2753C00AD6B2D /* EvolutionGod.swift */; };
 		791FF81A20B2773200AD6B2D /* EvolutionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791FF81920B2773200AD6B2D /* EvolutionState.swift */; };
 		791FF81C20B27EE800AD6B2D /* EvolutionAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791FF81B20B27EE800AD6B2D /* EvolutionAttribute.swift */; };
+		791FF81F20B3EACF00AD6B2D /* PasswordProduceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791FF81E20B3EACF00AD6B2D /* PasswordProduceViewController.swift */; };
+		791FF82120B3EAE900AD6B2D /* PasswordProduceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791FF82020B3EAE900AD6B2D /* PasswordProduceManager.swift */; };
+		791FF82320B3FEC900AD6B2D /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791FF82220B3FEC900AD6B2D /* String+Extension.swift */; };
 		7924D1C91FD9364100CEECB6 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7924D1C81FD9364100CEECB6 /* UIImageView+Extension.swift */; };
 		792E5E901FF0F530007E7605 /* CasinoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792E5E8F1FF0F530007E7605 /* CasinoViewController.swift */; };
 		7955CEEC1F8C729A007F6DC2 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955CEEB1F8C729A007F6DC2 /* QRCodeView.swift */; };
@@ -148,6 +151,9 @@
 		791FF81720B2753C00AD6B2D /* EvolutionGod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolutionGod.swift; sourceTree = "<group>"; };
 		791FF81920B2773200AD6B2D /* EvolutionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolutionState.swift; sourceTree = "<group>"; };
 		791FF81B20B27EE800AD6B2D /* EvolutionAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolutionAttribute.swift; sourceTree = "<group>"; };
+		791FF81E20B3EACF00AD6B2D /* PasswordProduceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordProduceViewController.swift; sourceTree = "<group>"; };
+		791FF82020B3EAE900AD6B2D /* PasswordProduceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordProduceManager.swift; sourceTree = "<group>"; };
+		791FF82220B3FEC900AD6B2D /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		7924D1C81FD9364100CEECB6 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		792E5E8F1FF0F530007E7605 /* CasinoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasinoViewController.swift; sourceTree = "<group>"; };
 		7955CEEB1F8C729A007F6DC2 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
@@ -276,6 +282,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		791FF81D20B3EA7C00AD6B2D /* PassWordProduce */ = {
+			isa = PBXGroup;
+			children = (
+				791FF81E20B3EACF00AD6B2D /* PasswordProduceViewController.swift */,
+				791FF82020B3EAE900AD6B2D /* PasswordProduceManager.swift */,
+			);
+			name = PassWordProduce;
+			sourceTree = "<group>";
+		};
 		7924D1CA1FDA672000CEECB6 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +299,7 @@
 				7924D1C81FD9364100CEECB6 /* UIImageView+Extension.swift */,
 				79B647D01F74DE8A0002103E /* UIDevide+Extension.swift */,
 				796468111F99CF6E0091D671 /* UIColor+Extension.swift */,
+				791FF82220B3FEC900AD6B2D /* String+Extension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -641,6 +657,7 @@
 		79FB35031EEAA65D0083ED79 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				791FF81D20B3EA7C00AD6B2D /* PassWordProduce */,
 				79D650E520AD5C89009E27CF /* Reader */,
 				798AE3E720A9A1B00019E38C /* WebView */,
 				798AE3E420A1EAD20019E38C /* ToDoEveryday */,
@@ -993,6 +1010,7 @@
 				791FF81C20B27EE800AD6B2D /* EvolutionAttribute.swift in Sources */,
 				79A923F41EEAA30D00D91121 /* ViewController.swift in Sources */,
 				79FB35091EEAAB850083ED79 /* Cellular.swift in Sources */,
+				791FF82120B3EAE900AD6B2D /* PasswordProduceManager.swift in Sources */,
 				798806701F4FB944001FB972 /* ImageCrawlerViewController.swift in Sources */,
 				7924D1C91FD9364100CEECB6 /* UIImageView+Extension.swift in Sources */,
 				7992BF6B1EF3869E00AE829A /* Numberboard.swift in Sources */,
@@ -1026,8 +1044,10 @@
 				79DCC1731F6D0D1F00D6A6CE /* QRCodeViewController.swift in Sources */,
 				791FF81620B274B500AD6B2D /* EvolutionGround.swift in Sources */,
 				79B26AA21F0DD9BE00B54EC2 /* SkillModel.swift in Sources */,
+				791FF82320B3FEC900AD6B2D /* String+Extension.swift in Sources */,
 				79DCC1651F6A4A1D00D6A6CE /* NotificationViewController.swift in Sources */,
 				7957142E2005C0F70007078A /* SubwayViewController.swift in Sources */,
+				791FF81F20B3EACF00AD6B2D /* PasswordProduceViewController.swift in Sources */,
 				795853BA1EEFB58B00F214A5 /* SortColumn.swift in Sources */,
 				79B26A8C1F0A427000B54EC2 /* FGOViewController.swift in Sources */,
 				79CB22791F97287A00C9FE1E /* BaseBannerView.swift in Sources */,

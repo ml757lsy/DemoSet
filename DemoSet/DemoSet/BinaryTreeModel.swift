@@ -455,11 +455,46 @@ class BinaryTreeNode: NSObject {
             let sub = queueArray[0]
             queueArray.remove(at: 0)
             
-            let l = BinaryTreeNode.depthOfTree(node: sub.left)
-            let r = BinaryTreeNode.depthOfTree(node: sub.right)
+            let ld = BinaryTreeNode.depthOfTree(node: sub.left)
+            let rd = BinaryTreeNode.depthOfTree(node: sub.right)
+            if abs(ld-rd) <= 1 {
+                //ok
+                if sub.left != nil {
+                    queueArray.append(sub.left!)
+                }
+                if sub.right != nil {
+                    queueArray.append(sub.right!)
+                }
+            }else{
+                if ld > rd {        //1.left
+                    let lld = BinaryTreeNode.depthOfTree(node: sub.left?.left)
+                    let lrd = BinaryTreeNode.depthOfTree(node: sub.left?.right)
+                    
+                    if lld > lrd {  //1.1 left left  toright
+                        let rrt = rightRoteTree(node: sub)
+                        queueArray.append(rrt)
+                    }else{          //1.2 left right toleft roright
+                        let lrt = leftRoteTree(node: sub.left!)
+                        sub.left = lrt
+                        queueArray.append(sub)
+                    }
+                }else{              //2.right
+                    let rld = BinaryTreeNode.depthOfTree(node: sub.right?.left)
+                    let rrd =  BinaryTreeNode.depthOfTree(node: sub.right?.right)
+                    
+                    if rrd > rld {  //2.1 right right toleft
+                        let lrt = leftRoteTree(node: sub)
+                        queueArray.append(lrt)
+                    }else{          //2.2 right left toright toleft
+                        let rrt = rightRoteTree(node: sub.right!)
+                        sub.right = rrt
+                        queueArray.append(sub)
+                    }
+                }
+            }
         }
         
-        return BinaryTreeNode()
+        return node
     }
     
     /// 左旋

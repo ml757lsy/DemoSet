@@ -82,6 +82,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         list.append("Web")
         list.append("Reader")
         list.append("Evolution")
+        list.append("Password Produce")
         
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize.init(width: 100, height: 100)
@@ -210,6 +211,10 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         case 25:
             let evolu = EvolutionViewController()
             navigationController?.pushViewController(evolu, animated: true)
+            break
+        case 26:
+            let pp = PasswordProduceViewController()
+            navigationController?.pushViewController(pp, animated: true)
             break
             
         default:

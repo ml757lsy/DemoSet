@@ -122,7 +122,11 @@ class BinaryTreeViewController: BaseViewController {
         print(isc+"是完全二叉树")
         
         //
+        let avlView = UIView.init(frame: CGRect.init(x: 0, y: 400, width: view.frame.size.width, height: 400))
+        view.addSubview(avlView)
+        
         let avl = BinaryTreeNode.AVLtransFormTree(node: tree)
+        avl.updateView(view: avlView)
         
     }
     
