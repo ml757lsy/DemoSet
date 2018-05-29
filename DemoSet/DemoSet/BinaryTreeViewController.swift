@@ -10,7 +10,7 @@ import UIKit
 
 // 二叉树相关
 class BinaryTreeViewController: BaseViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +21,8 @@ class BinaryTreeViewController: BaseViewController {
         button.setTitle("Creat", for: .normal)
         button.addTarget(self, action: #selector(creatTree), for: .touchUpInside)
         button.setTitleColor(UIColor.orange, for: .normal)
-        view.addSubview(button)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: button)
     }
     
     override func didReceiveMemoryWarning() {
@@ -47,9 +48,21 @@ class BinaryTreeViewController: BaseViewController {
         
         print(values)
         
+        let valueLabel = UILabel()
+        valueLabel.frame = CGRect.init(x: 10, y: 0, width: view.width-20, height: 20)
+        view.addSubview(valueLabel)
+        valueLabel.text = values.map({ (i) -> String in
+            return String.init(format: "%d,", i)
+        }).joined()
+
+        
+        
         let tree = BinaryTreeNode.creatSortTree(with: values)
         
-        tree.updateView(view: view)
+        let treeview = UIView.init(frame: CGRect.init(x: 10, y: 20, width: view.width-20, height: 320))
+        view.addSubview(treeview)
+        
+        tree.updateView(view: treeview)
         
         //
         var preL:[Int] = []
@@ -122,7 +135,7 @@ class BinaryTreeViewController: BaseViewController {
         print(isc+"是完全二叉树")
         
         //
-        let avlView = UIView.init(frame: CGRect.init(x: 0, y: 400, width: view.frame.size.width, height: 400))
+        let avlView = UIView.init(frame: CGRect.init(x: 10, y: 330, width: view.width-20, height: 320))
         view.addSubview(avlView)
         
         let avl = BinaryTreeNode.AVLtransFormTree(node: tree)

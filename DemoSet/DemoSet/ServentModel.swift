@@ -167,6 +167,8 @@ class ServentModel: FGOModel {
      k 终值
      p0 初始值
      r 曲度
+     
+     y=1/(a+b*exp(-x))
      */
 }
 

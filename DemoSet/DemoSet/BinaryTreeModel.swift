@@ -15,6 +15,7 @@ class BinaryTreeNode: NSObject {
     
     var left:BinaryTreeNode?
     var right:BinaryTreeNode?
+    var balance:Int = 0//平衡性
     
     // 位置，显示定位用的
     var rect:CGRect = CGRect.zero
@@ -30,7 +31,53 @@ class BinaryTreeNode: NSObject {
         return root!
     }
     
+    func creatAVLTree(with values:[Int]) -> BinaryTreeNode {
+        var root:BinaryTreeNode?
+        for value in values {
+            root = BinaryTreeNode.addAVLNewNode(root: root, vale: value)
+        }
+        return root!
+    }
+    
+    class func foundNode(root:BinaryTreeNode?, value:Int) -> BinaryTreeNode? {
+        
+        if root == nil {
+            return nil
+        }else
+        if value < (root?.value)! {
+            return foundNode(root: root?.left, value: value)
+        }else
+        if value > (root?.value)! {
+            return foundNode(root: root?.right, value: value)
+        }else{
+            //  ==
+            return root
+        }
+    }
+    
+    class func foundFather(root:BinaryTreeNode?, node:BinaryTreeNode) -> BinaryTreeNode? {
+        if root == nil {
+            return nil
+        }else
+            if root?.left == node || root?.right == node {
+                return root
+            }else{
+                let l = foundFather(root: root?.left, node: node)
+                if l != nil {
+                    return l
+                }
+                let r = foundFather(root: root?.right, node: node)
+                if r != nil {
+                    return r
+                }
+        }
+        return nil
+    }
+    
     class func addNewNode(with root:BinaryTreeNode?, and value:Int) -> BinaryTreeNode {
+        if foundNode(root: root, value: value) != nil {
+            return root!
+        }
         if root == nil  {
             let node = BinaryTreeNode()
             node.value = value
@@ -47,6 +94,21 @@ class BinaryTreeNode: NSObject {
         }
     }
     
+    class func deleteNode(with root:BinaryTreeNode, and value:Int) -> BinaryTreeNode {
+        
+        let node = foundNode(root: root, value: value)
+        if node?.left != nil && node?.right == nil {
+            //only left
+            let fa = foundFather(root: root, node: node!)
+            fa?.left = node?.left
+            node?.left = nil
+        }
+        
+        return root
+    }
+    
+    //MARK: - UI
+    
     func updateView(view:UIView) {
         if self.rect == CGRect.zero {
             self.rect = CGRect.init(x: view.width/2, y: 10, width: view.width, height: 0)
@@ -60,8 +122,10 @@ class BinaryTreeNode: NSObject {
         label.clipsToBounds = true
         label.backgroundColor = UIColor.randomColor()
         
+        let deep = BinaryTreeNode.depthOfTree(node: self)
+        
         //
-        let h:CGFloat = 45
+        let h:CGFloat = (view.frame.size.height-self.rect.origin.y)/CGFloat(deep+1)
         
         if self.left != nil {
             self.left?.rect = CGRect.init(x: self.rect.origin.x - self.rect.size.width/4, y: self.rect.origin.y + h, width: self.rect.size.width/2, height: 0)
@@ -107,7 +171,7 @@ class BinaryTreeNode: NSObject {
         view.layer.addSublayer(shap)
     }
 
-    
+    //MARK: - info
     /// 先序遍历 根-左-右
     ///
     /// - Parameters:
@@ -394,7 +458,6 @@ class BinaryTreeNode: NSObject {
         return node
     }
     
-    
     /// 是否是完全二叉树
     ///
     /// - Parameter node: 树
@@ -442,6 +505,8 @@ class BinaryTreeNode: NSObject {
         }
         return isComplate
     }
+    
+    //MARK: - AVL
     /// 生成平衡二叉树
     ///
     /// - Parameter node: 树
@@ -451,14 +516,22 @@ class BinaryTreeNode: NSObject {
         var queueArray:[BinaryTreeNode] = []
         queueArray.append(node)
         
+        var temp:BinaryTreeNode = BinaryTreeNode()
+        
         while queueArray.count > 0 {
             let sub = queueArray[0]
             queueArray.remove(at: 0)
             
             let ld = BinaryTreeNode.depthOfTree(node: sub.left)
             let rd = BinaryTreeNode.depthOfTree(node: sub.right)
+            print("Root:",sub.value)
+            print(" Left:",ld,"--Right:",rd)
             if abs(ld-rd) <= 1 {
                 //ok
+                print(sub.value," Balance!")
+                if temp.value == 0 {
+                    temp = sub
+                }
                 if sub.left != nil {
                     queueArray.append(sub.left!)
                 }
@@ -471,9 +544,11 @@ class BinaryTreeNode: NSObject {
                     let lrd = BinaryTreeNode.depthOfTree(node: sub.left?.right)
                     
                     if lld > lrd {  //1.1 left left  toright
+                        print("LL",sub.value)
                         let rrt = rightRoteTree(node: sub)
                         queueArray.append(rrt)
                     }else{          //1.2 left right toleft roright
+                        print("LR",sub.value)
                         let lrt = leftRoteTree(node: sub.left!)
                         sub.left = lrt
                         queueArray.append(sub)
@@ -483,9 +558,11 @@ class BinaryTreeNode: NSObject {
                     let rrd =  BinaryTreeNode.depthOfTree(node: sub.right?.right)
                     
                     if rrd > rld {  //2.1 right right toleft
+                        print("RR",sub.value)
                         let lrt = leftRoteTree(node: sub)
                         queueArray.append(lrt)
                     }else{          //2.2 right left toright toleft
+                        print("RL",sub.value)
                         let rrt = rightRoteTree(node: sub.right!)
                         sub.right = rrt
                         queueArray.append(sub)
@@ -494,7 +571,16 @@ class BinaryTreeNode: NSObject {
             }
         }
         
-        return node
+        return temp
+    }
+    
+    class func addAVLNewNode(root:BinaryTreeNode?, vale:Int) -> BinaryTreeNode {
+        if (BinaryTreeNode.foundNode(root: root, value: vale) != nil) {
+            return root!
+        }
+        
+        
+        return root!
     }
     
     /// 左旋
@@ -510,7 +596,7 @@ class BinaryTreeNode: NSObject {
         r?.left = node
         node.right = rl
         
-        return node
+        return r!
     }
     
     /// 右旋
@@ -526,9 +612,11 @@ class BinaryTreeNode: NSObject {
         l?.right = node
         node.left = lr
         
-        return node
+        return l!
     }
 }
+
+//MARK: - Node
 
 class BinaryTreeNodeProperty: NSObject {
     var depth:Int = 0

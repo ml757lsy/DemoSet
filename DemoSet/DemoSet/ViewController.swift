@@ -83,6 +83,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         list.append("Reader")
         list.append("Evolution")
         list.append("Password Produce")
+        list.append("I18N")
         
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize.init(width: 100, height: 100)
@@ -216,6 +217,10 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             let pp = PasswordProduceViewController()
             navigationController?.pushViewController(pp, animated: true)
             break
+        case 27:
+            let i18n = I18NViewController()
+            navigationController?.pushViewController(i18n, animated: true)
+            break
             
         default:
             break
@@ -234,6 +239,9 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         let selector = NSSelectorFromString("selectorTest")
         perform(selector, with: nil, afterDelay: 0.1)
         
+        let languages = UserDefaults.standard.value(forKey: "AppleLanguages")
+        print(languages);
+        
     }
     
     func selectorTest() {
@@ -248,7 +256,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:HomeCollectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Homecell", for: indexPath) as! HomeCollectionCell
         cell.backgroundColor = UIColor.randomColor()
-        cell.label.text = list[indexPath.row]
+        cell.label.I18NLocalized(key: list[indexPath.row])
         return cell
     }
     
@@ -303,7 +311,15 @@ class HomeCollectionCell: UICollectionViewCell {
             make.right.equalTo(-5)
             make.bottom.equalTo(-5)
         }
-        
+        enableI18N()
+    }
+    
+    override func refreshI18N(noti: NSNotification) {
+        //
+    }
+    
+    deinit {
+        disableI18N()
     }
     
 }

@@ -1,0 +1,35 @@
+/* 
+  I18N.strings
+  DemoSet
+
+  Created by 李世远 on 2018/5/28.
+  Copyright © 2018年 Far. All rights reserved.
+*/
+
+"Cell" = "元胞自动机";
+"Sort" = "정렬 알고리즘";
+"Numberboard" = "";
+"Animation" = "";
+"FGO" = "";
+"IconChange" = "";
+"ImageCrawler" = "";
+"PointLine" = "";
+"QRCode" = "";
+"Face" = "";
+"Wave" = "";
+"MessageFilter" = "";
+"NFC" = "";
+"Bluetooth" = "";
+"MaskView" = "";
+"Lottery" = "";
+"Math" = "수학";
+"Banner" = "";
+"AppStore" = "";
+"Runtime" = "";
+"Casino" = "";
+"Subway" = "";
+"ToDoEveryday" = "";
+"Web" = "";
+"Reader" = "";
+"Evolution" = "";
+"Password Produce" = "";

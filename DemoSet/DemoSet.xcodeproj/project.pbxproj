@@ -21,6 +21,12 @@
 		791FF82320B3FEC900AD6B2D /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791FF82220B3FEC900AD6B2D /* String+Extension.swift */; };
 		7924D1C91FD9364100CEECB6 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7924D1C81FD9364100CEECB6 /* UIImageView+Extension.swift */; };
 		792E5E901FF0F530007E7605 /* CasinoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792E5E8F1FF0F530007E7605 /* CasinoViewController.swift */; };
+		7933A3D120BBE33300AE36D7 /* I18NViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7933A3D020BBE33300AE36D7 /* I18NViewController.swift */; };
+		7933A3D320BBE35B00AE36D7 /* I18NManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7933A3D220BBE35B00AE36D7 /* I18NManager.swift */; };
+		7933A3D620BBE60800AE36D7 /* I18N.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7933A3D820BBE60800AE36D7 /* I18N.strings */; };
+		7933A3DD20BC070B00AE36D7 /* UIView+I18NExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7933A3DC20BC070B00AE36D7 /* UIView+I18NExtension.swift */; };
+		7933A3DF20BC161A00AE36D7 /* UILabel+I18NExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7933A3DE20BC161A00AE36D7 /* UILabel+I18NExtension.swift */; };
+		7933A3E120BCFED000AE36D7 /* UIButton+I18NExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7933A3E020BCFED000AE36D7 /* UIButton+I18NExtension.swift */; };
 		7955CEEC1F8C729A007F6DC2 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955CEEB1F8C729A007F6DC2 /* QRCodeView.swift */; };
 		7955CEEE1F8C730D007F6DC2 /* QRCodeMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955CEED1F8C730D007F6DC2 /* QRCodeMaskView.swift */; };
 		7955CEF11F8CBA25007F6DC2 /* BluetoothConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955CEF01F8CBA25007F6DC2 /* BluetoothConnectionViewController.swift */; };
@@ -156,6 +162,22 @@
 		791FF82220B3FEC900AD6B2D /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		7924D1C81FD9364100CEECB6 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		792E5E8F1FF0F530007E7605 /* CasinoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasinoViewController.swift; sourceTree = "<group>"; };
+		7933A3C720BBD97000AE36D7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		7933A3C820BBD97000AE36D7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		7933A3C920BBD98900AE36D7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		7933A3CA20BBD98900AE36D7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		7933A3CB20BBD99100AE36D7 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		7933A3CC20BBD99100AE36D7 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		7933A3CE20BBDA1500AE36D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		7933A3D020BBE33300AE36D7 /* I18NViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = I18NViewController.swift; sourceTree = "<group>"; };
+		7933A3D220BBE35B00AE36D7 /* I18NManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = I18NManager.swift; sourceTree = "<group>"; };
+		7933A3D720BBE60800AE36D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/I18N.strings; sourceTree = "<group>"; };
+		7933A3D920BBE60A00AE36D7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/I18N.strings"; sourceTree = "<group>"; };
+		7933A3DA20BBE60A00AE36D7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/I18N.strings; sourceTree = "<group>"; };
+		7933A3DB20BBE60B00AE36D7 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/I18N.strings; sourceTree = "<group>"; };
+		7933A3DC20BC070B00AE36D7 /* UIView+I18NExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+I18NExtension.swift"; sourceTree = "<group>"; };
+		7933A3DE20BC161A00AE36D7 /* UILabel+I18NExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+I18NExtension.swift"; sourceTree = "<group>"; };
+		7933A3E020BCFED000AE36D7 /* UIButton+I18NExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+I18NExtension.swift"; sourceTree = "<group>"; };
 		7955CEEB1F8C729A007F6DC2 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
 		7955CEED1F8C730D007F6DC2 /* QRCodeMaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeMaskView.swift; sourceTree = "<group>"; };
 		7955CEF01F8CBA25007F6DC2 /* BluetoothConnectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothConnectionViewController.swift; sourceTree = "<group>"; };
@@ -295,6 +317,9 @@
 			isa = PBXGroup;
 			children = (
 				795853BB1EEFBB4000F214A5 /* UIView+Extension.swift */,
+				7933A3DC20BC070B00AE36D7 /* UIView+I18NExtension.swift */,
+				7933A3DE20BC161A00AE36D7 /* UILabel+I18NExtension.swift */,
+				7933A3E020BCFED000AE36D7 /* UIButton+I18NExtension.swift */,
 				79DCC16F1F6CC81200D6A6CE /* UIImage+Extension.swift */,
 				7924D1C81FD9364100CEECB6 /* UIImageView+Extension.swift */,
 				79B647D01F74DE8A0002103E /* UIDevide+Extension.swift */,
@@ -310,6 +335,15 @@
 				792E5E8F1FF0F530007E7605 /* CasinoViewController.swift */,
 			);
 			name = Casino;
+			sourceTree = "<group>";
+		};
+		7933A3CF20BBE31800AE36D7 /* I18N */ = {
+			isa = PBXGroup;
+			children = (
+				7933A3D020BBE33300AE36D7 /* I18NViewController.swift */,
+				7933A3D220BBE35B00AE36D7 /* I18NManager.swift */,
+			);
+			name = I18N;
 			sourceTree = "<group>";
 		};
 		7955CEEF1F8CBA02007F6DC2 /* BluetoothConnection */ = {
@@ -428,6 +462,7 @@
 				79FB35031EEAA65D0083ED79 /* Business */,
 				79A923F11EEAA30D00D91121 /* AppDelegate.swift */,
 				79A923F31EEAA30D00D91121 /* ViewController.swift */,
+				7933A3D820BBE60800AE36D7 /* I18N.strings */,
 				79DCC16C1F6A72F300D6A6CE /* Second.storyboard */,
 				79A923F51EEAA30D00D91121 /* Main.storyboard */,
 				79B26AB51F185EF600B54EC2 /* Icon2@2x.png */,
@@ -657,6 +692,7 @@
 		79FB35031EEAA65D0083ED79 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				7933A3CF20BBE31800AE36D7 /* I18N */,
 				791FF81D20B3EA7C00AD6B2D /* PassWordProduce */,
 				79D650E520AD5C89009E27CF /* Reader */,
 				798AE3E720A9A1B00019E38C /* WebView */,
@@ -853,6 +889,9 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				ja,
+				ko,
 			);
 			mainGroup = 79A923E51EEAA30D00D91121;
 			productRefGroup = 79A923EF1EEAA30D00D91121 /* Products */;
@@ -877,6 +916,7 @@
 				795714302005C0F70007078A /* LineData.plist in Resources */,
 				79B26AB81F185F0300B54EC2 /* Icon2@3x.png in Resources */,
 				79A923F91EEAA30D00D91121 /* Assets.xcassets in Resources */,
+				7933A3D620BBE60800AE36D7 /* I18N.strings in Resources */,
 				79A923F71EEAA30D00D91121 /* Main.storyboard in Resources */,
 				7957142F2005C0F70007078A /* StationData.plist in Resources */,
 				79B26AB61F185EF600B54EC2 /* Icon2@2x.png in Resources */,
@@ -979,14 +1019,17 @@
 				79DCC1601F67ECE100D6A6CE /* PointLineViewController.swift in Sources */,
 				79B647641F7263780002103E /* MessageFliterViewController.swift in Sources */,
 				79B26A741F05068B00B54EC2 /* LeafView.swift in Sources */,
+				7933A3D320BBE35B00AE36D7 /* I18NManager.swift in Sources */,
 				7992BF691EF3866E00AE829A /* NumberboardViewController.swift in Sources */,
 				79B26A961F0A45CD00B54EC2 /* NoblePhantasmModel.swift in Sources */,
 				795853B81EEF954700F214A5 /* SortViewController.swift in Sources */,
 				79A4F5A81FD791A2001E9A37 /* BaseTabBarViewController.swift in Sources */,
 				79A4F5AE1FD7CCB7001E9A37 /* AppStoreContentCell.swift in Sources */,
 				79B647D11F74DE8A0002103E /* UIDevide+Extension.swift in Sources */,
+				7933A3E120BCFED000AE36D7 /* UIButton+I18NExtension.swift in Sources */,
 				79B26A721F05065E00B54EC2 /* AnimationViewController.swift in Sources */,
 				796468121F99CF6E0091D671 /* UIColor+Extension.swift in Sources */,
+				7933A3D120BBE33300AE36D7 /* I18NViewController.swift in Sources */,
 				791FF81820B2753C00AD6B2D /* EvolutionGod.swift in Sources */,
 				791FF81220B2743000AD6B2D /* EvolutionViewController.swift in Sources */,
 				79A4F59D1FCD7119001E9A37 /* SRPGViewController.swift in Sources */,
@@ -1011,6 +1054,7 @@
 				79A923F41EEAA30D00D91121 /* ViewController.swift in Sources */,
 				79FB35091EEAAB850083ED79 /* Cellular.swift in Sources */,
 				791FF82120B3EAE900AD6B2D /* PasswordProduceManager.swift in Sources */,
+				7933A3DD20BC070B00AE36D7 /* UIView+I18NExtension.swift in Sources */,
 				798806701F4FB944001FB972 /* ImageCrawlerViewController.swift in Sources */,
 				7924D1C91FD9364100CEECB6 /* UIImageView+Extension.swift in Sources */,
 				7992BF6B1EF3869E00AE829A /* Numberboard.swift in Sources */,
@@ -1033,6 +1077,7 @@
 				79B647D41F7899FD0002103E /* NFCViewController.swift in Sources */,
 				79CB22771F97032000C9FE1E /* BannerViewController.swift in Sources */,
 				79E29D771FECD7B400EC4577 /* RuntimeViewController.swift in Sources */,
+				7933A3DF20BC161A00AE36D7 /* UILabel+I18NExtension.swift in Sources */,
 				79A4F5A41FD6A18D001E9A37 /* AppStoreViewController.swift in Sources */,
 				79CB22741F95EBCA00C9FE1E /* LotteryViewController.swift in Sources */,
 				798AE3E920A9A1C00019E38C /* WebViewController.swift in Sources */,
@@ -1100,10 +1145,25 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		7933A3D820BBE60800AE36D7 /* I18N.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7933A3D720BBE60800AE36D7 /* en */,
+				7933A3D920BBE60A00AE36D7 /* zh-Hans */,
+				7933A3DA20BBE60A00AE36D7 /* ja */,
+				7933A3DB20BBE60B00AE36D7 /* ko */,
+			);
+			name = I18N.strings;
+			sourceTree = "<group>";
+		};
 		79A923F51EEAA30D00D91121 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				79A923F61EEAA30D00D91121 /* Base */,
+				7933A3C720BBD97000AE36D7 /* zh-Hans */,
+				7933A3C920BBD98900AE36D7 /* ja */,
+				7933A3CB20BBD99100AE36D7 /* ko */,
+				7933A3CE20BBDA1500AE36D7 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1112,6 +1172,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				79A923FB1EEAA30D00D91121 /* Base */,
+				7933A3C820BBD97000AE36D7 /* zh-Hans */,
+				7933A3CA20BBD98900AE36D7 /* ja */,
+				7933A3CC20BBD99100AE36D7 /* ko */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1123,6 +1186,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1172,6 +1236,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

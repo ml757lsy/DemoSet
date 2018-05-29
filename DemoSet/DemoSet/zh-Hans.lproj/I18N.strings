@@ -1,0 +1,35 @@
+/* 
+  I18N.strings
+  DemoSet
+
+  Created by 李世远 on 2018/5/28.
+  Copyright © 2018年 Far. All rights reserved.
+*/
+
+"Cell" = "元胞自动机";
+"Sort" = "排序";
+"Numberboard" = "数字特效";
+"Animation" = "动画";
+"FGO" = "冠位指定";
+"IconChange" = "变图标";
+"ImageCrawler" = "爬图";
+"PointLine" = "点线效果";
+"QRCode" = "二维码";
+"Face" = "人脸识别";
+"Wave" = "波形";
+"MessageFilter" = "短信过滤";
+"NFC" = "NFC";
+"Bluetooth" = "蓝牙";
+"MaskView" = "遮罩";
+"Lottery" = "彩票号";
+"Math" = "数学";
+"Banner" = "轮播图";
+"AppStore" = "仿App Store";
+"Runtime" = "运行时";
+"Casino" = "赌博";
+"Subway" = "地铁";
+"ToDoEveryday" = "每日任务";
+"Web" = "网页相关";
+"Reader" = "阅读器";
+"Evolution" = "进化";
+"Password Produce" = "密码生成";
