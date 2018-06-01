@@ -91,6 +91,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         collection = UICollectionView.init(frame: view.bounds, collectionViewLayout: layout)
         collection.delegate = self
         collection.dataSource = self
+        collection.backgroundColor = UIColor.clear
         view.addSubview(collection)
         collection.snp.makeConstraints { (make) in
             make.left.top.bottom.right.equalTo(0)
@@ -241,6 +242,13 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         
         let languages = UserDefaults.standard.value(forKey: "AppleLanguages")
         print(languages);
+        
+        
+        let calander = NSCalendar.init(identifier: .chinese);
+        let m = calander?.component(.month, from: Date())
+        let d = calander?.component(.day, from: Date())
+        
+        print(m,d)
         
     }
     

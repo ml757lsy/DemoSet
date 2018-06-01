@@ -62,7 +62,7 @@ class SkillModel: FGOModel {
     var selfBuffers:[BufferModel] = []
     var enemyBuffers:[BufferModel] = []
     
-    //MARK: --
+    //MARK: -
     
     /// 骑乘
     ///
@@ -235,6 +235,31 @@ class SkillModel: FGOModel {
         propmade.selfBuffers.append(propBuff)
         
         return propmade
+    }
+    
+    /// 臻至化境
+    ///
+    /// - Parameter baseLevel: 固有等级
+    /// - Returns: skill
+    class func consummate(baseLevel:BaseLevel) -> SkillModel {
+        //value
+        
+        //buff
+        //5% 魅惑100% 即死免疫
+        
+        //skill
+        let consummate = SkillModel()
+        
+        return consummate
+    }
+    
+    /// 反救世主
+    ///
+    /// - Parameter baseLevel: 固有等级
+    /// - Returns: skill
+    class func resavior(baseLevel:BaseLevel) -> SkillModel {
+        
+        return SkillModel()
     }
     
     

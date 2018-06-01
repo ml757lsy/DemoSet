@@ -88,8 +88,6 @@ class I18NManager: NSObject {
     ///   - observer: observe
     ///   - aSelector: selector
     func addI18NObserver(_ observer: NSObject, selector aSelector: Selector) {
-        let info = observer.observationInfo
-        print(observer)
         NotificationCenter.default.addObserver(observer, selector: aSelector, name: Notification.Name(LANGUAGE_SET_I18N), object: nil)
     }
     

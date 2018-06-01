@@ -1,15 +1,15 @@
 //
-//  DemoSetTests.swift
+//  SortTest.swift
 //  DemoSetTests
 //
-//  Created by lishiyuan on 2017/6/9.
-//  Copyright © 2017年 Far. All rights reserved.
+//  Created by 李世远 on 2018/5/30.
+//  Copyright © 2018年 Far. All rights reserved.
 //
 
 import XCTest
 @testable import DemoSet
 
-class DemoSetTests: XCTestCase {
+class SortTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -24,15 +24,17 @@ class DemoSetTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let v = ViewController()
-        print(v.view.subviews);
+        let s = SortViewController()
+        s.viewDidLoad()
+        s.insertSort()
+        s.quickSort()
+        s.compareSort()
+        
     }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
-            let v = MathViewController()
-            v.Fibinacci()
             // Put the code you want to measure the time of here.
         }
     }

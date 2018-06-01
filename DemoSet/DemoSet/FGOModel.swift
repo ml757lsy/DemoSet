@@ -64,15 +64,20 @@ struct classCorrect {
     let Saber:CGFloat       = 1.0
     let Archer:CGFloat      = 0.95
     let Lancer:CGFloat      = 1.05
+    
     let Rider:CGFloat       = 1.0
     let Caster:CGFloat      = 0.9
     let Assassin:CGFloat    = 0.9
+    
     let Berserker:CGFloat   = 1.1
     let Ruler:CGFloat       = 1.1
     let Shielder:CGFloat    = 1.0
-    let Alterego:CGFloat    = 1.0
     let Avenger:CGFloat     = 1.1
+    
+    let Alterego:CGFloat    = 1.0
     let Beast:CGFloat       = 1.0
+    let Frogener:CGFloat    = 1.0
+    let MoonCancer:CGFloat  = 1.0
     
     func classcorrect(with serventClass:ClassType) -> CGFloat{
         switch serventClass {
