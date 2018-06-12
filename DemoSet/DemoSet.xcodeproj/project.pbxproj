@@ -319,9 +319,6 @@
 			isa = PBXGroup;
 			children = (
 				795853BB1EEFBB4000F214A5 /* UIView+Extension.swift */,
-				7933A3DC20BC070B00AE36D7 /* UIView+I18NExtension.swift */,
-				7933A3DE20BC161A00AE36D7 /* UILabel+I18NExtension.swift */,
-				7933A3E020BCFED000AE36D7 /* UIButton+I18NExtension.swift */,
 				79DCC16F1F6CC81200D6A6CE /* UIImage+Extension.swift */,
 				7924D1C81FD9364100CEECB6 /* UIImageView+Extension.swift */,
 				79B647D01F74DE8A0002103E /* UIDevide+Extension.swift */,
@@ -344,6 +341,9 @@
 			children = (
 				7933A3D020BBE33300AE36D7 /* I18NViewController.swift */,
 				7933A3D220BBE35B00AE36D7 /* I18NManager.swift */,
+				7933A3DC20BC070B00AE36D7 /* UIView+I18NExtension.swift */,
+				7933A3DE20BC161A00AE36D7 /* UILabel+I18NExtension.swift */,
+				7933A3E020BCFED000AE36D7 /* UIButton+I18NExtension.swift */,
 			);
 			name = I18N;
 			sourceTree = "<group>";

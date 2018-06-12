@@ -56,6 +56,9 @@ class I18NViewController: BaseViewController {
             v.removeFromSuperview()
         }
         //清除后控件不会接收到通知 goodjob
+        AlertModule.showToast(title: "提示", conetent: "清除完成", duration: 1) {
+            //
+        }
     }
     
     func buttonClick() {
@@ -63,7 +66,17 @@ class I18NViewController: BaseViewController {
     }
     
     func changeLanguage() {
-        I18NManager.manager.changeLanguage()
+        let languages = I18NManager.manager.suportLanguagesString
+        AlertModule.showAlert(title: "更改语言", conetent: "选择更改的语言", actionStr: languages) { (i) in
+            I18NManager.manager.setLanguageIndex(index: i)
+            //加2秒的设置时间，弹窗阻隔一下
+            AlertModule.showWaitToast(titleStr: "设置中...", duration: 1.5, complate: {
+                //
+                AlertModule.showToast(title: "", conetent: "设置完成", duration: 0.3, complate: {
+                    //
+                })
+            })
+        }
     }
     
 

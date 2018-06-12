@@ -11,9 +11,15 @@ import UIKit
 public let EN = "en"
 public let CN = "zh-Hans"
 public let KO = "ko"
-public let JP = "jp"
+public let JP = "ja"
 public let LANGUAGE_SET_I18N = "language_set_i18n"
 
+/// 国际化字符串
+///
+/// - Parameters:
+///   - key: key
+///   - table: 组 默认I18N
+/// - Returns: 本地化后的字符串
 public func I18NlocalizedString(key:String,table:String = "I18N") -> String{
     return I18NManager.manager.localizedString(key: key, table: table)
 }
@@ -21,14 +27,32 @@ public func I18NlocalizedString(key:String,table:String = "I18N") -> String{
 class I18NManager: NSObject {
     
     
-    
+    /// 管理器
     static let manager = I18NManager.init()
     
     
     var bundle:Bundle = Bundle.main
     var language:String = EN
     
-    private var i18nUIlist:[Any] = []//保存需要的控件
+    /// 本地化支持的语言代码
+    var suportLanguagesCode:[String] {
+        return [EN,CN,JP,KO]
+        /*
+         "en"        = "English"
+         "zh-Hans"   = "简体中文"
+         "ko"        = "한글"
+         "ja"        = "かんご"
+         */
+    }
+    
+    /// 本地化支持的语言字符串
+    var suportLanguagesString:[String] {
+        var strings:[String] = []
+        for code in suportLanguagesCode {
+            strings.append(I18NlocalizedString(key: code))
+        }
+        return strings
+    }
     
     override init() {
         super.init()
@@ -48,10 +72,17 @@ class I18NManager: NSObject {
         }
     }
     
+    /// 本地化字符串
+    ///
+    /// - Parameters:
+    ///   - key: key
+    ///   - table: 本地化组
+    /// - Returns: 本地化后的字符串
     func localizedString(key:String, table:String) -> String{
         return bundle.localizedString(forKey: key, value: "", table: table)
     }
     
+    /// 更改语言
     func changeLanguage() {
         if language == EN {
             setLanguage(language: CN)
@@ -60,6 +91,19 @@ class I18NManager: NSObject {
         }
     }
     
+    
+    /// 设置语言
+    ///
+    /// - Parameter index: 列表顺序
+    func setLanguageIndex(index:Int) {
+        if index < suportLanguagesCode.count {
+            setLanguage(language: suportLanguagesCode[index])
+        }
+    }
+    
+    /// 设置语言
+    ///
+    /// - Parameter language: 语言
     func setLanguage(language:String) {
         if language == self.language {
             return
@@ -76,11 +120,12 @@ class I18NManager: NSObject {
         refreshLanguage()
     }
     
+    /// 发送刷新语言的通知
     func refreshLanguage() {
         NotificationCenter.default.post(name: NSNotification.Name(LANGUAGE_SET_I18N), object: language)
     }
     
-    //
+    //MARK: - Observer
     
     /// 添加刷新的通知监听，自动过滤已经添加过的
     ///

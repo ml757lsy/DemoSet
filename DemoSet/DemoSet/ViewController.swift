@@ -102,6 +102,8 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     }
     
     func cellClick(index:Int){
+        
+        var aimController:UIViewController = UIViewController()
         switch index {
         case 0:
             //
@@ -219,13 +221,15 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             navigationController?.pushViewController(pp, animated: true)
             break
         case 27:
-            let i18n = I18NViewController()
-            navigationController?.pushViewController(i18n, animated: true)
+            aimController = I18NViewController()
+            aimController.hidesBottomBarWhenPushed = true
             break
             
         default:
             break
         }
+        
+        navigationController?.pushViewController(aimController, animated: true)
     }
     
     func other() {
@@ -256,7 +260,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         print("Selector Test")
     }
     
-    /// MARK: - delegate
+    //MARK: - delegate
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return list.count
     }
@@ -295,6 +299,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
 
 
 }
+//MARK: - cell
 
 class HomeCollectionCell: UICollectionViewCell {
     //
@@ -319,6 +324,7 @@ class HomeCollectionCell: UICollectionViewCell {
             make.right.equalTo(-5)
             make.bottom.equalTo(-5)
         }
+        //其他需要国际化的地方
         enableI18N()
     }
     
