@@ -28,11 +28,11 @@ class FGOViewController: BaseViewController {
         ji.hp = 13097 + 990
         ji.campType = .sky
         ji.classType = .archer
-        ji.characteristic.append(.divinity)
-        ji.characteristic.append(.man)
-        ji.characteristic.append(.king)
-        ji.characteristic.append(.servent)
-        ji.characteristic.append(.skyorearth)
+        ji.characteristic.insert(.divinity)
+        ji.characteristic.insert(.man)
+        ji.characteristic.insert(.king)
+        ji.characteristic.insert(.servent)
+        ji.characteristic.insert(.skyorearth)
         ji.noplePhantasmRate = 4
         ji.noplePhantasmType = .buster
         
@@ -61,7 +61,7 @@ class FGOViewController: BaseViewController {
         aim.hp = 1000000
         aim.campType = .earth
         aim.classType = .berserker
-        aim.characteristic.append(.servent)
+        aim.characteristic.insert(.servent)
         
         NPModel.noplePhantasm(from: ji, to: aim)
     }

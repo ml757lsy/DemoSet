@@ -89,7 +89,6 @@ class NoblePhantasmModel: FGOModel {
         var sattackb:CGFloat = 0
         for buff in from.buffers {
             if buff.buffType == .specialAttackBuff {
-                
                 sattackb += buff.value
             }
         }

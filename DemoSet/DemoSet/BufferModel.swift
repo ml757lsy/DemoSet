@@ -70,8 +70,10 @@ enum BuffClass {
 class BufferModel: FGOModel {
     var buffType:BuffType = .busterCardBuff
     var value:CGFloat = 0
-    var aim:[CharacteristicType] = []//buff针对目标 针对特攻等类型使用
-    
+    var aimCharacteristic:Set<CharacteristicType> = []//buff针对目标 针对特攻等类型使用
+    var aimClass:Set<ClassType> = []
+    var aimCamp:Set<CampType> = []
+    var aimBuff:Set<BuffType> = []
     
     /// 是否针对目标特性
     ///
@@ -80,11 +82,9 @@ class BufferModel: FGOModel {
     func aim(with characteristics:[CharacteristicType]) -> Bool{
         var against = false
         
-        for char in aim {
-            for c in characteristics {
-                if char == c {
-                    against = true
-                }
+        for c in characteristics {
+            if aimCharacteristic.contains(c) {
+                return true
             }
         }
         

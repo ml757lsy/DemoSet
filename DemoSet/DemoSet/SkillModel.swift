@@ -253,6 +253,16 @@ class SkillModel: FGOModel {
         return consummate
     }
     
+    /// 女神的神核
+    ///
+    /// - Parameter baseLevel: 固有等级
+    /// - Returns: skill
+    class func goddessnucleus(baseLevel:BaseLevel) -> SkillModel {
+        
+        
+        return SkillModel()
+    }
+    
     /// 反救世主
     ///
     /// - Parameter baseLevel: 固有等级

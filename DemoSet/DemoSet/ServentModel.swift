@@ -116,7 +116,7 @@ class ServentModel: FGOModel {
     var sex:SexType = .man
     
     /// 特性
-    var characteristic:[CharacteristicType] = []
+    var characteristic:Set<CharacteristicType> = []
     
     var noplePhantasmType:CardType = .buster
     var noplePhantasmCharge:Int = 0
