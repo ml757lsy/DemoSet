@@ -121,6 +121,15 @@ class QRCodeModule: NSObject {
         return ciImage
     }
     
+    /// 信息生成二维码数据
+    ///
+    /// - Parameter message: 信息
+    /// - Returns: 数据
+    class func dataWith(message:String) -> [[Int]] {
+        let image = QRCodeModule.initQRCode(message: message)
+        return QRCodeModule.data(with: image)
+    }
+    
     /// 图片生成二维码包含的数据
     ///
     /// - Parameter image: 图片

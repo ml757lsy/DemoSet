@@ -27,8 +27,20 @@ class BannerViewController: BaseViewController {
         }
         
         let gifimage = UIImageView.init(frame: CGRect.init(x: 10, y: 220+w, width: 580/2, height: 329/2))
-        gifimage.loadgif(url: URL.init(fileURLWithPath: "/Users/lishiyuan/Desktop/102.gif"))
+        let path = Bundle.main.path(forResource: "testGif", ofType: "gif")
+        gifimage.loadgif(url: URL.init(fileURLWithPath: path!))
         view.addSubview(gifimage)
+        
+        var gw:CGFloat = (gifimage.image?.size.width)!
+        var gh:CGFloat = (gifimage.image?.size.height)!
+        
+        if gw > SCREENWIDTH - 20 {
+            let scal = (SCREENWIDTH - 20)/gw
+            gh = gh * scal
+            gw = SCREENWIDTH - 20
+        }
+        gifimage.frame.size.width = gw
+        gifimage.frame.size.height = gh
     }
 
     override func didReceiveMemoryWarning() {

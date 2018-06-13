@@ -102,7 +102,7 @@ extension UIImage{
     
     func creatGIF(imgs:[UIImage], duration:CGFloat, isRepeat:Bool){
         //路径
-        let path = "/Users/lishiyuan/Desktop/102.gif"
+        let path = NSHomeDirectory().appending("Documents/1.gif")
         
         let url = CFURLCreateWithFileSystemPath(kCFAllocatorDefault, path as CFString, CFURLPathStyle.cfurlposixPathStyle, false)
         

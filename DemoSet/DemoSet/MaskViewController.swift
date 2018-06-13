@@ -153,7 +153,7 @@ class MaskViewController: BaseViewController {
         
         let data = UIImageJPEGRepresentation(resized, 1.0)
         do {
-            try data?.write(to: URL.init(fileURLWithPath: "/Users/lishiyuan/Desktop/long.jpg"))
+//            try data?.write(to: URL.init(fileURLWithPath: "/Users/lishiyuan/Desktop/long.jpg"))
         } catch let error {
             //
         }

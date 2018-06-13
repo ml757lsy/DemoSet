@@ -29,6 +29,8 @@
 		7933A3E120BCFED000AE36D7 /* UIButton+I18NExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7933A3E020BCFED000AE36D7 /* UIButton+I18NExtension.swift */; };
 		7933A3FC20BEADF100AE36D7 /* SortTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7933A3FB20BEADF100AE36D7 /* SortTest.swift */; };
 		7933A46620D0FACD00AE36D7 /* CIFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7933A46520D0FACD00AE36D7 /* CIFilterViewController.swift */; };
+		7933A46820D0FC1B00AE36D7 /* QRCodeCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7933A46720D0FC1B00AE36D7 /* QRCodeCreateViewController.swift */; };
+		7933A46B20D1004F00AE36D7 /* testGif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7933A46A20D1004F00AE36D7 /* testGif.gif */; };
 		7955CEEC1F8C729A007F6DC2 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955CEEB1F8C729A007F6DC2 /* QRCodeView.swift */; };
 		7955CEEE1F8C730D007F6DC2 /* QRCodeMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955CEED1F8C730D007F6DC2 /* QRCodeMaskView.swift */; };
 		7955CEF11F8CBA25007F6DC2 /* BluetoothConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955CEF01F8CBA25007F6DC2 /* BluetoothConnectionViewController.swift */; };
@@ -182,6 +184,8 @@
 		7933A3E020BCFED000AE36D7 /* UIButton+I18NExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+I18NExtension.swift"; sourceTree = "<group>"; };
 		7933A3FB20BEADF100AE36D7 /* SortTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortTest.swift; sourceTree = "<group>"; };
 		7933A46520D0FACD00AE36D7 /* CIFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIFilterViewController.swift; sourceTree = "<group>"; };
+		7933A46720D0FC1B00AE36D7 /* QRCodeCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeCreateViewController.swift; sourceTree = "<group>"; };
+		7933A46A20D1004F00AE36D7 /* testGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = testGif.gif; sourceTree = "<group>"; };
 		7955CEEB1F8C729A007F6DC2 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
 		7955CEED1F8C730D007F6DC2 /* QRCodeMaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeMaskView.swift; sourceTree = "<group>"; };
 		7955CEF01F8CBA25007F6DC2 /* BluetoothConnectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothConnectionViewController.swift; sourceTree = "<group>"; };
@@ -358,6 +362,14 @@
 			name = CIFilter;
 			sourceTree = "<group>";
 		};
+		7933A46920D1003100AE36D7 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				7933A46A20D1004F00AE36D7 /* testGif.gif */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
 		7955CEEF1F8CBA02007F6DC2 /* BluetoothConnection */ = {
 			isa = PBXGroup;
 			children = (
@@ -469,6 +481,7 @@
 		79A923F01EEAA30D00D91121 /* DemoSet */ = {
 			isa = PBXGroup;
 			children = (
+				7933A46920D1003100AE36D7 /* Resource */,
 				79B647D51F78AFA90002103E /* DemoSet.entitlements */,
 				79FB35021EEAA5540083ED79 /* Base */,
 				79FB35031EEAA65D0083ED79 /* Business */,
@@ -657,6 +670,7 @@
 			isa = PBXGroup;
 			children = (
 				79DCC1721F6D0D1F00D6A6CE /* QRCodeViewController.swift */,
+				7933A46720D0FC1B00AE36D7 /* QRCodeCreateViewController.swift */,
 				79DCC1741F6D0D3100D6A6CE /* QRCodeModule.swift */,
 				7955CEEB1F8C729A007F6DC2 /* QRCodeView.swift */,
 				7955CEED1F8C730D007F6DC2 /* QRCodeMaskView.swift */,
@@ -929,6 +943,7 @@
 				79A923FC1EEAA30D00D91121 /* LaunchScreen.storyboard in Resources */,
 				795714302005C0F70007078A /* LineData.plist in Resources */,
 				79B26AB81F185F0300B54EC2 /* Icon2@3x.png in Resources */,
+				7933A46B20D1004F00AE36D7 /* testGif.gif in Resources */,
 				79A923F91EEAA30D00D91121 /* Assets.xcassets in Resources */,
 				7933A3D620BBE60800AE36D7 /* I18N.strings in Resources */,
 				79A923F71EEAA30D00D91121 /* Main.storyboard in Resources */,
@@ -1057,6 +1072,7 @@
 				79B26ABB1F185FC800B54EC2 /* IconChangeViewController.swift in Sources */,
 				79D650E720AD5C99009E27CF /* ReaderViewController.swift in Sources */,
 				79DCC1771F6D18E400D6A6CE /* AlertModule.swift in Sources */,
+				7933A46820D0FC1B00AE36D7 /* QRCodeCreateViewController.swift in Sources */,
 				79B26A921F0A43AE00B54EC2 /* MysticCodeModel.swift in Sources */,
 				79DCC1681F6A50B600D6A6CE /* NotificationModule.swift in Sources */,
 				79B26A901F0A431100B54EC2 /* ServentModel.swift in Sources */,
