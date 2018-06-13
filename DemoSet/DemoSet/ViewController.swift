@@ -84,6 +84,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         list.append("Evolution")
         list.append("Password Produce")
         list.append("I18N")
+        list.append("CIFilter")
         
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize.init(width: 100, height: 100)
@@ -107,128 +108,104 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         switch index {
         case 0:
             //
-            let cell = CellularAutomatonViewController()
-            navigationController?.pushViewController(cell, animated: true)
+            aimController = CellularAutomatonViewController()
             break
         case 1:
             //
-            let sort = SortViewController()
-            navigationController?.pushViewController(sort, animated: true)
+            aimController = SortViewController()
             break
         case 2:
             //
-            let num = NumberboardViewController()
-            navigationController?.pushViewController(num, animated: true)
+            aimController = NumberboardViewController()
             break
         case 3:
             //
-            let ani = AnimationViewController()
-            navigationController?.pushViewController(ani, animated: true)
+            aimController = AnimationViewController()
             break
         case 4:
             //
-            let fgo = FGOViewController()
-            navigationController?.pushViewController(fgo, animated: true)
+            aimController = FGOViewController()
             break
         case 5:
-            let changeiocn = IconChangeViewController()
-            navigationController?.pushViewController(changeiocn, animated: true)
+            aimController = IconChangeViewController()
             break
         case 6:
-            let crawler = ImageCrawlerViewController()
-            navigationController?.pushViewController(crawler, animated: true)
+            aimController = ImageCrawlerViewController()
             break
         case 7:
-            let pline = PointLineViewController()
-            navigationController?.pushViewController(pline, animated: true)
+            aimController = PointLineViewController()
             break
         case 8:
-            let qrcode = QRCodeViewController()
-            navigationController?.pushViewController(qrcode, animated: true)
+            aimController = QRCodeViewController()
             break
         case 9:
-            let face = FaceRecognitionViewController()
-            navigationController?.pushViewController(face, animated: true)
+            aimController = FaceRecognitionViewController()
             break
         case 10:
-            let wave = WaveViewController()
-            navigationController?.pushViewController(wave, animated: true)
+            aimController = WaveViewController()
             break
         case 11:
-            let filter = MessageFliterViewController()
-            navigationController?.pushViewController(filter, animated: true)
+            aimController = MessageFliterViewController()
             break
         case 12:
             if #available(iOS 11.0, *) {
-                let nfc = NFCViewController()
-                navigationController?.pushViewController(nfc, animated: true)
+                aimController = NFCViewController()
             } else {
                 // Fallback on earlier versions
+                return
             }
         case 13:
-            let blu = BluetoothConnectionViewController()
-            navigationController?.pushViewController(blu, animated: true)
+            aimController = BluetoothConnectionViewController()
             break
         case 14:
-            let mask = MaskViewController()
-            navigationController?.pushViewController(mask, animated: true)
+            aimController = MaskViewController()
             break
         case 15:
-            let lottery = LotteryViewController()
-            navigationController?.pushViewController(lottery, animated: true)
+            aimController = LotteryViewController()
         case 16:
-            let math = MathViewController()
-            navigationController?.pushViewController(math, animated: true)
+            aimController = MathViewController()
             break
         case 17:
-            let banner = BannerViewController()
-            navigationController?.pushViewController(banner, animated: true)
+            aimController = BannerViewController()
             break
         case 18:
-            let appstore = AppStoreViewController()
-            navigationController?.pushViewController(appstore, animated: true)
+            aimController = AppStoreViewController()
             break
         case 19:
-            let runtime = RuntimeViewController()
-            navigationController?.pushViewController(runtime, animated: true)
+            aimController = RuntimeViewController()
             break
         case 20:
-            let casino = CasinoViewController()
-            navigationController?.pushViewController(casino, animated: true)
+            aimController = CasinoViewController()
             break
         case 21:
-            let subway = SubwayViewController()
-            navigationController?.pushViewController(subway, animated: true)
+            aimController = SubwayViewController()
             break
         case 22:
-            let todo = ToDoViewController()
-            navigationController?.pushViewController(todo, animated: true)
+            aimController = ToDoViewController()
             break
         case 23:
-            let web = WebViewController()
-            navigationController?.pushViewController(web, animated: true)
+            aimController = WebViewController()
             break
         case 24:
-            let read = ReaderViewController()
-            navigationController?.pushViewController(read, animated: true)
+            aimController = ReaderViewController()
             break
         case 25:
-            let evolu = EvolutionViewController()
-            navigationController?.pushViewController(evolu, animated: true)
+            aimController = EvolutionViewController()
             break
         case 26:
-            let pp = PasswordProduceViewController()
-            navigationController?.pushViewController(pp, animated: true)
+            aimController = PasswordProduceViewController()
             break
         case 27:
             aimController = I18NViewController()
-            aimController.hidesBottomBarWhenPushed = true
+            break
+        case 28:
+            aimController = CIFilterViewController()
             break
             
         default:
             break
         }
-        
+        aimController.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(aimController, animated: true)
     }
     

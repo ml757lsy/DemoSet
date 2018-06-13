@@ -28,6 +28,7 @@
 		7933A3DF20BC161A00AE36D7 /* UILabel+I18NExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7933A3DE20BC161A00AE36D7 /* UILabel+I18NExtension.swift */; };
 		7933A3E120BCFED000AE36D7 /* UIButton+I18NExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7933A3E020BCFED000AE36D7 /* UIButton+I18NExtension.swift */; };
 		7933A3FC20BEADF100AE36D7 /* SortTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7933A3FB20BEADF100AE36D7 /* SortTest.swift */; };
+		7933A46620D0FACD00AE36D7 /* CIFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7933A46520D0FACD00AE36D7 /* CIFilterViewController.swift */; };
 		7955CEEC1F8C729A007F6DC2 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955CEEB1F8C729A007F6DC2 /* QRCodeView.swift */; };
 		7955CEEE1F8C730D007F6DC2 /* QRCodeMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955CEED1F8C730D007F6DC2 /* QRCodeMaskView.swift */; };
 		7955CEF11F8CBA25007F6DC2 /* BluetoothConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955CEF01F8CBA25007F6DC2 /* BluetoothConnectionViewController.swift */; };
@@ -180,6 +181,7 @@
 		7933A3DE20BC161A00AE36D7 /* UILabel+I18NExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+I18NExtension.swift"; sourceTree = "<group>"; };
 		7933A3E020BCFED000AE36D7 /* UIButton+I18NExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+I18NExtension.swift"; sourceTree = "<group>"; };
 		7933A3FB20BEADF100AE36D7 /* SortTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortTest.swift; sourceTree = "<group>"; };
+		7933A46520D0FACD00AE36D7 /* CIFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIFilterViewController.swift; sourceTree = "<group>"; };
 		7955CEEB1F8C729A007F6DC2 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
 		7955CEED1F8C730D007F6DC2 /* QRCodeMaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeMaskView.swift; sourceTree = "<group>"; };
 		7955CEF01F8CBA25007F6DC2 /* BluetoothConnectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothConnectionViewController.swift; sourceTree = "<group>"; };
@@ -346,6 +348,14 @@
 				7933A3E020BCFED000AE36D7 /* UIButton+I18NExtension.swift */,
 			);
 			name = I18N;
+			sourceTree = "<group>";
+		};
+		7933A46420D0FAB900AE36D7 /* CIFilter */ = {
+			isa = PBXGroup;
+			children = (
+				7933A46520D0FACD00AE36D7 /* CIFilterViewController.swift */,
+			);
+			name = CIFilter;
 			sourceTree = "<group>";
 		};
 		7955CEEF1F8CBA02007F6DC2 /* BluetoothConnection */ = {
@@ -695,6 +705,7 @@
 		79FB35031EEAA65D0083ED79 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				7933A46420D0FAB900AE36D7 /* CIFilter */,
 				7933A3CF20BBE31800AE36D7 /* I18N */,
 				791FF81D20B3EA7C00AD6B2D /* PassWordProduce */,
 				79D650E520AD5C89009E27CF /* Reader */,
@@ -1015,6 +1026,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				798AE3E32099939A0019E38C /* NetworkManager.swift in Sources */,
+				7933A46620D0FACD00AE36D7 /* CIFilterViewController.swift in Sources */,
 				795714271FFE24430007078A /* SRPGRoleModel.swift in Sources */,
 				79A4F5AC1FD7C290001E9A37 /* BaseConstFile.swift in Sources */,
 				791FF81420B2748900AD6B2D /* EvolutionCell.swift in Sources */,
