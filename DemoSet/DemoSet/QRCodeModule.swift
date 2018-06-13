@@ -173,6 +173,109 @@ class QRCodeModule: NSObject {
         return data
     }
     
+    /// 生成图片底的二维码
+    ///
+    /// - Parameters:
+    ///   - message: 信息
+    ///   - backImg: 底图
+    /// - Returns: img
+    class func qrcode(message:String,backImg:UIImage) -> UIImage {
+        let data = QRCodeModule.dataWith(message: message)
+        let cg = backImg.cgImage!
+        
+        var width = Int(max(backImg.size.width, backImg.size.height))
+        if width < 512 {
+            width = 512
+            
+        }
+        let height = width
+        let scal = CGFloat(width)/backImg.size.width
+        
+        let pixsize = CGFloat(width)/CGFloat(data.count)//pixsize
+        
+        let color = CGColorSpaceCreateDeviceRGB()
+        let bytesPerRow:Int = width * 4
+        let rgbImageBuf:UnsafeMutableRawPointer = malloc(bytesPerRow * height)
+        let context = CGContext.init(data: rgbImageBuf, width: width, height: height, bitsPerComponent: 8, bytesPerRow: bytesPerRow, space: color, bitmapInfo: 1)
+        context?.draw(cg, in: CGRect.init(x: 0, y: 0, width: backImg.size.width*scal, height: backImg.size.height*scal))
+        //先0
+        context?.setFillColor(UIColor.black.cgColor)
+        for l in 0..<data.count {
+            let line = data[l]
+            for i in 0..<line.count {
+                let d = line[i]
+                if d == 0 {
+                    if QRCodeModule.isStatic(x: i, y: l, size: data.count) {
+                        let path = CGPath.init(rect: CGRect.init(x: pixsize*CGFloat(i), y: pixsize*CGFloat(data.count - l), width: pixsize, height: pixsize), transform: nil)
+                        context?.addPath(path)
+                    }else{
+                        let path = CGPath.init(rect: CGRect.init(x: pixsize*CGFloat(i)+pixsize/3, y: pixsize*CGFloat(data.count - l)+pixsize/3, width: pixsize/3, height: pixsize/3), transform: nil)
+                        context?.addPath(path)
+                    }
+                    
+                }
+            }
+        }
+        context?.fillPath()
+        //再2
+        context?.setFillColor(UIColor.white.cgColor)
+        for l in 0..<data.count {
+            let line = data[l]
+            for i in 0..<line.count {
+                let d = line[i]
+                if d == 1 {
+                    if QRCodeModule.isStatic(x: i, y: l, size: data.count) {
+                        let path = CGPath.init(rect: CGRect.init(x: pixsize*CGFloat(i), y: pixsize*CGFloat(data.count - l), width: pixsize, height: pixsize), transform: nil)
+                        context?.addPath(path)
+                    }else{
+                        let path = CGPath.init(rect: CGRect.init(x: pixsize*CGFloat(i)+pixsize/3, y: pixsize*CGFloat(data.count - l)+pixsize/3, width: pixsize/3, height: pixsize/3), transform: nil)
+                        context?.addPath(path)
+                    }
+                }
+            }
+        }
+        context?.fillPath()
+        
+        
+        return UIImage.init(cgImage: (context?.makeImage())!)
+    }
+    
+    /// 是否是固定不变的
+    ///
+    /// - Parameters:
+    ///   - x: x
+    ///   - y: y
+    ///   - size: size
+    /// - Returns: bool
+    class func isStatic(x:Int, y:Int, size:Int) -> Bool {
+        if y == 7 {
+            //
+            return true
+        }else
+            if x == 7 {
+                //
+                return true
+            }else
+                if y <= 8 && x <= 8 {
+                    //
+                    return true
+                }else
+                    if x >= size - 9 && y <= 8 {
+                        //
+                        return true
+                    }else
+                        if x <= 8 && y >= size - 9 {
+                            //
+                            return true
+                        }else
+                            if x <= size - 6 && x > size - 6 - 5 && y <= size - 6 && y > size - 6 - 5 {
+                                //
+                                return true
+        }
+        
+        return false
+    }
+    
     /// 生成某个颜色的二维码
     ///
     /// - Parameters:

@@ -17,6 +17,9 @@ extension UIImage{
         return UIImage()
     }
     
+    /// 二值化
+    ///
+    /// - Returns: img
     func binaryzation() -> UIImage {
         let ci = CIImage.init(cgImage: self.cgImage!)
         
@@ -24,7 +27,7 @@ extension UIImage{
         let imageHeight = ci.extent.size.height
         
         //4-53:CICategoryHalftoneEffect - CICircularScreen,CICMYKHalftone,CIDotScreen,CIHatchedScreen,CILineScreen
-        let filter = CIFilter(name: "CIDotScreen")
+        let filter = CIFilter(name: "CIHatchedScreen")
 
         //["inputImage", "inputCenter", "inputAngle", "inputWidth", "inputSharpness"]
         filter?.setValue(ci, forKey: "inputImage")
@@ -38,6 +41,29 @@ extension UIImage{
         return UIImage.init(ciImage: out!)
     }
     
+    /// 灰度化
+    ///
+    /// - Returns: 图
+    func grayprocess() -> UIImage {
+        let width = Int(self.size.width)
+        let height = Int(self.size.height)
+        
+        let color = CGColorSpaceCreateDeviceGray()
+        
+        let context = CGContext.init(data: nil, width: width, height: height, bitsPerComponent: 8, bytesPerRow: 0, space: color, bitmapInfo: 1)
+        context?.draw(self.cgImage!, in: CGRect.init(x: 0, y: 0, width: width, height: height))
+        
+        let image = UIImage.init(cgImage: (context?.makeImage())!)
+        
+        return image
+    }
+    
+    /// 比例缩放
+    ///
+    /// - Parameters:
+    ///   - quality: 质量
+    ///   - rate: 比例
+    /// - Returns: img
     func resize(with quality:CGInterpolationQuality,rate:CGFloat) -> UIImage {
         var resized:UIImage
         let width:CGFloat = self.size.width * rate
@@ -86,9 +112,9 @@ extension UIImage{
                 let blue = pCurPtr.load(fromByteOffset: 3, as: UInt8.self)
                 
                 if red/3 + green/3 + blue/3 < 255 {
-                    row.append(0)
-                }else{
                     row.append(1)
+                }else{
+                    row.append(0)
                 }
                 
                 pCurPtr += 4
@@ -100,7 +126,49 @@ extension UIImage{
         return data
     }
     
-    func creatGIF(imgs:[UIImage], duration:CGFloat, isRepeat:Bool){
+    /// 根据数据生成图
+    ///
+    /// - Parameters:
+    ///   - data: 数据
+    ///   - pixSize: 像素大小
+    /// - Returns: img
+    class func creatImage(with data:[[Int]], pixSize:CGFloat) -> UIImage {
+        
+        let imageWidth = data[0].count
+        let imageHeight = data.count
+        
+        let color = CGColorSpaceCreateDeviceRGB()
+        let bytesPerRow:Int = imageWidth * 4
+        let rgbImageBuf:UnsafeMutableRawPointer = malloc(bytesPerRow * imageHeight)
+        
+        let context = CGContext.init(data: rgbImageBuf, width: imageWidth, height: imageHeight, bitsPerComponent: 8, bytesPerRow: bytesPerRow, space: color, bitmapInfo: 1)
+        
+        var pCurPtr = rgbImageBuf
+        for l in 0..<imageHeight {
+            for w in 0..<imageWidth {
+                let d = data[l][w]
+                pCurPtr.storeBytes(of: 255, toByteOffset: 0, as: UInt8.self)
+                if d == 0 {
+                    
+                }else{
+                    pCurPtr.storeBytes(of: 255, toByteOffset: 1, as: UInt8.self)//r
+                    pCurPtr.storeBytes(of: 255, toByteOffset: 2, as: UInt8.self)//g
+                    pCurPtr.storeBytes(of: 255, toByteOffset: 3, as: UInt8.self)//b
+                }
+                pCurPtr += 4
+            }
+        }
+        
+        return UIImage.init(cgImage: (context?.makeImage())!)
+    }
+    
+    /// 创建动图
+    ///
+    /// - Parameters:
+    ///   - imgs: 图组
+    ///   - duration: 持续时间
+    ///   - isRepeat: 是否重复
+    class func creatGIF(imgs:[UIImage], duration:CGFloat, isRepeat:Bool){
         //路径
         let path = NSHomeDirectory().appending("Documents/1.gif")
         
