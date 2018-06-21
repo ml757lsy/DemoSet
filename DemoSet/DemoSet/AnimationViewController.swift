@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class AnimationViewController: BaseViewController {
 
@@ -19,6 +20,8 @@ class AnimationViewController: BaseViewController {
         glow()
         scribble()
         vegas()
+        
+        snapkitAnimation()
     }
 
     override func didReceiveMemoryWarning() {
@@ -151,6 +154,30 @@ class AnimationViewController: BaseViewController {
         })
         
         
+    }
+    
+    //MARK: - snapkit
+    func snapkitAnimation() {
+        let snpview = UIView.init()
+        snpview.backgroundColor = UIColor.randomColor()
+        view.addSubview(snpview)
+        
+        snpview.snp.makeConstraints { (make) in
+            make.left.equalTo(20)
+            make.width.equalTo(200)
+            make.height.equalTo(100)
+            make.top.equalTo(300)
+        }
+        
+        //执行顺序
+        snpview.setNeedsLayout()
+        snpview.updateConstraints()
+        
+        UIView.animate(withDuration: 4, animations: {
+            snpview.layoutIfNeeded()//显示动画
+        }) { (b) in
+            //
+        }
     }
 
     /*

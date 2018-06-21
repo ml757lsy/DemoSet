@@ -694,13 +694,6 @@
 			name = Runtime;
 			sourceTree = "<group>";
 		};
-		79F7E1F31FC414B9003791B0 /* Animation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Animation;
-			sourceTree = "<group>";
-		};
 		79FB35021EEAA5540083ED79 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -731,7 +724,6 @@
 				79E29D751FECD79500EC4577 /* Runtime */,
 				79A4F5A21FD6A168001E9A37 /* AppStoreList */,
 				79A4F59B1FCD70DB001E9A37 /* SRPG */,
-				79F7E1F31FC414B9003791B0 /* Animation */,
 				7964680E1F9843CF0091D671 /* Math */,
 				79CB22751F97031100C9FE1E /* Banner */,
 				79CB22721F95EB7700C9FE1E /* Lottery */,
