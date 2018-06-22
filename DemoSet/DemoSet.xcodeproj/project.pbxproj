@@ -109,6 +109,10 @@
 		79DCC1771F6D18E400D6A6CE /* AlertModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DCC1761F6D18E400D6A6CE /* AlertModule.swift */; };
 		79DCC17A1F6D2EF900D6A6CE /* FaceRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DCC1791F6D2EF900D6A6CE /* FaceRecognitionViewController.swift */; };
 		79E29D771FECD7B400EC4577 /* RuntimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E29D761FECD7B400EC4577 /* RuntimeViewController.swift */; };
+		79EB465020DB9710000CB1B9 /* LandscapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB464F20DB9710000CB1B9 /* LandscapeViewController.swift */; };
+		79EB465220DB9837000CB1B9 /* LandAimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB465120DB9837000CB1B9 /* LandAimViewController.swift */; };
+		79EB465420DBA740000CB1B9 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB465320DBA740000CB1B9 /* BaseNavigationViewController.swift */; };
+		79EB465620DC9CA8000CB1B9 /* testGif2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 79EB465520DC9CA8000CB1B9 /* testGif2.gif */; };
 		79FB35061EEAA7190083ED79 /* CellularAutomatonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB35051EEAA7190083ED79 /* CellularAutomatonViewController.swift */; };
 		79FB35091EEAAB850083ED79 /* Cellular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB35081EEAAB850083ED79 /* Cellular.swift */; };
 /* End PBXBuildFile section */
@@ -273,6 +277,10 @@
 		79DCC1761F6D18E400D6A6CE /* AlertModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertModule.swift; sourceTree = "<group>"; };
 		79DCC1791F6D2EF900D6A6CE /* FaceRecognitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceRecognitionViewController.swift; sourceTree = "<group>"; };
 		79E29D761FECD7B400EC4577 /* RuntimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeViewController.swift; sourceTree = "<group>"; };
+		79EB464F20DB9710000CB1B9 /* LandscapeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeViewController.swift; sourceTree = "<group>"; };
+		79EB465120DB9837000CB1B9 /* LandAimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandAimViewController.swift; sourceTree = "<group>"; };
+		79EB465320DBA740000CB1B9 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
+		79EB465520DC9CA8000CB1B9 /* testGif2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = testGif2.gif; sourceTree = "<group>"; };
 		79FB35051EEAA7190083ED79 /* CellularAutomatonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellularAutomatonViewController.swift; sourceTree = "<group>"; };
 		79FB35081EEAAB850083ED79 /* Cellular.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cellular.swift; sourceTree = "<group>"; };
 		B57CB0D8E15F346CDBC020A0 /* Pods_DemoSet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoSet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -365,6 +373,7 @@
 		7933A46920D1003100AE36D7 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				79EB465520DC9CA8000CB1B9 /* testGif2.gif */,
 				7933A46A20D1004F00AE36D7 /* testGif.gif */,
 			);
 			name = Resource;
@@ -694,12 +703,22 @@
 			name = Runtime;
 			sourceTree = "<group>";
 		};
+		79EB464E20DB96F5000CB1B9 /* Landscape */ = {
+			isa = PBXGroup;
+			children = (
+				79EB464F20DB9710000CB1B9 /* LandscapeViewController.swift */,
+				79EB465120DB9837000CB1B9 /* LandAimViewController.swift */,
+			);
+			name = Landscape;
+			sourceTree = "<group>";
+		};
 		79FB35021EEAA5540083ED79 /* Base */ = {
 			isa = PBXGroup;
 			children = (
 				7924D1CA1FDA672000CEECB6 /* Extension */,
 				79A4F5AB1FD7C290001E9A37 /* BaseConstFile.swift */,
 				79A4F5A71FD791A2001E9A37 /* BaseTabBarViewController.swift */,
+				79EB465320DBA740000CB1B9 /* BaseNavigationViewController.swift */,
 				79584BB91EEFDDDB003ABE05 /* BaseViewController.swift */,
 				79DCC1761F6D18E400D6A6CE /* AlertModule.swift */,
 				7955CF161F9092C8007F6DC2 /* StringModel.swift */,
@@ -712,6 +731,7 @@
 		79FB35031EEAA65D0083ED79 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				79EB464E20DB96F5000CB1B9 /* Landscape */,
 				7933A46420D0FAB900AE36D7 /* CIFilter */,
 				7933A3CF20BBE31800AE36D7 /* I18N */,
 				791FF81D20B3EA7C00AD6B2D /* PassWordProduce */,
@@ -936,6 +956,7 @@
 				795714302005C0F70007078A /* LineData.plist in Resources */,
 				79B26AB81F185F0300B54EC2 /* Icon2@3x.png in Resources */,
 				7933A46B20D1004F00AE36D7 /* testGif.gif in Resources */,
+				79EB465620DC9CA8000CB1B9 /* testGif2.gif in Resources */,
 				79A923F91EEAA30D00D91121 /* Assets.xcassets in Resources */,
 				7933A3D620BBE60800AE36D7 /* I18N.strings in Resources */,
 				79A923F71EEAA30D00D91121 /* Main.storyboard in Resources */,
@@ -1058,13 +1079,16 @@
 				79DB4BB91F70A8D40014CA2D /* WaveView.swift in Sources */,
 				795853BC1EEFBB4000F214A5 /* UIView+Extension.swift in Sources */,
 				79DCC1621F692E8600D6A6CE /* PointLineView.swift in Sources */,
+				79EB465420DBA740000CB1B9 /* BaseNavigationViewController.swift in Sources */,
 				7955CEEE1F8C730D007F6DC2 /* QRCodeMaskView.swift in Sources */,
 				798AE3E620A1EAFB0019E38C /* ToDoViewController.swift in Sources */,
 				792E5E901FF0F530007E7605 /* CasinoViewController.swift in Sources */,
 				79B26ABB1F185FC800B54EC2 /* IconChangeViewController.swift in Sources */,
 				79D650E720AD5C99009E27CF /* ReaderViewController.swift in Sources */,
+				79EB465220DB9837000CB1B9 /* LandAimViewController.swift in Sources */,
 				79DCC1771F6D18E400D6A6CE /* AlertModule.swift in Sources */,
 				7933A46820D0FC1B00AE36D7 /* QRCodeCreateViewController.swift in Sources */,
+				79EB465020DB9710000CB1B9 /* LandscapeViewController.swift in Sources */,
 				79B26A921F0A43AE00B54EC2 /* MysticCodeModel.swift in Sources */,
 				79DCC1681F6A50B600D6A6CE /* NotificationModule.swift in Sources */,
 				79B26A901F0A431100B54EC2 /* ServentModel.swift in Sources */,

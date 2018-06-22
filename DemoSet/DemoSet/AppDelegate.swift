@@ -20,9 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigation.tabBarItem = UITabBarItem.init(title: "111", image: nil, tag: 1)
         navigation.viewControllers.append(ViewController())
         
+        let appstore = AppStoreViewController()
+        appstore.tabBarItem = UITabBarItem.init(title: "Store", image: nil, tag: 2)
                 
         let tab = BaseTabBarViewController()
-        tab.viewControllers = [navigation,AppStoreViewController()]
+        tab.viewControllers = [navigation,appstore]
         
         window?.rootViewController = tab
         

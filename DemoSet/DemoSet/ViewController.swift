@@ -85,6 +85,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         list.append("Password Produce")
         list.append("I18N")
         list.append("CIFilter")
+        list.append("Landscape")
         
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize.init(width: 100, height: 100)
@@ -201,11 +202,17 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         case 28:
             aimController = CIFilterViewController()
             break
+        case 29:
+            aimController = LandscapeViewController()
+            break
             
         default:
             break
         }
         aimController.hidesBottomBarWhenPushed = true
+        if aimController.isKind(of: LandscapeViewController.self){
+            aimController.hidesBottomBarWhenPushed = false
+        }
         navigationController?.pushViewController(aimController, animated: true)
     }
     

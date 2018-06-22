@@ -21,6 +21,35 @@ class BaseTabBarViewController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        //动画特效
+        
+        
+        switch item.tag {
+        case 1:
+            //
+            break
+        case 2:
+            let url = URL.init(fileURLWithPath: Bundle.main.path(forResource: "testGif2", ofType: "gif", inDirectory: nil)!)
+            item.image = UIImage.loadgif(url: url)
+            break
+        default:
+            break
+        }
+        
+        return
+        
+        for sub in tabBar.subviews {
+            if sub.isUserInteractionEnabled {
+                for s in sub.subviews {
+                    if s.isKind(of: NSClassFromString("UITabBarSwappableImageView")!) {
+                        let ss = s as! UIImageView
+                        ss.animationRepeatCount = 1
+                    }
+                }
+            }
+        }
+    }
     
 
     /*
