@@ -11,7 +11,8 @@ import UIKit
 class AppStoreContentCell: UITableViewCell {
     
     private var _content:UIView = UIView()
-    private var box:UIView = UIView()
+    var box:UIView = UIView()
+    private var _model:AppStoreContentModel = AppStoreContentModel()
     
     var content:UIView {
         get{
@@ -22,6 +23,18 @@ class AppStoreContentCell: UITableViewCell {
             _content = newValue
             _content.frame = CGRect.init(x: 0, y: 0, width: SCREENWIDTH-40, height: 350)
             box.addSubview(_content)
+        }
+    }
+    
+    /// 数据
+    var model:AppStoreContentModel {
+        get {
+            return _model
+        }
+        set(newValue) {
+            _model = newValue
+            //update view
+            box.backgroundColor = _model.color
         }
     }
 
@@ -35,7 +48,8 @@ class AppStoreContentCell: UITableViewCell {
     }
     
     func baseinit() {
-        box = UIView.init(frame: CGRect.init(x: 20, y: 0, width: SCREENWIDTH-40, height: 350))
+        box = UIView.init(frame: CGRect.init(x: 20, y: 10, width: SCREENWIDTH-40, height: 280))
+        box.layer.cornerRadius = 10
         addSubview(box)
     }
     

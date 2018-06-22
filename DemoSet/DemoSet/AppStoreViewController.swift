@@ -13,8 +13,9 @@ class AppStoreViewController: BaseViewController,UITableViewDelegate,UITableView
 
     var hidenStatusBar = false
     var listTable:UITableView = UITableView()
-    var listData:[String] = []
+    var listData:[AppStoreContentModel] = []
     var content = AppStoreContentViewController()
+    var cover:UIVisualEffectView = UIVisualEffectView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,7 @@ class AppStoreViewController: BaseViewController,UITableViewDelegate,UITableView
         self.navigationController?.isNavigationBarHidden = true
         
         initBaseView()
-//        hidenTopAndBottom()
+        loadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,27 +50,35 @@ class AppStoreViewController: BaseViewController,UITableViewDelegate,UITableView
     
     func initBaseView() {
         //
-        for i in 0..<10 {
-            listData.append("1")
-        }
-        
-        
-        
-        listTable.frame = CGRect.init(x: 20, y: 0, width: view.width-40, height: view.height)
+        listTable.frame = CGRect.init(x: 0, y: 0, width: view.width, height: view.height)
         listTable.separatorStyle = .none
         listTable.delegate = self
         listTable.dataSource = self
         view.addSubview(listTable)
         
-        listTable.reloadData()
-        
         content = AppStoreContentViewController()
+        
+        //遮罩 暂时隐藏
+        let blur = UIBlurEffect.init(style: .regular)
+        cover = UIVisualEffectView.init(effect: blur)
+        cover.alpha = 1
+        cover.frame = view.bounds
+        view.addSubview(cover)
+        cover.isHidden = true
     }
     
-    
-    func hidenTopAndBottom() {
+    func loadData() {
         
-        UIView.animate(withDuration: 0.4) {
+        for _ in 0..<10 {
+            listData.append(AppStoreContentModel())
+        }
+        listTable.reloadData()
+    }
+    
+    //MARK: -
+    /// 收起tabbar和顶部状态栏
+    func hidenTopAndBottom() {
+        UIView.animate(withDuration: 0.4, animations: {
             for v in (self.tabBarController?.view.subviews)! {
                 if v.isKind(of: UITabBar.self){
                     v.frame = CGRect.init(x: 0, y: SCREENHEIGHT, width: v.width, height: v.height)
@@ -78,6 +87,11 @@ class AppStoreViewController: BaseViewController,UITableViewDelegate,UITableView
                     self.view.frame = v.frame
                 }
             }
+            //
+            self.cover.alpha = 1
+            self.cover.isHidden = false
+        }) { (t) in
+            self.tabBarController?.tabBar.isHidden = true
         }
         
         hidenStatusBar = true
@@ -86,7 +100,9 @@ class AppStoreViewController: BaseViewController,UITableViewDelegate,UITableView
         }
     }
     
+    /// 显示tabbar和顶部状态栏
     func showTopAndBottom() {
+        self.tabBarController?.tabBar.isHidden = false
         UIView.animate(withDuration: 0.4) {
             for v in (self.tabBarController?.view.subviews)! {
                 if v.isKind(of: UITabBar.self){
@@ -113,6 +129,7 @@ class AppStoreViewController: BaseViewController,UITableViewDelegate,UITableView
     func gotoNext(with cell:UITableViewCell?) {
         cell?.setHighlighted(false, animated: true)
         hidenTopAndBottom()
+        //
         content.closeBlock = {
             self.showTopAndBottom()
             UIView.animate(withDuration: 0.2, animations: {
@@ -127,7 +144,7 @@ class AppStoreViewController: BaseViewController,UITableViewDelegate,UITableView
         }
     }
     
-    //
+    //MARK: - tableview delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listData.count
     }
@@ -138,19 +155,26 @@ class AppStoreViewController: BaseViewController,UITableViewDelegate,UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = AppStoreContentCell.init(style: .default, reuseIdentifier: "")
-        cell.backgroundColor = UIColor.randomColor()
+        cell.model = listData[indexPath.row]
         cell.clipsToBounds = true
         cell.selectionStyle = .none
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let rect = tableView.rectForRow(at: indexPath)
+        var rect = tableView.rectForRow(at: indexPath)
         let cell = tableView.cellForRow(at: indexPath)
         
-        content.content.backgroundColor = cell?.backgroundColor
+        rect.origin.x += 20
+        rect.size.width -= 40
+        rect.origin.y += 10
+        rect.size.height -= 20
+        
+        //
+        content.model = listData[indexPath.row]
         content.fromFrame = tableView.convert(rect, to: view)
         content.modalPresentationStyle = .overCurrentContext
+        
         cell?.setHighlighted(true, animated: true)
         perform(#selector(gotoNext(with:)), with: cell, afterDelay: 0.2)
     }

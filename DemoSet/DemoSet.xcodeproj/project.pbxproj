@@ -113,6 +113,8 @@
 		79EB465220DB9837000CB1B9 /* LandAimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB465120DB9837000CB1B9 /* LandAimViewController.swift */; };
 		79EB465420DBA740000CB1B9 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB465320DBA740000CB1B9 /* BaseNavigationViewController.swift */; };
 		79EB465620DC9CA8000CB1B9 /* testGif2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 79EB465520DC9CA8000CB1B9 /* testGif2.gif */; };
+		79EB465A20DCC768000CB1B9 /* AppStoreContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB465920DCC768000CB1B9 /* AppStoreContentModel.swift */; };
+		79EB465C20DCD632000CB1B9 /* AppStoreContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB465B20DCD632000CB1B9 /* AppStoreContentView.swift */; };
 		79FB35061EEAA7190083ED79 /* CellularAutomatonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB35051EEAA7190083ED79 /* CellularAutomatonViewController.swift */; };
 		79FB35091EEAAB850083ED79 /* Cellular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB35081EEAAB850083ED79 /* Cellular.swift */; };
 /* End PBXBuildFile section */
@@ -281,6 +283,8 @@
 		79EB465120DB9837000CB1B9 /* LandAimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandAimViewController.swift; sourceTree = "<group>"; };
 		79EB465320DBA740000CB1B9 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
 		79EB465520DC9CA8000CB1B9 /* testGif2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = testGif2.gif; sourceTree = "<group>"; };
+		79EB465920DCC768000CB1B9 /* AppStoreContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreContentModel.swift; sourceTree = "<group>"; };
+		79EB465B20DCD632000CB1B9 /* AppStoreContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreContentView.swift; sourceTree = "<group>"; };
 		79FB35051EEAA7190083ED79 /* CellularAutomatonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellularAutomatonViewController.swift; sourceTree = "<group>"; };
 		79FB35081EEAAB850083ED79 /* Cellular.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cellular.swift; sourceTree = "<group>"; };
 		B57CB0D8E15F346CDBC020A0 /* Pods_DemoSet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoSet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -457,8 +461,10 @@
 			isa = PBXGroup;
 			children = (
 				79A4F5A31FD6A18D001E9A37 /* AppStoreViewController.swift */,
+				79EB465B20DCD632000CB1B9 /* AppStoreContentView.swift */,
 				79A4F5A51FD6A1B7001E9A37 /* AppStoreContentViewController.swift */,
 				79A4F5AD1FD7CCB7001E9A37 /* AppStoreContentCell.swift */,
+				79EB465920DCC768000CB1B9 /* AppStoreContentModel.swift */,
 			);
 			name = AppStoreList;
 			sourceTree = "<group>";
@@ -1100,6 +1106,7 @@
 				791FF81C20B27EE800AD6B2D /* EvolutionAttribute.swift in Sources */,
 				79A923F41EEAA30D00D91121 /* ViewController.swift in Sources */,
 				79FB35091EEAAB850083ED79 /* Cellular.swift in Sources */,
+				79EB465A20DCC768000CB1B9 /* AppStoreContentModel.swift in Sources */,
 				791FF82120B3EAE900AD6B2D /* PasswordProduceManager.swift in Sources */,
 				7933A3DD20BC070B00AE36D7 /* UIView+I18NExtension.swift in Sources */,
 				798806701F4FB944001FB972 /* ImageCrawlerViewController.swift in Sources */,
@@ -1135,6 +1142,7 @@
 				79CB227B1F9744FB00C9FE1E /* GyroManager.swift in Sources */,
 				79DCC1731F6D0D1F00D6A6CE /* QRCodeViewController.swift in Sources */,
 				791FF81620B274B500AD6B2D /* EvolutionGround.swift in Sources */,
+				79EB465C20DCD632000CB1B9 /* AppStoreContentView.swift in Sources */,
 				79B26AA21F0DD9BE00B54EC2 /* SkillModel.swift in Sources */,
 				791FF82320B3FEC900AD6B2D /* String+Extension.swift in Sources */,
 				79DCC1651F6A4A1D00D6A6CE /* NotificationViewController.swift in Sources */,
