@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 
 /// 地铁路线
-class SubwayViewController: UIViewController {
+class SubwayViewController: BaseViewController {
     
     var lines = [Line]()
     var stations = [Station]()
@@ -61,6 +61,13 @@ class SubwayViewController: UIViewController {
         skview.presentScene(subwayscene)
         
         subwayscene.initSubwayData(with: lines, and: stations)
+        
+        let search = UIButton.init(type: .custom)
+        search.frame = CGRect.init(x: 20, y: view.width, width: 60, height: 30)
+        search.setTitle("Search", for: .normal)
+        search.setTitleColor(UIColor.red, for: .normal)
+        search.addTarget(self, action: #selector(loadDateFromDB), for: .touchUpInside)
+        view.addSubview(search)
     }
     
     //MARK: - data
@@ -146,7 +153,6 @@ class SubwayViewController: UIViewController {
          stationID = 1;
          */
 //        getTheWay(from: stations[275], to: stations[234])
-        
     }
     
     /// 站点添加
@@ -262,6 +268,13 @@ class SubwayViewController: UIViewController {
         }
         return []
     }
+    
+    func loadDateFromDB() {
+//        SQLManager.manager.search()
+        SubwayManager.manager.loadData()
+    }
+    
+    
     //MARK: - 线路算法
     func getTheLineWay(from station:Station, to aim:Station) {
         let startLines = station.lines

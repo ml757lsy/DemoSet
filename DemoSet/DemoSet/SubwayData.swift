@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 /// 站结构
 struct Station {
     
@@ -32,6 +31,9 @@ struct Station {
     
     /// 简化位置
     var simplePostion:CGPoint = CGPoint.zero//
+    
+    /// 可用
+    var isPractical:Bool = true
 }
 
 /// 线结构
@@ -140,6 +142,10 @@ class SubwayData {
                 }
             }
         }
+    }
+    
+    func loadDataFromSql() {
+
     }
     
     
@@ -272,7 +278,6 @@ class SubwayData {
         if s.write(toFile: path!, atomically: true) {
             print("save success")
         }
-        
     }
     
     
