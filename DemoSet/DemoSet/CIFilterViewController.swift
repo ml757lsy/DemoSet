@@ -48,23 +48,8 @@ class CIFilterViewController: BaseViewController {
     }
     
     func filter() {
-        
-        
         let names = CIFilter.filterNames(inCategory: nil)
         print(names)
-        for name in names {
-//            let cgimage = originalImage?.cgImage
-//            var ciimage = CIImage.init(cgImage: cgimage!)
-//            let filter = CIFilter.init(name: name)
-//            filter?.setValue(ciimage, forKey: kCIInputImageKey)
-//            ciimage = (filter?.outputImage)!
-//
-//            //
-//            let just = UIImageView.init(frame: CGRect.init(x: space, y: y, width: size, height: size))
-//            backScroll.addSubview(just)
-//            just.image = UIImage.init(ciImage: ciimage)
-//            y += size+space*2
-        }
         
         //
         let cgimage = originalImage?.cgImage
@@ -78,7 +63,9 @@ class CIFilterViewController: BaseViewController {
         let just = UIImageView.init(frame: CGRect.init(x: space, y: y, width: size, height: size))
         backScroll.addSubview(just)
         just.image = UIImage.init(ciImage: ciimage)
+        y += size + space
         
+        //
         loadFace()
     }
     
@@ -90,17 +77,70 @@ class CIFilterViewController: BaseViewController {
             return 
         }
         
+        //
+        let w = (image?.size.width)!/2
+        let h = (image?.size.height)!/2
+        let imageview = UIImageView.init(frame: CGRect.init(x: space, y: y, width: w, height: h))
+        imageview.image = image
+        y += h+space
+        backScroll.addSubview(imageview)
+        backScroll.contentSize = CGSize.init(width: backScroll.width, height: y*1.5)
+        
         
         let context = CIContext.init(options: nil)
-        let param = [CIDetectorAccuracy:CIDetectorAccuracyHigh]
+        let param:[String:Any] = [CIDetectorAccuracy:CIDetectorAccuracyHigh,
+                                  CIDetectorSmile:true]
         
         let faceDec = CIDetector.init(ofType: CIDetectorTypeFace, context: context, options: param)
         
         let features = faceDec?.features(in: ciimage)
-        print(features)
         for feature in features! {
             print(feature.type)
-            print(feature.bounds)
+            if feature.type == CIFeatureTypeFace {
+                print(feature.bounds)
+                let facefeature = feature as! CIFaceFeature
+                print(facefeature.leftEyePosition)
+                print(facefeature.rightEyePosition)
+                print(facefeature.mouthPosition)
+                print(facefeature.hasSmile)
+                
+                //y轴是从下往上来的
+                //sign
+                let box = UIView.init(frame: CGRect.init(x: feature.bounds.origin.x/4, y: imageview.height - feature.bounds.origin.y/4, width: feature.bounds.size.width/4, height: -feature.bounds.size.height/4))
+                box.layer.borderWidth = 1
+                box.layer.borderColor = UIColor.red.cgColor
+                box.backgroundColor = UIColor.clear
+                imageview.addSubview(box)
+                
+                if facefeature.hasMouthPosition {
+                    let mouth = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 8, height: 8))
+                    mouth.backgroundColor = UIColor.init(red: 1, green: 0, blue: 0, alpha: 0.8)
+                    mouth.center = CGPoint.init(x: facefeature.mouthPosition.x/4, y:imageview.height - facefeature.mouthPosition.y/4)
+                    imageview.addSubview(mouth)
+                }
+                
+                if  facefeature.hasLeftEyePosition {
+                    let left = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 5, height: 5))
+                    left.layer.backgroundColor = UIColor.init(red: 0, green: 1, blue: 0, alpha: 0.8).cgColor
+                    left.center = CGPoint.init(x: facefeature.leftEyePosition.x/4, y: imageview.height-facefeature.leftEyePosition.y/4)
+                    imageview.addSubview(left)
+                }
+                
+                if facefeature.hasRightEyePosition {
+                    let right = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 5, height: 5))
+                    right.layer.backgroundColor = UIColor.init(red: 0, green: 1, blue: 0, alpha: 0.8).cgColor
+                    right.center = CGPoint.init(x: facefeature.rightEyePosition.x/4, y: imageview.height-facefeature.rightEyePosition.y/4)
+                    imageview.addSubview(right)
+                }
+                
+                if facefeature.hasSmile {
+                    print("smile")
+                }
+                if facefeature.hasFaceAngle {
+                    print(facefeature.faceAngle)
+                    box.transform = CATransform3DGetAffineTransform(CATransform3DMakeRotation(CGFloat(facefeature.faceAngle/90), 0, 0, 1))
+                }
+            }
             print("--------")
         }
     }
