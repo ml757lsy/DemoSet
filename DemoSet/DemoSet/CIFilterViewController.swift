@@ -78,6 +78,31 @@ class CIFilterViewController: BaseViewController {
         let just = UIImageView.init(frame: CGRect.init(x: space, y: y, width: size, height: size))
         backScroll.addSubview(just)
         just.image = UIImage.init(ciImage: ciimage)
+        
+        loadFace()
+    }
+    
+    func loadFace() {
+        let image = UIImage.init(named: "testImage5")
+        let ciimage = CIImage.init(cgImage: (image?.cgImage)!)
+        
+        if ciimage == nil {
+            return 
+        }
+        
+        
+        let context = CIContext.init(options: nil)
+        let param = [CIDetectorAccuracy:CIDetectorAccuracyHigh]
+        
+        let faceDec = CIDetector.init(ofType: CIDetectorTypeFace, context: context, options: param)
+        
+        let features = faceDec?.features(in: ciimage)
+        print(features)
+        for feature in features! {
+            print(feature.type)
+            print(feature.bounds)
+            print("--------")
+        }
     }
     
 
