@@ -78,7 +78,28 @@ extension UIImage{
         UIGraphicsEndImageContext()
         
         return resized
-
+    }
+    
+    /// 缩放至大小
+    ///
+    /// - Parameters:
+    ///   - quality: 质量
+    ///   - size: 大小
+    /// - Returns: 图片
+    func resize(with quality:CGInterpolationQuality,size:CGSize) -> UIImage {
+        var resized:UIImage
+        let width:CGFloat = size.width
+        let height:CGFloat = size.height
+        
+        UIGraphicsBeginImageContext(CGSize.init(width: width, height: height))
+        let context:CGContext = UIGraphicsGetCurrentContext()!
+        context.interpolationQuality = quality
+        self.draw(in: CGRect.init(x: 0, y: 0, width: width, height: height))
+        
+        resized = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        return resized
     }
     
     func black() -> [[Int]] {

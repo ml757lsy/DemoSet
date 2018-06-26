@@ -120,6 +120,8 @@
 		79EB466B20DD0718000CB1B9 /* FMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79EB466A20DD0718000CB1B9 /* FMDB.framework */; };
 		79EB466D20DD0A75000CB1B9 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 79EB466C20DD0A74000CB1B9 /* libsqlite3.0.tbd */; };
 		79EB466F20E0BC57000CB1B9 /* SubwayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB466E20E0BC57000CB1B9 /* SubwayManager.swift */; };
+		79EB467120E23FBC000CB1B9 /* ReaderFileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB467020E23FBC000CB1B9 /* ReaderFileCell.swift */; };
+		79EB467320E2480F000CB1B9 /* ReaderContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB467220E2480F000CB1B9 /* ReaderContentViewController.swift */; };
 		79FB35061EEAA7190083ED79 /* CellularAutomatonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB35051EEAA7190083ED79 /* CellularAutomatonViewController.swift */; };
 		79FB35091EEAAB850083ED79 /* Cellular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB35081EEAAB850083ED79 /* Cellular.swift */; };
 /* End PBXBuildFile section */
@@ -297,6 +299,8 @@
 		79EB466A20DD0718000CB1B9 /* FMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79EB466C20DD0A74000CB1B9 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		79EB466E20E0BC57000CB1B9 /* SubwayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubwayManager.swift; sourceTree = "<group>"; };
+		79EB467020E23FBC000CB1B9 /* ReaderFileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderFileCell.swift; sourceTree = "<group>"; };
+		79EB467220E2480F000CB1B9 /* ReaderContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderContentViewController.swift; sourceTree = "<group>"; };
 		79FB35051EEAA7190083ED79 /* CellularAutomatonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellularAutomatonViewController.swift; sourceTree = "<group>"; };
 		79FB35081EEAAB850083ED79 /* Cellular.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cellular.swift; sourceTree = "<group>"; };
 		B57CB0D8E15F346CDBC020A0 /* Pods_DemoSet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoSet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -647,6 +651,8 @@
 			isa = PBXGroup;
 			children = (
 				79D650E620AD5C99009E27CF /* ReaderViewController.swift */,
+				79EB467220E2480F000CB1B9 /* ReaderContentViewController.swift */,
+				79EB467020E23FBC000CB1B9 /* ReaderFileCell.swift */,
 			);
 			name = Reader;
 			sourceTree = "<group>";
@@ -1140,6 +1146,7 @@
 				7907B25E1FDE8D4600BB9CD3 /* BinaryTreeViewController.swift in Sources */,
 				79FB35061EEAA7190083ED79 /* CellularAutomatonViewController.swift in Sources */,
 				79584BBA1EEFDDDB003ABE05 /* BaseViewController.swift in Sources */,
+				79EB467320E2480F000CB1B9 /* ReaderContentViewController.swift in Sources */,
 				79B26A941F0A453C00B54EC2 /* AttackModel.swift in Sources */,
 				796468101F9843E30091D671 /* MathViewController.swift in Sources */,
 				7907B2601FDE8D7700BB9CD3 /* BinaryTreeModel.swift in Sources */,
@@ -1150,6 +1157,7 @@
 				795714322005C0F70007078A /* SubwayScene.swift in Sources */,
 				79DCC1701F6CC81200D6A6CE /* UIImage+Extension.swift in Sources */,
 				79CB226F1F94B0C500C9FE1E /* MaskViewController.swift in Sources */,
+				79EB467120E23FBC000CB1B9 /* ReaderFileCell.swift in Sources */,
 				791FF81A20B2773200AD6B2D /* EvolutionState.swift in Sources */,
 				795714312005C0F70007078A /* SubwayData.swift in Sources */,
 				7955CF171F9092C9007F6DC2 /* StringModel.swift in Sources */,

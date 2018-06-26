@@ -85,14 +85,23 @@ class PasswordProduceManager: NSObject {
         
         //rule
         /* sime
-         1 -> i
+         1 -> i -> !
          2 -> L
-         3 -> E
+         3 -> e
          5 -> s -> S
          6 -> b
-         8 -> B
+         8 -> B -> &
          9 -> g -> q
          0 -> o -> O
+        
+         *
+         ss->55
+         22->zz
+         00->oo
+         ll->11
+         ee->33
+         66->bb
+         a -> @
          *
          transform
          7-L
@@ -102,13 +111,6 @@ class PasswordProduceManager: NSObject {
          w-m
          W-M
          b-d
-         *
-         ss->55
-         22->zz
-         00->oo
-         ll->11
-         ee->33
-         66->bb
          */
         
         for c in string {
@@ -190,6 +192,23 @@ class PasswordProduceManager: NSObject {
         }
         
         return true
+    }
+    
+    /// 时间相关字符串转换
+    ///
+    /// - Parameter t: 可能包括时间的串
+    /// - Returns: string
+    func time(with t:String) -> String {
+        let months = ["一月","","","","","",""]
+        let tomonths = ["Feb",""]
+        
+        let day = ["一日",""]
+        let today = ["first",".1"]
+        
+        //
+        
+        
+        return ""
     }
     
 }
