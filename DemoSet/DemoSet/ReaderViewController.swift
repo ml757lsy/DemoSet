@@ -115,11 +115,18 @@ class ReaderViewController: BaseViewController,UICollectionViewDataSource,UIColl
                     files.append(pp)
                 }
             }
-            
-            let content = ReaderContentViewController()
-            content.files = files
-            content.current = index
-            navigationController?.pushViewController(content, animated: true)
+            if suf == "mp4" {
+                //
+                let play = PlayerViewController()
+                play.playList = files
+                play.current = files.index(of: p)!
+                navigationController?.pushViewController(play, animated: true)
+            }else{
+                let content = ReaderContentViewController()
+                content.files = files
+                content.current = files.index(of: p)!
+                navigationController?.pushViewController(content, animated: true)
+            }
         }
     }
     

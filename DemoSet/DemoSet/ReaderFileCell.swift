@@ -34,7 +34,9 @@ class ReaderFileCell: UICollectionViewCell {
                             }
                         }
                     }
-                }else{//目录
+                }else if name.hasSuffix(".mp4"){//
+                    image.image = UIImage.init(named: "mp4")
+                }else {//目录
                     image.image = UIImage.init(named: "folder")
                 }
             }
