@@ -42,8 +42,8 @@ class EvolutionCell: NSObject {
             
             var type:String = (attribute?.components(separatedBy: ",").first!)!
             type = type.substring(from: String.Index.init(encodedOffset: 1))
-            
-            if "idfl".contains(type) {
+            //计算属性的才计算
+            if "idfl".contains(type) {//int double float long
                 let change = (newvalue as! CGFloat) - (oldvalue as! CGFloat)
                 print(change)
             }
@@ -51,7 +51,7 @@ class EvolutionCell: NSObject {
         }
         print(text)
         
-        nextState.reaction -= 0.05
+        nextState.reaction -= 0.05//减去时间粒度  精度问题
         
     }
 

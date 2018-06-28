@@ -29,6 +29,9 @@ class ReaderContentViewController: BaseViewController {
     func initView() {
         view.addSubview(imageView)
         imageView.frame = view.bounds
+        imageView.snp.makeConstraints { (make) in
+            make.left.top.right.bottom.equalTo(0)
+        }
         imageView.isUserInteractionEnabled = true
         imageView.contentMode = .scaleAspectFit
         if files.count > 0 {

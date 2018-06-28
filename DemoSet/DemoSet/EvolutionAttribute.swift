@@ -8,6 +8,22 @@
 
 import UIKit
 
+
+/// 级别
+///
+/// - food: 纯粹
+/// - provider: 最低价
+/// - normal: 正常
+/// - consume: 消费者
+/// - hunter: 会猎杀
+enum EvolutionType:Int {
+    case food
+    case provider
+    case normal
+    case consume
+    case hunter
+}
+
 class EvolutionAttribute: NSObject {
     
     var type:Int = 0
@@ -47,5 +63,15 @@ class EvolutionAttribute: NSObject {
     var energyCost:CGFloat = 0.1
     var energyMin:CGFloat = 1
     var energyMax:CGFloat = 100
+    
+    /// 危险程度
+    var danger:CGFloat = 10
+    var dangerScope:CGFloat = 10//适应的范围
+    var dangerFit:CGFloat = 10//适应的
+    
+    var attack:CGFloat = 1
+    var attackType:Int = 0
+    var foodType:EvolutionType = .normal
+    var eatType:EvolutionType = .provider
 
 }

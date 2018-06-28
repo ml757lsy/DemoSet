@@ -122,6 +122,8 @@
 		79EB466F20E0BC57000CB1B9 /* SubwayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB466E20E0BC57000CB1B9 /* SubwayManager.swift */; };
 		79EB467120E23FBC000CB1B9 /* ReaderFileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB467020E23FBC000CB1B9 /* ReaderFileCell.swift */; };
 		79EB467320E2480F000CB1B9 /* ReaderContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB467220E2480F000CB1B9 /* ReaderContentViewController.swift */; };
+		79EB467620E4B54E000CB1B9 /* PlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB467520E4B54E000CB1B9 /* PlayerManager.swift */; };
+		79EB467A20E4B91E000CB1B9 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB467920E4B91E000CB1B9 /* PlayerViewController.swift */; };
 		79FB35061EEAA7190083ED79 /* CellularAutomatonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB35051EEAA7190083ED79 /* CellularAutomatonViewController.swift */; };
 		79FB35091EEAAB850083ED79 /* Cellular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB35081EEAAB850083ED79 /* Cellular.swift */; };
 /* End PBXBuildFile section */
@@ -301,6 +303,8 @@
 		79EB466E20E0BC57000CB1B9 /* SubwayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubwayManager.swift; sourceTree = "<group>"; };
 		79EB467020E23FBC000CB1B9 /* ReaderFileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderFileCell.swift; sourceTree = "<group>"; };
 		79EB467220E2480F000CB1B9 /* ReaderContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderContentViewController.swift; sourceTree = "<group>"; };
+		79EB467520E4B54E000CB1B9 /* PlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerManager.swift; sourceTree = "<group>"; };
+		79EB467920E4B91E000CB1B9 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		79FB35051EEAA7190083ED79 /* CellularAutomatonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellularAutomatonViewController.swift; sourceTree = "<group>"; };
 		79FB35081EEAAB850083ED79 /* Cellular.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cellular.swift; sourceTree = "<group>"; };
 		B57CB0D8E15F346CDBC020A0 /* Pods_DemoSet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoSet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -742,6 +746,15 @@
 			name = Landscape;
 			sourceTree = "<group>";
 		};
+		79EB467420E4B534000CB1B9 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				79EB467920E4B91E000CB1B9 /* PlayerViewController.swift */,
+				79EB467520E4B54E000CB1B9 /* PlayerManager.swift */,
+			);
+			name = Player;
+			sourceTree = "<group>";
+		};
 		79FB35021EEAA5540083ED79 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -761,6 +774,7 @@
 		79FB35031EEAA65D0083ED79 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				79EB467420E4B534000CB1B9 /* Player */,
 				79EB464E20DB96F5000CB1B9 /* Landscape */,
 				7933A46420D0FAB900AE36D7 /* CIFilter */,
 				7933A3CF20BBE31800AE36D7 /* I18N */,
@@ -933,6 +947,9 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.NearFieldCommunicationTagReading = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -1170,6 +1187,7 @@
 				798AE3E920A9A1C00019E38C /* WebViewController.swift in Sources */,
 				79DCC1751F6D0D3100D6A6CE /* QRCodeModule.swift in Sources */,
 				7955CEF11F8CBA25007F6DC2 /* BluetoothConnectionViewController.swift in Sources */,
+				79EB467620E4B54E000CB1B9 /* PlayerManager.swift in Sources */,
 				79DCC16B1F6A69E400D6A6CE /* LocationModule.swift in Sources */,
 				79DB4BBB1F70B1B00014CA2D /* WaveViewController.swift in Sources */,
 				79CB227B1F9744FB00C9FE1E /* GyroManager.swift in Sources */,
@@ -1177,6 +1195,7 @@
 				79DCC1731F6D0D1F00D6A6CE /* QRCodeViewController.swift in Sources */,
 				791FF81620B274B500AD6B2D /* EvolutionGround.swift in Sources */,
 				79EB465C20DCD632000CB1B9 /* AppStoreContentView.swift in Sources */,
+				79EB467A20E4B91E000CB1B9 /* PlayerViewController.swift in Sources */,
 				79B26AA21F0DD9BE00B54EC2 /* SkillModel.swift in Sources */,
 				791FF82320B3FEC900AD6B2D /* String+Extension.swift in Sources */,
 				79DCC1651F6A4A1D00D6A6CE /* NotificationViewController.swift in Sources */,

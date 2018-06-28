@@ -12,9 +12,10 @@ import CoreLocation
 
 class NotificationModule: NSObject {
     
+    static let manager = NotificationModule()
     
     /// 注册通知
-    class func registNotification() {
+    func registNotification() {
         let ver = UIDevice.current.systemVersion
         let result = ver.compare("10.0.0")
         
@@ -34,7 +35,7 @@ class NotificationModule: NSObject {
         }
     }
     
-    class func addLocalNotification() {
+    func addLocalNotification() {
         if #available(iOS 10.0, *) {
             let center = UNUserNotificationCenter.current()
             
@@ -78,7 +79,7 @@ class NotificationModule: NSObject {
         }
     }
     
-    class func addHomeNotification() {
+    func addHomeNotification() {
         if #available(iOS 10.0, *) {
             let content = UNMutableNotificationContent()
             content.title = "Yo~"
@@ -98,7 +99,7 @@ class NotificationModule: NSObject {
     }
 
     
-    class func addNotification(preset:LocationPreset){
+     func addNotification(preset:LocationPreset){
         if #available(iOS 10.0, *) {
             let content = UNMutableNotificationContent()
             content.title = "Yo~"

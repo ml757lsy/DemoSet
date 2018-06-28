@@ -118,6 +118,7 @@ class ReaderViewController: BaseViewController,UICollectionViewDataSource,UIColl
             
             let content = ReaderContentViewController()
             content.files = files
+            content.current = index
             navigationController?.pushViewController(content, animated: true)
         }
     }

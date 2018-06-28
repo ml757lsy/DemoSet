@@ -16,7 +16,7 @@ class EvolutionGround: NSObject {
     
     
     ///
-    var position:CGPoint = CGPoint.zero
+    var position:CGPoint = CGPoint.init(x: 0, y: 0)
     
     var cells:[EvolutionCell] = []
 

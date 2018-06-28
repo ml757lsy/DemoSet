@@ -11,6 +11,7 @@ import UIKit
 class EvolutionState: NSObject {
     
     var position:CGPoint = CGPoint.zero
+    var health:CGFloat = 10
     var die:Bool = false
     var reaction:CGFloat = 0.1
 

@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import UserNotifications
+import UserNotificationsUI
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
 
@@ -28,8 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.rootViewController = tab
         
-        NotificationModule.registNotification()
-        NotificationModule.addHomeNotification()
+        NotificationModule.manager.registNotification()
+        NotificationModule.manager.addHomeNotification()
+        UNUserNotificationCenter.current().delegate = self
         
         // Override point for customization after application launch.
         return true
@@ -57,6 +60,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    //MARK: - notification
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        print(deviceToken)
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print(error)
+    }
+
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        //
+    }
+    
+    
+    //MARK: - delegate
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        //
+        print(notification.date)
+        print(notification.request.identifier)
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        //
+    }
+    
+    
 
 }
 
