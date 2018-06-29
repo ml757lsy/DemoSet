@@ -59,7 +59,7 @@ class ARViewController: BaseViewController {
             
             let anchor = ARAnchor.init(transform: transform)
             
-            sceneView.session.add(anchor: anchor)
+//            sceneView.session.add(anchor: anchor)
         }
     }
     
@@ -74,7 +74,7 @@ class ARViewController: BaseViewController {
 extension ARViewController: ARSKViewDelegate {
     func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {
         //
-        let node = SKShapeNode.init(rectOf: CGSize.init(width: 100, height: 100))
+        let node = SKShapeNode.init(rectOf: CGSize.init(width: 1, height: 1))
         node.position = CGPoint.init(x: sceneView.bounds.size.width/2, y: sceneView.bounds.size.height/2)
         node.fillColor = UIColor.red
         
@@ -84,6 +84,8 @@ extension ARViewController: ARSKViewDelegate {
     
     func view(_ view: ARSKView, didAdd node: SKNode, for anchor: ARAnchor) {
         print("add")
+        print("---------------")
+        
     }
     
     func view(_ view: ARSKView, didRemove node: SKNode, for anchor: ARAnchor) {
@@ -96,6 +98,24 @@ extension ARViewController: ARSKViewDelegate {
     
     func view(_ view: ARSKView, willUpdate node: SKNode, for anchor: ARAnchor) {
         print("will update")
+    }
+}
+
+extension ARViewController: ARSCNViewDelegate {
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        print("scn add")
+        if anchor.isKind(of: ARPlaneAnchor.self) {
+            let planchor = anchor as! ARPlaneAnchor
+            
+            let plan = SCNPlane.init(width: CGFloat(planchor.extent.x), height: CGFloat(planchor.extent.z))
+            plan.firstMaterial?.diffuse.contents = UIColor.green
+            plan.firstMaterial?.transparency = 0.5
+            
+            let scnode = SCNNode.init(geometry: plan)
+            scnode.position = SCNVector3.init(planchor.center.x, 0, planchor.center.z)
+            scnode.transform = SCNMatrix4MakeRotation(Float(-M_PI_2), 1, 0, 0)
+            node.addChildNode(scnode)
+        }
     }
 }
 
