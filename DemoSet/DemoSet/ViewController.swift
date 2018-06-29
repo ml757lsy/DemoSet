@@ -87,6 +87,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         list.append("CIFilter")
         list.append("Landscape")
         list.append("Player")
+        list.append("AR")
         
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize.init(width: 100, height: 100)
@@ -208,6 +209,9 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             break
         case 30:
             aimController = PlayerViewController()
+            break
+        case 31:
+            aimController = ARViewController()
             break
             
         default:

@@ -124,6 +124,10 @@
 		79EB467320E2480F000CB1B9 /* ReaderContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB467220E2480F000CB1B9 /* ReaderContentViewController.swift */; };
 		79EB467620E4B54E000CB1B9 /* PlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB467520E4B54E000CB1B9 /* PlayerManager.swift */; };
 		79EB467A20E4B91E000CB1B9 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB467920E4B91E000CB1B9 /* PlayerViewController.swift */; };
+		79EB467D20E4E820000CB1B9 /* SlideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB467C20E4E820000CB1B9 /* SlideMenuViewController.swift */; };
+		79EB467F20E4ED39000CB1B9 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB467E20E4ED39000CB1B9 /* LeftViewController.swift */; };
+		79EB468120E4ED43000CB1B9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB468020E4ED43000CB1B9 /* MainViewController.swift */; };
+		79EB468520E5D4D3000CB1B9 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB468420E5D4D3000CB1B9 /* ARViewController.swift */; };
 		79FB35061EEAA7190083ED79 /* CellularAutomatonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB35051EEAA7190083ED79 /* CellularAutomatonViewController.swift */; };
 		79FB35091EEAAB850083ED79 /* Cellular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB35081EEAAB850083ED79 /* Cellular.swift */; };
 /* End PBXBuildFile section */
@@ -305,6 +309,10 @@
 		79EB467220E2480F000CB1B9 /* ReaderContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderContentViewController.swift; sourceTree = "<group>"; };
 		79EB467520E4B54E000CB1B9 /* PlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerManager.swift; sourceTree = "<group>"; };
 		79EB467920E4B91E000CB1B9 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		79EB467C20E4E820000CB1B9 /* SlideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuViewController.swift; sourceTree = "<group>"; };
+		79EB467E20E4ED39000CB1B9 /* LeftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
+		79EB468020E4ED43000CB1B9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		79EB468420E5D4D3000CB1B9 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		79FB35051EEAA7190083ED79 /* CellularAutomatonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellularAutomatonViewController.swift; sourceTree = "<group>"; };
 		79FB35081EEAAB850083ED79 /* Cellular.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cellular.swift; sourceTree = "<group>"; };
 		B57CB0D8E15F346CDBC020A0 /* Pods_DemoSet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoSet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -755,6 +763,24 @@
 			name = Player;
 			sourceTree = "<group>";
 		};
+		79EB467B20E4E7E5000CB1B9 /* SliderController */ = {
+			isa = PBXGroup;
+			children = (
+				79EB467C20E4E820000CB1B9 /* SlideMenuViewController.swift */,
+				79EB467E20E4ED39000CB1B9 /* LeftViewController.swift */,
+				79EB468020E4ED43000CB1B9 /* MainViewController.swift */,
+			);
+			name = SliderController;
+			sourceTree = "<group>";
+		};
+		79EB468320E5D4C5000CB1B9 /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				79EB468420E5D4D3000CB1B9 /* ARViewController.swift */,
+			);
+			name = AR;
+			sourceTree = "<group>";
+		};
 		79FB35021EEAA5540083ED79 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -774,6 +800,8 @@
 		79FB35031EEAA65D0083ED79 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				79EB468320E5D4C5000CB1B9 /* AR */,
+				79EB467B20E4E7E5000CB1B9 /* SliderController */,
 				79EB467420E4B534000CB1B9 /* Player */,
 				79EB464E20DB96F5000CB1B9 /* Landscape */,
 				7933A46420D0FAB900AE36D7 /* CIFilter */,
@@ -1121,6 +1149,7 @@
 				79B26A961F0A45CD00B54EC2 /* NoblePhantasmModel.swift in Sources */,
 				795853B81EEF954700F214A5 /* SortViewController.swift in Sources */,
 				79A4F5A81FD791A2001E9A37 /* BaseTabBarViewController.swift in Sources */,
+				79EB467F20E4ED39000CB1B9 /* LeftViewController.swift in Sources */,
 				79A4F5AE1FD7CCB7001E9A37 /* AppStoreContentCell.swift in Sources */,
 				79B647D11F74DE8A0002103E /* UIDevide+Extension.swift in Sources */,
 				7933A3E120BCFED000AE36D7 /* UIButton+I18NExtension.swift in Sources */,
@@ -1147,6 +1176,7 @@
 				79DCC1681F6A50B600D6A6CE /* NotificationModule.swift in Sources */,
 				79B26A901F0A431100B54EC2 /* ServentModel.swift in Sources */,
 				79A4F5A11FD55567001E9A37 /* BaseBannerPointView.swift in Sources */,
+				79EB468520E5D4D3000CB1B9 /* ARViewController.swift in Sources */,
 				79DCC17A1F6D2EF900D6A6CE /* FaceRecognitionViewController.swift in Sources */,
 				79A4F59F1FCD712F001E9A37 /* RoleModel.swift in Sources */,
 				7955CEEC1F8C729A007F6DC2 /* QRCodeView.swift in Sources */,
@@ -1181,6 +1211,7 @@
 				79B647D41F7899FD0002103E /* NFCViewController.swift in Sources */,
 				79CB22771F97032000C9FE1E /* BannerViewController.swift in Sources */,
 				79E29D771FECD7B400EC4577 /* RuntimeViewController.swift in Sources */,
+				79EB468120E4ED43000CB1B9 /* MainViewController.swift in Sources */,
 				7933A3DF20BC161A00AE36D7 /* UILabel+I18NExtension.swift in Sources */,
 				79A4F5A41FD6A18D001E9A37 /* AppStoreViewController.swift in Sources */,
 				79CB22741F95EBCA00C9FE1E /* LotteryViewController.swift in Sources */,
@@ -1192,6 +1223,7 @@
 				79DB4BBB1F70B1B00014CA2D /* WaveViewController.swift in Sources */,
 				79CB227B1F9744FB00C9FE1E /* GyroManager.swift in Sources */,
 				79EB466F20E0BC57000CB1B9 /* SubwayManager.swift in Sources */,
+				79EB467D20E4E820000CB1B9 /* SlideMenuViewController.swift in Sources */,
 				79DCC1731F6D0D1F00D6A6CE /* QRCodeViewController.swift in Sources */,
 				791FF81620B274B500AD6B2D /* EvolutionGround.swift in Sources */,
 				79EB465C20DCD632000CB1B9 /* AppStoreContentView.swift in Sources */,
