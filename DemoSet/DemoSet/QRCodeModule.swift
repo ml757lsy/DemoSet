@@ -170,7 +170,17 @@ class QRCodeModule: NSObject {
             }
             data.append(line)
         }
+        let ver = qrcodeVersion(size: data.count)
+        print("Version:\(ver)")
         return data
+    }
+    
+    /// 计算Version
+    ///
+    /// - Parameter size: 大小
+    /// - Returns: version
+    class func qrcodeVersion(size:Int) -> Int {
+        return (size - 21)/4+1
     }
     
     /// 生成图片底的二维码
@@ -209,6 +219,9 @@ class QRCodeModule: NSObject {
                         let path = CGPath.init(rect: CGRect.init(x: pixsize*CGFloat(i), y: pixsize*CGFloat(data.count - l), width: pixsize, height: pixsize), transform: nil)
                         context?.addPath(path)
                     }else{
+//                        if !needDraw(context: context!, buf: rgbImageBuf, isBlack: true, x: i, y: l, size: Int(pixsize)){
+//                            continue
+//                        }
                         let path = CGPath.init(rect: CGRect.init(x: pixsize*CGFloat(i)+pixsize/3, y: pixsize*CGFloat(data.count - l)+pixsize/3, width: pixsize/3, height: pixsize/3), transform: nil)
                         context?.addPath(path)
                     }
@@ -228,6 +241,9 @@ class QRCodeModule: NSObject {
                         let path = CGPath.init(rect: CGRect.init(x: pixsize*CGFloat(i), y: pixsize*CGFloat(data.count - l), width: pixsize, height: pixsize), transform: nil)
                         context?.addPath(path)
                     }else{
+//                        if !needDraw(context: context!, buf: rgbImageBuf, isBlack: false, x: i, y: l, size: Int(pixsize)){
+//                            continue
+//                        }
                         let path = CGPath.init(rect: CGRect.init(x: pixsize*CGFloat(i)+pixsize/3, y: pixsize*CGFloat(data.count - l)+pixsize/3, width: pixsize/3, height: pixsize/3), transform: nil)
                         context?.addPath(path)
                     }
@@ -238,6 +254,61 @@ class QRCodeModule: NSObject {
         
         
         return UIImage.init(cgImage: (context?.makeImage())!)
+    }
+    
+    /// 是否需要绘点
+    ///
+    /// - Parameters:
+    ///   - context: context
+    ///   - buf: buf
+    ///   - isBlack: 黑点
+    /// - Returns: bool
+    class func needDraw(context:CGContext, buf:UnsafeMutableRawPointer, isBlack:Bool, x:Int, y:Int, size:Int) -> Bool {
+        /*权重计算
+         * 中心最高 边缘最低 范围0.3-1
+         */
+        /*阈值计算
+         *黑色为255*0.7 = 178.5
+         *白色为255*0.3 = 76.5
+         */
+        var point = buf
+        let c = y * context.width + x * size
+        point += c
+        
+        var cvalue:CGFloat = 0//色值
+        
+        for i in 0..<size {
+            for j in 0..<size {
+                let r = point.load(fromByteOffset: 0, as: UInt8.self)
+                let g = point.load(fromByteOffset: 1, as: UInt8.self)
+                let b = point.load(fromByteOffset: 2, as: UInt8.self)
+                
+                //会野指针···
+                let c = Int(r + g + b)/3
+                let w = (size+1)/2
+                let wc = max(abs(w-i), abs(w-j))
+                
+                let weight = (1-CGFloat(wc)/CGFloat(w))*0.7+0.3//权重
+                
+                let cv = CGFloat(c)*weight
+                cvalue += cv
+                
+                //next pix
+                point += 1
+            }
+            //next line
+            point += context.width - size
+        }
+        let colorvalue = cvalue / CGFloat(size)*CGFloat(size)
+        
+        if isBlack && colorvalue > 178.5 {
+            return false
+        }else
+            if !isBlack && colorvalue < 76.5 {
+                return false
+        }
+        //默认吧
+        return true
     }
     
     /// 是否是固定不变的

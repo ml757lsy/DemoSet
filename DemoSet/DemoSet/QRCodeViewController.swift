@@ -84,7 +84,7 @@ class QRCodeViewController: BaseViewController,AVCaptureMetadataOutputObjectsDel
         
         view.addSubview(box)
         box.frame = CGRect.init(x: 30, y: 100, width: view.width-60, height: view.height-300)
-        box.backgroundColor = UIColor.init(red: 1, green: 0, blue: 0, alpha: 0.3)
+//        box.backgroundColor = UIColor.init(red: 1, green: 0, blue: 0, alpha: 0.3)
         
         session.startRunning()
         

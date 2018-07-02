@@ -109,7 +109,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 public func Print<T>(_ message:T, file:String = #file, line:Int = #line, function:String = #function) {
     #if DEBUG
         let filename = (file as NSString).lastPathComponent
-    print("#\(filename)-\(line):\(message)")
+        print("#\(filename)-\(line):\(message)")
     #endif
 }
 
