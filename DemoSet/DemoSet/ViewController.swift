@@ -240,6 +240,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         print(languages);
         
         
+        //获取农历
         let calander = NSCalendar.init(identifier: .chinese);
         let m = calander?.component(.month, from: Date())
         let d = calander?.component(.day, from: Date())

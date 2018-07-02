@@ -99,3 +99,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
 }
 
+/// 自定义打印
+///
+/// - Parameters:
+///   - message: 信息
+///   - file: 文件
+///   - line: 行号
+///   - function: 功能
+public func Print<T>(_ message:T, file:String = #file, line:Int = #line, function:String = #function) {
+    #if DEBUG
+        let filename = (file as NSString).lastPathComponent
+    print("#\(filename)-\(line):\(message)")
+    #endif
+}
+

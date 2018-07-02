@@ -35,7 +35,7 @@ class GyroManager: NSObject {
             motion.gyroUpdateInterval = updateInterval
             motion.startGyroUpdates(to: queue) { (data, error) in
                 if (error != nil){
-                    print("Gyro Error")
+                    Print("Gyro Error")
                     self.motion.stopGyroUpdates()
                 }else{
                     let x:CGFloat = CGFloat((data?.rotationRate.x)!)
@@ -46,7 +46,7 @@ class GyroManager: NSObject {
                 }
             }
         }else{
-            print("设备不可用")
+            Print("设备不可用")
         }
     }
     
@@ -62,7 +62,7 @@ class GyroManager: NSObject {
             motion.gyroUpdateInterval = updateInterval
             motion.startAccelerometerUpdates(to: queue) { (data, error) in
                 if error != nil {
-                    print("Accelerometer Error")
+                    Print("Accelerometer Error")
                     self.motion.stopAccelerometerUpdates()
                 }else{
                     let x:CGFloat = CGFloat((data?.acceleration.x)!)
@@ -73,7 +73,7 @@ class GyroManager: NSObject {
                 }
             }
         }else{
-            print("设备不可用")
+            Print("设备不可用")
         }
         
     }
@@ -91,7 +91,7 @@ class GyroManager: NSObject {
             motion.gyroUpdateInterval = updateInterval
             motion.startDeviceMotionUpdates(to: queue, withHandler: { (data, error) in
                 if error != nil{
-                    print("DeviceMotion Error")
+                    Print("DeviceMotion Error")
                     self.motion.stopDeviceMotionUpdates()
                 }else{
                     let x:CGFloat = CGFloat((data?.rotationRate.x)!)
@@ -102,7 +102,7 @@ class GyroManager: NSObject {
                 }
             })
         }else{
-            print("设备不可用")
+            Print("设备不可用")
         }
     }
     
