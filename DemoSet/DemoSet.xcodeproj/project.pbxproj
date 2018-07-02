@@ -86,7 +86,7 @@
 		79B647641F7263780002103E /* MessageFliterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B647631F7263780002103E /* MessageFliterViewController.swift */; };
 		79B647871F7361D90002103E /* MessageFilterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B647861F7361D90002103E /* MessageFilterExtension.swift */; };
 		79B6478B1F7361D90002103E /* MessageFilterExt.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 79B647841F7361D90002103E /* MessageFilterExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		79B647D11F74DE8A0002103E /* UIDevide+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B647D01F74DE8A0002103E /* UIDevide+Extension.swift */; };
+		79B647D11F74DE8A0002103E /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B647D01F74DE8A0002103E /* UIDevice+Extension.swift */; };
 		79B647D41F7899FD0002103E /* NFCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B647D31F7899FD0002103E /* NFCViewController.swift */; };
 		79CB226F1F94B0C500C9FE1E /* MaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CB226E1F94B0C500C9FE1E /* MaskViewController.swift */; };
 		79CB22711F94B0D900C9FE1E /* MaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CB22701F94B0D900C9FE1E /* MaskView.swift */; };
@@ -268,7 +268,7 @@
 		79B647841F7361D90002103E /* MessageFilterExt.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MessageFilterExt.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		79B647861F7361D90002103E /* MessageFilterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFilterExtension.swift; sourceTree = "<group>"; };
 		79B647881F7361D90002103E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		79B647D01F74DE8A0002103E /* UIDevide+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevide+Extension.swift"; sourceTree = "<group>"; };
+		79B647D01F74DE8A0002103E /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		79B647D31F7899FD0002103E /* NFCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCViewController.swift; sourceTree = "<group>"; };
 		79B647D51F78AFA90002103E /* DemoSet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DemoSet.entitlements; sourceTree = "<group>"; };
 		79CB226E1F94B0C500C9FE1E /* MaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskViewController.swift; sourceTree = "<group>"; };
@@ -369,7 +369,7 @@
 				795853BB1EEFBB4000F214A5 /* UIView+Extension.swift */,
 				79DCC16F1F6CC81200D6A6CE /* UIImage+Extension.swift */,
 				7924D1C81FD9364100CEECB6 /* UIImageView+Extension.swift */,
-				79B647D01F74DE8A0002103E /* UIDevide+Extension.swift */,
+				79B647D01F74DE8A0002103E /* UIDevice+Extension.swift */,
 				796468111F99CF6E0091D671 /* UIColor+Extension.swift */,
 				791FF82220B3FEC900AD6B2D /* String+Extension.swift */,
 			);
@@ -1151,7 +1151,7 @@
 				79A4F5A81FD791A2001E9A37 /* BaseTabBarViewController.swift in Sources */,
 				79EB467F20E4ED39000CB1B9 /* LeftViewController.swift in Sources */,
 				79A4F5AE1FD7CCB7001E9A37 /* AppStoreContentCell.swift in Sources */,
-				79B647D11F74DE8A0002103E /* UIDevide+Extension.swift in Sources */,
+				79B647D11F74DE8A0002103E /* UIDevice+Extension.swift in Sources */,
 				7933A3E120BCFED000AE36D7 /* UIButton+I18NExtension.swift in Sources */,
 				79B26A721F05065E00B54EC2 /* AnimationViewController.swift in Sources */,
 				796468121F99CF6E0091D671 /* UIColor+Extension.swift in Sources */,

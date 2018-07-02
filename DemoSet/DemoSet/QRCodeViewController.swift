@@ -18,7 +18,10 @@ class QRCodeViewController: BaseViewController,AVCaptureMetadataOutputObjectsDel
     override func viewDidLoad() {
         super.viewDidLoad()
         customNavigationBar()
-        start()
+        
+        if !UIDevice.isSimulator() {
+            start()
+        }
     }
 
     override func didReceiveMemoryWarning() {

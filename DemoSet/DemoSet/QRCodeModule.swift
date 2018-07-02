@@ -181,7 +181,7 @@ class QRCodeModule: NSObject {
     /// - Returns: img
     class func qrcode(message:String,backImg:UIImage) -> UIImage {
         let data = QRCodeModule.dataWith(message: message)
-        let cg = backImg.cgImage!
+        let cg = backImg.getCGImage()
         
         var width = Int(max(backImg.size.width, backImg.size.height))
         if width < 512 {

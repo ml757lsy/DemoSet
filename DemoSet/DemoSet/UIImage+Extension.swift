@@ -301,4 +301,25 @@ extension UIImage{
         
         return imgs
     }
+    
+    //MARK： -
+    func getCIImage() -> CIImage {
+        if ciImage != nil {
+            return ciImage!
+        }else{
+            let ci = CIImage.init(cgImage: cgImage!)
+            return ci
+        }
+    }
+    
+    func getCGImage() -> CGImage {
+        if cgImage != nil {
+            return cgImage!
+        }else{
+            let ci = self.ciImage
+            let context = CIContext.init()
+            let cg = context.createCGImage(ci!, from: (ci?.extent)!)
+            return cg!
+        }
+    }
 }

@@ -60,6 +60,19 @@ extension UIDevice {
         }
     }
     
+    /// 是不是模拟器
+    ///
+    /// - Returns: bool
+    class func isSimulator() -> Bool {
+        if UIDevice().modelName == "Simulator" {
+            return true
+        }
+        return false
+    }
+    
+    /// 是不是iPhone X
+    ///
+    /// - Returns: bool
     class func isiPhoneX() -> Bool {
         let device = UIDevice().modelName
         if device == "iPhone X" {

@@ -30,6 +30,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         window?.rootViewController = tab
         
+        //slide
+        let main = MainViewController()
+        main.baseinit()
+        let left = LeftViewController()
+        let nvc = UINavigationController.init(rootViewController: main)
+        
+        let  slide = SlideMenuViewController.init(leftViewController: left, mainViewController: nvc)
+//        window?.rootViewController = slide
+        
         NotificationModule.manager.registNotification()
         NotificationModule.manager.addHomeNotification()
         UNUserNotificationCenter.current().delegate = self

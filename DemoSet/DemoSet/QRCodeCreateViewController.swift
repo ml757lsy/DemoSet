@@ -37,7 +37,7 @@ class QRCodeCreateViewController: BaseViewController {
         let qrsize:CGFloat = (SCREENWIDTH - space * 3) / 2
         
         //1.base
-        let qrcodimage = QRCodeModule.initQRCode(message: "哈哈哈哈哈哈嗝···")
+        let qrcodimage = QRCodeModule.initQRCode(message: "只是个头像有什么好扫的")
         let qrview = UIImageView.init(frame: CGRect.init(x: space, y: space, width: qrsize, height: qrsize))
         qrview.image = qrcodimage
         backScroll.addSubview(qrview)
@@ -47,7 +47,7 @@ class QRCodeCreateViewController: BaseViewController {
         data = QRCodeModule.data(with: qrcodimage)
         
         //3.image
-        let image = UIImage.init(named: "testImage3")
+        let image = UIImage.init(named: "testImage6")
         let reheader = image?.resize(with: .none, rate: CGFloat(data.count)*3/(image?.size.width)!)
         
         //original
@@ -62,7 +62,7 @@ class QRCodeCreateViewController: BaseViewController {
         //join
         let imgcode = UIImageView.init(frame: CGRect.init(x: space, y: (qrsize + space)*2, width: qrsize, height: qrsize))
         backScroll.addSubview(imgcode)
-        imgcode.image = QRCodeModule.qrcode(message: "123123123aaaaaa", backImg: image!)
+        imgcode.image = QRCodeModule.qrcode(message: "只是个头像有什么好扫的", backImg: (reheader?.binaryzation())!)
         
     }
     
