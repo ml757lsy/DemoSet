@@ -158,7 +158,7 @@ class SubwayManager: NSObject {
                                     
                                     if path.to != path.from {//第一站不换
                                         let newgo = SubwayGo.init()
-                                        newgo.path = getNewPath(go: go)
+                                        newgo.path = getNewPath(go: go)//新建，否则浅拷贝或导致数据问题
                                         let newpath = SubwayPath()
                                         newpath.line = foundLine(uid: l)
                                         for i in 0..<newpath.line.stops.count {
@@ -224,6 +224,10 @@ class SubwayManager: NSObject {
         return []
     }
     
+    /// 返回一个路径的复制
+    ///
+    /// - Parameter go: 路径
+    /// - Returns: 复制路径
     func getNewPath(go:SubwayGo) -> [SubwayPath] {
         var new:[SubwayPath] = []
         for path in go.path {
@@ -236,6 +240,10 @@ class SubwayManager: NSObject {
         return new
     }
     
+    /// 根据id寻找线路
+    ///
+    /// - Parameter uid: lineid
+    /// - Returns: line
     func foundLine(uid:String) -> SubwayLine{
         for line in contentData {
             if line.line_uid == uid {

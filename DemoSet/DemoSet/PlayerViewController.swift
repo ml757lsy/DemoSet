@@ -13,6 +13,7 @@ class PlayerViewController: BaseViewController,UITableViewDelegate,UITableViewDa
     var playList:[String] = []
     var current:Int = 0
     private let listTable:UITableView = UITableView.init()
+    private let manager = PlayerManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +28,17 @@ class PlayerViewController: BaseViewController,UITableViewDelegate,UITableViewDa
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        manager.stop()
+    }
+    
     func initView() {
-        view.addSubview(PlayerManager.manager.view)
-        PlayerManager.manager.view.snp.makeConstraints { (make) in
+        view.addSubview(manager.view)
+        manager.view.snp.makeConstraints { (make) in
             make.left.right.top.bottom.equalTo(0)
         }
-        PlayerManager.manager.view.backgroundColor = UIColor.lightGray
+        manager.view.backgroundColor = UIColor.lightGray
         
         //list
         view.addSubview(listTable)
@@ -61,8 +67,9 @@ class PlayerViewController: BaseViewController,UITableViewDelegate,UITableViewDa
     //MARK: - func
     
     func play(index:Int) {
+        closeList()
         let path = playList[index]
-        PlayerManager.manager.loadVideo(with: path)
+        manager.loadVideo(with: path)
     }
     
     func showList() {
@@ -91,9 +98,13 @@ class PlayerViewController: BaseViewController,UITableViewDelegate,UITableViewDa
         return playList.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 45
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell.init(style: .default, reuseIdentifier: "cell")
-        cell.textLabel?.text = playList[indexPath.row]
+        cell.textLabel?.text = (playList[indexPath.row] as NSString).lastPathComponent
         if indexPath.row == current {
             cell.textLabel?.textColor = UIColor.red
         }else{
