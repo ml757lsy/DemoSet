@@ -46,9 +46,15 @@ class PlayerManager: NSObject {
 /// 视图 比layer可以更好的自适应
 class PlayerView: UIView {
     
+    private var controlView = UIView()
+    
     private var _layer = AVPlayerLayer()
     private var _timer = Timer()
     private var _timeCout:Int = 0
+    
+    private var slider = UISlider()
+    private var sliderEdit = false
+    private var timeLabel = UILabel()
     
     var playerLayer:AVPlayerLayer{
         get{
@@ -58,6 +64,7 @@ class PlayerView: UIView {
             _layer.removeFromSuperlayer()
             _layer = newVlaue
             layer.addSublayer(newVlaue)
+            bringSubview(toFront: controlView)
         }
     }
     
@@ -81,15 +88,34 @@ class PlayerView: UIView {
     
     /// 创建控制器相关组件
     func initControl() {
+        addSubview(controlView)
+        controlView.snp.makeConstraints { (make) in
+            make.left.top.right.bottom.equalTo(0)
+        }
         //slider
-        let slider = UISlider.init(frame: CGRect.init(x: 0, y: 0, width: 10, height: 10))
-        addSubview(slider)
+        slider = UISlider.init(frame: CGRect.init(x: 0, y: 0, width: 10, height: 10))
+        slider.addTarget(self, action: #selector(sliderUp), for: .touchUpInside)
+        slider.addTarget(self, action: #selector(sliderCancel), for: .touchUpOutside)
+        slider.addTarget(self, action: #selector(sliderDown), for: .touchDown)
+        slider.addTarget(self, action: #selector(sliderChange), for: .valueChanged)
+        controlView.addSubview(slider)
         slider.snp.makeConstraints { (make) in
             make.left.equalTo(40)
             make.right.equalTo(-40)
             make.height.equalTo(10)
             make.bottom.equalTo(-40)
         }
+        //label
+        controlView.addSubview(timeLabel)
+        timeLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(20)
+            make.width.equalTo(150)
+            make.height.equalTo(20)
+            make.bottom.equalTo(-20)
+        }
+        timeLabel.textColor = UIColor.white
+        timeLabel.font = UIFont.boldSystemFont(ofSize: 12)
+        
         //timer
         _timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerHandler(timer:)), userInfo: nil, repeats: true)
     }
@@ -98,15 +124,42 @@ class PlayerView: UIView {
         _timeCout += 1
         
         
-        let currenttime = CGFloat((playerLayer.player?.currentTime().value)!)/CGFloat((playerLayer.player?.currentTime().timescale)!)
+        var currenttime:CGFloat = 0
+        var duration:CGFloat = 0
         
         if playerLayer.player?.currentItem != nil {
-            let duration = CGFloat((playerLayer.player?.currentItem?.duration.value)!)/CGFloat((playerLayer.player?.currentItem?.duration.timescale)!)
-            print( duration)
+            duration = CGFloat((playerLayer.player?.currentItem?.duration.value)!)/CGFloat((playerLayer.player?.currentItem?.duration.timescale)!)
+            slider.maximumValue = Float(duration)
+            
+            currenttime = CGFloat((playerLayer.player?.currentTime().value)!)/CGFloat((playerLayer.player?.currentTime().timescale)!)
+            if !sliderEdit {
+                slider.value = Float(currenttime)
+            }
         }
         
-        
-        print(currenttime)
+        let ch = Int(currenttime)/60/60
+        let cm = Int(currenttime)/60%60
+        let cs = Int(currenttime)%60
+        let dh = Int(duration)/60/60
+        let dm = Int(duration)/60%60
+        let ds = Int(duration)%60
+        timeLabel.text = "\(String(format: "%02d", ch)):\(String(format: "%02d", cm)):\(String(format: "%02d", cs))-\(String(format: "%02d", dh)):\(String(format: "%02d", dm)):\(String(format: "%02d", ds))"
+        //
+    }
+    
+    func sliderUp() {
+        let time = CMTime.init(value: CMTimeValue(slider.value*1000), timescale: 1000)
+        playerLayer.player?.seek(to: time)
+        sliderEdit = false
+    }
+    func sliderDown() {
+        sliderEdit = true
+    }
+    func sliderCancel() {
+        sliderEdit = false
+    }
+    func sliderChange() {
+        //
     }
     
 }

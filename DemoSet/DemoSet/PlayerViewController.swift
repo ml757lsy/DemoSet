@@ -66,6 +66,13 @@ class PlayerViewController: BaseViewController,UITableViewDelegate,UITableViewDa
     
     //MARK: - func
     
+    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+        get{
+            print("TTTTTT")
+            return super.preferredInterfaceOrientationForPresentation
+        }
+    }
+    
     func play(index:Int) {
         closeList()
         let path = playList[index]
