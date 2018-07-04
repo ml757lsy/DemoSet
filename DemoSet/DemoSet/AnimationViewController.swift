@@ -22,6 +22,7 @@ class AnimationViewController: BaseViewController {
         vegas()
         
         snapkitAnimation()
+        waitingAnimation()
     }
 
     override func didReceiveMemoryWarning() {
@@ -178,6 +179,14 @@ class AnimationViewController: BaseViewController {
         }) { (b) in
             //
         }
+    }
+    
+    func waitingAnimation() {
+        let wait = WaitingView.init(frame: CGRect.init(x: 200, y: 200, width: 150, height: 100))
+        view.addSubview(wait)
+        wait.initPoint()
+//        wait.waveAnimation()
+        wait.turnAniamtion()
     }
 
     /*

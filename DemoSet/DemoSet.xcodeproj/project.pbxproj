@@ -128,6 +128,7 @@
 		79EB467F20E4ED39000CB1B9 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB467E20E4ED39000CB1B9 /* LeftViewController.swift */; };
 		79EB468120E4ED43000CB1B9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB468020E4ED43000CB1B9 /* MainViewController.swift */; };
 		79EB468520E5D4D3000CB1B9 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB468420E5D4D3000CB1B9 /* ARViewController.swift */; };
+		79EB468920EC6C41000CB1B9 /* WaitingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB468820EC6C41000CB1B9 /* WaitingView.swift */; };
 		79FB35061EEAA7190083ED79 /* CellularAutomatonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB35051EEAA7190083ED79 /* CellularAutomatonViewController.swift */; };
 		79FB35091EEAAB850083ED79 /* Cellular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB35081EEAAB850083ED79 /* Cellular.swift */; };
 /* End PBXBuildFile section */
@@ -313,6 +314,7 @@
 		79EB467E20E4ED39000CB1B9 /* LeftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		79EB468020E4ED43000CB1B9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		79EB468420E5D4D3000CB1B9 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		79EB468820EC6C41000CB1B9 /* WaitingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingView.swift; sourceTree = "<group>"; };
 		79FB35051EEAA7190083ED79 /* CellularAutomatonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellularAutomatonViewController.swift; sourceTree = "<group>"; };
 		79FB35081EEAAB850083ED79 /* Cellular.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cellular.swift; sourceTree = "<group>"; };
 		B57CB0D8E15F346CDBC020A0 /* Pods_DemoSet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoSet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -572,6 +574,7 @@
 			children = (
 				79B26A711F05065E00B54EC2 /* AnimationViewController.swift */,
 				79B26A731F05068B00B54EC2 /* LeafView.swift */,
+				79EB468820EC6C41000CB1B9 /* WaitingView.swift */,
 			);
 			name = Animation;
 			sourceTree = "<group>";
@@ -1169,6 +1172,7 @@
 				79B26ABB1F185FC800B54EC2 /* IconChangeViewController.swift in Sources */,
 				79D650E720AD5C99009E27CF /* ReaderViewController.swift in Sources */,
 				79EB465220DB9837000CB1B9 /* LandAimViewController.swift in Sources */,
+				79EB468920EC6C41000CB1B9 /* WaitingView.swift in Sources */,
 				79DCC1771F6D18E400D6A6CE /* AlertModule.swift in Sources */,
 				7933A46820D0FC1B00AE36D7 /* QRCodeCreateViewController.swift in Sources */,
 				79EB465020DB9710000CB1B9 /* LandscapeViewController.swift in Sources */,
