@@ -183,6 +183,18 @@ extension UIImage{
         return UIImage.init(cgImage: (context?.makeImage())!)
     }
     
+    /// 加载图片
+    ///
+    /// - Parameter path: 路径
+    /// - Returns: 图片 识别gif与普通
+    class func contentsOfFile(path: String) -> UIImage? {
+        if path.lowercased().hasSuffix(".gif") {
+            return loadgif(url: URL.init(fileURLWithPath: path))
+        }else{
+            return UIImage.init(contentsOfFile: path)
+        }
+    }
+    
     /// 加载动图
     ///
     /// - Parameter url: 路径

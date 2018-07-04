@@ -35,7 +35,7 @@ class ReaderContentViewController: BaseViewController {
         imageView.isUserInteractionEnabled = true
         imageView.contentMode = .scaleAspectFit
         if files.count > 0 {
-            imageView.image = UIImage.init(contentsOfFile: files[current])
+            imageView.image = UIImage.contentsOfFile(path: files[current])
         }
         
         let swipleft = UISwipeGestureRecognizer.init(target: self, action: #selector(swipe(ges:)))
@@ -71,7 +71,7 @@ class ReaderContentViewController: BaseViewController {
         if  current >= files.count {
             current = current - files.count
         }
-        imageView.image = UIImage.init(contentsOfFile: files[current])
+        imageView.image = UIImage.contentsOfFile(path: files[current])
     }
     
     func pine(ges:UIPinchGestureRecognizer) {

@@ -29,6 +29,7 @@ class ReaderViewController: BaseViewController,UICollectionViewDataSource,UIColl
         path.append("/Documents")
         loadFiles(path: path)
         filePath.append(path)
+        Print(path)
     }
 
     override func didReceiveMemoryWarning() {
@@ -108,14 +109,14 @@ class ReaderViewController: BaseViewController,UICollectionViewDataSource,UIColl
         }else{
             //去展示
             //过滤
-            let suf = p.components(separatedBy: ".").last
+            let suf = p.components(separatedBy: ".").last?.lowercased()
             var files:[String] = []
             for pp in fileList {
                 if pp.hasSuffix(suf!) {
                     files.append(pp)
                 }
             }
-            if suf == "mp4" {
+            if suf == ".mp4" {
                 //
                 let play = PlayerViewController()
                 play.playList = files
