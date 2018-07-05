@@ -129,6 +129,7 @@
 		79EB468120E4ED43000CB1B9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB468020E4ED43000CB1B9 /* MainViewController.swift */; };
 		79EB468520E5D4D3000CB1B9 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB468420E5D4D3000CB1B9 /* ARViewController.swift */; };
 		79EB468920EC6C41000CB1B9 /* WaitingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB468820EC6C41000CB1B9 /* WaitingView.swift */; };
+		79EB468C20EE3A05000CB1B9 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB468B20EE3A05000CB1B9 /* CollectionViewController.swift */; };
 		79FB35061EEAA7190083ED79 /* CellularAutomatonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB35051EEAA7190083ED79 /* CellularAutomatonViewController.swift */; };
 		79FB35091EEAAB850083ED79 /* Cellular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB35081EEAAB850083ED79 /* Cellular.swift */; };
 /* End PBXBuildFile section */
@@ -315,6 +316,7 @@
 		79EB468020E4ED43000CB1B9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		79EB468420E5D4D3000CB1B9 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		79EB468820EC6C41000CB1B9 /* WaitingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingView.swift; sourceTree = "<group>"; };
+		79EB468B20EE3A05000CB1B9 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		79FB35051EEAA7190083ED79 /* CellularAutomatonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellularAutomatonViewController.swift; sourceTree = "<group>"; };
 		79FB35081EEAAB850083ED79 /* Cellular.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cellular.swift; sourceTree = "<group>"; };
 		B57CB0D8E15F346CDBC020A0 /* Pods_DemoSet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoSet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -784,6 +786,14 @@
 			name = AR;
 			sourceTree = "<group>";
 		};
+		79EB468A20EE39E2000CB1B9 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				79EB468B20EE3A05000CB1B9 /* CollectionViewController.swift */,
+			);
+			name = Collection;
+			sourceTree = "<group>";
+		};
 		79FB35021EEAA5540083ED79 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -803,6 +813,7 @@
 		79FB35031EEAA65D0083ED79 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				79EB468A20EE39E2000CB1B9 /* Collection */,
 				79EB468320E5D4C5000CB1B9 /* AR */,
 				79EB467B20E4E7E5000CB1B9 /* SliderController */,
 				79EB467420E4B534000CB1B9 /* Player */,
@@ -1177,6 +1188,7 @@
 				7933A46820D0FC1B00AE36D7 /* QRCodeCreateViewController.swift in Sources */,
 				79EB465020DB9710000CB1B9 /* LandscapeViewController.swift in Sources */,
 				79B26A921F0A43AE00B54EC2 /* MysticCodeModel.swift in Sources */,
+				79EB468C20EE3A05000CB1B9 /* CollectionViewController.swift in Sources */,
 				79DCC1681F6A50B600D6A6CE /* NotificationModule.swift in Sources */,
 				79B26A901F0A431100B54EC2 /* ServentModel.swift in Sources */,
 				79A4F5A11FD55567001E9A37 /* BaseBannerPointView.swift in Sources */,

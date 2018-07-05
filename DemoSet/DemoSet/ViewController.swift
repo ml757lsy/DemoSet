@@ -88,6 +88,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         list.append("Landscape")
         list.append("Player")
         list.append("AR")
+        list.append("Collection")
         
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize.init(width: 100, height: 100)
@@ -212,6 +213,9 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             break
         case 31:
             aimController = ARViewController()
+            break
+        case 32:
+            aimController = CollectionViewController()
             break
             
         default:
