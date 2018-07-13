@@ -17,6 +17,7 @@ class ReaderFileCell: UICollectionViewCell {
         }
         set(newVlaue){
             _str = newVlaue
+            print(_str)
             //chai
             let paths = _str.components(separatedBy: "/")
             if paths.count > 0 {
@@ -35,9 +36,10 @@ class ReaderFileCell: UICollectionViewCell {
                         }
                     }
                 }else if name.hasSuffix(".mp4"){//
-                    image.image = UIImage.init(named: "mp4")
+                    image.image = UIImage.init(named: "file_mp4")
                 }else {//目录
-                    image.image = UIImage.init(named: "folder")
+                    let img = UIImage.init(named: "file_mp4")
+                    image.image = img
                 }
             }
         }
@@ -60,7 +62,10 @@ class ReaderFileCell: UICollectionViewCell {
     func customInit() {
         addSubview(image)
         image.snp.makeConstraints { (make) in
-            make.left.right.top.bottom.equalTo(0)
+            make.width.equalTo(self.snp.height).multipliedBy(0.8).multipliedBy(0.78)
+            make.height.equalTo(self.snp.height).multipliedBy(0.8)
+            make.top.equalTo(2)
+            make.centerX.equalTo(self.centerX)
         }
         
         addSubview(label)
@@ -72,7 +77,7 @@ class ReaderFileCell: UICollectionViewCell {
             make.left.equalTo(5)
             make.right.equalTo(-5)
             make.bottom.equalTo(-2)
-            make.height.equalTo(25)
+            make.height.equalTo(20)
         }
         //其他需要国际化的地方
         enableI18N()

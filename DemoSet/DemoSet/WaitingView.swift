@@ -138,4 +138,8 @@ class WaitingView: UIView {
     func stopAnimation() {
         stop = true
     }
+    
+    deinit {
+        stopAnimation()
+    }
 }
