@@ -42,6 +42,8 @@ class CollectionModel: NSObject {
     var name:String = ""
     var id:Int = 0
     var card:UIImage = UIImage.init()
+    var header:UIImage = UIImage()
+    
     var atk:CGFloat = 0
     var def:CGFloat = 0
     var scl:CGFloat = 0
@@ -52,6 +54,28 @@ class CollectionModel: NSObject {
     var sclg:CGFloat = 0
     
     var info:String = ""
+    
+    
+    //MARK: - func
+    
+    class func card(withName name:String) -> UIImage {
+        let card = UIImage.init(named: name)
+        if card != nil {
+            return card!
+        }else{
+            return UIImage()
+        }
+    }
+    
+    class func box(withRare rare:CollectionRare) -> UIImage {
+        var box =  UIImage.init(named: "boxImage")
+        if box != nil {
+            box = box?.stretchableImage(withLeftCapWidth: 140, topCapHeight: 80)
+            return box!
+        }else{
+            return UIImage()
+        }
+    }
     
 
 }

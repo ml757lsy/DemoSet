@@ -14,11 +14,27 @@ class CollectionHomeViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        initTest()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func initTest() {
+        //
+        let model = CollectionModel()
+        model.name = "Test"
+        model.card = CollectionModel.card(withName: "backGround")
+        
+        //
+        let card = CollectionCard.init(frame: CGRect.init(x: 40, y: 40, width: 100, height: 178))
+        card.frame = CGRect.init(x: 0, y: 0, width: 100, height: 178)
+        view.addSubview(card)
+        
+        card.model = model
+        
     }
     
 

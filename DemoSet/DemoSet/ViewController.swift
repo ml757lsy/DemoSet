@@ -90,6 +90,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         list.append("AR")
         list.append("Collection")
         list.append("Wakeup")
+        list.append("CardGAME")
         
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize.init(width: 100, height: 100)
@@ -220,6 +221,9 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             break
         case 33:
             aimController = WakeupViewController()
+            break
+        case 34:
+            aimController = CollectionHomeViewController()
             break
             
         default:

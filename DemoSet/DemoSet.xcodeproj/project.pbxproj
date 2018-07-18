@@ -113,6 +113,7 @@
 		79E473E820F8925100931381 /* CollectionHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E473E720F8925100931381 /* CollectionHomeViewController.swift */; };
 		79E473EA20F8926600931381 /* CollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E473E920F8926600931381 /* CollectionModel.swift */; };
 		79E473EC20F8942500931381 /* CollectionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E473EB20F8942500931381 /* CollectionCard.swift */; };
+		79E4740620FF36DB00931381 /* ReaderTxtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4740520FF36DB00931381 /* ReaderTxtViewController.swift */; };
 		79EB465020DB9710000CB1B9 /* LandscapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB464F20DB9710000CB1B9 /* LandscapeViewController.swift */; };
 		79EB465220DB9837000CB1B9 /* LandAimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB465120DB9837000CB1B9 /* LandAimViewController.swift */; };
 		79EB465420DBA740000CB1B9 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB465320DBA740000CB1B9 /* BaseNavigationViewController.swift */; };
@@ -302,6 +303,7 @@
 		79E473E720F8925100931381 /* CollectionHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHomeViewController.swift; sourceTree = "<group>"; };
 		79E473E920F8926600931381 /* CollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionModel.swift; sourceTree = "<group>"; };
 		79E473EB20F8942500931381 /* CollectionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCard.swift; sourceTree = "<group>"; };
+		79E4740520FF36DB00931381 /* ReaderTxtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderTxtViewController.swift; sourceTree = "<group>"; };
 		79EB464F20DB9710000CB1B9 /* LandscapeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeViewController.swift; sourceTree = "<group>"; };
 		79EB465120DB9837000CB1B9 /* LandAimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandAimViewController.swift; sourceTree = "<group>"; };
 		79EB465320DBA740000CB1B9 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
@@ -686,6 +688,7 @@
 				79D650E620AD5C99009E27CF /* ReaderViewController.swift */,
 				79EB467220E2480F000CB1B9 /* ReaderContentViewController.swift */,
 				79EB467020E23FBC000CB1B9 /* ReaderFileCell.swift */,
+				79E4740520FF36DB00931381 /* ReaderTxtViewController.swift */,
 			);
 			name = Reader;
 			sourceTree = "<group>";
@@ -1179,6 +1182,7 @@
 			files = (
 				798AE3E32099939A0019E38C /* NetworkManager.swift in Sources */,
 				7933A46620D0FACD00AE36D7 /* CIFilterViewController.swift in Sources */,
+				79E4740620FF36DB00931381 /* ReaderTxtViewController.swift in Sources */,
 				795714271FFE24430007078A /* SRPGRoleModel.swift in Sources */,
 				79A4F5AC1FD7C290001E9A37 /* BaseConstFile.swift in Sources */,
 				791FF81420B2748900AD6B2D /* EvolutionCell.swift in Sources */,

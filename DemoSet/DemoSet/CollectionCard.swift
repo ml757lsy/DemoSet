@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class CollectionCard: UIView {
     
@@ -17,6 +18,7 @@ class CollectionCard: UIView {
     private var classView:UIImageView = UIImageView()
     private var atkLabel:UILabel = UILabel()
     private var defLabel:UILabel = UILabel()
+    private var sclView:UIImageView = UIImageView()
 
     var model:CollectionModel {
         get {
@@ -39,16 +41,25 @@ class CollectionCard: UIView {
     
     //
     func baseInit() {
+        clipsToBounds = true
+        
         addSubview(imageView)
+        imageView.contentMode = .scaleAspectFill
+        imageView.frame = bounds
+        
         addSubview(boxView)
+        boxView.frame = bounds
+        
         addSubview(typeView)
         addSubview(classView)
         addSubview(atkLabel)
         addSubview(defLabel)
+        addSubview(sclView)
     }
     
     func update() {
-        
+        imageView.image = model.card
+        boxView.image = CollectionModel.box(withRare: model.rare)
     }
 
 }

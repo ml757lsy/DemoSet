@@ -103,30 +103,41 @@ class ReaderViewController: BaseViewController,UICollectionViewDataSource,UIColl
     func cellClick(index:Int) {
         //do
         let p = fileList[index]
-        if !p.containsSigns(sign: ".") {
-            filePath.append(p)
-            loadFiles(path: p)
-        }else{
-            //去展示
-            //过滤
-            let suf = p.components(separatedBy: ".").last?.lowercased()
-            var files:[String] = []
-            for pp in fileList {
-                if pp.hasSuffix(suf!) {
-                    files.append(pp)
-                }
-            }
-            if suf == ".mp4" {
-                //
-                let play = PlayerViewController()
-                play.playList = files
-                play.current = files.index(of: p)!
-                navigationController?.pushViewController(play, animated: true)
+        
+        var isDir:ObjCBool = false
+        
+        if FileManager.default.fileExists(atPath: p, isDirectory: &isDir) {
+            if isDir.boolValue {
+                filePath.append(p)
+                loadFiles(path: p)
             }else{
-                let content = ReaderContentViewController()
-                content.files = files
-                content.current = files.index(of: p)!
-                navigationController?.pushViewController(content, animated: true)
+                //去展示
+                //过滤文件
+                let suf = p.components(separatedBy: ".").last?.lowercased()
+                var files:[String] = []
+                for pp in fileList {
+                    if pp.hasSuffix(suf!) {
+                        files.append(pp)
+                    }
+                }
+                if suf == "txt" {
+                    //
+                    let read = ReaderTxtViewController()
+                    read.path = p
+                    navigationController?.pushViewController(read, animated: true);
+                }else
+                    if suf == "mp4" {
+                        //
+                        let play = PlayerViewController()
+                        play.playList = files
+                        play.current = files.index(of: p)!
+                        navigationController?.pushViewController(play, animated: true)
+                    }else{
+                        let content = ReaderContentViewController()
+                        content.files = files
+                        content.current = files.index(of: p)!
+                        navigationController?.pushViewController(content, animated: true)
+                }
             }
         }
     }
