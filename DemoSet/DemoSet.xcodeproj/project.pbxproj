@@ -114,6 +114,7 @@
 		79E473EA20F8926600931381 /* CollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E473E920F8926600931381 /* CollectionModel.swift */; };
 		79E473EC20F8942500931381 /* CollectionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E473EB20F8942500931381 /* CollectionCard.swift */; };
 		79E4740620FF36DB00931381 /* ReaderTxtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E4740520FF36DB00931381 /* ReaderTxtViewController.swift */; };
+		79E4743A2109F12600931381 /* FontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E474392109F12600931381 /* FontViewController.swift */; };
 		79EB465020DB9710000CB1B9 /* LandscapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB464F20DB9710000CB1B9 /* LandscapeViewController.swift */; };
 		79EB465220DB9837000CB1B9 /* LandAimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB465120DB9837000CB1B9 /* LandAimViewController.swift */; };
 		79EB465420DBA740000CB1B9 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB465320DBA740000CB1B9 /* BaseNavigationViewController.swift */; };
@@ -304,6 +305,7 @@
 		79E473E920F8926600931381 /* CollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionModel.swift; sourceTree = "<group>"; };
 		79E473EB20F8942500931381 /* CollectionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCard.swift; sourceTree = "<group>"; };
 		79E4740520FF36DB00931381 /* ReaderTxtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderTxtViewController.swift; sourceTree = "<group>"; };
+		79E474392109F12600931381 /* FontViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontViewController.swift; sourceTree = "<group>"; };
 		79EB464F20DB9710000CB1B9 /* LandscapeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeViewController.swift; sourceTree = "<group>"; };
 		79EB465120DB9837000CB1B9 /* LandAimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandAimViewController.swift; sourceTree = "<group>"; };
 		79EB465320DBA740000CB1B9 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
@@ -779,6 +781,14 @@
 			name = CollectionGame;
 			sourceTree = "<group>";
 		};
+		79E474382109F10800931381 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				79E474392109F12600931381 /* FontViewController.swift */,
+			);
+			name = Font;
+			sourceTree = "<group>";
+		};
 		79EB464E20DB96F5000CB1B9 /* Landscape */ = {
 			isa = PBXGroup;
 			children = (
@@ -842,6 +852,7 @@
 		79FB35031EEAA65D0083ED79 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				79E474382109F10800931381 /* Font */,
 				79E473E620F8922600931381 /* CollectionGame */,
 				7948D9D420EF0985004D1B67 /* Wakeup */,
 				79EB468A20EE39E2000CB1B9 /* Collection */,
@@ -1226,6 +1237,7 @@
 				79EB468C20EE3A05000CB1B9 /* CollectionViewController.swift in Sources */,
 				79DCC1681F6A50B600D6A6CE /* NotificationModule.swift in Sources */,
 				79B26A901F0A431100B54EC2 /* ServentModel.swift in Sources */,
+				79E4743A2109F12600931381 /* FontViewController.swift in Sources */,
 				79A4F5A11FD55567001E9A37 /* BaseBannerPointView.swift in Sources */,
 				79EB468520E5D4D3000CB1B9 /* ARViewController.swift in Sources */,
 				79DCC17A1F6D2EF900D6A6CE /* FaceRecognitionViewController.swift in Sources */,

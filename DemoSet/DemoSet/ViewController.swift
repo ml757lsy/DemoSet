@@ -91,6 +91,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         list.append("Collection")
         list.append("Wakeup")
         list.append("CardGAME")
+        list.append("AllFont")
         
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize.init(width: 100, height: 100)
@@ -224,6 +225,9 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             break
         case 34:
             aimController = CollectionHomeViewController()
+            break
+        case 35:
+            aimController = FontViewController()
             break
             
         default:
