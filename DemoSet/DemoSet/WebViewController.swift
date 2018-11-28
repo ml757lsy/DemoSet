@@ -32,6 +32,7 @@ class WebViewController: BaseViewController,UIWebViewDelegate {
         let request = URLRequest.init(url: URL.init(string: "https://www.rule34hentai.net/image/265844.webm")!)
         web.loadRequest(request)
         web.delegate = self
+        
     }
     
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {

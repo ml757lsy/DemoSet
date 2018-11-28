@@ -1,5 +1,14 @@
 //
-//  Use this file to import your target's public headers that you would like to expose to Swift.
+//  DemoSet-Bridging-Header.h
+//  DemoSet
+//
+//  Created by 李世远 on 2018/9/12.
+//  Copyright © 2018年 Far. All rights reserved.
 //
 
-//#import "FMDB.h"
+#ifndef DemoSet_Bridging_Header_h
+#define DemoSet_Bridging_Header_h
+
+#import "FLEX/FLEX.h"
+
+#endif /* DemoSet_Bridging_Header_h */

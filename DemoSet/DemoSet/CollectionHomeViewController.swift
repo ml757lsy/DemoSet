@@ -15,11 +15,27 @@ class CollectionHomeViewController: BaseViewController {
 
         // Do any additional setup after loading the view.
         initTest()
+        initView()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func initView() {
+        let toBox = UIButton.init(type: .system)
+        toBox.setTitle("Box", for: .normal)
+        toBox.addTarget(self, action: #selector(toBoxVC), for: .touchUpInside)
+        
+        let right = UIBarButtonItem.init(customView: toBox)
+        navigationItem.rightBarButtonItem = right
+        
+    }
+    
+    func toBoxVC() {
+        let boxvc = CollectionBoxViewController()
+        navigationController?.pushViewController(boxvc, animated: true)
     }
     
     func initTest() {

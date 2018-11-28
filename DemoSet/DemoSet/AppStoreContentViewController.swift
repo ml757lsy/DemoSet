@@ -97,7 +97,7 @@ class AppStoreContentViewController: BaseViewController {
     }
     
     func closeAnimation() {
-        blurBack.alpha = 1
+        blurBack.alpha = 0
         UIView.animate(withDuration: 0.4, animations: {
             self.closeBlock()
             self.content.frame = self.fromFrame
@@ -107,7 +107,6 @@ class AppStoreContentViewController: BaseViewController {
             self.blurBack.alpha = 0.5
         }) { (b) in
             self.dismiss(animated: false, completion: {
-                //
             })
         }
     }

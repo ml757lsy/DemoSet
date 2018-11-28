@@ -107,7 +107,7 @@ class AlertModule: NSObject {
         
         let frontView = window?.subviews.first
         let nextResponder = frontView?.next
-        
+
         if (nextResponder?.isKind(of: UIViewController.self))!{
             result = nextResponder as! UIViewController;
         }else{

@@ -334,4 +334,21 @@ extension UIImage{
             return cg!
         }
     }
+    
+    /// 图转数据
+    ///
+    /// - Parameter img: image
+    /// - Returns: base64
+    func imageEncryptToData(img:UIImage) -> Data {
+        let data = UIImagePNGRepresentation(img)
+        return (data?.base64EncodedData())!
+    }
+    
+    /// 数据转图
+    ///
+    /// - Parameter data: base64
+    /// - Returns: image
+    func imageEncryptWithData(data:Data) -> UIImage {
+        return UIImage.init(data: Data.init(base64Encoded: data)!)!
+    }
 }

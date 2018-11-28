@@ -23,6 +23,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     }
     
     func initMainView() {
+        view.traitCollection.verticalSizeClass
         backImage.frame = CGRect.init(x: -100, y: -100, width: view.width+200, height: view.height+200)
         view.addSubview(backImage)
         backImage.image = UIImage.init(named: "backGround")
@@ -92,6 +93,8 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         list.append("Wakeup")
         list.append("CardGAME")
         list.append("AllFont")
+        list.append("Calculator")
+        list.append("SelfCheck")
         
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize.init(width: 100, height: 100)
@@ -229,6 +232,12 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         case 35:
             aimController = FontViewController()
             break
+        case 36:
+            aimController = CalculatorViewController()
+            break
+        case 37:
+            aimController = SelfCheckViewController()
+            break
             
         default:
             break
@@ -267,6 +276,31 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     func selectorTest() {
         print("Selector Test")
+    }
+    
+    /// 根据情况进行布局
+    ///
+    /// - Parameter isCompact: bool
+    func layoutSubview(isCompact:Bool) {
+        if isCompact {
+            //窄的
+        }else{
+            //宽的
+        }
+    }
+    
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        //
+        if newCollection.horizontalSizeClass == UIUserInterfaceSizeClass.compact {
+            //need layout
+            self.layoutSubview(isCompact: true)
+        }else{
+            self.layoutSubview(isCompact: false)
+        }
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        //
     }
     
     //MARK: - delegate

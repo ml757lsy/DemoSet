@@ -41,6 +41,8 @@ class CollectionCard: UIView {
     
     //
     func baseInit() {
+        //16:9
+        //85.6:54.0
         clipsToBounds = true
         
         addSubview(imageView)

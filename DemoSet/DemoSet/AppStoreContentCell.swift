@@ -51,6 +51,12 @@ class AppStoreContentCell: UITableViewCell {
         box = UIView.init(frame: CGRect.init(x: 20, y: 10, width: SCREENWIDTH-40, height: 280))
         box.layer.cornerRadius = 10
         addSubview(box)
+        box.snp.makeConstraints { (make) in
+            make.left.equalTo(20)
+            make.top.equalTo(10)
+            make.right.equalTo(-20)
+            make.bottom.equalTo(-10)
+        }
     }
     
     func small() {

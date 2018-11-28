@@ -179,9 +179,7 @@ class BinaryTreeNode: NSObject {
     ///   - handler: 处理闭包
     class func preOrderTraverseTree(node:BinaryTreeNode?, handler:(_ node:BinaryTreeNode)->Void){
         if node != nil {
-            if handler != nil {
-                handler(node!)
-            }
+            handler(node!)
             preOrderTraverseTree(node: node?.left, handler: handler)
             preOrderTraverseTree(node: node?.right, handler: handler)
             

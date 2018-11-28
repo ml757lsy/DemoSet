@@ -37,7 +37,7 @@ class QRCodeCreateViewController: BaseViewController {
         let qrsize:CGFloat = (SCREENWIDTH - space * 3) / 2
         
         //1.base
-        let qrcodimage = QRCodeModule.initQRCode(message: "只是个头像有什么好扫的")
+        let qrcodimage = QRCodeModule.initQRCode(message: "https://itunes.apple.com/kr/app/id1423521190")
         let qrview = UIImageView.init(frame: CGRect.init(x: space, y: space, width: qrsize, height: qrsize))
         qrview.image = qrcodimage
         backScroll.addSubview(qrview)
@@ -63,6 +63,7 @@ class QRCodeCreateViewController: BaseViewController {
         let imgcode = UIImageView.init(frame: CGRect.init(x: space, y: (qrsize + space)*2, width: qrsize, height: qrsize))
         backScroll.addSubview(imgcode)
         imgcode.image = QRCodeModule.qrcode(message: "只是个头像有什么好扫的", backImg: (reheader?.binaryzation())!)
+        //https://itunes.apple.com/kr/app/id1423521190
         
     }
     

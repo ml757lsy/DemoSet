@@ -23,6 +23,19 @@ class BaseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if event?.subtype == UIEventSubtype.motionShake && event?.type == UIEventType.motion {
+            AlertModule.showAlert(title: "", conetent: "", actionStr: ["设置","FLEX"]) { (index) in
+                if index == 0 {
+                    //设置
+                }else if index == 1 {
+                    //flex
+                    FLEXManager.shared().showExplorer()
+                }
+            }
+        }
+    }
+    
 
     /*
     // MARK: - Navigation

@@ -55,6 +55,9 @@ class AppStoreViewController: BaseViewController,UITableViewDelegate,UITableView
         listTable.delegate = self
         listTable.dataSource = self
         view.addSubview(listTable)
+        listTable.snp.makeConstraints { (make) in
+            make.left.top.right.bottom.equalTo(0)
+        }
         
         content = AppStoreContentViewController()
         
@@ -104,6 +107,8 @@ class AppStoreViewController: BaseViewController,UITableViewDelegate,UITableView
     func showTopAndBottom() {
         self.tabBarController?.tabBar.isHidden = false
         UIView.animate(withDuration: 0.4) {
+            self.cover.alpha = 0
+            self.cover.isHidden = true
             for v in (self.tabBarController?.view.subviews)! {
                 if v.isKind(of: UITabBar.self){
                     v.frame = CGRect.init(x: 0, y: SCREENHEIGHT - v.height, width: v.width, height: v.height)

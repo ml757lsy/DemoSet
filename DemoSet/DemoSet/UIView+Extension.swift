@@ -9,6 +9,8 @@
 import UIKit
 
 extension UIView{
+    //frame
+    
     var height: CGFloat{
         set(newValue) {
             self.frame = CGRect.init(x: self.frame.origin.x, y: self.frame.origin.y, width: self.frame.size.width, height: newValue)
@@ -74,6 +76,8 @@ extension UIView{
         }
     }
     
+    //MARK: -
+    
     /// 复制视图
     ///
     /// - Returns: view
@@ -81,6 +85,9 @@ extension UIView{
         return NSKeyedUnarchiver.unarchiveObject(with: NSKeyedArchiver.archivedData(withRootObject: self)) as! T
     }
     
+    /// 反射视图
+    ///
+    /// - Returns: 反射后的视图
     func reflection() -> UIView {
         let copylayer = self.copyView().layer
         copylayer.transform = CATransform3DMakeRotation(CGFloat.pi, 1, 0, 0)

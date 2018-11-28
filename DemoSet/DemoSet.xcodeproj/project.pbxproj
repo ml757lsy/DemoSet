@@ -19,6 +19,9 @@
 		791FF81F20B3EACF00AD6B2D /* PasswordProduceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791FF81E20B3EACF00AD6B2D /* PasswordProduceViewController.swift */; };
 		791FF82120B3EAE900AD6B2D /* PasswordProduceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791FF82020B3EAE900AD6B2D /* PasswordProduceManager.swift */; };
 		791FF82320B3FEC900AD6B2D /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791FF82220B3FEC900AD6B2D /* String+Extension.swift */; };
+		79200165219972B10057931D /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79200164219972B10057931D /* CalculatorViewController.swift */; };
+		79200167219973040057931D /* CalculatorAbbreviationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79200166219973040057931D /* CalculatorAbbreviationView.swift */; };
+		79200169219973A90057931D /* CalculatorBignumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79200168219973A90057931D /* CalculatorBignumberView.swift */; };
 		7924D1C91FD9364100CEECB6 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7924D1C81FD9364100CEECB6 /* UIImageView+Extension.swift */; };
 		792E5E901FF0F530007E7605 /* CasinoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792E5E8F1FF0F530007E7605 /* CasinoViewController.swift */; };
 		7933A3D120BBE33300AE36D7 /* I18NViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7933A3D020BBE33300AE36D7 /* I18NViewController.swift */; };
@@ -49,6 +52,7 @@
 		795853BC1EEFBB4000F214A5 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795853BB1EEFBB4000F214A5 /* UIView+Extension.swift */; };
 		796468101F9843E30091D671 /* MathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7964680F1F9843E30091D671 /* MathViewController.swift */; };
 		796468121F99CF6E0091D671 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796468111F99CF6E0091D671 /* UIColor+Extension.swift */; };
+		797C7D4621A6B1BF001E3F4B /* SelfCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797C7D4521A6B1BF001E3F4B /* SelfCheckViewController.swift */; };
 		798806701F4FB944001FB972 /* ImageCrawlerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988066F1F4FB944001FB972 /* ImageCrawlerViewController.swift */; };
 		798AE3E32099939A0019E38C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798AE3E22099939A0019E38C /* NetworkManager.swift */; };
 		798AE3E620A1EAFB0019E38C /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798AE3E520A1EAFB0019E38C /* ToDoViewController.swift */; };
@@ -96,6 +100,7 @@
 		79CB22791F97287A00C9FE1E /* BaseBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CB22781F97287A00C9FE1E /* BaseBannerView.swift */; };
 		79CB227B1F9744FB00C9FE1E /* GyroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CB227A1F9744FB00C9FE1E /* GyroManager.swift */; };
 		79D650E720AD5C99009E27CF /* ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D650E620AD5C99009E27CF /* ReaderViewController.swift */; };
+		79D9535E21143ACC0002314C /* CollectionBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D9535D21143ACC0002314C /* CollectionBoxViewController.swift */; };
 		79DB4BB91F70A8D40014CA2D /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB4BB81F70A8D40014CA2D /* WaveView.swift */; };
 		79DB4BBB1F70B1B00014CA2D /* WaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB4BBA1F70B1B00014CA2D /* WaveViewController.swift */; };
 		79DCC1601F67ECE100D6A6CE /* PointLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DCC15F1F67ECE100D6A6CE /* PointLineViewController.swift */; };
@@ -191,6 +196,9 @@
 		791FF81E20B3EACF00AD6B2D /* PasswordProduceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordProduceViewController.swift; sourceTree = "<group>"; };
 		791FF82020B3EAE900AD6B2D /* PasswordProduceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordProduceManager.swift; sourceTree = "<group>"; };
 		791FF82220B3FEC900AD6B2D /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		79200164219972B10057931D /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		79200166219973040057931D /* CalculatorAbbreviationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorAbbreviationView.swift; sourceTree = "<group>"; };
+		79200168219973A90057931D /* CalculatorBignumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorBignumberView.swift; sourceTree = "<group>"; };
 		7924D1C81FD9364100CEECB6 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		792E5E8F1FF0F530007E7605 /* CasinoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasinoViewController.swift; sourceTree = "<group>"; };
 		7933A3C720BBD97000AE36D7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -231,6 +239,7 @@
 		795853BB1EEFBB4000F214A5 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		7964680F1F9843E30091D671 /* MathViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathViewController.swift; sourceTree = "<group>"; };
 		796468111F99CF6E0091D671 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		797C7D4521A6B1BF001E3F4B /* SelfCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfCheckViewController.swift; sourceTree = "<group>"; };
 		7988066F1F4FB944001FB972 /* ImageCrawlerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCrawlerViewController.swift; sourceTree = "<group>"; };
 		798AE3E22099939A0019E38C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		798AE3E520A1EAFB0019E38C /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
@@ -287,6 +296,7 @@
 		79CB22781F97287A00C9FE1E /* BaseBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBannerView.swift; sourceTree = "<group>"; };
 		79CB227A1F9744FB00C9FE1E /* GyroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyroManager.swift; sourceTree = "<group>"; };
 		79D650E620AD5C99009E27CF /* ReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderViewController.swift; sourceTree = "<group>"; };
+		79D9535D21143ACC0002314C /* CollectionBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionBoxViewController.swift; sourceTree = "<group>"; };
 		79DB4BB81F70A8D40014CA2D /* WaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
 		79DB4BBA1F70B1B00014CA2D /* WaveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveViewController.swift; sourceTree = "<group>"; };
 		79DCC15F1F67ECE100D6A6CE /* PointLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointLineViewController.swift; sourceTree = "<group>"; };
@@ -379,6 +389,16 @@
 			name = PassWordProduce;
 			sourceTree = "<group>";
 		};
+		79200163219972930057931D /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				79200164219972B10057931D /* CalculatorViewController.swift */,
+				79200166219973040057931D /* CalculatorAbbreviationView.swift */,
+				79200168219973A90057931D /* CalculatorBignumberView.swift */,
+			);
+			name = Calculator;
+			sourceTree = "<group>";
+		};
 		7924D1CA1FDA672000CEECB6 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -456,7 +476,6 @@
 				795714292005C0F60007078A /* SubwayViewController.swift */,
 				79EB466620DD0210000CB1B9 /* SQLManager.swift */,
 				79EB466E20E0BC57000CB1B9 /* SubwayManager.swift */,
-				79EB466220DD0128000CB1B9 /* DemoSet-Bridging-Header.h */,
 			);
 			name = Subway;
 			sourceTree = "<group>";
@@ -469,6 +488,14 @@
 				7907B25F1FDE8D7700BB9CD3 /* BinaryTreeModel.swift */,
 			);
 			name = Math;
+			sourceTree = "<group>";
+		};
+		797C7D4421A6B198001E3F4B /* SelfCheck */ = {
+			isa = PBXGroup;
+			children = (
+				797C7D4521A6B1BF001E3F4B /* SelfCheckViewController.swift */,
+			);
+			name = SelfCheck;
 			sourceTree = "<group>";
 		};
 		7988066E1F4FB90A001FB972 /* ImageCrawler */ = {
@@ -560,6 +587,7 @@
 				79FB35031EEAA65D0083ED79 /* Business */,
 				79A923F11EEAA30D00D91121 /* AppDelegate.swift */,
 				79A923F31EEAA30D00D91121 /* ViewController.swift */,
+				79EB466220DD0128000CB1B9 /* DemoSet-Bridging-Header.h */,
 				7933A3D820BBE60800AE36D7 /* I18N.strings */,
 				79DCC16C1F6A72F300D6A6CE /* Second.storyboard */,
 				79A923F51EEAA30D00D91121 /* Main.storyboard */,
@@ -777,6 +805,7 @@
 				79E473E720F8925100931381 /* CollectionHomeViewController.swift */,
 				79E473E920F8926600931381 /* CollectionModel.swift */,
 				79E473EB20F8942500931381 /* CollectionCard.swift */,
+				79D9535D21143ACC0002314C /* CollectionBoxViewController.swift */,
 			);
 			name = CollectionGame;
 			sourceTree = "<group>";
@@ -852,6 +881,8 @@
 		79FB35031EEAA65D0083ED79 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				797C7D4421A6B198001E3F4B /* SelfCheck */,
+				79200163219972930057931D /* Calculator */,
 				79E474382109F10800931381 /* Font */,
 				79E473E620F8922600931381 /* CollectionGame */,
 				7948D9D420EF0985004D1B67 /* Wakeup */,
@@ -1149,6 +1180,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-DemoSet/Pods-DemoSet-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FLEX/FLEX.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -1157,6 +1189,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLEX.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -1194,8 +1227,11 @@
 				798AE3E32099939A0019E38C /* NetworkManager.swift in Sources */,
 				7933A46620D0FACD00AE36D7 /* CIFilterViewController.swift in Sources */,
 				79E4740620FF36DB00931381 /* ReaderTxtViewController.swift in Sources */,
+				79200165219972B10057931D /* CalculatorViewController.swift in Sources */,
 				795714271FFE24430007078A /* SRPGRoleModel.swift in Sources */,
+				79200169219973A90057931D /* CalculatorBignumberView.swift in Sources */,
 				79A4F5AC1FD7C290001E9A37 /* BaseConstFile.swift in Sources */,
+				79200167219973040057931D /* CalculatorAbbreviationView.swift in Sources */,
 				791FF81420B2748900AD6B2D /* EvolutionCell.swift in Sources */,
 				79B26A981F0A513D00B54EC2 /* BufferModel.swift in Sources */,
 				79DCC1601F67ECE100D6A6CE /* PointLineViewController.swift in Sources */,
@@ -1239,6 +1275,7 @@
 				79B26A901F0A431100B54EC2 /* ServentModel.swift in Sources */,
 				79E4743A2109F12600931381 /* FontViewController.swift in Sources */,
 				79A4F5A11FD55567001E9A37 /* BaseBannerPointView.swift in Sources */,
+				79D9535E21143ACC0002314C /* CollectionBoxViewController.swift in Sources */,
 				79EB468520E5D4D3000CB1B9 /* ARViewController.swift in Sources */,
 				79DCC17A1F6D2EF900D6A6CE /* FaceRecognitionViewController.swift in Sources */,
 				79A4F59F1FCD712F001E9A37 /* RoleModel.swift in Sources */,
@@ -1290,6 +1327,7 @@
 				79EB467D20E4E820000CB1B9 /* SlideMenuViewController.swift in Sources */,
 				79DCC1731F6D0D1F00D6A6CE /* QRCodeViewController.swift in Sources */,
 				791FF81620B274B500AD6B2D /* EvolutionGround.swift in Sources */,
+				797C7D4621A6B1BF001E3F4B /* SelfCheckViewController.swift in Sources */,
 				79EB465C20DCD632000CB1B9 /* AppStoreContentView.swift in Sources */,
 				79EB467A20E4B91E000CB1B9 /* PlayerViewController.swift in Sources */,
 				79B26AA21F0DD9BE00B54EC2 /* SkillModel.swift in Sources */,
@@ -1499,6 +1537,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "DemoSet/DemoSet-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1519,6 +1558,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "DemoSet/DemoSet-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
