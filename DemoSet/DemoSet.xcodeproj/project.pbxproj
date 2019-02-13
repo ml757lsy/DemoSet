@@ -53,6 +53,26 @@
 		796468101F9843E30091D671 /* MathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7964680F1F9843E30091D671 /* MathViewController.swift */; };
 		796468121F99CF6E0091D671 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796468111F99CF6E0091D671 /* UIColor+Extension.swift */; };
 		797C7D4621A6B1BF001E3F4B /* SelfCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797C7D4521A6B1BF001E3F4B /* SelfCheckViewController.swift */; };
+		797D3E1321ED939D002D9E50 /* EmitterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797D3E1221ED939D002D9E50 /* EmitterViewController.swift */; };
+		797D3E1B21F19103002D9E50 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797D3E1A21F19103002D9E50 /* IntentHandler.swift */; };
+		797D3E2321F19103002D9E50 /* IntentsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 797D3E2221F19103002D9E50 /* IntentsUI.framework */; };
+		797D3E2621F19103002D9E50 /* IntentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797D3E2521F19103002D9E50 /* IntentViewController.swift */; };
+		797D3E2921F19103002D9E50 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 797D3E2721F19103002D9E50 /* MainInterface.storyboard */; };
+		797D3E2D21F19103002D9E50 /* SiriExtensionUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 797D3E2121F19103002D9E50 /* SiriExtensionUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		797D3E3021F19103002D9E50 /* SiriExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 797D3E1821F19102002D9E50 /* SiriExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		797D3E3821F1B6EC002D9E50 /* AppIntentVocablary.plist in Resources */ = {isa = PBXBuildFile; fileRef = 797D3E3721F1B6EB002D9E50 /* AppIntentVocablary.plist */; };
+		797D3E3B21F6D933002D9E50 /* ImmortalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797D3E3A21F6D933002D9E50 /* ImmortalViewController.swift */; };
+		797D3E3D21F6D94B002D9E50 /* ImmortalCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797D3E3C21F6D94B002D9E50 /* ImmortalCore.swift */; };
+		797D3E3F21F703C1002D9E50 /* Xue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797D3E3E21F703C1002D9E50 /* Xue.swift */; };
+		797D3E4121F703DC002D9E50 /* Mai.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797D3E4021F703DC002D9E50 /* Mai.swift */; };
+		797D3E4321F7053F002D9E50 /* Qi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797D3E4221F7053F002D9E50 /* Qi.swift */; };
+		797D3E4521F9B303002D9E50 /* GoogolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797D3E4421F9B302002D9E50 /* GoogolViewController.swift */; };
+		797D3E4B21F9B3F5002D9E50 /* String+GoogolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797D3E4A21F9B3F5002D9E50 /* String+GoogolExtension.swift */; };
+		797D3E4D21F9C0FB002D9E50 /* Charcter+NumberExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797D3E4C21F9C0FB002D9E50 /* Charcter+NumberExtension.swift */; };
+		7984B14A220431F7007AF5BA /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7984B149220431F7007AF5BA /* GameViewController.swift */; };
+		7984B14C22043204007AF5BA /* MinesweeperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7984B14B22043204007AF5BA /* MinesweeperViewController.swift */; };
+		7984B14F22126505007AF5BA /* MultipeerConnectivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7984B14E22126505007AF5BA /* MultipeerConnectivityViewController.swift */; };
+		7984B15122126783007AF5BA /* MultipeerConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7984B15022126783007AF5BA /* MultipeerConnectivityManager.swift */; };
 		798806701F4FB944001FB972 /* ImageCrawlerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988066F1F4FB944001FB972 /* ImageCrawlerViewController.swift */; };
 		798AE3E32099939A0019E38C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798AE3E22099939A0019E38C /* NetworkManager.swift */; };
 		798AE3E620A1EAFB0019E38C /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798AE3E520A1EAFB0019E38C /* ToDoViewController.swift */; };
@@ -141,11 +161,27 @@
 		79EB468520E5D4D3000CB1B9 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB468420E5D4D3000CB1B9 /* ARViewController.swift */; };
 		79EB468920EC6C41000CB1B9 /* WaitingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB468820EC6C41000CB1B9 /* WaitingView.swift */; };
 		79EB468C20EE3A05000CB1B9 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB468B20EE3A05000CB1B9 /* CollectionViewController.swift */; };
+		79EEDCD121E2FB6A009E7906 /* TiledImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EEDCD021E2FB6A009E7906 /* TiledImageView.swift */; };
+		79EEDCD321E30CDF009E7906 /* LargeImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EEDCD221E30CDF009E7906 /* LargeImageViewController.swift */; };
 		79FB35061EEAA7190083ED79 /* CellularAutomatonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB35051EEAA7190083ED79 /* CellularAutomatonViewController.swift */; };
 		79FB35091EEAAB850083ED79 /* Cellular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB35081EEAAB850083ED79 /* Cellular.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		797D3E2B21F19103002D9E50 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 79A923E61EEAA30D00D91121 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 797D3E2021F19103002D9E50;
+			remoteInfo = SiriExtensionUI;
+		};
+		797D3E2E21F19103002D9E50 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 79A923E61EEAA30D00D91121 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 797D3E1721F19102002D9E50;
+			remoteInfo = SiriExtension;
+		};
 		79A924031EEAA30D00D91121 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 79A923E61EEAA30D00D91121 /* Project object */;
@@ -176,7 +212,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				797D3E3021F19103002D9E50 /* SiriExtension.appex in Embed App Extensions */,
 				79B6478B1F7361D90002103E /* MessageFilterExt.appex in Embed App Extensions */,
+				797D3E2D21F19103002D9E50 /* SiriExtensionUI.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,6 +278,28 @@
 		7964680F1F9843E30091D671 /* MathViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathViewController.swift; sourceTree = "<group>"; };
 		796468111F99CF6E0091D671 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		797C7D4521A6B1BF001E3F4B /* SelfCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfCheckViewController.swift; sourceTree = "<group>"; };
+		797D3E1221ED939D002D9E50 /* EmitterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmitterViewController.swift; sourceTree = "<group>"; };
+		797D3E1821F19102002D9E50 /* SiriExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SiriExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		797D3E1A21F19103002D9E50 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		797D3E1C21F19103002D9E50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		797D3E2121F19103002D9E50 /* SiriExtensionUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SiriExtensionUI.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		797D3E2221F19103002D9E50 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		797D3E2521F19103002D9E50 /* IntentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentViewController.swift; sourceTree = "<group>"; };
+		797D3E2821F19103002D9E50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		797D3E2A21F19103002D9E50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		797D3E3721F1B6EB002D9E50 /* AppIntentVocablary.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AppIntentVocablary.plist; sourceTree = "<group>"; };
+		797D3E3A21F6D933002D9E50 /* ImmortalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmortalViewController.swift; sourceTree = "<group>"; };
+		797D3E3C21F6D94B002D9E50 /* ImmortalCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmortalCore.swift; sourceTree = "<group>"; };
+		797D3E3E21F703C1002D9E50 /* Xue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Xue.swift; sourceTree = "<group>"; };
+		797D3E4021F703DC002D9E50 /* Mai.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mai.swift; sourceTree = "<group>"; };
+		797D3E4221F7053F002D9E50 /* Qi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qi.swift; sourceTree = "<group>"; };
+		797D3E4421F9B302002D9E50 /* GoogolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogolViewController.swift; sourceTree = "<group>"; };
+		797D3E4A21F9B3F5002D9E50 /* String+GoogolExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+GoogolExtension.swift"; sourceTree = "<group>"; };
+		797D3E4C21F9C0FB002D9E50 /* Charcter+NumberExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Charcter+NumberExtension.swift"; sourceTree = "<group>"; };
+		7984B149220431F7007AF5BA /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		7984B14B22043204007AF5BA /* MinesweeperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinesweeperViewController.swift; sourceTree = "<group>"; };
+		7984B14E22126505007AF5BA /* MultipeerConnectivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerConnectivityViewController.swift; sourceTree = "<group>"; };
+		7984B15022126783007AF5BA /* MultipeerConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerConnectivityManager.swift; sourceTree = "<group>"; };
 		7988066F1F4FB944001FB972 /* ImageCrawlerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCrawlerViewController.swift; sourceTree = "<group>"; };
 		798AE3E22099939A0019E38C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		798AE3E520A1EAFB0019E38C /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
@@ -339,6 +399,8 @@
 		79EB468420E5D4D3000CB1B9 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		79EB468820EC6C41000CB1B9 /* WaitingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingView.swift; sourceTree = "<group>"; };
 		79EB468B20EE3A05000CB1B9 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		79EEDCD021E2FB6A009E7906 /* TiledImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TiledImageView.swift; sourceTree = "<group>"; };
+		79EEDCD221E30CDF009E7906 /* LargeImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeImageViewController.swift; sourceTree = "<group>"; };
 		79FB35051EEAA7190083ED79 /* CellularAutomatonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellularAutomatonViewController.swift; sourceTree = "<group>"; };
 		79FB35081EEAAB850083ED79 /* Cellular.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cellular.swift; sourceTree = "<group>"; };
 		B57CB0D8E15F346CDBC020A0 /* Pods_DemoSet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoSet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -346,6 +408,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		797D3E1521F19102002D9E50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		797D3E1E21F19103002D9E50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				797D3E2321F19103002D9E50 /* IntentsUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		79A923EB1EEAA30D00D91121 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -486,6 +563,9 @@
 				7964680F1F9843E30091D671 /* MathViewController.swift */,
 				7907B25D1FDE8D4600BB9CD3 /* BinaryTreeViewController.swift */,
 				7907B25F1FDE8D7700BB9CD3 /* BinaryTreeModel.swift */,
+				797D3E4421F9B302002D9E50 /* GoogolViewController.swift */,
+				797D3E4A21F9B3F5002D9E50 /* String+GoogolExtension.swift */,
+				797D3E4C21F9C0FB002D9E50 /* Charcter+NumberExtension.swift */,
 			);
 			name = Math;
 			sourceTree = "<group>";
@@ -496,6 +576,63 @@
 				797C7D4521A6B1BF001E3F4B /* SelfCheckViewController.swift */,
 			);
 			name = SelfCheck;
+			sourceTree = "<group>";
+		};
+		797D3E1121ED935B002D9E50 /* CAEmitter */ = {
+			isa = PBXGroup;
+			children = (
+				797D3E1221ED939D002D9E50 /* EmitterViewController.swift */,
+			);
+			name = CAEmitter;
+			sourceTree = "<group>";
+		};
+		797D3E1921F19103002D9E50 /* SiriExtension */ = {
+			isa = PBXGroup;
+			children = (
+				797D3E1A21F19103002D9E50 /* IntentHandler.swift */,
+				797D3E1C21F19103002D9E50 /* Info.plist */,
+			);
+			path = SiriExtension;
+			sourceTree = "<group>";
+		};
+		797D3E2421F19103002D9E50 /* SiriExtensionUI */ = {
+			isa = PBXGroup;
+			children = (
+				797D3E2521F19103002D9E50 /* IntentViewController.swift */,
+				797D3E2721F19103002D9E50 /* MainInterface.storyboard */,
+				797D3E2A21F19103002D9E50 /* Info.plist */,
+			);
+			path = SiriExtensionUI;
+			sourceTree = "<group>";
+		};
+		797D3E3921F6D8BF002D9E50 /* Immortal */ = {
+			isa = PBXGroup;
+			children = (
+				797D3E3A21F6D933002D9E50 /* ImmortalViewController.swift */,
+				797D3E3C21F6D94B002D9E50 /* ImmortalCore.swift */,
+				797D3E3E21F703C1002D9E50 /* Xue.swift */,
+				797D3E4021F703DC002D9E50 /* Mai.swift */,
+				797D3E4221F7053F002D9E50 /* Qi.swift */,
+			);
+			name = Immortal;
+			sourceTree = "<group>";
+		};
+		7984B148220431DE007AF5BA /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				7984B149220431F7007AF5BA /* GameViewController.swift */,
+				7984B14B22043204007AF5BA /* MinesweeperViewController.swift */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
+		7984B14D221264CD007AF5BA /* Mutabl */ = {
+			isa = PBXGroup;
+			children = (
+				7984B14E22126505007AF5BA /* MultipeerConnectivityViewController.swift */,
+				7984B15022126783007AF5BA /* MultipeerConnectivityManager.swift */,
+			);
+			name = Mutabl;
 			sourceTree = "<group>";
 		};
 		7988066E1F4FB90A001FB972 /* ImageCrawler */ = {
@@ -557,10 +694,13 @@
 		79A923E51EEAA30D00D91121 = {
 			isa = PBXGroup;
 			children = (
+				797D3E3721F1B6EB002D9E50 /* AppIntentVocablary.plist */,
 				79A923F01EEAA30D00D91121 /* DemoSet */,
 				79A924051EEAA30D00D91121 /* DemoSetTests */,
 				79A924101EEAA30D00D91121 /* DemoSetUITests */,
 				79B647851F7361D90002103E /* MessageFilterExt */,
+				797D3E1921F19103002D9E50 /* SiriExtension */,
+				797D3E2421F19103002D9E50 /* SiriExtensionUI */,
 				79A923EF1EEAA30D00D91121 /* Products */,
 				BD0BEA95B308EEF73D3F467E /* Pods */,
 				7AFFC65A0DAFEE6C54CCEAC5 /* Frameworks */,
@@ -574,6 +714,8 @@
 				79A924021EEAA30D00D91121 /* DemoSetTests.xctest */,
 				79A9240D1EEAA30D00D91121 /* DemoSetUITests.xctest */,
 				79B647841F7361D90002103E /* MessageFilterExt.appex */,
+				797D3E1821F19102002D9E50 /* SiriExtension.appex */,
+				797D3E2121F19103002D9E50 /* SiriExtensionUI.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -862,6 +1004,15 @@
 			name = Collection;
 			sourceTree = "<group>";
 		};
+		79EEDCCF21E2FB39009E7906 /* LargeImage */ = {
+			isa = PBXGroup;
+			children = (
+				79EEDCD021E2FB6A009E7906 /* TiledImageView.swift */,
+				79EEDCD221E30CDF009E7906 /* LargeImageViewController.swift */,
+			);
+			name = LargeImage;
+			sourceTree = "<group>";
+		};
 		79FB35021EEAA5540083ED79 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -881,6 +1032,11 @@
 		79FB35031EEAA65D0083ED79 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				7984B14D221264CD007AF5BA /* Mutabl */,
+				7984B148220431DE007AF5BA /* Game */,
+				797D3E3921F6D8BF002D9E50 /* Immortal */,
+				797D3E1121ED935B002D9E50 /* CAEmitter */,
+				79EEDCCF21E2FB39009E7906 /* LargeImage */,
 				797C7D4421A6B198001E3F4B /* SelfCheck */,
 				79200163219972930057931D /* Calculator */,
 				79E474382109F10800931381 /* Font */,
@@ -954,6 +1110,7 @@
 				79EB466820DD055F000CB1B9 /* libsqlite3.tbd */,
 				B57CB0D8E15F346CDBC020A0 /* Pods_DemoSet.framework */,
 				79B6476E1F7359BB0002103E /* Messages.framework */,
+				797D3E2221F19103002D9E50 /* IntentsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -970,6 +1127,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		797D3E1721F19102002D9E50 /* SiriExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 797D3E3421F19103002D9E50 /* Build configuration list for PBXNativeTarget "SiriExtension" */;
+			buildPhases = (
+				797D3E1421F19102002D9E50 /* Sources */,
+				797D3E1521F19102002D9E50 /* Frameworks */,
+				797D3E1621F19102002D9E50 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SiriExtension;
+			productName = SiriExtension;
+			productReference = 797D3E1821F19102002D9E50 /* SiriExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		797D3E2021F19103002D9E50 /* SiriExtensionUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 797D3E3121F19103002D9E50 /* Build configuration list for PBXNativeTarget "SiriExtensionUI" */;
+			buildPhases = (
+				797D3E1D21F19103002D9E50 /* Sources */,
+				797D3E1E21F19103002D9E50 /* Frameworks */,
+				797D3E1F21F19103002D9E50 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SiriExtensionUI;
+			productName = SiriExtensionUI;
+			productReference = 797D3E2121F19103002D9E50 /* SiriExtensionUI.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		79A923ED1EEAA30D00D91121 /* DemoSet */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 79A924161EEAA30D00D91121 /* Build configuration list for PBXNativeTarget "DemoSet" */;
@@ -986,6 +1177,8 @@
 			);
 			dependencies = (
 				79B6478A1F7361D90002103E /* PBXTargetDependency */,
+				797D3E2C21F19103002D9E50 /* PBXTargetDependency */,
+				797D3E2F21F19103002D9E50 /* PBXTargetDependency */,
 			);
 			name = DemoSet;
 			productName = DemoSet;
@@ -1051,10 +1244,20 @@
 		79A923E61EEAA30D00D91121 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
+				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Far;
 				TargetAttributes = {
+					797D3E1721F19102002D9E50 = {
+						CreatedOnToolsVersion = 9.3.1;
+						DevelopmentTeam = WUWMJYLBP4;
+						ProvisioningStyle = Automatic;
+					};
+					797D3E2021F19103002D9E50 = {
+						CreatedOnToolsVersion = 9.3.1;
+						DevelopmentTeam = WUWMJYLBP4;
+						ProvisioningStyle = Automatic;
+					};
 					79A923ED1EEAA30D00D91121 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = WUWMJYLBP4;
@@ -1108,11 +1311,28 @@
 				79A924011EEAA30D00D91121 /* DemoSetTests */,
 				79A9240C1EEAA30D00D91121 /* DemoSetUITests */,
 				79B647831F7361D90002103E /* MessageFilterExt */,
+				797D3E1721F19102002D9E50 /* SiriExtension */,
+				797D3E2021F19103002D9E50 /* SiriExtensionUI */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		797D3E1621F19102002D9E50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		797D3E1F21F19103002D9E50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				797D3E2921F19103002D9E50 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		79A923EC1EEAA30D00D91121 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1126,6 +1346,7 @@
 				79A923F91EEAA30D00D91121 /* Assets.xcassets in Resources */,
 				7933A3D620BBE60800AE36D7 /* I18N.strings in Resources */,
 				79A923F71EEAA30D00D91121 /* Main.storyboard in Resources */,
+				797D3E3821F1B6EC002D9E50 /* AppIntentVocablary.plist in Resources */,
 				7957142F2005C0F70007078A /* StationData.plist in Resources */,
 				79B26AB61F185EF600B54EC2 /* Icon2@2x.png in Resources */,
 				79EB465E20DCFE9D000CB1B9 /* subways.sql in Resources */,
@@ -1220,10 +1441,27 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		797D3E1421F19102002D9E50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				797D3E1B21F19103002D9E50 /* IntentHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		797D3E1D21F19103002D9E50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				797D3E2621F19103002D9E50 /* IntentViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		79A923EA1EEAA30D00D91121 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7984B15122126783007AF5BA /* MultipeerConnectivityManager.swift in Sources */,
 				798AE3E32099939A0019E38C /* NetworkManager.swift in Sources */,
 				7933A46620D0FACD00AE36D7 /* CIFilterViewController.swift in Sources */,
 				79E4740620FF36DB00931381 /* ReaderTxtViewController.swift in Sources */,
@@ -1239,11 +1477,13 @@
 				79B647641F7263780002103E /* MessageFliterViewController.swift in Sources */,
 				79B26A741F05068B00B54EC2 /* LeafView.swift in Sources */,
 				7933A3D320BBE35B00AE36D7 /* I18NManager.swift in Sources */,
+				797D3E4D21F9C0FB002D9E50 /* Charcter+NumberExtension.swift in Sources */,
 				7992BF691EF3866E00AE829A /* NumberboardViewController.swift in Sources */,
 				79B26A961F0A45CD00B54EC2 /* NoblePhantasmModel.swift in Sources */,
 				795853B81EEF954700F214A5 /* SortViewController.swift in Sources */,
 				79A4F5A81FD791A2001E9A37 /* BaseTabBarViewController.swift in Sources */,
 				79E473E820F8925100931381 /* CollectionHomeViewController.swift in Sources */,
+				7984B14F22126505007AF5BA /* MultipeerConnectivityViewController.swift in Sources */,
 				79EB467F20E4ED39000CB1B9 /* LeftViewController.swift in Sources */,
 				79A4F5AE1FD7CCB7001E9A37 /* AppStoreContentCell.swift in Sources */,
 				79B647D11F74DE8A0002103E /* UIDevice+Extension.swift in Sources */,
@@ -1257,13 +1497,17 @@
 				79DB4BB91F70A8D40014CA2D /* WaveView.swift in Sources */,
 				795853BC1EEFBB4000F214A5 /* UIView+Extension.swift in Sources */,
 				79DCC1621F692E8600D6A6CE /* PointLineView.swift in Sources */,
+				797D3E4B21F9B3F5002D9E50 /* String+GoogolExtension.swift in Sources */,
 				79EB465420DBA740000CB1B9 /* BaseNavigationViewController.swift in Sources */,
 				7955CEEE1F8C730D007F6DC2 /* QRCodeMaskView.swift in Sources */,
+				797D3E3B21F6D933002D9E50 /* ImmortalViewController.swift in Sources */,
 				798AE3E620A1EAFB0019E38C /* ToDoViewController.swift in Sources */,
 				792E5E901FF0F530007E7605 /* CasinoViewController.swift in Sources */,
 				79B26ABB1F185FC800B54EC2 /* IconChangeViewController.swift in Sources */,
 				79D650E720AD5C99009E27CF /* ReaderViewController.swift in Sources */,
 				79EB465220DB9837000CB1B9 /* LandAimViewController.swift in Sources */,
+				79EEDCD321E30CDF009E7906 /* LargeImageViewController.swift in Sources */,
+				7984B14A220431F7007AF5BA /* GameViewController.swift in Sources */,
 				79EB468920EC6C41000CB1B9 /* WaitingView.swift in Sources */,
 				79DCC1771F6D18E400D6A6CE /* AlertModule.swift in Sources */,
 				7933A46820D0FC1B00AE36D7 /* QRCodeCreateViewController.swift in Sources */,
@@ -1279,8 +1523,10 @@
 				79EB468520E5D4D3000CB1B9 /* ARViewController.swift in Sources */,
 				79DCC17A1F6D2EF900D6A6CE /* FaceRecognitionViewController.swift in Sources */,
 				79A4F59F1FCD712F001E9A37 /* RoleModel.swift in Sources */,
+				79EEDCD121E2FB6A009E7906 /* TiledImageView.swift in Sources */,
 				7955CEEC1F8C729A007F6DC2 /* QRCodeView.swift in Sources */,
 				79CB22711F94B0D900C9FE1E /* MaskView.swift in Sources */,
+				797D3E4521F9B303002D9E50 /* GoogolViewController.swift in Sources */,
 				791FF81C20B27EE800AD6B2D /* EvolutionAttribute.swift in Sources */,
 				79A923F41EEAA30D00D91121 /* ViewController.swift in Sources */,
 				79FB35091EEAAB850083ED79 /* Cellular.swift in Sources */,
@@ -1295,8 +1541,10 @@
 				79584BBA1EEFDDDB003ABE05 /* BaseViewController.swift in Sources */,
 				79EB467320E2480F000CB1B9 /* ReaderContentViewController.swift in Sources */,
 				79B26A941F0A453C00B54EC2 /* AttackModel.swift in Sources */,
+				7984B14C22043204007AF5BA /* MinesweeperViewController.swift in Sources */,
 				796468101F9843E30091D671 /* MathViewController.swift in Sources */,
 				7907B2601FDE8D7700BB9CD3 /* BinaryTreeModel.swift in Sources */,
+				797D3E4121F703DC002D9E50 /* Mai.swift in Sources */,
 				79B26A8E1F0A428800B54EC2 /* FGOModel.swift in Sources */,
 				79A4F5A61FD6A1B7001E9A37 /* AppStoreContentViewController.swift in Sources */,
 				795714251FFE242D0007078A /* SRPGSkillModel.swift in Sources */,
@@ -1305,10 +1553,12 @@
 				79DCC1701F6CC81200D6A6CE /* UIImage+Extension.swift in Sources */,
 				79CB226F1F94B0C500C9FE1E /* MaskViewController.swift in Sources */,
 				79EB467120E23FBC000CB1B9 /* ReaderFileCell.swift in Sources */,
+				797D3E4321F7053F002D9E50 /* Qi.swift in Sources */,
 				791FF81A20B2773200AD6B2D /* EvolutionState.swift in Sources */,
 				795714312005C0F70007078A /* SubwayData.swift in Sources */,
 				7955CF171F9092C9007F6DC2 /* StringModel.swift in Sources */,
 				79E473EC20F8942500931381 /* CollectionCard.swift in Sources */,
+				797D3E3F21F703C1002D9E50 /* Xue.swift in Sources */,
 				79B647D41F7899FD0002103E /* NFCViewController.swift in Sources */,
 				79CB22771F97032000C9FE1E /* BannerViewController.swift in Sources */,
 				79E29D771FECD7B400EC4577 /* RuntimeViewController.swift in Sources */,
@@ -1332,7 +1582,9 @@
 				79EB467A20E4B91E000CB1B9 /* PlayerViewController.swift in Sources */,
 				79B26AA21F0DD9BE00B54EC2 /* SkillModel.swift in Sources */,
 				791FF82320B3FEC900AD6B2D /* String+Extension.swift in Sources */,
+				797D3E1321ED939D002D9E50 /* EmitterViewController.swift in Sources */,
 				79DCC1651F6A4A1D00D6A6CE /* NotificationViewController.swift in Sources */,
+				797D3E3D21F6D94B002D9E50 /* ImmortalCore.swift in Sources */,
 				7957142E2005C0F70007078A /* SubwayViewController.swift in Sources */,
 				79EB466720DD0210000CB1B9 /* SQLManager.swift in Sources */,
 				791FF81F20B3EACF00AD6B2D /* PasswordProduceViewController.swift in Sources */,
@@ -1371,6 +1623,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		797D3E2C21F19103002D9E50 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 797D3E2021F19103002D9E50 /* SiriExtensionUI */;
+			targetProxy = 797D3E2B21F19103002D9E50 /* PBXContainerItemProxy */;
+		};
+		797D3E2F21F19103002D9E50 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 797D3E1721F19102002D9E50 /* SiriExtension */;
+			targetProxy = 797D3E2E21F19103002D9E50 /* PBXContainerItemProxy */;
+		};
 		79A924041EEAA30D00D91121 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 79A923ED1EEAA30D00D91121 /* DemoSet */;
@@ -1400,6 +1662,14 @@
 			name = I18N.strings;
 			sourceTree = "<group>";
 		};
+		797D3E2721F19103002D9E50 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				797D3E2821F19103002D9E50 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		79A923F51EEAA30D00D91121 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1426,6 +1696,126 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		797D3E3221F19103002D9E50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WUWMJYLBP4;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = SiriExtensionUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ml.myapp.SiriExtensionUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		797D3E3321F19103002D9E50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WUWMJYLBP4;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = SiriExtensionUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ml.myapp.SiriExtensionUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		797D3E3521F19103002D9E50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WUWMJYLBP4;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = SiriExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ml.myapp.SiriExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		797D3E3621F19103002D9E50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WUWMJYLBP4;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = SiriExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ml.myapp.SiriExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		79A924141EEAA30D00D91121 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1677,6 +2067,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		797D3E3121F19103002D9E50 /* Build configuration list for PBXNativeTarget "SiriExtensionUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				797D3E3221F19103002D9E50 /* Debug */,
+				797D3E3321F19103002D9E50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		797D3E3421F19103002D9E50 /* Build configuration list for PBXNativeTarget "SiriExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				797D3E3521F19103002D9E50 /* Debug */,
+				797D3E3621F19103002D9E50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		79A923E91EEAA30D00D91121 /* Build configuration list for PBXProject "DemoSet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

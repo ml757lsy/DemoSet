@@ -71,6 +71,17 @@ class MaskViewController: BaseViewController {
                 })
             })
         }
+        //rgb
+        let rgb = UIImage.init(named: "banner1")
+        let im1 = UIImageView.init(frame: CGRect.init(x: 50, y: 200, width: 100, height: 100))
+        im1.image = rgb?.rbgReset(r: 1.0, g: 0.0, b: 1.0, a: 1.0)
+        view.addSubview(im1)
+        let im2 = UIImageView.init(frame: CGRect.init(x: 150, y: 200, width: 100, height: 100))
+        im2.image = rgb?.rbgReset(r: 1.0, g: 1.0, b: 0.0, a: 1.0)
+        view.addSubview(im2)
+        let im3 = UIImageView.init(frame: CGRect.init(x: 250, y: 200, width: 100, height: 100))
+        im3.image = rgb?.rbgReset(r: 0.0, g: 1.0, b: 1.0, a: 1.0)
+        view.addSubview(im3)
         
         //
         let longtap = UIPanGestureRecognizer.init(target: self, action: #selector(longTapHandler(with:)))
@@ -89,7 +100,7 @@ class MaskViewController: BaseViewController {
         img2.clipsToBounds = true
         view.addSubview(img2)
         
-        img2.mask = imageMaskView
+        img2.mask = imageMaskView//可以指定不规则图形，做很多骚套路，比如透镜效果，刮开效果等
         imageMaskView.backgroundColor = UIColor.white
         imageMaskView.frame = CGRect.init(x: 0, y: 0, width: 80, height: 80)
         

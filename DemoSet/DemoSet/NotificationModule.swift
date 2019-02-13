@@ -35,20 +35,25 @@ class NotificationModule: NSObject {
         }
     }
     
+    /// 注销通知
+    func removeNotification() {
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+    }
+    
     func addLocalNotification() {
         if #available(iOS 10.0, *) {
             let center = UNUserNotificationCenter.current()
             
             //content
-            var content = UNMutableNotificationContent()
-            content.title = ""
-            content.subtitle = ""
-            content.body = ""
+            let content = UNMutableNotificationContent()
+            content.title = "title"
+            content.subtitle = "sub"
+            content.body = "hhhh"
             
             //trigger
             //通知的触发器
             //1.计时器类型的，可单次可循环
-            let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: 10, repeats: true)
+            let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: 60, repeats: true)//如果要循环那么至少得间隔60 也就是一分钟
             
             var datecomponent = DateComponents.init()
             //每周1 8点
@@ -73,6 +78,7 @@ class NotificationModule: NSObject {
             let request = UNNotificationRequest.init(identifier: identifier, content: content, trigger: trigger)
             center.add(request, withCompletionHandler: { (error) in
                 //
+                print("completion~~~~")
             })
         } else {
             // Fallback on earlier versions

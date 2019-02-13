@@ -64,12 +64,24 @@ class MathViewController: BaseViewController {
         shap.fillColor = UIColor.red.cgColor
         shap.opacity = 0.8
         view.layer.addSublayer(shap)
+        
+        bignum()
     }
     
     /// 大数相关
     func bignum() {
+        let n1 = "2222223"
+        let n2 = "159"
         
+        let n3 = n1 * n2;
+        let n4 = n1.minus(rhs: n2)
+        let n5 = n1.add(rhs: n2)
+        let n6 = "9999".divid(rhs: "33")
+        
+        print(n4)
     }
+    
+    //MARK: - fibinacci
     /// 计算斐波那契数
     func Fibinacci() {
         let index = 40
@@ -112,7 +124,7 @@ class MathViewController: BaseViewController {
     }
     
     
-    //
+    //MARK: - palindromenumber
     func PalindromeNumClick() {
         let alert = UIAlertController.init(title: "", message: "输入初始数字", preferredStyle: .alert)
         
@@ -182,6 +194,10 @@ class MathViewController: BaseViewController {
         
     }
     
+    /// 回文数
+    ///
+    /// - Parameter num: 数字串
+    /// - Returns: 是否
     func checkPalindrime(num:String) -> Bool {
         let numstring = num as NSString
         let count = numstring.length
@@ -195,8 +211,74 @@ class MathViewController: BaseViewController {
         
         return true
     }
+    //MARK: - primenumber
+    /// 检测是不是质数
+    ///
+    /// - Parameter num: 数字
+    /// - Returns: 是否
+    func checkPrimenumber(num:Int64) -> Bool {
+        let primelist:[Int64] = [2,3,5,7,13,61,24251]
+        for n in primelist {
+            if num == n {
+                return true
+            }
+            if !check(nn: num, pp: n, dd: num-1) {
+                return false
+            }
+        }
+        
+        return true
+    }
     
-    //
+    /// 费马小定理判定
+    ///
+    /// - Parameters:
+    ///   - nn: 数字
+    ///   - pp: 质数
+    ///   - dd: 值
+    /// - Returns: 结果
+    func check(nn:Int64,pp:Int64,dd:Int64) -> Bool {
+        var n = nn;
+        var p = pp;
+        var d = dd;
+        if n == 2 {
+            return true
+        }
+        if n == p {
+            return false
+        }
+        
+        if ((n&1)<=0) {
+            return true
+        }
+        while (d&1) <= 0 {
+            d = d >> 1
+        }
+        var t = pow_mod(a: p, b: d, r: n)
+        while (d != (n-1))&&(t != n-1)&&(t != 1) {
+            t = t*t%n
+            d = d<<1
+        }
+        return t == n-1 || (d&1) == 1
+    }
+    
+    func pow_mod(a:Int64,b:Int64,r:Int64) -> Int64 {
+        var ans:Int64 = 1
+        var buff = a
+        var b = b
+        while b > 0 {
+            if b&1 > 0 {
+                ans = (ans * buff)%r
+                buff = (buff * buff)%r
+                b = b>>1
+            }
+        }
+        return ans
+    }
+    
+    
+    
+    //MARK: - other
     func binaryTreeClick() {
         let bin = BinaryTreeViewController()
         navigationController?.pushViewController(bin, animated: true)

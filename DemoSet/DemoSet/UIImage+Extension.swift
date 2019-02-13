@@ -58,6 +58,58 @@ extension UIImage{
         return image
     }
     
+    ///
+    ///
+    /// - Parameters:
+    ///   - r: r 0-1
+    ///   - g: g 0-1
+    ///   - b: b 0-1
+    ///   - a: a 0-1
+    /// - Returns: img
+    func rbgReset(r:CGFloat,g:CGFloat,b:CGFloat,a:CGFloat) -> UIImage {
+        // 分配内存
+        let imageWidth:Int = Int(self.size.width)
+        let imageHeight:Int = Int(self.size.height)
+        let bytesPerRow:Int = imageWidth * 4
+        let rgbImageBuf:UnsafeMutableRawPointer = malloc(bytesPerRow * imageHeight)
+        
+        // 创建context
+        
+        let cg = self.cgImage
+        
+        
+        let colorSpace:CGColorSpace = CGColorSpaceCreateDeviceRGB()
+        let context:CGContext = CGContext(data: rgbImageBuf, width: imageWidth, height: imageHeight, bitsPerComponent: 8, bytesPerRow: bytesPerRow, space: colorSpace,bitmapInfo: 1)!
+        
+        context.draw(cg!, in: CGRect.init(x: 0, y: 0, width: self.size.width, height: self.size.height), byTiling: true)
+        
+        // 遍历像素
+        var pCurPtr = rgbImageBuf
+        for _ in 0..<imageHeight {
+            for _ in 0..<imageWidth {
+                var alpha = pCurPtr.load(fromByteOffset: 0, as: UInt8.self)
+                var red = pCurPtr.load(fromByteOffset: 1, as: UInt8.self)
+                var green = pCurPtr.load(fromByteOffset: 2, as: UInt8.self)
+                var blue = pCurPtr.load(fromByteOffset: 3, as: UInt8.self)
+                
+                alpha = UInt8(CGFloat(alpha) * a)
+                red = UInt8(CGFloat(red) * r)
+                green = UInt8(CGFloat(green) * g)
+                blue = UInt8(CGFloat(blue) * b)
+                
+                pCurPtr.storeBytes(of: alpha, toByteOffset: 0, as: UInt8.self)
+                pCurPtr.storeBytes(of: red, toByteOffset: 1, as: UInt8.self)
+                pCurPtr.storeBytes(of: green, toByteOffset: 2, as: UInt8.self)
+                pCurPtr.storeBytes(of: blue, toByteOffset: 3, as: UInt8.self)
+                
+                pCurPtr += 4
+            }
+        }
+        let image = UIImage.init(cgImage: (context.makeImage())!)
+        
+        return image
+    }
+    
     /// 比例缩放
     ///
     /// - Parameters:

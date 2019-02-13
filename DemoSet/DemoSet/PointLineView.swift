@@ -19,7 +19,7 @@ class PointLineView: UIView {
     var points:[Point] = []
     var lines:[[UIBezierPath]] = []
     var notes:[UIBezierPath] = []
-    var timer:Timer = Timer()
+    var timer:CADisplayLink = CADisplayLink()
     var maxPoint:Int = 40
     
     private var minLength:CGFloat = 30//最短
@@ -41,7 +41,7 @@ class PointLineView: UIView {
             var point = Point()
             point.position = CGPoint.init(x: CGFloat(arc4random()%500), y: CGFloat(arc4random()%500))
             point.direction = CGPoint.init(x: CGFloat(arc4random()%10+1), y: CGFloat(arc4random()%10+1))
-            point.speed = CGFloat(arc4random()%5+1)
+            point.speed = CGFloat(arc4random()%3+1)
             points.append(point)
         }
         //line
@@ -63,8 +63,14 @@ class PointLineView: UIView {
     
     //
     func initTimer() {
-        timer.invalidate()
-        timer = Timer.scheduledTimer(timeInterval: 0.06, target: self, selector: #selector(updateView), userInfo: nil, repeats: true)
+//        timer = Timer.scheduledTimer(timeInterval: 0.06, target: self, selector: #selector(updateView), userInfo: nil, repeats: true)
+        timer = CADisplayLink.init(target: self, selector: #selector(updateView))
+        timer.add(to: RunLoop.current, forMode: .defaultRunLoopMode)
+    }
+    
+    override func removeFromSuperview() {
+        timer.invalidate()//全部从runloop移除 不会超限啊哈哈
+        super.removeFromSuperview()
     }
     
     func updateView() {

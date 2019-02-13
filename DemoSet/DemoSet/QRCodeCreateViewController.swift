@@ -62,7 +62,7 @@ class QRCodeCreateViewController: BaseViewController {
         //join
         let imgcode = UIImageView.init(frame: CGRect.init(x: space, y: (qrsize + space)*2, width: qrsize, height: qrsize))
         backScroll.addSubview(imgcode)
-        imgcode.image = QRCodeModule.qrcode(message: "只是个头像有什么好扫的", backImg: (reheader?.binaryzation())!)
+        imgcode.image = QRCodeModule.qrcode(message: "新年新头像 2019 Far", backImg: (reheader?.binaryzation())!)
         //https://itunes.apple.com/kr/app/id1423521190
         
     }

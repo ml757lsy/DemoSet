@@ -64,6 +64,17 @@ class FGOViewController: BaseViewController {
         aim.characteristic.insert(.servent)
         
         NPModel.noplePhantasm(from: ji, to: aim)
+        /*
+         buff
+         atk
+         
+         card
+         
+         
+         
+         
+         
+         */
     }
     
     

@@ -64,6 +64,28 @@ class SkillModel: FGOModel {
     
     //MARK: -
     
+    /// 根据设定和等级获取数值
+    ///
+    /// - Parameters:
+    ///   - values: 设定
+    ///   - level: 等级
+    ///   - change: 调整
+    /// - Returns: 数值
+    class func value(with values:[CGFloat], at level:BaseLevel, and change:CGFloat) -> CGFloat{
+        
+        var value:CGFloat = values[level.rawValue%5]
+        if level.rawValue%5 < 1 {
+            value -= change
+        }
+        if level.rawValue%5 > 1 {
+            value += change * CGFloat(level.rawValue%5-1)
+        }
+        
+        return value
+    }
+    
+    //MARK: -
+    
     /// 骑乘
     ///
     /// - Parameter baseLevel: 固有等级
@@ -99,7 +121,7 @@ class SkillModel: FGOModel {
     class func divinity(baseLevel:BaseLevel) -> SkillModel{
         let divinityValues:[CGFloat] = [100,125,150,175,200,300]
         let change:CGFloat = 5
-        var value = SkillModel.value(with: divinityValues, at: baseLevel, and: change)
+        let value = SkillModel.value(with: divinityValues, at: baseLevel, and: change)
         //
         let aattackbuff = BufferModel()
         aattackbuff.buffType = .addAttackBuff
@@ -119,7 +141,7 @@ class SkillModel: FGOModel {
     class func magicDefence(baseLevel:BaseLevel) -> SkillModel{
         let magicDefenceValues:[CGFloat] = [0.1, 0.125, 0.15, 0.175, 0.20, 0.25]
         let change:CGFloat = 0.005
-        var value = SkillModel.value(with: magicDefenceValues, at: baseLevel, and: change)
+        let value = SkillModel.value(with: magicDefenceValues, at: baseLevel, and: change)
         //buff
         let magicDBuff = BufferModel()
         magicDBuff.buffType = .weakAgainstBuff
@@ -140,7 +162,7 @@ class SkillModel: FGOModel {
     class func berserker(baseLevel:BaseLevel) -> SkillModel{
         let berserkerValues:[CGFloat] = [0.02, 0.04, 0.06, 0.08, 0.10, 0.12]
         let change:CGFloat = 0.01
-        var value:CGFloat = SkillModel.value(with: berserkerValues, at: baseLevel, and: change)
+        let value:CGFloat = SkillModel.value(with: berserkerValues, at: baseLevel, and: change)
         //buff
         let berbuff = BufferModel()
         berbuff.buffType = .busterCardBuff
@@ -160,7 +182,7 @@ class SkillModel: FGOModel {
     class func positionalwarfare(baseLevel:BaseLevel) -> SkillModel {
         let artisValues:[CGFloat] = [0.02, 0.04, 0.06, 0.08, 0.10, 0.12]
         let change:CGFloat = 0.01
-        var value:CGFloat = SkillModel.value(with: artisValues, at: baseLevel, and: change)
+        let value:CGFloat = SkillModel.value(with: artisValues, at: baseLevel, and: change)
         //buff
         let artsbuff = BufferModel()
         artsbuff.buffType = .artsCardBuff
@@ -180,7 +202,7 @@ class SkillModel: FGOModel {
     class func single(baseLevel:BaseLevel) -> SkillModel {
         let singleValues:[CGFloat] = [0.02, 0.04, 0.06, 0.08, 0.10, 0.12]
         let change:CGFloat = 0.01
-        var value:CGFloat = SkillModel.value(with: singleValues, at: baseLevel, and: change)
+        let value:CGFloat = SkillModel.value(with: singleValues, at: baseLevel, and: change)
         //buff
         let singleBuff = BufferModel()
         singleBuff.buffType = .critBuff
@@ -200,7 +222,7 @@ class SkillModel: FGOModel {
     class func hiden(baseLevel:BaseLevel) -> SkillModel{
         let hidenValues:[CGFloat] = [0.02, 0.04, 0.06, 0.08, 0.10, 0.12]
         let change:CGFloat = 0.01
-        var value:CGFloat = SkillModel.value(with: hidenValues, at: baseLevel, and: change)
+        let value:CGFloat = SkillModel.value(with: hidenValues, at: baseLevel, and: change)
         //buff
         let hidenBuff = BufferModel()
         hidenBuff.buffType = .circleBuff
@@ -221,7 +243,7 @@ class SkillModel: FGOModel {
     class func propmade(baseLevel:BaseLevel) -> SkillModel{
         let propValues:[CGFloat] = [0.02, 0.04, 0.06, 0.08, 0.10, 0.12]
         let change:CGFloat = 0.01
-        var value:CGFloat = SkillModel.value(with: propValues, at: baseLevel, and: change)
+        let value:CGFloat = SkillModel.value(with: propValues, at: baseLevel, and: change)
         
         //buff
         let propBuff = BufferModel()
@@ -273,24 +295,37 @@ class SkillModel: FGOModel {
     }
     
     
-    /// 根据设定和等级获取数值
+    /// 无限的魔力供给
     ///
-    /// - Parameters:
-    ///   - values: 设定
-    ///   - level: 等级
-    ///   - change: 调整
-    /// - Returns: 数值
-    class func value(with values:[CGFloat], at level:BaseLevel, and change:CGFloat) -> CGFloat{
+    /// - Parameter baseLevel: 固有等级
+    /// - Returns: skill
+    class func infiniteMagicSupport(baseLevel:BaseLevel) -> SkillModel {
         
-        var value:CGFloat = values[level.rawValue%5]
-        if level.rawValue%5 < 1 {
-            value -= change
-        }
-        if level.rawValue%5 > 1 {
-            value += change * CGFloat(level.rawValue%5-1)
-        }
+        //C np+3
+        //B np+4
+        return SkillModel()
+    }
+    
+    /// 自我回复
+    ///
+    /// - Parameter baseLevel: 固有等级
+    /// - Returns: skill
+    class func selfRepair(baseLevel:BaseLevel) -> SkillModel {
         
-        return value
+        //D np+3
+        //A+ np+4
+        return SkillModel()
+    }
+    
+    /// 混血
+    ///
+    /// - Parameter baseLevel: 固有等级
+    /// - Returns: skill
+    class func miscegenation(baseLevel:BaseLevel) -> SkillModel {
+        
+        //EX np+5
+        //e-2 cd-3 ba-4 x-5 应该是同等级的技能
+        return SkillModel()
     }
     
     

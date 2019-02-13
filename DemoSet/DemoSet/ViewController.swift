@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Intents
 
 class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     private var list:[String] = []
@@ -95,6 +96,12 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         list.append("AllFont")
         list.append("Calculator")
         list.append("SelfCheck")
+        list.append("LargeImage")
+        list.append("Emitter")
+        list.append("Immortal")
+        list.append("Notification")
+        list.append("Game")
+        list.append("MultipeerConnectivity")
         
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize.init(width: 100, height: 100)
@@ -164,6 +171,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
                 // Fallback on earlier versions
                 return
             }
+            break
         case 13:
             aimController = BluetoothConnectionViewController()
             break
@@ -238,6 +246,24 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         case 37:
             aimController = SelfCheckViewController()
             break
+        case 38:
+            aimController = LargeImageViewController()
+            break
+        case 39:
+            aimController = EmitterViewController()
+            break
+        case 40:
+            aimController = ImmortalViewController()
+            break
+        case 41:
+            aimController = NotificationViewController()
+            break
+        case 42:
+            aimController = GameViewController()
+            break
+        case 43:
+            aimController = MultipeerConnectivityViewController()
+            break
             
         default:
             break
@@ -271,6 +297,16 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         let d = calander?.component(.day, from: Date())
         
         print(m,d)
+        
+        //
+//        INPreferences.requestSiriAuthorization { (status) in
+//            //
+//            if status == .authorized {
+//                print("Siri可以调戏了")
+//            }else {
+//                print("Siri还不能调戏哦")
+//            }
+//        }
         
     }
     

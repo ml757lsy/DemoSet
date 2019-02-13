@@ -11,6 +11,10 @@ import UIKit
 let SCREENWIDTH = UIScreen.main.bounds.width
 let SCREENHEIGHT = UIScreen.main.bounds.height
 
+typealias BaseBlockVoid = ()->Void
+typealias BaseBlockCGFloat = (CGFloat)->Void
+
+
 class BaseConstFile: NSObject {
 
 }
