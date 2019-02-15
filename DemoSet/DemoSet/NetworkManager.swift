@@ -15,6 +15,21 @@ class NetworkManager: NSObject {
     
     static let manager = NetworkManager()
     
+    //function
+    func get(url:URLConvertible,responseString:@escaping (String)->Void) {
+        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseString { (string) in
+            let str = string.result.value
+            responseString(str ?? "")
+        }
+    }
+    
+    func post(url:URLConvertible,parameters:Parameters?,resonseString:@escaping (String)->Void) {
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseString { (string) in
+            let str = string.result.value
+            resonseString(str ?? "")
+        }
+    }
+    
     //class function
     public class func request(url:URLConvertible,responseString:@escaping (String)->Void) {
         Alamofire.request(url).responseString { (string) in

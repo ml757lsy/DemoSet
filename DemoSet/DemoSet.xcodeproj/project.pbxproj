@@ -73,6 +73,7 @@
 		7984B14C22043204007AF5BA /* MinesweeperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7984B14B22043204007AF5BA /* MinesweeperViewController.swift */; };
 		7984B14F22126505007AF5BA /* MultipeerConnectivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7984B14E22126505007AF5BA /* MultipeerConnectivityViewController.swift */; };
 		7984B15122126783007AF5BA /* MultipeerConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7984B15022126783007AF5BA /* MultipeerConnectivityManager.swift */; };
+		7984B154221673E5007AF5BA /* APIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7984B153221673E4007AF5BA /* APIViewController.swift */; };
 		798806701F4FB944001FB972 /* ImageCrawlerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988066F1F4FB944001FB972 /* ImageCrawlerViewController.swift */; };
 		798AE3E32099939A0019E38C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798AE3E22099939A0019E38C /* NetworkManager.swift */; };
 		798AE3E620A1EAFB0019E38C /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798AE3E520A1EAFB0019E38C /* ToDoViewController.swift */; };
@@ -300,6 +301,7 @@
 		7984B14B22043204007AF5BA /* MinesweeperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinesweeperViewController.swift; sourceTree = "<group>"; };
 		7984B14E22126505007AF5BA /* MultipeerConnectivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerConnectivityViewController.swift; sourceTree = "<group>"; };
 		7984B15022126783007AF5BA /* MultipeerConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerConnectivityManager.swift; sourceTree = "<group>"; };
+		7984B153221673E4007AF5BA /* APIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIViewController.swift; sourceTree = "<group>"; };
 		7988066F1F4FB944001FB972 /* ImageCrawlerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCrawlerViewController.swift; sourceTree = "<group>"; };
 		798AE3E22099939A0019E38C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		798AE3E520A1EAFB0019E38C /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
@@ -633,6 +635,14 @@
 				7984B15022126783007AF5BA /* MultipeerConnectivityManager.swift */,
 			);
 			name = Mutabl;
+			sourceTree = "<group>";
+		};
+		7984B152221673C8007AF5BA /* API */ = {
+			isa = PBXGroup;
+			children = (
+				7984B153221673E4007AF5BA /* APIViewController.swift */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 		7988066E1F4FB90A001FB972 /* ImageCrawler */ = {
@@ -1032,6 +1042,7 @@
 		79FB35031EEAA65D0083ED79 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				7984B152221673C8007AF5BA /* API */,
 				7984B14D221264CD007AF5BA /* Mutabl */,
 				7984B148220431DE007AF5BA /* Game */,
 				797D3E3921F6D8BF002D9E50 /* Immortal */,
@@ -1592,6 +1603,7 @@
 				79B26A8C1F0A427000B54EC2 /* FGOViewController.swift in Sources */,
 				79CB22791F97287A00C9FE1E /* BaseBannerView.swift in Sources */,
 				79B26AA01F0CFAB500B54EC2 /* ProbabilityModel.swift in Sources */,
+				7984B154221673E5007AF5BA /* APIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

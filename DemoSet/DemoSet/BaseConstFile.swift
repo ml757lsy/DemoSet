@@ -13,6 +13,7 @@ let SCREENHEIGHT = UIScreen.main.bounds.height
 
 typealias BaseBlockVoid = ()->Void
 typealias BaseBlockCGFloat = (CGFloat)->Void
+typealias BaseBlockString = (String) -> Void
 
 
 class BaseConstFile: NSObject {

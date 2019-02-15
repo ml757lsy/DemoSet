@@ -102,6 +102,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         list.append("Notification")
         list.append("Game")
         list.append("MultipeerConnectivity")
+        list.append("API")
         
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize.init(width: 100, height: 100)
@@ -263,6 +264,9 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             break
         case 43:
             aimController = MultipeerConnectivityViewController()
+            break
+        case 44:
+            aimController = APIViewController()
             break
             
         default:

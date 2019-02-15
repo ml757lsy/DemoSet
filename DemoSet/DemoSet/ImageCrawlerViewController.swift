@@ -34,11 +34,7 @@ class ImageCrawlerViewController: BaseViewController {
         crawler.addTarget(self, action: #selector(toCrawler), for: .touchUpInside)
         view.addSubview(crawler)
         
-        let apibtn = UIButton.init(type: .system)
-        apibtn.frame = CGRect.init(x: 100, y: 40, width: 60, height: 40)
-        apibtn.setTitle("API", for: .normal)
-        apibtn.addTarget(self, action: #selector(loadMessage), for: .touchUpInside)
-        view.addSubview(apibtn)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,19 +42,7 @@ class ImageCrawlerViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func loadMessage() {
-        let url:URL = URL.init(string: "http://byfar.cc/api.php?action=getusers")!
-        
-        Alamofire.request(url).responseString { (string) in
-            print(string.result.value!)
-        }
-        
-        NetworkManager.requestModel(url: url, modeltype: UserList()) { (model) in
-            print(model.list.count)
-            let user = model.list[0]
-            print(user.name)
-        }
-    }
+    
     
 
     func toCrawler() {

@@ -15,6 +15,7 @@ class MultipeerConnectivityViewController: BaseViewController,MCBrowserViewContr
     let find = UIButton.init()
     let send = UIButton.init()
     let manager = MultipeerConnectivityManager.manager
+    let text = UITextView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,21 @@ class MultipeerConnectivityViewController: BaseViewController,MCBrowserViewContr
         send.addTarget(self, action: #selector(sendMsgAction), for: .touchUpInside)
         view.addSubview(send)
         
+        text.frame = CGRect.init(x: 20, y: 200, width: SCREENWIDTH-40, height: SCREENHEIGHT-200-20-(navigationController?.navigationBar.height)!)
+        text.backgroundColor = UIColor.init(white: 0, alpha: 0.1)
+        view.addSubview(text)
+        
         manager.setupPeerName(name: UIDevice.current.name)
+        weak var weakself = self
+        manager.receiveMessage = {
+            str in
+            //
+            weakself?.addMsgAction(str: str)
+        }
+        manager.addSystemMsg = {
+            msg in
+            weakself?.addMsgAction(str: msg)
+        }
     }
     
     func openSwitchAction() {
@@ -45,10 +60,10 @@ class MultipeerConnectivityViewController: BaseViewController,MCBrowserViewContr
     
     func findOtherAction() {
         manager.setupBrowser()
-        manager.browser!.delegate = self
-        present(manager.browser!, animated: true) {
-            //
-        }
+    }
+    
+    func addMsgAction(str:String) {
+        text.text = text.text + str + "\n"
     }
     
     func sendMsgAction() {
@@ -59,6 +74,10 @@ class MultipeerConnectivityViewController: BaseViewController,MCBrowserViewContr
         } catch {
             //
         }
+    }
+    
+    func reactiove(msg:String) {
+        //
     }
     
     func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
