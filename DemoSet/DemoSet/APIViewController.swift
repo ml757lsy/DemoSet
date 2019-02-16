@@ -18,11 +18,23 @@ class APIViewController: BaseViewController {
 
         // Do any additional setup after loading the view.
         
-        let apibtn = UIButton.init(type: .system)
-        apibtn.frame = CGRect.init(x: 100, y: 40, width: 60, height: 40)
-        apibtn.setTitle("API", for: .normal)
-        apibtn.addTarget(self, action: #selector(loadMessage), for: .touchUpInside)
-        view.addSubview(apibtn)
+        let query = UIButton.init(type: .system)
+        query.frame = CGRect.init(x: 20, y: 40, width: 60, height: 40)
+        query.setTitle("Query", for: .normal)
+        query.addTarget(self, action: #selector(loadMessage), for: .touchUpInside)
+        view.addSubview(query)
+        
+        let regist = UIButton.init(type: .system)
+        regist.frame = CGRect.init(x: 100, y: 40, width: 60, height: 40)
+        regist.setTitle("Regist", for: .normal)
+        regist.addTarget(self, action: #selector(registAction), for: .touchUpInside)
+        view.addSubview(regist)
+        
+        let update = UIButton.init(type: .system)
+        update.frame = CGRect.init(x: 180, y: 40, width: 60, height: 40)
+        update.setTitle("Update", for: .normal)
+        update.addTarget(self, action: #selector(updateAction), for: .touchUpInside)
+        view.addSubview(update)
         
         textView.frame = CGRect.init(x: 20, y: 150, width: SCREENWIDTH-40, height: view.height-150)
         textView.backgroundColor = UIColor.init(white: 0, alpha: 0.1)
@@ -51,6 +63,26 @@ class APIViewController: BaseViewController {
         Alamofire.request(login, method: .post, parameters: param, encoding: URLEncoding.default, headers: nil).responseString { (string) in
             //
             print("login:"+string.result.value!)
+        }
+    }
+    
+    func registAction() {
+        let login:URL = URL.init(string: "http://byfar.cc/regist.php")!
+        let param:[String:Any] = ["username":"Jhon","password":"pass","sign":"sssss"]
+        
+        Alamofire.request(login, method: .post, parameters: param, encoding: URLEncoding.default, headers: nil).responseString { (string) in
+            //
+            print("regist:"+string.result.value!)
+        }
+    }
+    
+    func updateAction() {
+        let update:URL = URL.init(string: "http://byfar.cc/update.php")!
+        let param:[String:Any] = ["username":"Jhon","password":"pass","type":"3"]
+        
+        Alamofire.request(update, method: .post, parameters: param, encoding: URLEncoding.default, headers: nil).responseString { (string) in
+            //
+            print("update:"+string.result.value!)
         }
     }
 
