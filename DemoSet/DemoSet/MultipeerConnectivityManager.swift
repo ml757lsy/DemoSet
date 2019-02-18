@@ -140,6 +140,7 @@ class MultipeerConnectivityManager: NSObject,MCSessionDelegate,MCNearbyServiceBr
         let msg = "receive invitation"
         print(msg)
         addSystemMsg(msg)
+        //做一些处理判断是否接受邀请
         invitationHandler(true,session!)
     }
 

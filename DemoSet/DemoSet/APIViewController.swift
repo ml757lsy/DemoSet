@@ -36,6 +36,12 @@ class APIViewController: BaseViewController {
         update.addTarget(self, action: #selector(updateAction), for: .touchUpInside)
         view.addSubview(update)
         
+        let custom = UIButton.init(type: .system)
+        custom.frame = CGRect.init(x: 260, y: 40, width: 60, height: 40)
+        custom.setTitle("Custom", for: .normal)
+        custom.addTarget(self, action: #selector(customSQL), for: .touchUpInside)
+        view.addSubview(custom)
+        
         textView.frame = CGRect.init(x: 20, y: 150, width: SCREENWIDTH-40, height: view.height-150)
         textView.backgroundColor = UIColor.init(white: 0, alpha: 0.1)
         view.addSubview(textView)
@@ -84,6 +90,17 @@ class APIViewController: BaseViewController {
             //
             print("update:"+string.result.value!)
         }
+    }
+    
+    func customSQL() {
+        let url:URL = URL.init(string: "http://byfar.cc/api.php")!
+        let sql:String = "SELECT * FROM `bdm262241171_db`.`user` ORDER BY `userid` DESC  LIMIT 0,2"
+        let param:[String:Any] = ["SQL":sql]
+        self.textView.text += sql+"\n"
+        NetworkManager.manager.post(url: url, parameters: param) { (string) in
+            print("custom:"+string)
+        }
+        
     }
 
     /*
