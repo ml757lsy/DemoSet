@@ -7,5 +7,6 @@ pod 'SnapKit', '~> 3.2.0'
 pod 'OpenCV', '~> 3.4.1'
 pod 'FMDB', '~> 2.7.2'
 pod 'FLEX', '~> 2.4.0'
+pod 'Kingfisher'
 use_frameworks!
 end

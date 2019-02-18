@@ -30,6 +30,13 @@ class NetworkManager: NSObject {
         }
     }
     
+    func upload(url:URLConvertible, file:URL, progressHandler:@escaping BaseBlockCGFloat) {
+        Alamofire.upload(file, to: url).uploadProgress { (progress) in
+            //
+//            progressHandler(progress)
+        }
+    }
+    
     //class function
     public class func request(url:URLConvertible,responseString:@escaping (String)->Void) {
         Alamofire.request(url).responseString { (string) in

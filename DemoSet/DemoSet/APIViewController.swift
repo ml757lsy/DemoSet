@@ -8,8 +8,9 @@
 
 import UIKit
 import Alamofire
+import Kingfisher
 
-class APIViewController: BaseViewController {
+class APIViewController: BaseViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
     let textView = UITextView()
     
@@ -18,11 +19,24 @@ class APIViewController: BaseViewController {
 
         // Do any additional setup after loading the view.
         
+        let host = "http://www.byfar.cc"
+        
+        let imgview = UIImageView.init(frame: CGRect.init(x: 20, y: 20, width: 60, height: 60))
+        let resource = ImageResource.init(downloadURL: URL.init(string: host+"/ulf/83025aafa40f4bfb619bfc63024f78f0f73618b9.jpg.gif")!)
+        imgview.kf.setImage(with: resource)
+        view.addSubview(imgview)
+        
         let query = UIButton.init(type: .system)
         query.frame = CGRect.init(x: 20, y: 40, width: 60, height: 40)
         query.setTitle("Query", for: .normal)
         query.addTarget(self, action: #selector(loadMessage), for: .touchUpInside)
         view.addSubview(query)
+        
+        let upload = UIButton.init(type: .system)
+        upload.frame = CGRect.init(x: 20, y: 100, width: 60, height: 40)
+        upload.setTitle("UPLOAD", for: .normal)
+        upload.addTarget(self, action: #selector(uploadAction), for: .touchUpInside)
+        view.addSubview(upload)
         
         let regist = UIButton.init(type: .system)
         regist.frame = CGRect.init(x: 100, y: 40, width: 60, height: 40)
@@ -92,6 +106,28 @@ class APIViewController: BaseViewController {
         }
     }
     
+    func uploadAction() {
+        
+        let picker = UIImagePickerController.init()
+        picker.delegate = self
+        self.present(picker, animated: true) {
+            //
+        }
+    }
+    
+    func upload(path:URL) {
+        print("path:"+path.absoluteString)
+        //upload
+        let url:URL = URL.init(string: "http://byfar.cc/upload.php")!
+//        NetworkManager.manager.upload(url: url, file: path) { (progress) in
+//            //
+//            print(progress)
+//        }
+        Alamofire.upload(path, to: url).uploadProgress { (progress) in
+            print("progress:\(progress)")
+        }
+    }
+    
     func customSQL() {
         let url:URL = URL.init(string: "http://byfar.cc/api.php")!
         let sql:String = "SELECT * FROM `bdm262241171_db`.`user` ORDER BY `userid` DESC  LIMIT 0,2"
@@ -103,6 +139,16 @@ class APIViewController: BaseViewController {
         
     }
 
+    // delegate
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        //
+        print(info)
+        let path:URL = info["UIImagePickerControllerImageURL"] as! URL
+        upload(path: path)
+        picker.dismiss(animated: true) {
+            //
+        }
+    }
     /*
     // MARK: - Navigation
 
