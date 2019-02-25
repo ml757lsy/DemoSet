@@ -30,7 +30,7 @@ class LandscapeViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func jump() {
+    @objc func jump() {
         let land = LandAimViewController()
         let landv = UINavigationController.init(rootViewController: land)
         present(landv, animated: true) {

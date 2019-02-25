@@ -79,7 +79,7 @@ class PlayerViewController: BaseViewController,UITableViewDelegate,UITableViewDa
         manager.loadVideo(with: path)
     }
     
-    func showList() {
+    @objc func showList() {
         listTable.snp.updateConstraints { (make) in
             make.right.equalTo(0)
         }

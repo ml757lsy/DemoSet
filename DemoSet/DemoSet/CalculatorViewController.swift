@@ -57,7 +57,7 @@ class CalculatorViewController: BaseViewController {
         
     }
     
-    func typeButtonClick(btn:UIButton) {
+    @objc func typeButtonClick(btn:UIButton) {
         switch btn.tag {
         case 1:
             abbreviation.isHidden = false

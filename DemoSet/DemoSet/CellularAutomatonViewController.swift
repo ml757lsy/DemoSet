@@ -108,7 +108,7 @@ class CellularAutomatonViewController: BaseViewController {
         }
     }
     
-    func setStart() {
+    @objc func setStart() {
         
         //
         for i in 0..<oldEnvironmental.count {
@@ -133,7 +133,7 @@ class CellularAutomatonViewController: BaseViewController {
         timer = Timer.scheduledTimer(timeInterval: 0.15, target: self, selector: #selector(nextGeneration), userInfo: nil, repeats: true)
     }
     
-    func nextGeneration() {
+    @objc func nextGeneration() {
         generation += 1
         generationLabel.text = "\(generation)代"
         for l in 0..<height {

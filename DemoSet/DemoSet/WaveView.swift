@@ -48,7 +48,7 @@ class WaveView: UIView {
         colors.append(UIColor.blue)
     }
     
-    func animation() {
+    @objc func animation() {
         offset += 2
         
         for i in 0..<waves.count {
@@ -77,7 +77,7 @@ class WaveView: UIView {
         super.draw(rect)
         
         let link = CADisplayLink.init(target: self, selector: #selector(animation))
-        link.add(to: RunLoop.main, forMode: .commonModes)
+        link.add(to: RunLoop.main, forMode: RunLoop.Mode.common)
     }
 
 }

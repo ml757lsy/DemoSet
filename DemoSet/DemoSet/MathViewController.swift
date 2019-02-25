@@ -53,6 +53,14 @@ class MathViewController: BaseViewController {
         view.addSubview(binarytree)
         
         //
+        let mpibutton = UIButton.init(type: .custom)
+        mpibutton.frame = CGRect.init(x: 20, y: 100, width: 100, height: 40)
+        mpibutton.setTitle("PI", for: .normal)
+        mpibutton.setTitleColor(UIColor.orange, for: .normal)
+        mpibutton.addTarget(self, action: #selector(mpi), for: .touchUpInside)
+        view.addSubview(mpibutton)
+        
+        //
         
         let l = UIBezierPath.init()
         l.move(to: CGPoint.init(x: 100, y: 100))
@@ -83,7 +91,7 @@ class MathViewController: BaseViewController {
     
     //MARK: - fibinacci
     /// 计算斐波那契数
-    func Fibinacci() {
+    @objc func Fibinacci() {
         let index = 40
         
         let s = Date()
@@ -97,6 +105,11 @@ class MathViewController: BaseViewController {
         let nd = ne.timeIntervalSince1970-ns.timeIntervalSince1970
 
         FibonacciLabel.text = "计算第\(index)位斐波那契数\n结果\(n)--\(nn)\n递归用时:\(d)\n尾递归用时:\(nd)"
+        
+        /*
+         fn = (1/sqr(5))*(pow(((1+sqr(5))/2),n)+pow(((1-sqr(5))/2),n))
+         //通项公式
+         */
     }
     
     //尾递归
@@ -125,7 +138,7 @@ class MathViewController: BaseViewController {
     
     
     //MARK: - palindromenumber
-    func PalindromeNumClick() {
+    @objc func PalindromeNumClick() {
         let alert = UIAlertController.init(title: "", message: "输入初始数字", preferredStyle: .alert)
         
         alert.addTextField { (textfiled) in
@@ -156,8 +169,8 @@ class MathViewController: BaseViewController {
         
         var add:Int = 0
         for i in 0..<seriation.length {
-            let c1 = seriation.character(at: i) - 48
-            let c2 = seriation.character(at: seriation.length-1-i) - 48
+            let c1:Int = Int(seriation.character(at: i)) - 48
+            let c2:Int = Int(seriation.character(at: seriation.length-1-i)) - 48
             
             var c = c1 + c2 + add
             if c >= 10 {
@@ -279,9 +292,33 @@ class MathViewController: BaseViewController {
     
     
     //MARK: - other
-    func binaryTreeClick() {
+    @objc func binaryTreeClick() {
         let bin = BinaryTreeViewController()
         navigationController?.pushViewController(bin, animated: true)
+    }
+    
+    // 计算pi
+    func mpi() {
+        /*
+         4/1-4/3+4/5```
+         */
+        var n:Double = 1
+        var b:Bool = true
+        var p:Double = 0
+        while Int64(n) < INTMAX_MAX {
+            //
+            
+            if b {
+                p += 4/n
+            }else{
+                p -= 4/n
+            }
+            b = !b
+            n += 2
+            
+            print(p)
+            sleep(1)
+        }
     }
 
 }

@@ -28,10 +28,10 @@ class SlideMenuViewController: BaseViewController {
         set(newVlaue) {
             left = newVlaue
             left.view.frame = leftView.bounds
-            if !self.childViewControllers.contains(newVlaue) {
-                addChildViewController(left)
+            if !self.children.contains(newVlaue) {
+                addChild(left)
                 leftView.addSubview(left.view)
-                left.didMove(toParentViewController: self)
+                left.didMove(toParent: self)
             }
             //
         }
@@ -45,10 +45,10 @@ class SlideMenuViewController: BaseViewController {
             main = newVlaue
             main.view.frame = mainView.bounds
             
-            if self.childViewControllers.contains(newVlaue) {
-                addChildViewController(main)
+            if self.children.contains(newVlaue) {
+                addChild(main)
                 mainView.addSubview(main.view)
-                main.didMove(toParentViewController: self)
+                main.didMove(toParent: self)
             }
         }
     }
@@ -88,7 +88,7 @@ class SlideMenuViewController: BaseViewController {
         opacityframe.size.height = opacityframe.size.height - opacityOffset
         opacityView = UIView(frame: opacityframe)
         opacityView.backgroundColor = SlideMenuOptions.opacityViewBackgroundColor
-        opacityView.autoresizingMask = [UIViewAutoresizing.flexibleHeight, UIViewAutoresizing.flexibleWidth]
+        opacityView.autoresizingMask = [UIView.AutoresizingMask.flexibleHeight, UIView.AutoresizingMask.flexibleWidth]
         opacityView.layer.opacity = 0.0
         view.insertSubview(opacityView, at: 1)
         
@@ -101,7 +101,7 @@ class SlideMenuViewController: BaseViewController {
             leftFrame.size.height = leftFrame.size.height - leftOffset
             leftView = UIView(frame: leftFrame)
             leftView.backgroundColor = UIColor.yellow
-            leftView.autoresizingMask = UIViewAutoresizing.flexibleHeight
+            leftView.autoresizingMask = UIView.AutoresizingMask.flexibleHeight
             view.insertSubview(leftView, at: 2)
 //            addLeftGestures()
         }

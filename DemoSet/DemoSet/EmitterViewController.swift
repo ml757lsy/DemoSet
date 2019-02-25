@@ -30,9 +30,9 @@ class EmitterViewController: BaseViewController {
         
         fireworksLayer.emitterPosition = CGPoint.init(x:self.view.layer.bounds.size.width * 0.5, y:self.view.layer.bounds.size.height); // 在底部
         fireworksLayer.emitterSize = CGSize.init(width:self.view.layer.bounds.size.width * 0.1, height:0);  // 宽度为一半
-        fireworksLayer.emitterMode = kCAEmitterLayerOutline;
-        fireworksLayer.emitterShape = kCAEmitterLayerLine;
-        fireworksLayer.renderMode = kCAEmitterLayerAdditive;
+        fireworksLayer.emitterMode = CAEmitterLayerEmitterMode.outline;
+        fireworksLayer.emitterShape = CAEmitterLayerEmitterShape.line;
+        fireworksLayer.renderMode = CAEmitterLayerRenderMode.additive;
         fireworksLayer.birthRate = 1.0;
         
         //

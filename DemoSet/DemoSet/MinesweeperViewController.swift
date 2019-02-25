@@ -138,7 +138,7 @@ class MinesweeperViewController: BaseViewController {
         
     }
     
-    func mineClick(button:UIButton) {
+    @objc func mineClick(button:UIButton) {
         let x = button.tag % 10000
         let y = button.tag/10000
         

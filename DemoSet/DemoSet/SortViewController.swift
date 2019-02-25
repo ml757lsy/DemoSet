@@ -99,7 +99,7 @@ class SortViewController: BaseViewController {
         }
     }
     
-    func insertSort() {
+    @objc func insertSort() {
         
         DispatchQueue.global().async {
             for i in 0..<self.list.count {
@@ -127,9 +127,9 @@ class SortViewController: BaseViewController {
         }
     }
     
-    func compareSort() {
+    @objc func compareSort() {
     }
-    func quickSort() {
+    @objc func quickSort() {
         startquickSort(from: 0, to: list.count-1)
     }
     

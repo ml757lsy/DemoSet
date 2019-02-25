@@ -58,7 +58,7 @@ extension UIImage{
         return image
     }
     
-    ///
+    ///修改RGBA值
     ///
     /// - Parameters:
     ///   - r: r 0-1
@@ -109,6 +109,8 @@ extension UIImage{
         
         return image
     }
+    
+    //MARK: - resize
     
     /// 比例缩放
     ///
@@ -247,6 +249,63 @@ extension UIImage{
         }
     }
     
+    /// 获取主色调
+    ///
+    /// - Returns: uicolor
+    func mainColor() -> UIColor {
+        // 分配内存
+        let imageWidth:Int = 40
+        let imageHeight:Int = 40
+        let bytesPerRow:Int = imageWidth * 4
+        let rgbImageBuf:UnsafeMutableRawPointer = malloc(bytesPerRow * imageHeight)
+        
+        //resize
+        let little = self.resize(with: .high, size: CGSize.init(width: imageWidth, height: imageHeight))
+        
+        // 创建context
+        let cg = little.cgImage
+        
+        let colorSpace:CGColorSpace = CGColorSpaceCreateDeviceRGB()
+        let context:CGContext = CGContext(data: rgbImageBuf, width: imageWidth, height: imageHeight, bitsPerComponent: 8, bytesPerRow: bytesPerRow, space: colorSpace,bitmapInfo: 1)!
+        
+        context.draw(cg!, in: CGRect.init(x: 0, y: 0, width: imageWidth, height: imageHeight), byTiling: true)
+        
+        let set:NSCountedSet = NSCountedSet.init()
+        // 遍历像素
+        var pCurPtr = rgbImageBuf
+        for _ in 0..<imageHeight {
+            for _ in 0..<imageWidth {
+                let alpha = pCurPtr.load(fromByteOffset: 0, as: UInt8.self)
+                let red = pCurPtr.load(fromByteOffset: 1, as: UInt8.self)
+                let green = pCurPtr.load(fromByteOffset: 2, as: UInt8.self)
+                let blue = pCurPtr.load(fromByteOffset: 3, as: UInt8.self)
+                
+                let ar = [alpha,red,green,blue]
+                set.add(ar)
+                
+                pCurPtr += 4
+            }
+        }
+        var maxa:[UInt8] = [0,255,255,255]
+        var max:Int = 0
+        for a in set {
+            let c = set.count(for: a)
+            if c > max {
+                max = c
+                maxa = a as! [UInt8]
+            }
+        }
+        
+        let a = CGFloat(maxa[0])/255.0
+        let r = CGFloat(maxa[1])/255.0
+        let g = CGFloat(maxa[2])/255.0
+        let b = CGFloat(maxa[3])/255.0
+        
+        return UIColor.init(red: a, green: r, blue: g, alpha: b)
+    }
+    
+    //MARK: - GIF
+    
     /// 加载动图
     ///
     /// - Parameter url: 路径
@@ -352,7 +411,7 @@ extension UIImage{
                 let imageRef = CGImageSourceCreateImageAtIndex(source!, i, nil)
                 
                 //生成image
-                let image = UIImage.init(cgImage: imageRef!, scale: UIScreen.main.scale, orientation: UIImageOrientation.up)
+                let image = UIImage.init(cgImage: imageRef!, scale: UIScreen.main.scale, orientation: UIImage.Orientation.up)
                 
                 imgs.append(image)
             }
@@ -387,12 +446,14 @@ extension UIImage{
         }
     }
     
+    //MARK: - Data
+    
     /// 图转数据
     ///
     /// - Parameter img: image
     /// - Returns: base64
     func imageEncryptToData(img:UIImage) -> Data {
-        let data = UIImagePNGRepresentation(img)
+        let data = img.pngData()
         return (data?.base64EncodedData())!
     }
     
@@ -402,5 +463,70 @@ extension UIImage{
     /// - Returns: image
     func imageEncryptWithData(data:Data) -> UIImage {
         return UIImage.init(data: Data.init(base64Encoded: data)!)!
+    }
+    
+    //MARK: - CharMap
+    
+    /// 生成字符图
+    ///
+    /// - Parameters:
+    ///   - chars: 字符范围
+    ///   - width: 字符宽度
+    /// - Returns: [[char]]
+    func charMap(with chars:[Character],width:Int) -> [[Character]] {
+        var pixmap:[[UInt8]] = []//pix
+        
+        
+        return [[]]
+    }
+    
+    func charSort(chars:[Character], size:CGSize) -> [[UInt8]]{
+        //各点差值法
+        
+        //1.各字符按这个size生成表
+        let count = chars.map { $0 }
+        
+        return []
+    }
+    
+    func charImage(symbol:String, font:UIFont) -> UIImage {
+        let
+        length = font.pointSize * 2,
+        size   = CGSize(width: length, height: length),
+        rect   = CGRect(origin: CGPoint.zero, size: size)
+        
+        UIGraphicsBeginImageContext(size)
+        let context = UIGraphicsGetCurrentContext()
+        
+        // Fill the background with white.
+        context?.setFillColor(UIColor.white.cgColor)
+        context?.fill(rect)
+        
+        // Draw the character with black.
+        let nsString = NSString(string: symbol)
+        nsString.draw(at: rect.origin, withAttributes: convertToOptionalNSAttributedStringKeyDictionary([
+            convertFromNSAttributedStringKey(NSAttributedString.Key.font): font,
+            convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor): UIColor.black
+            ]))
+        let image = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return image
+    }
+    
+    
+    func charWithBloc(block:[[UInt8]]) -> Character {
+        
+        return "a"
+    }
+    
+//     Helper function inserted by Swift 4.2 migrator.
+    fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
+        guard let input = input else { return nil }
+        return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
+    }
+
+    // Helper function inserted by Swift 4.2 migrator.
+    fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
+        return input.rawValue
     }
 }

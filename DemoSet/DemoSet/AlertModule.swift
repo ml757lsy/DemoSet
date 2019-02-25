@@ -67,7 +67,7 @@ class AlertModule: NSObject {
         let alert = UIAlertController.init(title: "\(titleStr ?? "")", message: " \n  \n", preferredStyle: .alert)
         
 //
-        let activity = UIActivityIndicatorView.init(activityIndicatorStyle: .gray)
+        let activity = UIActivityIndicatorView.init(style: .gray)
         activity.frame = CGRect.init(x: 0, y: 0, width: SCREENWIDTH*0.72, height: 120)
         activity.startAnimating()
         alert.view.addSubview(activity)
@@ -79,7 +79,7 @@ class AlertModule: NSObject {
         perform(#selector(AlertModule.complate(with:)), with: ["alert":alert,"block":complate,"animated":true], afterDelay: TimeInterval(time))
     }
     
-    class func complate(with info:[String:Any]){
+    @objc class func complate(with info:[String:Any]){
         let toast = info["alert"] as! UIAlertController
         let block = info["block"] as! ()->Void
         let animated = info["animated"] as! Bool
@@ -94,11 +94,11 @@ class AlertModule: NSObject {
     class func currentController() -> UIViewController {
         var result:UIViewController = UIViewController()
         var window = UIApplication.shared.keyWindow
-        if (window?.windowLevel != UIWindowLevelNormal)
+        if (window?.windowLevel != UIWindow.Level.normal)
         {
             let windows = UIApplication.shared.windows
             for tmpWin in windows{
-                if (tmpWin.windowLevel == UIWindowLevelNormal){
+                if (tmpWin.windowLevel == UIWindow.Level.normal){
                     window = tmpWin
                     break
                 }

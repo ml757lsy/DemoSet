@@ -33,7 +33,7 @@ class CollectionHomeViewController: BaseViewController {
         
     }
     
-    func toBoxVC() {
+    @objc func toBoxVC() {
         let boxvc = CollectionBoxViewController()
         navigationController?.pushViewController(boxvc, animated: true)
     }

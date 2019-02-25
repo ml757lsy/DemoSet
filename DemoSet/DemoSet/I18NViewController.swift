@@ -51,7 +51,7 @@ class I18NViewController: BaseViewController {
         button.addTarget(self, action: #selector(buttonClick), for: .touchUpInside)
     }
     
-    func cleanView() {
+    @objc func cleanView() {
         for v in view.subviews {
             v.removeFromSuperview()
         }
@@ -61,11 +61,11 @@ class I18NViewController: BaseViewController {
         }
     }
     
-    func buttonClick() {
+    @objc func buttonClick() {
         
     }
     
-    func changeLanguage() {
+    @objc func changeLanguage() {
         let languages = I18NManager.manager.suportLanguagesString
         AlertModule.showAlert(title: "更改语言", conetent: "选择更改的语言", actionStr: languages) { (i) in
             I18NManager.manager.setLanguageIndex(index: i)

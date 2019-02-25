@@ -36,13 +36,13 @@ class EvolutionViewController: BaseViewController {
         stopButton.addTarget(self, action: #selector(stopWorld), for: .touchUpInside)
     }
     
-    func initGod() {
+    @objc func initGod() {
         let god = EvolutionGod.god
         god.creatWorldwith(cellnum: 1, groundwidth: 100, height: 100, size: 1)
         god.startEvolution()
     }
     
-    func stopWorld() {
+    @objc func stopWorld() {
         EvolutionGod.god.stopEvolution()
     }
 }

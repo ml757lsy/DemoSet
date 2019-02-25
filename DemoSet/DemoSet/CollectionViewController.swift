@@ -83,7 +83,7 @@ extension CollectionViewController:UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(10, 10, 10, 10)
+        return UIEdgeInsets.init(top: 10, left: 10, bottom: 10, right: 10)
     }
 
     

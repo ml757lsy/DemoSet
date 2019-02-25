@@ -28,7 +28,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         backImage.frame = CGRect.init(x: -100, y: -100, width: view.width+200, height: view.height+200)
         view.addSubview(backImage)
         backImage.image = UIImage.init(named: "backGround")
-        backImage.contentMode = UIViewContentMode.scaleAspectFill
+        backImage.contentMode = UIView.ContentMode.scaleAspectFill
         
         let speed:CGFloat = 1
         GyroManager.manager.updateInterval = 0.1
@@ -360,7 +360,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(10, 10, 10, 10)
+        return UIEdgeInsets.init(top: 10, left: 10, bottom: 10, right: 10)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

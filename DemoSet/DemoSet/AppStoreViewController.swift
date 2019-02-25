@@ -131,7 +131,7 @@ class AppStoreViewController: BaseViewController,UITableViewDelegate,UITableView
         self.tabBarController?.setNeedsStatusBarAppearanceUpdate()
     }
     
-    func gotoNext(with cell:UITableViewCell?) {
+    @objc func gotoNext(with cell:UITableViewCell?) {
         cell?.setHighlighted(false, animated: true)
         hidenTopAndBottom()
         //

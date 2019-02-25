@@ -23,6 +23,9 @@ class BaseBannerView: UIView,UIScrollViewDelegate {
     var imageWidth:CGFloat = 1//图片宽度，默认为视图的宽度
     var imageHeight:CGFloat = 1//图片的高度，默认为视图的高度
     
+    /// 完成滚动的回调
+    var didEndScroll:BaseBlockInt = { _ in }
+    
     
     /// 图片名称
     var images:[String] {
@@ -90,6 +93,7 @@ class BaseBannerView: UIView,UIScrollViewDelegate {
             current += images.count
         }
         point.changeTo(index: current)
+        didEndScroll(current)
     }
     
     //MARK: - scroll delegate

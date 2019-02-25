@@ -47,7 +47,7 @@ class CIFilterViewController: BaseViewController {
         y += size+space*2
     }
     
-    func filter() {
+    @objc func filter() {
         let names = CIFilter.filterNames(inCategory: nil)
         print(names)
         

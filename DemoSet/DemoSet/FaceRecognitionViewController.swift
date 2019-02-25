@@ -36,16 +36,16 @@ class FaceRecognitionViewController: BaseViewController,AVCaptureMetadataOutputO
 
     func start() {
         //设备
-        let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+        let device = AVCaptureDevice.default(for: AVMediaType(rawValue: convertFromAVMediaType(AVMediaType.video)))
         
         //session
         
-        session.sessionPreset = AVCaptureSessionPresetHigh
+        session.sessionPreset = AVCaptureSession.Preset(rawValue: convertFromAVCaptureSessionPreset(AVCaptureSession.Preset.high))
         
         //输入流
         var input:AVCaptureDeviceInput
         do {
-            input = try AVCaptureDeviceInput.init(device: device)
+            input = try AVCaptureDeviceInput.init(device: device!)
             session.addInput(input)
         } catch _ {
         }
@@ -54,13 +54,13 @@ class FaceRecognitionViewController: BaseViewController,AVCaptureMetadataOutputO
         let output:AVCaptureMetadataOutput = AVCaptureMetadataOutput.init()
         output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
         session.addOutput(output)//先添加输出流
-        output.metadataObjectTypes = [AVMetadataObjectTypeFace]
+        output.metadataObjectTypes = [AVMetadataObject.ObjectType.face]
         //上 左 高 宽
         output.rectOfInterest = CGRect.init(x: 0.1, y: 0.1, width: 0.8, height: 0.8)
         
         //layer
         sessionLayer = AVCaptureVideoPreviewLayer.init(session: session)
-        sessionLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
+        sessionLayer.videoGravity = AVLayerVideoGravity(rawValue: convertFromAVLayerVideoGravity(AVLayerVideoGravity.resizeAspectFill))
         sessionLayer.frame = CGRect.init(x: 30, y: 100, width: view.width-60, height: view.height-300)
         view.layer.insertSublayer(sessionLayer, at: 0)
         
@@ -75,7 +75,7 @@ class FaceRecognitionViewController: BaseViewController,AVCaptureMetadataOutputO
         session.startRunning()
     }
     
-    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
+    func metadataOutput(_ captureOutput: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         if metadataObjects.count > 0 {
             while metadataObjects.count > boxs.count {
                 let box = CAShapeLayer.init()
@@ -123,12 +123,32 @@ class FaceRecognitionViewController: BaseViewController,AVCaptureMetadataOutputO
         }
     }
     
-    func captureOutput(_ captureOutput: AVCaptureOutput!, didDrop sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
+    func captureOutput(_ captureOutput: AVCaptureOutput, didDrop sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         //
     }
     
-    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
+    func captureOutput(_ captureOutput: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         //
     }
 
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromAVMediaType(_ input: AVMediaType) -> String {
+	return input.rawValue
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromAVCaptureSessionPreset(_ input: AVCaptureSession.Preset) -> String {
+	return input.rawValue
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromAVMetadataObjectObjectType(_ input: AVMetadataObject.ObjectType) -> String {
+	return input.rawValue
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromAVLayerVideoGravity(_ input: AVLayerVideoGravity) -> String {
+	return input.rawValue
 }

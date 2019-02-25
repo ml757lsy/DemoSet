@@ -269,7 +269,7 @@ class SubwayViewController: BaseViewController {
         return []
     }
     
-    func loadDateFromDB() {
+    @objc func loadDateFromDB() {
 //        SQLManager.manager.search()
         SubwayManager.manager.loadData()
     }

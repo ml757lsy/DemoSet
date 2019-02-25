@@ -130,7 +130,7 @@ class MaskViewController: BaseViewController {
         
     }
     
-    func longTapHandler(with tap:UIPanGestureRecognizer) {
+    @objc func longTapHandler(with tap:UIPanGestureRecognizer) {
         let p = tap.location(in: view)
         imageMaskView.center = CGPoint.init(x: p.x-10, y: p.y-300)
     }
@@ -162,7 +162,7 @@ class MaskViewController: BaseViewController {
         resized = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
-        let data = UIImageJPEGRepresentation(resized, 1.0)
+        let data = resized.jpegData(compressionQuality: 1.0)
         do {
 //            try data?.write(to: URL.init(fileURLWithPath: "/Users/lishiyuan/Desktop/long.jpg"))
         } catch let error {

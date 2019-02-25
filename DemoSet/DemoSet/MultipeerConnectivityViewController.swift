@@ -54,11 +54,11 @@ class MultipeerConnectivityViewController: BaseViewController,MCBrowserViewContr
         }
     }
     
-    func openSwitchAction() {
+    @objc func openSwitchAction() {
         manager.advertiseSelf(isAdvertise: open.isOn)
     }
     
-    func findOtherAction() {
+    @objc func findOtherAction() {
         manager.setupBrowser()
     }
     
@@ -66,7 +66,7 @@ class MultipeerConnectivityViewController: BaseViewController,MCBrowserViewContr
         text.text = text.text + str + "\n"
     }
     
-    func sendMsgAction() {
+    @objc func sendMsgAction() {
         let data = "message".data(using: .utf8)
         
         do {

@@ -16,7 +16,20 @@ class BannerViewController: BaseViewController {
 
         // Do any additional setup after loading the view.
         let banner = BaseBannerView.init(frame: CGRect.init(x: 10, y: 10, width: view.frame.size.width-20, height: 200))
-        banner.images = ["banner1","banner2","banner3","banner4","banner5","banner6",]
+        banner.images = ["b1","b2","b3","b4","b5","b6"]
+        var colors = [UIColor.white,UIColor.white,UIColor.white,UIColor.white,UIColor.white,UIColor.white]
+        banner.didEndScroll = {
+            index in
+            //
+            var color = colors[index]
+            if (color == UIColor.white) {
+                color = (UIImage.init(named: banner.images[index])?.mainColor())!
+                colors[index] = color
+            }
+            UIView.animate(withDuration: 0.4, animations: {
+                self.view.backgroundColor = color
+            })
+        }
         view.addSubview(banner)
         
         let w = view.width/CGFloat(banner.images.count)

@@ -60,7 +60,7 @@ class BluetoothConnectionViewController: BaseViewController,MCBrowserViewControl
         send.addTarget(self, action: #selector(sendClick), for: .touchUpInside)
     }
     
-    func seek() {
+    @objc func seek() {
         let mc = MCBrowserViewController.init(serviceType: "JoinGame", session: session!)
         mc.delegate = self
         mc.maximumNumberOfPeers = 4
@@ -70,7 +70,7 @@ class BluetoothConnectionViewController: BaseViewController,MCBrowserViewControl
         }
     }
     
-    func sendClick() {
+    @objc func sendClick() {
         
     }
     

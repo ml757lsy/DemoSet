@@ -65,7 +65,7 @@ class PointLineView: UIView {
     func initTimer() {
 //        timer = Timer.scheduledTimer(timeInterval: 0.06, target: self, selector: #selector(updateView), userInfo: nil, repeats: true)
         timer = CADisplayLink.init(target: self, selector: #selector(updateView))
-        timer.add(to: RunLoop.current, forMode: .defaultRunLoopMode)
+        timer.add(to: RunLoop.current, forMode: RunLoop.Mode.default)
     }
     
     override func removeFromSuperview() {
@@ -73,7 +73,7 @@ class PointLineView: UIView {
         super.removeFromSuperview()
     }
     
-    func updateView() {
+    @objc func updateView() {
         
         for point in points {
             

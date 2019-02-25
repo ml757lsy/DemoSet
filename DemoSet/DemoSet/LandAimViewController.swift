@@ -52,13 +52,13 @@ class LandAimViewController: BaseViewController {
         }
     }
     
-    func dismissSelf() {
+    @objc func dismissSelf() {
         self.dismiss(animated: true) {
             //
         }
     }
     
-    func buttonClick(button:UIButton) {
+    @objc func buttonClick(button:UIButton) {
         print(button.tag)
     }
     

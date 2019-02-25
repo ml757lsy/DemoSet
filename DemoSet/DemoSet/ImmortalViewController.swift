@@ -37,14 +37,14 @@ class ImmortalViewController: BaseViewController {
     
     func loadTimer() {
         timer = CADisplayLink.init(target: self, selector: #selector(timerHandler))
-        timer.add(to: RunLoop.current, forMode: .defaultRunLoopMode)
+        timer.add(to: RunLoop.current, forMode: RunLoop.Mode.default)
     }
     
     func removeTimer() {
         timer.invalidate()
     }
     
-    func timerHandler() {
+    @objc func timerHandler() {
         print(timer.duration)
     }
     

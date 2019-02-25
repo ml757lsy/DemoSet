@@ -27,9 +27,9 @@ class WakeupViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func openHaohaochifan() {
+    @objc func openHaohaochifan() {
         let url = URL.init(string: "chidiansha://")
-        let options:[String:Any] = [:]
+        let options:[UIApplication.OpenExternalURLOptionsKey:Any] = [:]
         UIApplication.shared.open(url!, options: options) { (success) in
             //
         }

@@ -61,7 +61,7 @@ class EvolutionGod: NSObject {
     }
     
     /// get next
-    func nextStep() {
+    @objc func nextStep() {
         updateCells()
         
         for cell in cells {

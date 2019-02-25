@@ -36,11 +36,11 @@ class NotificationViewController: BaseViewController {
         view.addSubview(removebutton)
     }
     
-    func removeNoti() {
+    @objc func removeNoti() {
         NotificationModule.manager.removeNotification()
     }
     
-    func localNotification() {
+    @objc func localNotification() {
         NotificationModule.manager.addLocalNotification()
     }
 

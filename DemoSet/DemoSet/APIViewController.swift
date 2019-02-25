@@ -62,7 +62,7 @@ class APIViewController: BaseViewController,UIImagePickerControllerDelegate,UINa
     }
     
     
-    func loadMessage() {
+    @objc func loadMessage() {
         let url:URL = URL.init(string: "http://byfar.cc/api.php?action=getusers")!
         
         Alamofire.request(url).responseString { (string) in
@@ -86,7 +86,7 @@ class APIViewController: BaseViewController,UIImagePickerControllerDelegate,UINa
         }
     }
     
-    func registAction() {
+    @objc func registAction() {
         let login:URL = URL.init(string: "http://byfar.cc/regist.php")!
         let param:[String:Any] = ["username":"Jhon","password":"pass","sign":"sssss"]
         
@@ -96,7 +96,7 @@ class APIViewController: BaseViewController,UIImagePickerControllerDelegate,UINa
         }
     }
     
-    func updateAction() {
+    @objc func updateAction() {
         let update:URL = URL.init(string: "http://byfar.cc/update.php")!
         let param:[String:Any] = ["username":"Jhon","password":"pass","type":"3"]
         
@@ -106,7 +106,7 @@ class APIViewController: BaseViewController,UIImagePickerControllerDelegate,UINa
         }
     }
     
-    func uploadAction() {
+    @objc func uploadAction() {
         
         let picker = UIImagePickerController.init()
         picker.delegate = self
@@ -124,11 +124,56 @@ class APIViewController: BaseViewController,UIImagePickerControllerDelegate,UINa
 //            print(progress)
 //        }
         Alamofire.upload(path, to: url).uploadProgress { (progress) in
-            print("progress:\(progress)")
+            print("progress:\(progress.fractionCompleted)")
+            }.responseString { (string) in
+                print("upload:"+string.result.value!)
         }
+        Alamofire.request(url, method: .post , parameters: nil, encoding: URLEncoding.default, headers: nil)
+        
     }
     
-    func customSQL() {
+    func upload(img:UIImage) {
+        print(img.size)
+        let url:URL = URL.init(string: "http://byfar.cc/upload.php")!
+        
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            //
+            let data = img.jpegData(compressionQuality: 1.0)
+            let imageName = String(Date.timeIntervalSinceReferenceDate) + ".png"
+            
+            multipartFormData.append(data!, withName: "file", mimeType: "image/png")
+            
+            //把剩下的两个参数作为字典,利用 multipartFormData.appendBodyPart(data: name: )添加参数,
+            //因为这个方法的第一个参数接收的是NSData类型,所以要利用 NSUTF8StringEncoding 把字符串转为NSData
+            let param:[String:String] = ["type" : "png", "size" : "\(img.size)","name":imageName,"tmp_name":"temp"]
+            
+            //遍历字典
+            for (key, value) in param {
+                multipartFormData.append(value.data(using: .utf8)!, withName: key)
+            }
+        }, to: url) { (result) in
+            //
+            switch result {
+            case .success(let upload,_, _):
+                upload.responseString(completionHandler: { (string) in
+                    print(string.result.value!)
+                })
+                break
+            case .failure(let e):
+                print(e)
+                break
+            default:
+                //
+                break
+            }
+        }
+        
+        let n:Int = 0
+        
+    }
+    
+    
+    @objc func customSQL() {
         let url:URL = URL.init(string: "http://byfar.cc/api.php")!
         let sql:String = "SELECT * FROM `bdm262241171_db`.`user` ORDER BY `userid` DESC  LIMIT 0,2"
         let param:[String:Any] = ["SQL":sql]
@@ -140,11 +185,16 @@ class APIViewController: BaseViewController,UIImagePickerControllerDelegate,UINa
     }
 
     // delegate
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
         //
         print(info)
-        let path:URL = info["UIImagePickerControllerImageURL"] as! URL
-        upload(path: path)
+//        let path:URL = info["UIImagePickerControllerImageURL"] as! URL
+        let img:UIImage = info["UIImagePickerControllerOriginalImage"] as! UIImage
+//        upload(path: path)
+        upload(img: img)
         picker.dismiss(animated: true) {
             //
         }
@@ -159,4 +209,9 @@ class APIViewController: BaseViewController,UIImagePickerControllerDelegate,UINa
     }
     */
 
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
 }

@@ -403,7 +403,7 @@ class QRCodeModule: NSObject {
         mask.fillColor = UIColor.gray.cgColor
         mask.strokeColor = UIColor.green.cgColor
         mask.lineWidth = size
-        mask.lineJoin = "round"
+        mask.lineJoin = convertToCAShapeLayerLineJoin("round")
         mask.path = path.cgPath
         view.layer.mask = mask
         
@@ -468,4 +468,9 @@ class QRCodeModule: NSObject {
         //        @available(iOS 9.0, *)
         //        public let kCICategoryFilterGenerator: String ///滤镜生成器
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToCAShapeLayerLineJoin(_ input: String) -> CAShapeLayerLineJoin {
+	return CAShapeLayerLineJoin(rawValue: input)
 }

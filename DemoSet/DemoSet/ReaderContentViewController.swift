@@ -58,7 +58,7 @@ class ReaderContentViewController: BaseViewController {
         
     }
     
-    func swipe(ges:UISwipeGestureRecognizer) {
+    @objc func swipe(ges:UISwipeGestureRecognizer) {
         if ges.direction == .left {
             current += 1
         }else{
@@ -74,7 +74,7 @@ class ReaderContentViewController: BaseViewController {
         imageView.image = UIImage.contentsOfFile(path: files[current])
     }
     
-    func pine(ges:UIPinchGestureRecognizer) {
+    @objc func pine(ges:UIPinchGestureRecognizer) {
         var scale = ges.scale
         if scale > 3 {
             scale = 3
@@ -85,7 +85,7 @@ class ReaderContentViewController: BaseViewController {
         imageView.transform = CGAffineTransform.init(scaleX: ges.scale, y: ges.scale)
     }
     
-    func backToLast() {
+    @objc func backToLast() {
         navigationController?.popViewController(animated: true)
     }
 

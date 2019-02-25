@@ -25,17 +25,17 @@ class EvolutionCell: NSObject {
     func continueState() {
         
         var propNum:UInt32 = 0
-        let properties = class_copyPropertyList(EvolutionState, &propNum)
+        let properties = class_copyPropertyList(EvolutionState.self, &propNum)
         var text:String = ""
         
         for index in 0..<numericCast(propNum) {
-            let p:objc_property_t = properties![index]!
+            let p:objc_property_t = properties![index]
             
             let name = String.init(utf8String: property_getName(p))
-            let attribute = String.init(utf8String: property_getAttributes(p))
+            let attribute = String.init(utf8String: property_getAttributes(p)!)
 
             text.append("\np_name:\(name)")
-            text.append("\np_attribute:\(String.init(utf8String: property_getAttributes(p)))")
+            text.append("\np_attribute:\(String.init(utf8String: property_getAttributes(p)!))")
             
             let oldvalue = oldState.value(forKey: name!)
             let newvalue = state.value(forKey: name!)

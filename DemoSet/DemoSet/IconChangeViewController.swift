@@ -31,7 +31,7 @@ class IconChangeViewController: BaseViewController {
         view.addSubview(c)
     }
     
-    func changeIcon() {
+    @objc func changeIcon() {
         if #available(iOS 10.3, *) {
             if UIApplication.shared.supportsAlternateIcons {
                 //

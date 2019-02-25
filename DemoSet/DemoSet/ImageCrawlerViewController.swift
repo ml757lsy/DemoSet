@@ -45,7 +45,7 @@ class ImageCrawlerViewController: BaseViewController {
     
     
 
-    func toCrawler() {
+    @objc func toCrawler() {
 //        let url:URL = URL.init(string: "http://bbs.ngacn.cc/read.php?tid=9462385")!
 //        let sk = "[img]"
 //        let ek = "[/img]"

@@ -35,11 +35,11 @@ class RuntimeViewController: BaseViewController {
         view.addSubview(infoText)
         
         print("======Runtime Start======")
-        getMethodAndPropertiesFrom(clas: RuntimeClass)
-        getMethodAndPropertiesFrom(clas: RuntimeViewController)
+        getMethodAndPropertiesFrom(clas: RuntimeClass.self)
+        getMethodAndPropertiesFrom(clas: RuntimeViewController.self)
         
-        swizzleMethod(clas: RuntimeViewController, originMethod: #selector(viewDidAppear(_:)), destinationMethod: #selector(m_viewDidAppear(_:)))
-        swizzleMethod(clas: RuntimeViewController, originMethod: #selector(returnInt), destinationMethod: #selector(m_returnInt))
+        swizzleMethod(clas: RuntimeViewController.self, originMethod: #selector(viewDidAppear(_:)), destinationMethod: #selector(m_viewDidAppear(_:)))
+        swizzleMethod(clas: RuntimeViewController.self, originMethod: #selector(returnInt), destinationMethod: #selector(m_returnInt))
         
         returnInt()
     }
@@ -55,19 +55,19 @@ class RuntimeViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func m_viewDidAppear(_ animated: Bool) {
+    @objc func m_viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print("My Did")
         infoText.text.append("\nMy Did")
     }
     
-    dynamic func returnInt() -> Int  {
+    @objc dynamic func returnInt() -> Int  {
         print("ReturnInt")
         infoText.text.append("\nReturnInt")
         return 1
     }
     
-    func m_returnInt() -> Int {
+    @objc func m_returnInt() -> Int {
         print("M_ReturnInt")
         infoText.text.append("\nM_ReturnInt")
         return 2
@@ -84,15 +84,15 @@ class RuntimeViewController: BaseViewController {
         let methods = class_copyMethodList(clas, &methodNum)
         
         for index in 0..<numericCast(methodNum) {
-            let m:Method = methods![index]!
+            let m:Method = methods![index]
             
             print("m_name:\(method_getName(m))")
             print("m_returntype\(String.init(utf8String: method_copyReturnType(m)))")
-            print("m_type\(String.init(utf8String: method_getTypeEncoding(m)))")
+            print("m_type\(String.init(utf8String: method_getTypeEncoding(m)!))")
             
             infoText.text.append("\nm_name:\(method_getName(m))")
             infoText.text.append("\nm_returntype\(String.init(utf8String: method_copyReturnType(m)))")
-            infoText.text.append("\nm_type\(String.init(utf8String: method_getTypeEncoding(m)))")
+            infoText.text.append("\nm_type\(String.init(utf8String: method_getTypeEncoding(m)!))")
         }
         //
         print("Properties")
@@ -101,17 +101,17 @@ class RuntimeViewController: BaseViewController {
         let properties = class_copyPropertyList(clas, &propNum)
         
         for index in 0..<numericCast(propNum) {
-            let p:objc_property_t = properties![index]!
+            let p:objc_property_t = properties![index]
             
             let name = String.init(utf8String: property_getName(p))
             print("p_name:\(name)")
-            print("p_attribute:\(String.init(utf8String: property_getAttributes(p)))")
+            print("p_attribute:\(String.init(utf8String: property_getAttributes(p)!))")
             
             let value = "clas.vale"
             print("value:\(value)")
             
             infoText.text.append("\np_name:\(name)")
-            infoText.text.append("\np_attribute:\(String.init(utf8String: property_getAttributes(p)))")
+            infoText.text.append("\np_attribute:\(String.init(utf8String: property_getAttributes(p)!))")
             infoText.text.append("\nvalue:\(value)")
         }
         print("--------")
@@ -129,7 +129,7 @@ class RuntimeViewController: BaseViewController {
         let origin = class_getInstanceMethod(clas, originMethod)
         let swizzle = class_getInstanceMethod(clas, destinationMethod)
         
-        method_exchangeImplementations(origin, swizzle)
+        method_exchangeImplementations(origin!, swizzle!)
     }
     
 }

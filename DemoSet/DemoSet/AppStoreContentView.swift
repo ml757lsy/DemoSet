@@ -68,7 +68,7 @@ class AppStoreContentView: UIView {
         _content.addSubview(test)
     }
     
-    func testClick() {
+    @objc func testClick() {
         print("2123")
     }
     
@@ -80,7 +80,7 @@ class AppStoreContentView: UIView {
         }
     }
     
-    func closeAnimation() {
+    @objc func closeAnimation() {
         UIView.animate(withDuration: 0.4, animations: {
             self._content.frame = self.fromFrame
             self.close.frame = CGRect.init(x: self._content.width-20-30, y: 20+40, width: 30, height: 30)

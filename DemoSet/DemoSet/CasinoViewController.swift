@@ -77,7 +77,7 @@ class CasinoViewController: BaseViewController {
         
     }
     
-    func roll() {
+    @objc func roll() {
         
         for i in 0..<2 {
             if i%2 == 1 {
@@ -88,13 +88,13 @@ class CasinoViewController: BaseViewController {
         }
         
         
-        let a = arc4random()%6+1
-        let b = arc4random()%6+1
-        let c = arc4random()%6+1
+        let a:Int = Int(arc4random()%6)+1
+        let b:Int = Int(arc4random()%6)+1
+        let c:Int = Int(arc4random()%6)+1
         
-        dice1.text = dices[a-1]
-        dice2.text = dices[b-1]
-        dice3.text = dices[c-1]
+        dice1.text = dices[a - 1]
+        dice2.text = dices[b - 1]
+        dice3.text = dices[c - 1]
         
         print(a,b,c)
         
@@ -113,13 +113,13 @@ class CasinoViewController: BaseViewController {
     }
     
     
-    func startVibration() {
+    @objc func startVibration() {
         AudioServicesPlaySystemSoundWithCompletion(kSystemSoundID_Vibrate) {
             //complate
         }
         
     }
-    func stopVibration() {
+    @objc func stopVibration() {
         AudioServicesRemoveSystemSoundCompletion(kSystemSoundID_Vibrate)
     }
 

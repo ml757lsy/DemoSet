@@ -21,7 +21,7 @@ class PlayerManager: NSObject {
     override init() {
         super.init()
         layer.player = player
-        layer.videoGravity = AVLayerVideoGravityResizeAspect
+        layer.videoGravity = AVLayerVideoGravity.resizeAspect
         layer.contentsScale = 1.0
         view.playerLayer = layer
     }
@@ -64,7 +64,7 @@ class PlayerView: UIView {
             _layer.removeFromSuperlayer()
             _layer = newVlaue
             layer.addSublayer(newVlaue)
-            bringSubview(toFront: controlView)
+            bringSubviewToFront(controlView)
         }
     }
     
@@ -120,7 +120,7 @@ class PlayerView: UIView {
         _timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerHandler(timer:)), userInfo: nil, repeats: true)
     }
     
-    func timerHandler(timer:Timer) {
+    @objc func timerHandler(timer:Timer) {
         _timeCout += 1
         
         
@@ -147,18 +147,18 @@ class PlayerView: UIView {
         //
     }
     
-    func sliderUp() {
+    @objc func sliderUp() {
         let time = CMTime.init(value: CMTimeValue(slider.value*1000), timescale: 1000)
         playerLayer.player?.seek(to: time)
         sliderEdit = false
     }
-    func sliderDown() {
+    @objc func sliderDown() {
         sliderEdit = true
     }
-    func sliderCancel() {
+    @objc func sliderCancel() {
         sliderEdit = false
     }
-    func sliderChange() {
+    @objc func sliderChange() {
         //
     }
     

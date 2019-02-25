@@ -112,12 +112,12 @@ class AppStoreContentViewController: BaseViewController {
     }
     
     //MARK: - func
-    func closeClick() {
+    @objc func closeClick() {
         closeAnimation()
     }
     
     
-    func dragclose(pan:UIPanGestureRecognizer) {
+    @objc func dragclose(pan:UIPanGestureRecognizer) {
         if pan.state == .began {
             //start
             pan.location(in: content)

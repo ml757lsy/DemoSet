@@ -28,7 +28,7 @@ class LotteryViewController: BaseViewController {
     }
     
 
-    func getNum() -> [Int]{
+    @objc func getNum() -> [Int]{
         let rmax = 35
         let bmax = 12
         
@@ -65,7 +65,7 @@ class LotteryViewController: BaseViewController {
         return red + blue
     }
     
-    func getDoubleChromosphereNum() {
+    @objc func getDoubleChromosphereNum() {
         let max = 33
         let m = 16
         

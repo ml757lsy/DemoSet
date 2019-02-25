@@ -41,7 +41,7 @@ class PasswordProduceViewController: BaseViewController {
         }
     }
     
-    func passwordProduce() {
+    @objc func passwordProduce() {
         label.text = PasswordProduceManager.manager.producePureNumWith(length: 6)
     }
 

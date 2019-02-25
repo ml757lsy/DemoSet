@@ -36,7 +36,7 @@ class MainViewController: BaseViewController {
         view.backgroundColor = UIColor.blue
     }
     
-    func showLeft() {
+    @objc func showLeft() {
         let slide = self.slideMenuController()
         slide?.openLeft()
     }

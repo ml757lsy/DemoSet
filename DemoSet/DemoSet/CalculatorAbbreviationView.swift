@@ -101,7 +101,7 @@ class CalculatorAbbreviationView: UIView {
         }
     }
     
-    func submitClick() {
+    @objc func submitClick() {
         let n = income.text
         let ss = socialsecurity.text
         var num:Double = 0

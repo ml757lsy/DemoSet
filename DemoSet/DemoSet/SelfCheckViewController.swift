@@ -22,7 +22,7 @@ class SelfCheckViewController: BaseViewController {
         let outputvolume = AVAudioSession.sharedInstance().outputVolume
         let a = AVAudioSession.sharedInstance().currentRoute
         for inp in a.inputs {
-            print(inp.portName,inp.portType)
+            print(inp.portName,convertFromAVAudioSessionPort(inp.portType))
         }
     }
     
@@ -45,4 +45,9 @@ class SelfCheckViewController: BaseViewController {
         
     }
 
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromAVAudioSessionPort(_ input: AVAudioSession.Port) -> String {
+	return input.rawValue
 }

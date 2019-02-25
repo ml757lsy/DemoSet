@@ -30,7 +30,7 @@ class BinaryTreeViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func creatTree() {
+    @objc func creatTree() {
         var values:[Int] = []
         
         for i in 1...20 {
@@ -43,7 +43,7 @@ class BinaryTreeViewController: BaseViewController {
             if index1 == index2 {
                 index2 = (index1+1)%values.count
             }
-            swap(&values[index1], &values[index2])
+            values.swapAt(index1, index2)
         }
         
         print(values)

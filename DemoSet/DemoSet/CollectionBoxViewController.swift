@@ -72,11 +72,11 @@ class CollectionBoxViewController: BaseViewController {
         stagehad.backgroundColor = UIColor.yellow
     }
     
-    func checkClick() {
+    @objc func checkClick() {
         Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(boxClick), userInfo: nil, repeats: true)
     }
     
-    func boxClick() {
+    @objc func boxClick() {
         //
         let num = arc4random()%10000
         let n1 = 100

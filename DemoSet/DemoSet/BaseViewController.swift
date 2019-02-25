@@ -23,8 +23,8 @@ class BaseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
-        if event?.subtype == UIEventSubtype.motionShake && event?.type == UIEventType.motion {
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if event?.subtype == UIEvent.EventSubtype.motionShake && event?.type == UIEvent.EventType.motion {
             AlertModule.showAlert(title: "", conetent: "", actionStr: ["设置","FLEX"]) { (index) in
                 if index == 0 {
                     //设置

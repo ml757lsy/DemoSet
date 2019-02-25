@@ -39,11 +39,11 @@ extension UIButton {
         var dic = stateKey
         for s in stateKey.keys {
             let k = dic[s]
-            I18NLocalized(key: k!, state: UIControlState.init(rawValue: s))
+            I18NLocalized(key: k!, state: UIControl.State.init(rawValue: s))
         }
     }
     
-    func I18NLocalized(key:String, state:UIControlState) {
+    func I18NLocalized(key:String, state:UIControl.State) {
         disableI18N()
         enableI18N()
         var dic = stateKey

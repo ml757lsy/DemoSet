@@ -69,6 +69,8 @@
 		797D3E4521F9B303002D9E50 /* GoogolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797D3E4421F9B302002D9E50 /* GoogolViewController.swift */; };
 		797D3E4B21F9B3F5002D9E50 /* String+GoogolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797D3E4A21F9B3F5002D9E50 /* String+GoogolExtension.swift */; };
 		797D3E4D21F9C0FB002D9E50 /* Charcter+NumberExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797D3E4C21F9C0FB002D9E50 /* Charcter+NumberExtension.swift */; };
+		797E2765221FA94D00E25311 /* ASCIIImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797E2764221FA94D00E25311 /* ASCIIImageViewController.swift */; };
+		797E2767221FAE5900E25311 /* ASCIIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797E2766221FAE5900E25311 /* ASCIIImage.swift */; };
 		7984B14A220431F7007AF5BA /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7984B149220431F7007AF5BA /* GameViewController.swift */; };
 		7984B14C22043204007AF5BA /* MinesweeperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7984B14B22043204007AF5BA /* MinesweeperViewController.swift */; };
 		7984B14F22126505007AF5BA /* MultipeerConnectivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7984B14E22126505007AF5BA /* MultipeerConnectivityViewController.swift */; };
@@ -297,6 +299,8 @@
 		797D3E4421F9B302002D9E50 /* GoogolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogolViewController.swift; sourceTree = "<group>"; };
 		797D3E4A21F9B3F5002D9E50 /* String+GoogolExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+GoogolExtension.swift"; sourceTree = "<group>"; };
 		797D3E4C21F9C0FB002D9E50 /* Charcter+NumberExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Charcter+NumberExtension.swift"; sourceTree = "<group>"; };
+		797E2764221FA94D00E25311 /* ASCIIImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASCIIImageViewController.swift; sourceTree = "<group>"; };
+		797E2766221FAE5900E25311 /* ASCIIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASCIIImage.swift; sourceTree = "<group>"; };
 		7984B149220431F7007AF5BA /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		7984B14B22043204007AF5BA /* MinesweeperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinesweeperViewController.swift; sourceTree = "<group>"; };
 		7984B14E22126505007AF5BA /* MultipeerConnectivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerConnectivityViewController.swift; sourceTree = "<group>"; };
@@ -617,6 +621,15 @@
 				797D3E4221F7053F002D9E50 /* Qi.swift */,
 			);
 			name = Immortal;
+			sourceTree = "<group>";
+		};
+		797E2763221FA92C00E25311 /* AsciiImage */ = {
+			isa = PBXGroup;
+			children = (
+				797E2764221FA94D00E25311 /* ASCIIImageViewController.swift */,
+				797E2766221FAE5900E25311 /* ASCIIImage.swift */,
+			);
+			name = AsciiImage;
 			sourceTree = "<group>";
 		};
 		7984B148220431DE007AF5BA /* Game */ = {
@@ -1042,6 +1055,7 @@
 		79FB35031EEAA65D0083ED79 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				797E2763221FA92C00E25311 /* AsciiImage */,
 				7984B152221673C8007AF5BA /* API */,
 				7984B14D221264CD007AF5BA /* Mutabl */,
 				7984B148220431DE007AF5BA /* Game */,
@@ -1261,6 +1275,7 @@
 					797D3E1721F19102002D9E50 = {
 						CreatedOnToolsVersion = 9.3.1;
 						DevelopmentTeam = WUWMJYLBP4;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 					797D3E2021F19103002D9E50 = {
@@ -1271,7 +1286,7 @@
 					79A923ED1EEAA30D00D91121 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = WUWMJYLBP4;
-						LastSwiftMigration = 0930;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.NearFieldCommunicationTagReading = {
@@ -1285,18 +1300,21 @@
 					79A924011EEAA30D00D91121 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = WUWMJYLBP4;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 79A923ED1EEAA30D00D91121;
 					};
 					79A9240C1EEAA30D00D91121 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = WUWMJYLBP4;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 79A923ED1EEAA30D00D91121;
 					};
 					79B647831F7361D90002103E = {
 						CreatedOnToolsVersion = 9.0;
 						DevelopmentTeam = WUWMJYLBP4;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -1468,6 +1486,7 @@
 				79A4F5AC1FD7C290001E9A37 /* BaseConstFile.swift in Sources */,
 				79200167219973040057931D /* CalculatorAbbreviationView.swift in Sources */,
 				791FF81420B2748900AD6B2D /* EvolutionCell.swift in Sources */,
+				797E2765221FA94D00E25311 /* ASCIIImageViewController.swift in Sources */,
 				79B26A981F0A513D00B54EC2 /* BufferModel.swift in Sources */,
 				79DCC1601F67ECE100D6A6CE /* PointLineViewController.swift in Sources */,
 				7948D9D620EF0999004D1B67 /* WakeupViewController.swift in Sources */,
@@ -1510,6 +1529,7 @@
 				7933A46820D0FC1B00AE36D7 /* QRCodeCreateViewController.swift in Sources */,
 				79EB465020DB9710000CB1B9 /* LandscapeViewController.swift in Sources */,
 				79B26A921F0A43AE00B54EC2 /* MysticCodeModel.swift in Sources */,
+				797E2767221FAE5900E25311 /* ASCIIImage.swift in Sources */,
 				79E473EA20F8926600931381 /* CollectionModel.swift in Sources */,
 				79EB468C20EE3A05000CB1B9 /* CollectionViewController.swift in Sources */,
 				79DCC1681F6A50B600D6A6CE /* NotificationModule.swift in Sources */,
@@ -1719,7 +1739,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ml.myapp.SiriExtensionUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1749,7 +1769,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ml.myapp.SiriExtensionUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1779,7 +1799,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ml.myapp.SiriExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1809,7 +1830,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ml.myapp.SiriExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1924,7 +1946,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "DemoSet/DemoSet-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1945,7 +1968,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ml.myapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "DemoSet/DemoSet-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1960,7 +1984,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.my.DemoSetTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoSet.app/DemoSet";
 			};
 			name = Debug;
@@ -1975,7 +2000,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.my.DemoSetTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoSet.app/DemoSet";
 			};
 			name = Release;
@@ -1989,7 +2015,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.my.DemoSetUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TEST_TARGET_NAME = DemoSet;
 			};
 			name = Debug;
@@ -2003,7 +2030,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.my.DemoSetUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TEST_TARGET_NAME = DemoSet;
 			};
 			name = Release;
@@ -2030,7 +2058,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ml.myapp.MessageFilterExt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -2057,7 +2086,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ml.myapp.MessageFilterExt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

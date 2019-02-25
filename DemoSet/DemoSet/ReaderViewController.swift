@@ -88,7 +88,7 @@ class ReaderViewController: BaseViewController,UICollectionViewDataSource,UIColl
     }
     
     /// 返回上一层
-    func backToLast() {
+    @objc func backToLast() {
         if filePath.count > 1 {
             //
             let pa = filePath[filePath.count-2]
@@ -159,7 +159,7 @@ class ReaderViewController: BaseViewController,UICollectionViewDataSource,UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(space, space, space, space)
+        return UIEdgeInsets.init(top: space, left: space, bottom: space, right: space)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

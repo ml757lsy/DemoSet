@@ -12,6 +12,7 @@ let SCREENWIDTH = UIScreen.main.bounds.width
 let SCREENHEIGHT = UIScreen.main.bounds.height
 
 typealias BaseBlockVoid = ()->Void
+typealias BaseBlockInt = (Int)->Void
 typealias BaseBlockCGFloat = (CGFloat)->Void
 typealias BaseBlockString = (String) -> Void
 
