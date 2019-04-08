@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let tab = BaseTabBarViewController()
         tab.viewControllers = [navigation,appstore]
         
-        window?.rootViewController = tab
+//        window?.rootViewController = tab
         
         //slide
         let main = MainViewController()
@@ -36,8 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let left = LeftViewController()
         let nvc = UINavigationController.init(rootViewController: main)
         
-        let  slide = SlideMenuViewController.init(leftViewController: left, mainViewController: nvc)
-//        window?.rootViewController = slide
+        let  slide = SlideMenuViewController.init(leftViewController: left, mainViewController: tab)
+        window?.rootViewController = slide
         
         NotificationModule.manager.registNotification()
         NotificationModule.manager.addHomeNotification()

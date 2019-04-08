@@ -51,6 +51,9 @@ class CollectionHomeViewController: BaseViewController {
         
         card.model = model
         
+        //new
+        
+        
     }
     
 

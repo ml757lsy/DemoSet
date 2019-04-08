@@ -8,5 +8,6 @@ pod 'OpenCV', '~> 3.4.1'
 pod 'FMDB', '~> 2.7.2'
 pod 'FLEX', '~> 2.4.0'
 pod 'Kingfisher'
+pod 'YYImage','~> 1.0.4'
 use_frameworks!
 end

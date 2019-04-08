@@ -103,6 +103,9 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         list.append("Game")
         list.append("MultipeerConnectivity")
         list.append("API")
+        list.append("LocalAuthentication")
+        list.append("SpeechRecongnition")
+        list.append("ASCIIArt")
         
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize.init(width: 100, height: 100)
@@ -268,6 +271,15 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         case 44:
             aimController = APIViewController()
             break
+        case 45:
+            aimController = LocalAuthenticationViewController()
+            break
+        case 46:
+            aimController = SpeechRecognitionViewController()
+            break
+        case 47:
+            aimController = ASCIIImageViewController()
+            break
             
         default:
             break
@@ -314,7 +326,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         
     }
     
-    func selectorTest() {
+    @objc func selectorTest() {
         print("Selector Test")
     }
     

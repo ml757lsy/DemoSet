@@ -15,6 +15,25 @@ class ASCIIImageViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let img = UIImage.init(named: "banner1")
+        let size = CGSize.init(width: (img?.size.width ?? 100)/2, height: (img?.size.height ?? 100)/2)
+        let labelFont = UIFont(name: "Menlo", size: 7)!
+        
+        
+        ASCIIImage.defaultTool.font = labelFont
+        let asciiArt = ASCIIImage.defaultTool.str(img!, size: size)
+        
+        let label = UILabel()
+        label.font = labelFont
+        label.lineBreakMode = NSLineBreakMode.byClipping
+        label.numberOfLines = 0
+        label.text = asciiArt
+        label.sizeToFit()
+        
+        let scroll = UIScrollView.init(frame: view.bounds)
+        scroll.contentSize = label.bounds.size
+        scroll.addSubview(label)
+        view.addSubview(scroll)
     }
     
 

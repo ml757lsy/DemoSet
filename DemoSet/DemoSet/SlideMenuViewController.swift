@@ -45,7 +45,7 @@ class SlideMenuViewController: BaseViewController {
             main = newVlaue
             main.view.frame = mainView.bounds
             
-            if self.children.contains(newVlaue) {
+            if !self.children.contains(newVlaue) {
                 addChild(main)
                 mainView.addSubview(main.view)
                 main.didMove(toParent: self)
@@ -82,6 +82,12 @@ class SlideMenuViewController: BaseViewController {
         mainView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         view.insertSubview(mainView, at: 0)
         
+        let sq = UISwipeGestureRecognizer.init(target: self, action: #selector(mainSwipAction(swip:)))
+        mainView.addGestureRecognizer(sq)
+        
+        let cq = UISwipeGestureRecognizer.init(target: self, action: #selector(leftSwipAction(swip:)))
+        leftView.addGestureRecognizer(cq)
+        
         var opacityframe: CGRect = view.bounds
         let opacityOffset: CGFloat = 0
         opacityframe.origin.y = opacityframe.origin.y + opacityOffset
@@ -100,12 +106,23 @@ class SlideMenuViewController: BaseViewController {
             leftFrame.origin.y = leftFrame.origin.y + leftOffset
             leftFrame.size.height = leftFrame.size.height - leftOffset
             leftView = UIView(frame: leftFrame)
-            leftView.backgroundColor = UIColor.yellow
             leftView.autoresizingMask = UIView.AutoresizingMask.flexibleHeight
             view.insertSubview(leftView, at: 2)
 //            addLeftGestures()
         }
         
+    }
+    
+    @objc func mainSwipAction(swip:UISwipeGestureRecognizer) {
+        if swip.direction == .right {
+            openLeft()
+        }
+    }
+    
+    @objc func leftSwipAction(swip:UISwipeGestureRecognizer) {
+        if swip.direction == .left {
+            closeLeft()
+        }
     }
     
     func openLeft() {
@@ -120,7 +137,14 @@ class SlideMenuViewController: BaseViewController {
     }
     
     func closeLeft() {
-        
+        left.beginAppearanceTransition(true, animated: true)
+        UIView.animate(withDuration: 0.4, delay: 0.0, options: .curveEaseInOut, animations: {
+            //
+            self.leftView.x = -SlideMenuOptions.leftViewWidth
+            self.mainView.x = 0
+        }) { (complate) in
+            //
+        }
     }
 
 }

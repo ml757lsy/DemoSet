@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>我想听听你说啥</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>我想刷脸</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>我想存点图</string>
 	<key>NSPhotoLibraryUsageDescription</key>

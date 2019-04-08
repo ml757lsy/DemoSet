@@ -23,6 +23,9 @@ PODS:
   - Kingfisher (4.10.1)
   - OpenCV (3.4.1)
   - SnapKit (4.2.0)
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.2.1)
@@ -33,6 +36,7 @@ DEPENDENCIES:
   - Kingfisher
   - OpenCV (~> 3.4.1)
   - SnapKit (~> 4.2.0)
+  - YYImage (~> 1.0.4)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -44,6 +48,7 @@ SPEC REPOS:
     - Kingfisher
     - OpenCV
     - SnapKit
+    - YYImage
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -54,7 +59,8 @@ SPEC CHECKSUMS:
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   OpenCV: 533d4b33a02bd225c49838901db2a1ddb6efe6b1
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
 
-PODFILE CHECKSUM: a6172216598a0f011e3bbda4972394cf07daa5a8
+PODFILE CHECKSUM: 312ab8974ebc1bfe82b3d98184873450d18a34d3
 
 COCOAPODS: 1.5.0
