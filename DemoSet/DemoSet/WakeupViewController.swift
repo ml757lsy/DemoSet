@@ -20,6 +20,12 @@ class WakeupViewController: BaseViewController {
         open.setTitle("chidiansha", for: .normal)
         open.addTarget(self, action: #selector(openHaohaochifan), for: .touchUpInside)
         
+        let kakao = UIButton.init(type: .system)
+        view.addSubview(kakao)
+        kakao.frame = CGRect.init(x: 40, y: 100, width: 60, height: 40)
+        kakao.setTitle("kakao", for: .normal)
+        kakao.addTarget(self, action: #selector(openKakao), for: .touchUpInside)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,6 +35,14 @@ class WakeupViewController: BaseViewController {
     
     @objc func openHaohaochifan() {
         let url = URL.init(string: "chidiansha://")
+        let options:[UIApplication.OpenExternalURLOptionsKey:Any] = [:]
+        UIApplication.shared.open(url!, options: options) { (success) in
+            //
+        }
+    }
+    
+    @objc func openKakao() {
+        let url = URL.init(string: "kakaolink://")
         let options:[UIApplication.OpenExternalURLOptionsKey:Any] = [:]
         UIApplication.shared.open(url!, options: options) { (success) in
             //

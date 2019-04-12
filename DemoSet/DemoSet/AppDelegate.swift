@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let left = LeftViewController()
         let nvc = UINavigationController.init(rootViewController: main)
         
-        let  slide = SlideMenuViewController.init(leftViewController: left, mainViewController: tab)
+        let  slide = SlideMenuViewController.init(leftController: left, mainController: navigation)
         window?.rootViewController = slide
         
         NotificationModule.manager.registNotification()

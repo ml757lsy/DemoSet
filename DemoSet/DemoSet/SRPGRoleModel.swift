@@ -24,7 +24,8 @@ class SRPGRoleModel: NSObject {
     var hp:Int = 0
     var mp:Int = 0
     var move:Int = 0
-    var range:Int = 0
+    var maxRange:Int = 0//
+    var minRange:Int = 0//
     
     var power:Int = 0
     var agient:Int = 0
