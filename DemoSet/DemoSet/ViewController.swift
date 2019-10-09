@@ -106,6 +106,8 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         list.append("LocalAuthentication")
         list.append("SpeechRecongnition")
         list.append("ASCIIArt")
+        list.append("Leetcode")
+        list.append("TalkRobot")
         
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize.init(width: 100, height: 100)
@@ -279,6 +281,12 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             break
         case 47:
             aimController = ASCIIImageViewController()
+            break
+        case 48:
+            aimController = LeetcodeViewController()
+            break
+        case 49:
+            aimController = TalkRobotViewController()
             break
             
         default:

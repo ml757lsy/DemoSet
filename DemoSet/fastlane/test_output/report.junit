@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='DemoSetUITests.xctest' tests='4' failures='0'>
+  <testsuite name='DemoSetTests.DemoSetTests' tests='2' failures='0'>
+    <testcase classname='DemoSetTests.DemoSetTests' name='testExample' time='0.007'/>
+    <testcase classname='DemoSetTests.DemoSetTests' name='testPerformanceExample' time='31.209'/>
+  </testsuite>
+  <testsuite name='DemoSetTests.SortTest' tests='1' failures='0'>
+    <testcase classname='DemoSetTests.SortTest' name='testExample' time='0.004'/>
+  </testsuite>
+  <testsuite name='DemoSetUITests.DemoSetUITests' tests='1' failures='0'>
+    <testcase classname='DemoSetUITests.DemoSetUITests' name='testExample' time='4.848'/>
+  </testsuite>
+</testsuites>

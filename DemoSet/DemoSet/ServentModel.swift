@@ -28,6 +28,7 @@ enum ClassType:Int {
     case avenger
     case mooncancer
     case beast
+    case foreigner
 }
 
 enum CampType:Int {

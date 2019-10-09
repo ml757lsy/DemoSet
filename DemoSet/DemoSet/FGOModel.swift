@@ -78,6 +78,7 @@ struct classCorrect {
     let Beast:CGFloat       = 1.0
     let Frogener:CGFloat    = 1.0
     let MoonCancer:CGFloat  = 1.0
+    let Foreigner:CGFloat   = 1.0
     
     func classcorrect(with serventClass:ClassType) -> CGFloat{
         switch serventClass {

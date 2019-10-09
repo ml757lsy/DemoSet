@@ -43,6 +43,8 @@ class CollectionHomeViewController: BaseViewController {
         let model = CollectionModel()
         model.name = "Test"
         model.card = CollectionModel.card(withName: "backGround")
+        //bwQ5-c1w8XoZ6jT3cSb0-g9.gif
+        model.card = CollectionModel.card(withName: "bwQ5-c1w8XoZ6jT3cSb0-g9")
         
         //
         let card = CollectionCard.init(frame: CGRect.init(x: 40, y: 40, width: 100, height: 178))
@@ -52,7 +54,15 @@ class CollectionHomeViewController: BaseViewController {
         card.model = model
         
         //new
+        //3B63A8C86AF3E15972D664A98D1610AB
+        //bwQ5-g4puXiZ4zT1kS8a-8q
+        //t01348fb6a07ef8447b
         
+        let gi = UIImageView.init(frame: CGRect.init(x: 40, y: 250, width: 200, height: 166))
+        view.addSubview(gi)
+        var path = "a"
+        path = Bundle.main.path(forResource: "3B63A8C86AF3E15972D664A98D1610AB", ofType: "gif") ?? ""
+        gi.loadgif(url: URL.init(fileURLWithPath: path))
         
     }
     

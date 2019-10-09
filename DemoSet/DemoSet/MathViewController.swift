@@ -60,6 +60,13 @@ class MathViewController: BaseViewController {
         mpibutton.addTarget(self, action: #selector(mpi), for: .touchUpInside)
         view.addSubview(mpibutton)
         
+        let threedoorbutton = UIButton.init(type: .custom)
+        threedoorbutton.frame = CGRect.init(x: 20, y: 100, width: 100, height: 40)
+        threedoorbutton.setTitle("3门问题", for: .normal)
+        threedoorbutton.setTitleColor(UIColor.orange, for: .normal)
+        threedoorbutton.addTarget(self, action: #selector(threedoor), for: .touchUpInside)
+        view.addSubview(threedoorbutton)
+        
         //
         
         let l = UIBezierPath.init()
@@ -319,6 +326,13 @@ class MathViewController: BaseViewController {
             print(p)
             sleep(1)
         }
+    }
+    
+    func threedoor() {
+        let aim = arc4random()%3;//设定
+        let choose = arc4random()%3;//选择
+        let close = ((arc4random()%2+1)+choose)%3;
+        //中
     }
 
 }

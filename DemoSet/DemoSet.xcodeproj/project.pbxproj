@@ -123,6 +123,17 @@
 		79B6478B1F7361D90002103E /* MessageFilterExt.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 79B647841F7361D90002103E /* MessageFilterExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		79B647D11F74DE8A0002103E /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B647D01F74DE8A0002103E /* UIDevice+Extension.swift */; };
 		79B647D41F7899FD0002103E /* NFCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B647D31F7899FD0002103E /* NFCViewController.swift */; };
+		79C41307230E734B0090ACCD /* bwQ5-c1w8XoZ6jT3cSb0-g9.gif in Resources */ = {isa = PBXBuildFile; fileRef = 79C41306230E734B0090ACCD /* bwQ5-c1w8XoZ6jT3cSb0-g9.gif */; };
+		79C4130A230FEB780090ACCD /* t01348fb6a07ef8447b.gif in Resources */ = {isa = PBXBuildFile; fileRef = 79C41308230FEB780090ACCD /* t01348fb6a07ef8447b.gif */; };
+		79C4130B230FEB780090ACCD /* bwQ5-g4puXiZ4zT1kS8a-8q.gif in Resources */ = {isa = PBXBuildFile; fileRef = 79C41309230FEB780090ACCD /* bwQ5-g4puXiZ4zT1kS8a-8q.gif */; };
+		79C4130D230FEB9B0090ACCD /* 3B63A8C86AF3E15972D664A98D1610AB.gif in Resources */ = {isa = PBXBuildFile; fileRef = 79C4130C230FEB9B0090ACCD /* 3B63A8C86AF3E15972D664A98D1610AB.gif */; };
+		79C41310231519860090ACCD /* TalkRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C4130F231519860090ACCD /* TalkRobot.swift */; };
+		79C41313231655870090ACCD /* LeetcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C41312231655870090ACCD /* LeetcodeViewController.swift */; };
+		79C4131523167FE20090ACCD /* dic.txt in Resources */ = {isa = PBXBuildFile; fileRef = 79C4131423167FE10090ACCD /* dic.txt */; };
+		79C41317231680030090ACCD /* TalkRobotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C41316231680030090ACCD /* TalkRobotViewController.swift */; };
+		79C41319231E4C1A0090ACCD /* TalkRobotDicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C41318231E4C1A0090ACCD /* TalkRobotDicListViewController.swift */; };
+		79C4131B231FB32F0090ACCD /* TalkRobotDicListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C4131A231FB32F0090ACCD /* TalkRobotDicListCell.swift */; };
+		79C4131D232240420090ACCD /* TalkRobotNewDialogueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C4131C232240420090ACCD /* TalkRobotNewDialogueViewController.swift */; };
 		79CB226F1F94B0C500C9FE1E /* MaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CB226E1F94B0C500C9FE1E /* MaskViewController.swift */; };
 		79CB22711F94B0D900C9FE1E /* MaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CB22701F94B0D900C9FE1E /* MaskView.swift */; };
 		79CB22741F95EBCA00C9FE1E /* LotteryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CB22731F95EBCA00C9FE1E /* LotteryViewController.swift */; };
@@ -369,6 +380,17 @@
 		79B647D01F74DE8A0002103E /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		79B647D31F7899FD0002103E /* NFCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCViewController.swift; sourceTree = "<group>"; };
 		79B647D51F78AFA90002103E /* DemoSet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DemoSet.entitlements; sourceTree = "<group>"; };
+		79C41306230E734B0090ACCD /* bwQ5-c1w8XoZ6jT3cSb0-g9.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "bwQ5-c1w8XoZ6jT3cSb0-g9.gif"; sourceTree = "<group>"; };
+		79C41308230FEB780090ACCD /* t01348fb6a07ef8447b.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = t01348fb6a07ef8447b.gif; sourceTree = "<group>"; };
+		79C41309230FEB780090ACCD /* bwQ5-g4puXiZ4zT1kS8a-8q.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "bwQ5-g4puXiZ4zT1kS8a-8q.gif"; sourceTree = "<group>"; };
+		79C4130C230FEB9B0090ACCD /* 3B63A8C86AF3E15972D664A98D1610AB.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 3B63A8C86AF3E15972D664A98D1610AB.gif; sourceTree = "<group>"; };
+		79C4130F231519860090ACCD /* TalkRobot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkRobot.swift; sourceTree = "<group>"; };
+		79C41312231655870090ACCD /* LeetcodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeetcodeViewController.swift; sourceTree = "<group>"; };
+		79C4131423167FE10090ACCD /* dic.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dic.txt; sourceTree = "<group>"; };
+		79C41316231680030090ACCD /* TalkRobotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkRobotViewController.swift; sourceTree = "<group>"; };
+		79C41318231E4C1A0090ACCD /* TalkRobotDicListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkRobotDicListViewController.swift; sourceTree = "<group>"; };
+		79C4131A231FB32F0090ACCD /* TalkRobotDicListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkRobotDicListCell.swift; sourceTree = "<group>"; };
+		79C4131C232240420090ACCD /* TalkRobotNewDialogueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkRobotNewDialogueViewController.swift; sourceTree = "<group>"; };
 		79CB226E1F94B0C500C9FE1E /* MaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskViewController.swift; sourceTree = "<group>"; };
 		79CB22701F94B0D900C9FE1E /* MaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskView.swift; sourceTree = "<group>"; };
 		79CB22731F95EBCA00C9FE1E /* LotteryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryViewController.swift; sourceTree = "<group>"; };
@@ -541,8 +563,13 @@
 			isa = PBXGroup;
 			children = (
 				7988B0F2224CF9A1000120C3 /* 83.mp3 */,
+				79C4131423167FE10090ACCD /* dic.txt */,
 				79EB465520DC9CA8000CB1B9 /* testGif2.gif */,
 				7933A46A20D1004F00AE36D7 /* testGif.gif */,
+				79C41309230FEB780090ACCD /* bwQ5-g4puXiZ4zT1kS8a-8q.gif */,
+				79C41308230FEB780090ACCD /* t01348fb6a07ef8447b.gif */,
+				79C4130C230FEB9B0090ACCD /* 3B63A8C86AF3E15972D664A98D1610AB.gif */,
+				79C41306230E734B0090ACCD /* bwQ5-c1w8XoZ6jT3cSb0-g9.gif */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -892,6 +919,26 @@
 			name = OC;
 			sourceTree = "<group>";
 		};
+		79C4130E2315195D0090ACCD /* TalkRobot */ = {
+			isa = PBXGroup;
+			children = (
+				79C4130F231519860090ACCD /* TalkRobot.swift */,
+				79C41316231680030090ACCD /* TalkRobotViewController.swift */,
+				79C41318231E4C1A0090ACCD /* TalkRobotDicListViewController.swift */,
+				79C4131C232240420090ACCD /* TalkRobotNewDialogueViewController.swift */,
+				79C4131A231FB32F0090ACCD /* TalkRobotDicListCell.swift */,
+			);
+			name = TalkRobot;
+			sourceTree = "<group>";
+		};
+		79C413112316555B0090ACCD /* LeetCode */ = {
+			isa = PBXGroup;
+			children = (
+				79C41312231655870090ACCD /* LeetcodeViewController.swift */,
+			);
+			name = LeetCode;
+			sourceTree = "<group>";
+		};
 		79CB226D1F94B0AB00C9FE1E /* MaskView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1097,6 +1144,8 @@
 		79FB35031EEAA65D0083ED79 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				79C413112316555B0090ACCD /* LeetCode */,
+				79C4130E2315195D0090ACCD /* TalkRobot */,
 				7988B0EF224CD14F000120C3 /* SpeechRecognition */,
 				7988B0E4224B5295000120C3 /* Fortnite */,
 				7988B0E1224A3E6C000120C3 /* LocalAuthentication */,
@@ -1420,11 +1469,16 @@
 				79EB465620DC9CA8000CB1B9 /* testGif2.gif in Resources */,
 				79A923F91EEAA30D00D91121 /* Assets.xcassets in Resources */,
 				7933A3D620BBE60800AE36D7 /* I18N.strings in Resources */,
+				79C4130A230FEB780090ACCD /* t01348fb6a07ef8447b.gif in Resources */,
 				79A923F71EEAA30D00D91121 /* Main.storyboard in Resources */,
 				797D3E3821F1B6EC002D9E50 /* AppIntentVocablary.plist in Resources */,
 				7957142F2005C0F70007078A /* StationData.plist in Resources */,
+				79C4131523167FE20090ACCD /* dic.txt in Resources */,
 				79B26AB61F185EF600B54EC2 /* Icon2@2x.png in Resources */,
 				79EB465E20DCFE9D000CB1B9 /* subways.sql in Resources */,
+				79C4130B230FEB780090ACCD /* bwQ5-g4puXiZ4zT1kS8a-8q.gif in Resources */,
+				79C4130D230FEB9B0090ACCD /* 3B63A8C86AF3E15972D664A98D1610AB.gif in Resources */,
+				79C41307230E734B0090ACCD /* bwQ5-c1w8XoZ6jT3cSb0-g9.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1462,6 +1516,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FLEX/FLEX.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/Gilgamesh/Gilgamesh.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -1472,6 +1527,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLEX.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gilgamesh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -1544,6 +1600,7 @@
 				797D3E4D21F9C0FB002D9E50 /* Charcter+NumberExtension.swift in Sources */,
 				7992BF691EF3866E00AE829A /* NumberboardViewController.swift in Sources */,
 				79B26A961F0A45CD00B54EC2 /* NoblePhantasmModel.swift in Sources */,
+				79C4131B231FB32F0090ACCD /* TalkRobotDicListCell.swift in Sources */,
 				795853B81EEF954700F214A5 /* SortViewController.swift in Sources */,
 				79A4F5A81FD791A2001E9A37 /* BaseTabBarViewController.swift in Sources */,
 				79E473E820F8925100931381 /* CollectionHomeViewController.swift in Sources */,
@@ -1559,6 +1616,7 @@
 				7988B0E7224B52E5000120C3 /* FortniteViewController.swift in Sources */,
 				791FF81220B2743000AD6B2D /* EvolutionViewController.swift in Sources */,
 				79A4F59D1FCD7119001E9A37 /* SRPGViewController.swift in Sources */,
+				79C41310231519860090ACCD /* TalkRobot.swift in Sources */,
 				7988B0F5224E0A59000120C3 /* UIImage+ExtensitionASCII.swift in Sources */,
 				79DB4BB91F70A8D40014CA2D /* WaveView.swift in Sources */,
 				795853BC1EEFBB4000F214A5 /* UIView+Extension.swift in Sources */,
@@ -1598,9 +1656,11 @@
 				79A923F41EEAA30D00D91121 /* ViewController.swift in Sources */,
 				79FB35091EEAAB850083ED79 /* Cellular.swift in Sources */,
 				79EB465A20DCC768000CB1B9 /* AppStoreContentModel.swift in Sources */,
+				79C41319231E4C1A0090ACCD /* TalkRobotDicListViewController.swift in Sources */,
 				7988B0EE224B8E63000120C3 /* SRPGManager.swift in Sources */,
 				791FF82120B3EAE900AD6B2D /* PasswordProduceManager.swift in Sources */,
 				7933A3DD20BC070B00AE36D7 /* UIView+I18NExtension.swift in Sources */,
+				79C41317231680030090ACCD /* TalkRobotViewController.swift in Sources */,
 				798806701F4FB944001FB972 /* ImageCrawlerViewController.swift in Sources */,
 				7924D1C91FD9364100CEECB6 /* UIImageView+Extension.swift in Sources */,
 				7992BF6B1EF3869E00AE829A /* Numberboard.swift in Sources */,
@@ -1627,6 +1687,7 @@
 				7955CF171F9092C9007F6DC2 /* StringModel.swift in Sources */,
 				79E473EC20F8942500931381 /* CollectionCard.swift in Sources */,
 				797D3E3F21F703C1002D9E50 /* Xue.swift in Sources */,
+				79C41313231655870090ACCD /* LeetcodeViewController.swift in Sources */,
 				79B647D41F7899FD0002103E /* NFCViewController.swift in Sources */,
 				79CB22771F97032000C9FE1E /* BannerViewController.swift in Sources */,
 				79E29D771FECD7B400EC4577 /* RuntimeViewController.swift in Sources */,
@@ -1656,6 +1717,7 @@
 				797D3E3D21F6D94B002D9E50 /* ImmortalCore.swift in Sources */,
 				7957142E2005C0F70007078A /* SubwayViewController.swift in Sources */,
 				7988B0EC224B8C5F000120C3 /* SRPGMapModel.swift in Sources */,
+				79C4131D232240420090ACCD /* TalkRobotNewDialogueViewController.swift in Sources */,
 				79EB466720DD0210000CB1B9 /* SQLManager.swift in Sources */,
 				791FF81F20B3EACF00AD6B2D /* PasswordProduceViewController.swift in Sources */,
 				795853BA1EEFB58B00F214A5 /* SortColumn.swift in Sources */,

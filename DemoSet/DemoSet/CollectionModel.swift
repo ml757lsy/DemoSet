@@ -59,7 +59,11 @@ class CollectionModel: NSObject {
     //MARK: - func
     
     class func card(withName name:String) -> UIImage {
-        let card = UIImage.init(named: name)
+        var card = UIImage.init(named: name)
+        if card == nil {
+            let path = Bundle.main.path(forResource: name, ofType: "gif")
+            card = UIImage.loadgif(url: URL.init(fileURLWithPath: path ?? ""))
+        }
         if card != nil {
             return card!
         }else{
