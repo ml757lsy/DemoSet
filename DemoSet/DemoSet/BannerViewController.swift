@@ -54,6 +54,21 @@ class BannerViewController: BaseViewController {
         }
         gifimage.frame.size.width = gw
         gifimage.frame.size.height = gh
+        
+        //
+        perform(#selector(giftovideo), with: nil, afterDelay: 1)
+    }
+    
+    @objc func giftovideo() {
+        let gifpath = Bundle.main.path(forResource: "4da0e35c49aa37b70fd54a5b92447df0d9c259661a9865-t8562E_fw658", ofType: "gif")
+        var path = NSHomeDirectory()
+        path.append("/Documents")
+        path.append("/test.mp4")
+        let videopath = path
+        UIImage.gifToVideo(gifPath: gifpath!, videoPath: videopath, duration: 4) {
+            result in
+            print("complate")
+        }
     }
 
     override func didReceiveMemoryWarning() {

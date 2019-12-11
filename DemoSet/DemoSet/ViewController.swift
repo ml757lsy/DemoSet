@@ -108,6 +108,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         list.append("ASCIIArt")
         list.append("Leetcode")
         list.append("TalkRobot")
+        list.append("PaintViewController")
         
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize.init(width: 100, height: 100)
@@ -288,6 +289,8 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         case 49:
             aimController = TalkRobotViewController()
             break
+        case 50:
+            aimController = PaintViewController()
             
         default:
             break

@@ -24,6 +24,8 @@
 		79200169219973A90057931D /* CalculatorBignumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79200168219973A90057931D /* CalculatorBignumberView.swift */; };
 		7924D1C91FD9364100CEECB6 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7924D1C81FD9364100CEECB6 /* UIImageView+Extension.swift */; };
 		792E5E901FF0F530007E7605 /* CasinoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792E5E8F1FF0F530007E7605 /* CasinoViewController.swift */; };
+		7931EC24238F74A90001FA76 /* PaintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7931EC23238F74A90001FA76 /* PaintViewController.swift */; };
+		7931EC26238F74B90001FA76 /* PaintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7931EC25238F74B90001FA76 /* PaintView.swift */; };
 		7933A3D120BBE33300AE36D7 /* I18NViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7933A3D020BBE33300AE36D7 /* I18NViewController.swift */; };
 		7933A3D320BBE35B00AE36D7 /* I18NManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7933A3D220BBE35B00AE36D7 /* I18NManager.swift */; };
 		7933A3D620BBE60800AE36D7 /* I18N.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7933A3D820BBE60800AE36D7 /* I18N.strings */; };
@@ -34,6 +36,7 @@
 		7933A46620D0FACD00AE36D7 /* CIFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7933A46520D0FACD00AE36D7 /* CIFilterViewController.swift */; };
 		7933A46820D0FC1B00AE36D7 /* QRCodeCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7933A46720D0FC1B00AE36D7 /* QRCodeCreateViewController.swift */; };
 		7933A46B20D1004F00AE36D7 /* testGif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7933A46A20D1004F00AE36D7 /* testGif.gif */; };
+		7940BE2A236963D60054960E /* 4da0e35c49aa37b70fd54a5b92447df0d9c259661a9865-t8562E_fw658.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7940BE29236963D60054960E /* 4da0e35c49aa37b70fd54a5b92447df0d9c259661a9865-t8562E_fw658.gif */; };
 		7948D9D620EF0999004D1B67 /* WakeupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7948D9D520EF0999004D1B67 /* WakeupViewController.swift */; };
 		7955CEEC1F8C729A007F6DC2 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955CEEB1F8C729A007F6DC2 /* QRCodeView.swift */; };
 		7955CEEE1F8C730D007F6DC2 /* QRCodeMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955CEED1F8C730D007F6DC2 /* QRCodeMaskView.swift */; };
@@ -260,6 +263,8 @@
 		79200168219973A90057931D /* CalculatorBignumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorBignumberView.swift; sourceTree = "<group>"; };
 		7924D1C81FD9364100CEECB6 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		792E5E8F1FF0F530007E7605 /* CasinoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasinoViewController.swift; sourceTree = "<group>"; };
+		7931EC23238F74A90001FA76 /* PaintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintViewController.swift; sourceTree = "<group>"; };
+		7931EC25238F74B90001FA76 /* PaintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintView.swift; sourceTree = "<group>"; };
 		7933A3C720BBD97000AE36D7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		7933A3C820BBD97000AE36D7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		7933A3C920BBD98900AE36D7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
@@ -280,6 +285,7 @@
 		7933A46520D0FACD00AE36D7 /* CIFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIFilterViewController.swift; sourceTree = "<group>"; };
 		7933A46720D0FC1B00AE36D7 /* QRCodeCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeCreateViewController.swift; sourceTree = "<group>"; };
 		7933A46A20D1004F00AE36D7 /* testGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = testGif.gif; sourceTree = "<group>"; };
+		7940BE29236963D60054960E /* 4da0e35c49aa37b70fd54a5b92447df0d9c259661a9865-t8562E_fw658.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "4da0e35c49aa37b70fd54a5b92447df0d9c259661a9865-t8562E_fw658.gif"; sourceTree = "<group>"; };
 		7948D9D520EF0999004D1B67 /* WakeupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakeupViewController.swift; sourceTree = "<group>"; };
 		7955CEEB1F8C729A007F6DC2 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
 		7955CEED1F8C730D007F6DC2 /* QRCodeMaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeMaskView.swift; sourceTree = "<group>"; };
@@ -539,6 +545,15 @@
 			name = Casino;
 			sourceTree = "<group>";
 		};
+		7931EC22238F74840001FA76 /* Paint */ = {
+			isa = PBXGroup;
+			children = (
+				7931EC23238F74A90001FA76 /* PaintViewController.swift */,
+				7931EC25238F74B90001FA76 /* PaintView.swift */,
+			);
+			name = Paint;
+			sourceTree = "<group>";
+		};
 		7933A3CF20BBE31800AE36D7 /* I18N */ = {
 			isa = PBXGroup;
 			children = (
@@ -570,6 +585,7 @@
 				79C41308230FEB780090ACCD /* t01348fb6a07ef8447b.gif */,
 				79C4130C230FEB9B0090ACCD /* 3B63A8C86AF3E15972D664A98D1610AB.gif */,
 				79C41306230E734B0090ACCD /* bwQ5-c1w8XoZ6jT3cSb0-g9.gif */,
+				7940BE29236963D60054960E /* 4da0e35c49aa37b70fd54a5b92447df0d9c259661a9865-t8562E_fw658.gif */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -1144,6 +1160,7 @@
 		79FB35031EEAA65D0083ED79 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				7931EC22238F74840001FA76 /* Paint */,
 				79C413112316555B0090ACCD /* LeetCode */,
 				79C4130E2315195D0090ACCD /* TalkRobot */,
 				7988B0EF224CD14F000120C3 /* SpeechRecognition */,
@@ -1469,6 +1486,7 @@
 				79EB465620DC9CA8000CB1B9 /* testGif2.gif in Resources */,
 				79A923F91EEAA30D00D91121 /* Assets.xcassets in Resources */,
 				7933A3D620BBE60800AE36D7 /* I18N.strings in Resources */,
+				7940BE2A236963D60054960E /* 4da0e35c49aa37b70fd54a5b92447df0d9c259661a9865-t8562E_fw658.gif in Resources */,
 				79C4130A230FEB780090ACCD /* t01348fb6a07ef8447b.gif in Resources */,
 				79A923F71EEAA30D00D91121 /* Main.storyboard in Resources */,
 				797D3E3821F1B6EC002D9E50 /* AppIntentVocablary.plist in Resources */,
@@ -1588,6 +1606,7 @@
 				795714271FFE24430007078A /* SRPGRoleModel.swift in Sources */,
 				79200169219973A90057931D /* CalculatorBignumberView.swift in Sources */,
 				79A4F5AC1FD7C290001E9A37 /* BaseConstFile.swift in Sources */,
+				7931EC26238F74B90001FA76 /* PaintView.swift in Sources */,
 				79200167219973040057931D /* CalculatorAbbreviationView.swift in Sources */,
 				791FF81420B2748900AD6B2D /* EvolutionCell.swift in Sources */,
 				797E2765221FA94D00E25311 /* ASCIIImageViewController.swift in Sources */,
@@ -1610,6 +1629,7 @@
 				79B647D11F74DE8A0002103E /* UIDevice+Extension.swift in Sources */,
 				7933A3E120BCFED000AE36D7 /* UIButton+I18NExtension.swift in Sources */,
 				79B26A721F05065E00B54EC2 /* AnimationViewController.swift in Sources */,
+				7931EC24238F74A90001FA76 /* PaintViewController.swift in Sources */,
 				796468121F99CF6E0091D671 /* UIColor+Extension.swift in Sources */,
 				7933A3D120BBE33300AE36D7 /* I18NViewController.swift in Sources */,
 				791FF81820B2753C00AD6B2D /* EvolutionGod.swift in Sources */,

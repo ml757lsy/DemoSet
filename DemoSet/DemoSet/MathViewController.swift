@@ -312,7 +312,7 @@ class MathViewController: BaseViewController {
         var n:Double = 1
         var b:Bool = true
         var p:Double = 0
-        while Int64(n) < INTMAX_MAX {
+        while Int64(n) < INT64_MAX {
             //
             
             if b {

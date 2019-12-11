@@ -37,6 +37,7 @@ class NFCViewController: BaseViewController,NFCNDEFReaderSessionDelegate {
         print("ac")
     }
     
+    @available(iOS 13.0, *)
     func readerSession(_ session: NFCReaderSession, didDetect tags: [NFCTag]) {
         print(tags)
     }

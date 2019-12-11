@@ -13,7 +13,7 @@ PODS:
   - YYImage/Core (1.0.4)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.7.3)
+  - Alamofire
   - FLEX (~> 2.4.0)
   - FMDB (~> 2.7.2)
   - Gilgamesh (~> 0.1.1)
@@ -44,6 +44,6 @@ SPEC CHECKSUMS:
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
 
-PODFILE CHECKSUM: 4d01f70643557eac82423aa9ba0c1d8269f1aab6
+PODFILE CHECKSUM: d473004a7d877ddc6303c2220efd7a9a358c387a
 
 COCOAPODS: 1.5.0

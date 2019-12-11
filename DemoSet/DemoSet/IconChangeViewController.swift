@@ -45,6 +45,14 @@ class IconChangeViewController: BaseViewController {
         }
         
     }
+    
+    func drawIcon() {
+        let icon = UIView.init(frame: CGRect.init(x: 100, y: 160, width: 200, height: 200))
+        view.addSubview(icon)
+        
+        let d = UIBezierPath.init()
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

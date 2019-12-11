@@ -8,6 +8,7 @@
 
 import UIKit
 import MobileCoreServices
+import AVFoundation
 
 extension UIImage{
     func reflection(present:CGFloat) -> UIImage{
@@ -444,6 +445,116 @@ extension UIImage{
             let cg = context.createCGImage(ci!, from: (ci?.extent)!)
             return cg!
         }
+    }
+    
+    /// 将gif图片转换成mp4格式便于播放
+    ///
+    /// - Parameters:
+    ///   - gifPath: gif路径
+    ///   - videoPath: 生成的video路径
+    ///   - duration: 时长
+    ///   - completion: 完成的回调
+    class func gifToVideo(gifPath:String, videoPath:String, duration:TimeInterval, completion:@escaping(Bool)->Void) {
+        let gifimgs = UIImage().gifToImages(gifPath: gifPath)
+        let size = gifimgs[0].size
+        let w = size.width
+        let h = size.height
+        
+        do {
+            let videourl = URL.init(fileURLWithPath: videoPath)
+            let videoWriter = try AVAssetWriter.init(url: videourl, fileType: .mp4)
+            let setting = [AVVideoCodecKey:"AVVideoCodecTypeH264",AVVideoWidthKey:NSNumber.init(value: Float(w)),AVVideoHeightKey:NSNumber.init(value: Float(h))] as [String : Any]
+            let videoInput = AVAssetWriterInput.init(mediaType: .video, outputSettings: setting)
+            
+            var index = 0
+            let queue = DispatchQueue.init(label: "mediainput")
+            let frameDuration = Int64(duration/TimeInterval(gifimgs.count)*1000)
+            videoInput.requestMediaDataWhenReady(on: queue) {
+                //
+                let adaptor = AVAssetWriterInputPixelBufferAdaptor.init(assetWriterInput: videoInput, sourcePixelBufferAttributes: nil)
+                var finished = true
+                
+                while index < gifimgs.count {
+                    if !videoInput.isReadyForMoreMediaData {
+                        finished = false
+                        break
+                    }
+                    
+                    let img = gifimgs[index]
+                    let buffer = UIImage().CVPixelBufferRefFromImage(img: img)
+                    let time = CMTime.init(value: frameDuration*Int64(index), timescale: 1000)
+                    let addResult = adaptor.append(buffer, withPresentationTime: time)
+                    
+                    if addResult {
+                        index += 1
+                    }else {
+                        print("add img:\(index) fail")
+                    }
+                }
+                
+                if finished {
+                    videoInput.markAsFinished()
+                    videoWriter.finishWriting {
+                        DispatchQueue.main.async {
+                            completion(true)
+                        }
+                    }
+                }else {
+                    completion(false)
+                    print("trans 2 video fail")
+                }
+                
+            }
+        } catch let error {
+            print(error)
+            completion(false)
+        }
+        
+        
+    }
+    
+    /// 图片转cvpixbuffer
+    ///
+    /// - Parameter img: uiimage
+    /// - Returns: buffer
+    func CVPixelBufferRefFromImage (img:UIImage) -> CVPixelBuffer {
+        
+        let size = img.size
+        let image = img.cgImage!
+        
+        let options = [kCVPixelBufferCGImageCompatibilityKey:NSNumber.init(value: true),kCVPixelBufferCGBitmapContextCompatibilityKey:nil]
+        
+        var pxbuffer:CVPixelBuffer? = nil;
+        let status:CVReturn = CVPixelBufferCreate(kCFAllocatorDefault, Int(size.width), Int(size.height), kCVPixelFormatType_32ABGR, options as CFDictionary, &pxbuffer)
+        
+        if !(status == kCVReturnSuccess && pxbuffer != nil) {
+            print("pxbuffer create error!!!")
+        }
+        
+        CVPixelBufferLockBaseAddress(pxbuffer!, []);
+        let pxdata = CVPixelBufferGetBaseAddress(pxbuffer!);
+        
+        let rgbColorSpace = CGColorSpaceCreateDeviceRGB();
+        
+        //CGBitmapInfo的设置
+        //uint32_t bitmapInfo = CGImageAlphaInfo | CGBitmapInfo;
+        
+        //当inputPixelFormat=kCVPixelFormatType_32BGRA CGBitmapInfo的正确的设置
+        //uint32_t bitmapInfo = kCGImageAlphaPremultipliedFirst | kCGBitmapByteOrder32Host;
+        //uint32_t bitmapInfo = kCGImageAlphaNoneSkipFirst | kCGBitmapByteOrder32Host;
+        
+        //当inputPixelFormat=kCVPixelFormatType_32ARGB CGBitmapInfo的正确的设置
+        //uint32_t bitmapInfo = kCGImageAlphaPremultipliedFirst | kCGBitmapByteOrder32Big;
+        //uint32_t bitmapInfo = kCGImageAlphaNoneSkipFirst | kCGBitmapByteOrder32Big;
+        
+        let bitmapInfo = CGBitmapInfo.alphaInfoMask.rawValue | CGBitmapInfo.byteOrder32Big.rawValue;
+        
+        let context = CGContext(data: pxdata, width: Int(size.width), height: Int(size.height), bitsPerComponent: 8, bytesPerRow: 4*Int(size.width), space: rgbColorSpace, bitmapInfo: bitmapInfo);
+        context?.draw(image, in: CGRect.init(x: 0, y: 0, width: size.width, height: size.height))
+        
+        CVPixelBufferUnlockBaseAddress(pxbuffer!, []);
+        
+        return pxbuffer!;
     }
     
     //MARK: - Data
