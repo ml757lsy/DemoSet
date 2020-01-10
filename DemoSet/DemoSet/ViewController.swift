@@ -108,7 +108,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         list.append("ASCIIArt")
         list.append("Leetcode")
         list.append("TalkRobot")
-        list.append("PaintViewController")
+        list.append("Paint")
         
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize.init(width: 100, height: 100)

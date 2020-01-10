@@ -9,9 +9,11 @@
 import UIKit
 
 /// 数学相关的好多玩意
-class MathViewController: BaseViewController {
+class MathViewController: BaseViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
     private let FibonacciLabel = UILabel()
+    private var questions:[String] = []
+    private var collection:UICollectionView = UICollectionView.init(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init())
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,63 +27,79 @@ class MathViewController: BaseViewController {
     }
     //view
     func initView() {
-        let FibonacciButton = UIButton.init(type: .custom)
-        FibonacciButton.frame = CGRect.init(x: 20, y: 60, width: 100, height: 40)
-        view.addSubview(FibonacciButton)
-        FibonacciButton.setTitle("Fibonacci", for: .normal)
-        FibonacciButton.setTitleColor(UIColor.orange, for: .normal)
-        FibonacciButton.addTarget(self, action: #selector(Fibinacci), for: .touchUpInside)
+        //view
+        let layout = UICollectionViewFlowLayout.init()
+        layout.itemSize = CGSize.init(width: 150, height: 70)
+        collection = UICollectionView.init(frame: CGRect.init(x: 0, y: 0, width: view.width, height: view.height-200), collectionViewLayout: layout)
+        collection.delegate = self
+        collection.dataSource = self
+        collection.register(MathCollectionCell.self, forCellWithReuseIdentifier: "mcell")
+        view.addSubview(collection)
         
-        view.addSubview(FibonacciLabel)
-        FibonacciLabel.frame = CGRect.init(x: 20, y: 100, width: 200, height: 200)
-        FibonacciLabel.numberOfLines = 0
-        
-        //
-        let PalindromeNum = UIButton.init(type: .custom)
-        PalindromeNum.frame = CGRect.init(x: 120, y: 60, width: 100, height: 40)
-        PalindromeNum.setTitle("Palindrome", for: .normal)
-        PalindromeNum.setTitleColor(UIColor.orange, for: .normal)
-        PalindromeNum.addTarget(self, action: #selector(PalindromeNumClick), for: .touchUpInside)
-        view.addSubview(PalindromeNum)
-        
-        //
-        let binarytree = UIButton.init(type: .custom)
-        binarytree.frame = CGRect.init(x: 240, y: 60, width: 100, height: 40)
-        binarytree.setTitle("BinaryTree", for: .normal)
-        binarytree.setTitleColor(UIColor.orange, for: .normal)
-        binarytree.addTarget(self, action: #selector(binaryTreeClick), for: .touchUpInside)
-        view.addSubview(binarytree)
-        
-        //
-        let mpibutton = UIButton.init(type: .custom)
-        mpibutton.frame = CGRect.init(x: 20, y: 100, width: 100, height: 40)
-        mpibutton.setTitle("PI", for: .normal)
-        mpibutton.setTitleColor(UIColor.orange, for: .normal)
-        mpibutton.addTarget(self, action: #selector(mpi), for: .touchUpInside)
-        view.addSubview(mpibutton)
-        
-        let threedoorbutton = UIButton.init(type: .custom)
-        threedoorbutton.frame = CGRect.init(x: 20, y: 100, width: 100, height: 40)
-        threedoorbutton.setTitle("3门问题", for: .normal)
-        threedoorbutton.setTitleColor(UIColor.orange, for: .normal)
-        threedoorbutton.addTarget(self, action: #selector(threedoor), for: .touchUpInside)
-        view.addSubview(threedoorbutton)
-        
-        //
-        
-        let l = UIBezierPath.init()
-        l.move(to: CGPoint.init(x: 100, y: 100))
-        l.addLine(to: CGPoint.init(x: 200, y: 200))
-        l.addLine(to: CGPoint.init(x: 100, y: 300))
-        
-        let shap = CAShapeLayer.init()
-        shap.path = l.cgPath
-        shap.fillColor = UIColor.red.cgColor
-        shap.opacity = 0.8
-        view.layer.addSublayer(shap)
-        
-        bignum()
+        //data
+        questions.append("Fibonacci")
+        questions.append("Palindrome")
+        questions.append("BinaryTree")
+        questions.append("PI")
+        questions.append("3门问题")
+        questions.append("BIGNUM")
+        questions.append("数学公式")
     }
+    
+    //MARK: - delelgate
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return questions.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell:MathCollectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "mcell", for: indexPath) as! MathCollectionCell
+        cell.label.text = questions[indexPath.row]
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize.init(width: 150, height: 70)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            Fibinacci()
+            break
+        case 1:
+            PalindromeNumClick()
+            break
+        case 2:
+            binaryTreeClick()
+            break
+        case 3:
+            mpi()
+            break
+        case 4:
+            threedoor()
+            break
+        case 5:
+            break
+        case 6:
+            break
+        default:
+            break
+        }
+    }
+    
+    //MARK: - func
     
     /// 大数相关
     func bignum() {
@@ -89,11 +107,11 @@ class MathViewController: BaseViewController {
         let n2 = "159"
         
         let n3 = n1 * n2;
-        let n4 = n1.minus(rhs: n2)
-        let n5 = n1.add(rhs: n2)
-        let n6 = "9999".divid(rhs: "33")
+        let n4 = n1.minus(rhs: n3)
+        let n5 = n1.add(rhs: n4)
+        let n6 = "9999".divid(rhs: "33").add(rhs: n5)
         
-        print(n4)
+        print(n6)
     }
     
     //MARK: - fibinacci
@@ -111,8 +129,7 @@ class MathViewController: BaseViewController {
         let ne = Date()
         let nd = ne.timeIntervalSince1970-ns.timeIntervalSince1970
 
-        FibonacciLabel.text = "计算第\(index)位斐波那契数\n结果\(n)--\(nn)\n递归用时:\(d)\n尾递归用时:\(nd)"
-        
+        alert(message: "计算第\(index)位斐波那契数\n结果\(n)--\(nn)\n递归用时:\(d)\n尾递归用时:\(nd)")
         /*
          fn = (1/sqr(5))*(pow(((1+sqr(5))/2),n)+pow(((1-sqr(5))/2),n))
          //通项公式
@@ -195,19 +212,9 @@ class MathViewController: BaseViewController {
         }
         
         if checkPalindrime(num: count) {
-
-            let alert = UIAlertController.init(title: "成功", message: "回文数字为"+count+"\n\(time)次计算", preferredStyle: .alert)
-            present(alert, animated: true, completion: {
-                //
-            })
-            let close = UIAlertAction.init(title: "确定", style: .default, handler: { (action) in
-                alert.dismiss(animated: true, completion: {
-                    //
-                })
-            })
-            alert.addAction(close)
+            alert(message: "回文数字为"+count+"\n\(time)次计算")
         }else{
-            print(count+" not Palindrime")
+            alert(message: count+" not Palindrime")
             palindrimeNumComit(num: count,time: time+1)
         }
         
@@ -296,9 +303,14 @@ class MathViewController: BaseViewController {
         return ans
     }
     
+    //MARK: - 概率
+    func probability(p:CGFloat) {
+        let c = 100//拆分次数 每百次出现
+        //第100次必定出现
+    }
     
     
-    //MARK: - other
+    //MARK: - 二叉树
     @objc func binaryTreeClick() {
         let bin = BinaryTreeViewController()
         navigationController?.pushViewController(bin, animated: true)
@@ -334,5 +346,58 @@ class MathViewController: BaseViewController {
         let close = ((arc4random()%2+1)+choose)%3;
         //中
     }
+    
+    func toLaTextVC() {
+        let latex = LaTeXViewController.init()
+        navigationController?.pushViewController(latex, animated: true)
+    }
+    
+    /// 提示吧
+    /// - Parameter message: msg
+    func alert(message:String) {
+        let alert = UIAlertController.init(title: "提示", message: message, preferredStyle: .alert)
+        let ok = UIAlertAction.init(title: "OK", style: .default) { (ac) in
+        }
+        alert.addAction(ok)
+        present(alert, animated: true) {
+        }
+    }
 
+}
+
+class MathCollectionCell: UICollectionViewCell {
+//
+    let label:UILabel = UILabel()
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        customInit()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    func customInit() {
+        addSubview(label)
+        label.textColor = UIColor.orange
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.snp.makeConstraints { (make) in
+            make.left.top.equalTo(5)
+            make.right.equalTo(-5)
+            make.bottom.equalTo(-5)
+        }
+        //其他需要国际化的地方
+        enableI18N()
+    }
+
+    override func refreshI18N(noti: NSNotification) {
+        //
+    }
+
+    deinit {
+        disableI18N()
+    }
+    
 }

@@ -45,6 +45,35 @@ class CIFilterViewController: BaseViewController {
         backScroll.addSubview(originalImageView)
         
         y += size+space*2
+        
+        let categories = ["kCICategoryDistortionEffect",
+                          "kCICategoryGeometryAdjustment",
+                          "kCICategoryCompositeOperation",
+                          "kCICategoryHalftoneEffect",
+                          "kCICategoryColorAdjustment",
+                          "kCICategoryColorEffect",
+                          "kCICategoryTransition",
+                          "kCICategoryTileEffect",
+                          "kCICategoryGenerator",
+                          "kCICategoryReduction",
+                          "kCICategoryGradient",
+                          "kCICategoryStylize",
+                          "kCICategorySharpen",
+                          "kCICategoryBlur",
+                          "kCICategoryVideo",
+                          "kCICategoryStillImage",
+                          "kCICategoryInterlaced",
+                          "kCICategoryNonSquarePixels",
+                          "kCICategoryHighDynamicRange",
+                          "kCICategoryBuiltIn",
+                          "kCICategoryFilterGenerator",
+        ];
+        let filterNames = CIFilter.filterNames(inCategories: categories)
+        for name in filterNames {
+            print(name)
+//            let att = CIFilter.init(name: name)?.attributes
+//            print(att)
+        }
     }
     
     @objc func filter() {
@@ -69,6 +98,8 @@ class CIFilterViewController: BaseViewController {
         loadFace()
     }
     
+    
+    // MARK: - 人脸识别
     func loadFace() {
         let image = UIImage.init(named: "testImage5")
         let ciimage = CIImage.init(cgImage: (image?.cgImage)!)
@@ -140,11 +171,30 @@ class CIFilterViewController: BaseViewController {
                     print(facefeature.faceAngle)
                     box.transform = CATransform3DGetAffineTransform(CATransform3DMakeRotation(CGFloat(facefeature.faceAngle/90), 0, 0, 1))
                 }
+                //自己计算角度
+                let y = facefeature.rightEyePosition.y - facefeature.leftEyePosition.y
+                let x = facefeature.rightEyePosition.x - facefeature.leftEyePosition.x
+                let c = sqrt(y*y+x*x)
+                var a = asin(y/c)
+                print(a)
+                if(y < 0) {
+                    a = a * -1;
+                }
+                box.transform = CATransform3DGetAffineTransform(CATransform3DMakeRotation(-a, 0, 0, 1))
             }
             print("--------")
         }
     }
     
+    // MARK:- 矩形识别
+    func loadBox() {
+        let context = CIContext.init(options: nil)
+        let dector = CIDetector.init(ofType: CIDetectorTypeRectangle, context: context, options: nil)
+    }
+    
+    func imageMask() {
+        
+    }
 
     /*
     // MARK: - Navigation

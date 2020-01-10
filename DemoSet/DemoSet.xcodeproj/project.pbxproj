@@ -121,6 +121,7 @@
 		79B26AB61F185EF600B54EC2 /* Icon2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79B26AB51F185EF600B54EC2 /* Icon2@2x.png */; };
 		79B26AB81F185F0300B54EC2 /* Icon2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79B26AB71F185F0300B54EC2 /* Icon2@3x.png */; };
 		79B26ABB1F185FC800B54EC2 /* IconChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B26ABA1F185FC800B54EC2 /* IconChangeViewController.swift */; };
+		79B2B80123C84D1100A9D98A /* LaTeXViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B2B80023C84D1100A9D98A /* LaTeXViewController.swift */; };
 		79B647641F7263780002103E /* MessageFliterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B647631F7263780002103E /* MessageFliterViewController.swift */; };
 		79B647871F7361D90002103E /* MessageFilterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B647861F7361D90002103E /* MessageFilterExtension.swift */; };
 		79B6478B1F7361D90002103E /* MessageFilterExt.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 79B647841F7361D90002103E /* MessageFilterExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -378,6 +379,7 @@
 		79B26AB51F185EF600B54EC2 /* Icon2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon2@2x.png"; sourceTree = "<group>"; };
 		79B26AB71F185F0300B54EC2 /* Icon2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon2@3x.png"; sourceTree = "<group>"; };
 		79B26ABA1F185FC800B54EC2 /* IconChangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconChangeViewController.swift; sourceTree = "<group>"; };
+		79B2B80023C84D1100A9D98A /* LaTeXViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaTeXViewController.swift; sourceTree = "<group>"; };
 		79B647631F7263780002103E /* MessageFliterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFliterViewController.swift; sourceTree = "<group>"; };
 		79B6476E1F7359BB0002103E /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		79B647841F7361D90002103E /* MessageFilterExt.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MessageFilterExt.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -625,6 +627,7 @@
 			isa = PBXGroup;
 			children = (
 				7964680F1F9843E30091D671 /* MathViewController.swift */,
+				79B2B80023C84D1100A9D98A /* LaTeXViewController.swift */,
 				7907B25D1FDE8D4600BB9CD3 /* BinaryTreeViewController.swift */,
 				7907B25F1FDE8D7700BB9CD3 /* BinaryTreeModel.swift */,
 				797D3E4421F9B302002D9E50 /* GoogolViewController.swift */,
@@ -1530,15 +1533,17 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-DemoSet/Pods-DemoSet-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-DemoSet/Pods-DemoSet-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FLEX/FLEX.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/Gilgamesh/Gilgamesh.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MathEditor/MathEditor.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework",
+				"${BUILT_PRODUCTS_DIR}/iosMath/iosMath.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1548,12 +1553,14 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gilgamesh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MathEditor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iosMath.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DemoSet/Pods-DemoSet-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DemoSet/Pods-DemoSet-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AF37B49B50EEDF76BFABC433 /* [CP] Check Pods Manifest.lock */ = {
@@ -1609,6 +1616,7 @@
 				7931EC26238F74B90001FA76 /* PaintView.swift in Sources */,
 				79200167219973040057931D /* CalculatorAbbreviationView.swift in Sources */,
 				791FF81420B2748900AD6B2D /* EvolutionCell.swift in Sources */,
+				79B2B80123C84D1100A9D98A /* LaTeXViewController.swift in Sources */,
 				797E2765221FA94D00E25311 /* ASCIIImageViewController.swift in Sources */,
 				79B26A981F0A513D00B54EC2 /* BufferModel.swift in Sources */,
 				79DCC1601F67ECE100D6A6CE /* PointLineViewController.swift in Sources */,

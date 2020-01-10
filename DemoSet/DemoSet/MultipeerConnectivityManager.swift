@@ -9,6 +9,15 @@
 import UIKit
 import MultipeerConnectivity
 
+enum ConnectRequestType {
+    case request
+    case accept
+    case refuse
+    case passworderror
+    case memberfull
+    case other
+}
+
 class MultipeerConnectivityManager: NSObject,MCSessionDelegate,MCNearbyServiceBrowserDelegate,MCNearbyServiceAdvertiserDelegate {
     
     static let manager = MultipeerConnectivityManager()
@@ -17,6 +26,9 @@ class MultipeerConnectivityManager: NSObject,MCSessionDelegate,MCNearbyServiceBr
     var session:MCSession?
     var browser:MCNearbyServiceBrowser?
     var advertise:MCNearbyServiceAdvertiser?
+    
+    private var passWord = ""
+    private var token = ""
     
     var peers:[MCPeerID] = []//已经连接的设备
     
@@ -64,6 +76,28 @@ class MultipeerConnectivityManager: NSObject,MCSessionDelegate,MCNearbyServiceBr
     
     func connectTo(peerid:MCPeerID) {
         browser?.invitePeer(peerid, to: session!, withContext: nil, timeout: 10)
+    }
+    
+    /// 创建主机
+    func creatHost(name:String,password:String) {
+        let info = ["name":name]
+        passWord = password
+        advertise = MCNearbyServiceAdvertiser.init(peer: peerid!, discoveryInfo: info, serviceType: "chat-files")
+        advertise?.delegate = self
+        advertise!.startAdvertisingPeer()
+    }
+    
+    func closeHost() {
+        advertise?.stopAdvertisingPeer()
+    }
+    
+    func requestHost(peerid:MCPeerID) {
+        token = "asdas"
+        let context = ["state":ConnectRequestType.request,"password":"1234","token":token] as [String : Any]
+        
+        let data = try?JSONSerialization.data(withJSONObject: context, options: [])
+        
+        browser?.invitePeer(peerid, to: session!, withContext: data, timeout: 10)
     }
     
     //MARK: - delegate
@@ -139,9 +173,22 @@ class MultipeerConnectivityManager: NSObject,MCSessionDelegate,MCNearbyServiceBr
         //
         let msg = "receive invitation"
         print(msg)
+        
+        if context != nil {
+            let json = try?JSONSerialization.jsonObject(with: context!, options: .mutableContainers)
+            
+            let dic = json as! [String:Any]
+            
+            print(dic)
+            
+            let state = dic["state"]
+            
+            print(state)
+        }
+        
         addSystemMsg(msg)
         //做一些处理判断是否接受邀请
-        invitationHandler(true,session!)
+        invitationHandler(false,session!)
     }
 
 }

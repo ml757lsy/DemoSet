@@ -10,5 +10,8 @@
 #define DemoSet_Bridging_Header_h
 
 #import "FLEX/FLEX.h"
+#import "IosMath.h"
+//#import "MTEditableMathLabel.h"
+//#import "MTMathKeyboardRootView.h"
 
 #endif /* DemoSet_Bridging_Header_h */

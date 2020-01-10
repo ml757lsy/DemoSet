@@ -54,7 +54,24 @@ class MultipeerConnectivityViewController: BaseViewController,MCBrowserViewContr
         }
     }
     
+    //MARK: - function
+    
     @objc func openSwitchAction() {
+        if open.isOn {
+            //创建
+        }else {
+            //关闭 弹窗确定
+            let alert = UIAlertController.init(title: "警告", message: "是否确定关闭", preferredStyle: .alert)
+            let submit = UIAlertAction.init(title: "确定", style: .default) { (action) in
+                //
+            }
+            let cancel = UIAlertAction.init(title: "取消", style: .cancel) { (action) in
+                self.open.isOn = true;//回拨
+            }
+            alert.addAction(submit)
+            alert.addAction(cancel)
+            show(alert, sender: nil)
+        }
         manager.advertiseSelf(isAdvertise: open.isOn)
     }
     
@@ -67,13 +84,18 @@ class MultipeerConnectivityViewController: BaseViewController,MCBrowserViewContr
     }
     
     @objc func sendMsgAction() {
-        let data = "message".data(using: .utf8)
+        let date = "Time:\(Date.timeIntervalBetween1970AndReferenceDate)"
+        let data = date.data(using: .utf8)
         
         do {
             try manager.session?.send(data!, toPeers: manager.peers, with: .reliable)
         } catch {
             //
         }
+    }
+    
+    func closeHost() {
+        manager.closeHost()
     }
     
     func reactiove(msg:String) {
