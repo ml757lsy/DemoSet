@@ -10,9 +10,12 @@ import UIKit
 import MathEditor
 
 /// 展示和编辑数学公式
-class LaTeXViewController: BaseViewController,MTEditableMathLabelDelegate {
+class LaTeXViewController: BaseViewController,UITextFieldDelegate,MTEditableMathLabelDelegate {
 
     var editorHeight:CGFloat = 64;
+    var mtlabel:MTMathUILabel = MTMathUILabel()
+    let showLabel = UILabel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,19 +24,37 @@ class LaTeXViewController: BaseViewController,MTEditableMathLabelDelegate {
     }
     
     func initView() {
-        let label = MTMathUILabel()
-        label.labelMode = .text
-        label.textAlignment = .left
-        label.fontSize = 25
-        label.latex = "x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}"
-        label.sizeToFit()
-        view.addSubview(label)
         
-        //edit
+        mtlabel.frame = CGRect.init(x: 40, y: 10, width: view.width-80, height: 64)
+        mtlabel.labelMode = .text
+        mtlabel.textAlignment = .left
+        mtlabel.fontSize = 25
+        mtlabel.latex = "x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}"
+        mtlabel.backgroundColor = .white
+        mtlabel.sizeToFit()
+        view.addSubview(mtlabel)
+        
+        let edit = UITextField()
+        edit.frame = CGRect.init(x: 40, y: 100, width: view.width-80, height: 64)
+        edit.layer.borderWidth = 2
+        edit.layer.cornerRadius = 5
+        edit.text = "x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}"
+        edit.delegate = self
+        view.addSubview(edit)
+        
+        let line = UIView.init(frame: CGRect.init(x: 40, y: 180, width: view.width-80, height: 2))
+        line.backgroundColor = UIColor.darkGray
+        view.addSubview(line)
+        
+        //MARK: - editablemath
+        showLabel.frame = CGRect.init(x: 40, y: 200, width: view.width-80, height: 64)
+        view.addSubview(showLabel);
+        
         let editLabel = MTEditableMathLabel()
-        editLabel.frame = CGRect.init(x: 40, y: 100, width: 200, height: editorHeight)
+        editLabel.frame = CGRect.init(x: 40, y: 300, width: view.width-80, height: editorHeight)
         editLabel.layer.borderWidth = 2
         editLabel.layer.cornerRadius = 5
+        editLabel.backgroundColor = .white
         editLabel.delegate = self
         editLabel.keyboard = MTMathKeyboardRootView.sharedInstance()
         editLabel.enableTap(true)
@@ -50,6 +71,7 @@ class LaTeXViewController: BaseViewController,MTEditableMathLabelDelegate {
             // animate
             UIView.animate(withDuration: 0.5) {
                 self.editorHeight = mathSize.height + 10;
+                label.height = self.editorHeight
                 label.layoutIfNeeded()
             }
         } else if (mathSize.height < self.editorHeight - 20) {
@@ -59,6 +81,7 @@ class LaTeXViewController: BaseViewController,MTEditableMathLabelDelegate {
                 // animate
                 UIView.animate(withDuration: 0.5) {
                     self.editorHeight = newHeight;
+                    label.height = self.editorHeight
                     label.layoutIfNeeded()
                 }
             }
@@ -74,8 +97,12 @@ class LaTeXViewController: BaseViewController,MTEditableMathLabelDelegate {
                 label.fontSize = fontSize;
             }
         }
+        showLabel.text = label.mathList.stringValue
     }
 
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        mtlabel.latex = textField.text
+    }
     /*
     // MARK: - Navigation
 

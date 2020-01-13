@@ -91,8 +91,10 @@ class MathViewController: BaseViewController,UICollectionViewDelegate,UICollecti
             threedoor()
             break
         case 5:
+            bignum()
             break
         case 6:
+            toLaTextVC()
             break
         default:
             break
