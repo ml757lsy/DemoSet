@@ -69,7 +69,7 @@ class LocalAuthenticationViewController: BaseViewController {
                 }
             }
         }else {
-            print(error?.debugDescription)
+            print(error?.debugDescription as Any)
         }
     }
     

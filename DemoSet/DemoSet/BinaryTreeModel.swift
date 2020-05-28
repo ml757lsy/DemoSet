@@ -116,6 +116,7 @@ class BinaryTreeNode: NSObject {
         
         let label = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: 20, height: 20))
         label.text = "\(self.value)"
+        label.font = .boldSystemFont(ofSize: 14)
         label.textAlignment = .center
         label.center = self.rect.origin
         label.layer.cornerRadius = 10
@@ -170,6 +171,26 @@ class BinaryTreeNode: NSObject {
         shap.fillColor = UIColor.blue.cgColor
         view.layer.addSublayer(shap)
     }
+    
+    func showInView(view:UIView) {
+        
+    }
+    
+    /// 更新位置
+    func updateRect() {
+        let d = self.depth()
+        let l = self.leftCount()
+        self.rect.size = CGSize.init(width: 20, height: 20)
+        self.rect.origin.x = CGFloat(l)*20
+        if self.left != nil {
+            self.left?.rect.origin.y = CGFloat(d) * (20+40)
+            self.left?.updateRect()
+        }
+        if self.right != nil {
+            self.right?.rect.origin.y = CGFloat(d) * (20+40)
+            self.right?.updateRect()
+        }
+    }
 
     //MARK: - info
     /// 先序遍历 根-左-右
@@ -198,6 +219,15 @@ class BinaryTreeNode: NSObject {
             handler(node!)
             inOrderTraverseTree(node: node?.right, handler: handler)
         }
+    }
+    
+    /// 左侧数
+    func leftCount() -> Int {
+        var count = 0
+        BinaryTreeNode.inOrderTraverseTree(node: self) { (n) in
+            count += 1
+        }
+        return count
     }
     
     /// 后序遍历 左-右-根
@@ -261,6 +291,11 @@ class BinaryTreeNode: NSObject {
         return max(depthl, depthr) + 1
     }
     
+    /// 深度
+    func depth() -> Int {
+        return BinaryTreeNode.depthOfTree(node: self)
+    }
+    
     /// 二叉树的宽度
     ///
     /// - Parameter node: 树
@@ -293,6 +328,11 @@ class BinaryTreeNode: NSObject {
         }
         
         return maxWidth
+    }
+    
+    /// 宽度
+    func width() -> Int {
+        return BinaryTreeNode.widthOfTree(node: self)
     }
     
     /// 二叉树的节点总数

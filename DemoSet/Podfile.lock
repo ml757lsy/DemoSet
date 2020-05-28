@@ -8,6 +8,7 @@ PODS:
   - HandyJSON (5.0.0)
   - iosMath (0.9.4)
   - Kingfisher (4.10.1)
+  - lottie-ios (2.5.3)
   - MathEditor (0.3.0):
     - iosMath (~> 0.9.3)
   - SnapKit (4.2.0)
@@ -22,18 +23,20 @@ DEPENDENCIES:
   - Gilgamesh (~> 0.1.1)
   - HandyJSON (~> 5.0.0)
   - Kingfisher
+  - lottie-ios
   - MathEditor (~> 0.3.0)
   - SnapKit (~> 4.2.0)
   - YYImage (~> 1.0.4)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - FLEX
     - FMDB
     - HandyJSON
     - iosMath
     - Kingfisher
+    - lottie-ios
     - MathEditor
     - SnapKit
     - YYImage
@@ -48,10 +51,11 @@ SPEC CHECKSUMS:
   HandyJSON: 992f2d661716d6a91de82d0056927bc7813b5770
   iosMath: f7a6cbadf9d836d2149c2a84c435b1effc244cba
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
   MathEditor: 0571991a0850213891aead3c2aae6d4b8faa7ced
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
 
-PODFILE CHECKSUM: 46d4ed1d369e41165272678b8a0ede134e8098f0
+PODFILE CHECKSUM: efbf3415dacb686bd33ae04197d414d5392f3756
 
-COCOAPODS: 1.6.2
+COCOAPODS: 1.8.4

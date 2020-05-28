@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import Lottie
 
 class AnimationViewController: BaseViewController {
 
@@ -23,6 +24,12 @@ class AnimationViewController: BaseViewController {
         
         snapkitAnimation()
         waitingAnimation()
+        
+        let ani = LOTAnimationView.init(name: "TwitterHeart")
+        ani.frame = CGRect.init(x: 10, y: 360, width: 150, height: 150)
+        view.addSubview(ani)
+        ani.play()
+        ani.loopAnimation = true
     }
 
     override func didReceiveMemoryWarning() {

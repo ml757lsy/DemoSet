@@ -10,6 +10,57 @@
 		5029ECEC05CB68AC730AF2C3 /* Pods_DemoSet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B57CB0D8E15F346CDBC020A0 /* Pods_DemoSet.framework */; };
 		7907B25E1FDE8D4600BB9CD3 /* BinaryTreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7907B25D1FDE8D4600BB9CD3 /* BinaryTreeViewController.swift */; };
 		7907B2601FDE8D7700BB9CD3 /* BinaryTreeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7907B25F1FDE8D7700BB9CD3 /* BinaryTreeModel.swift */; };
+		79084D2E2424D29B00C55CBD /* Switch_States.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084CFA2424D29800C55CBD /* Switch_States.json */; };
+		79084D2F2424D29B00C55CBD /* LottieLogo1.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084CFB2424D29800C55CBD /* LottieLogo1.json */; };
+		79084D302424D29B00C55CBD /* timeremap.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084CFC2424D29900C55CBD /* timeremap.json */; };
+		79084D312424D29B00C55CBD /* vcTransition1.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084CFD2424D29900C55CBD /* vcTransition1.json */; };
+		79084D322424D29B00C55CBD /* MotionCorpse-Jrcanest.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084CFE2424D29900C55CBD /* MotionCorpse-Jrcanest.json */; };
+		79084D332424D29B00C55CBD /* Switch.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084CFF2424D29900C55CBD /* Switch.json */; };
+		79084D342424D29B00C55CBD /* Watermelon.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D002424D29900C55CBD /* Watermelon.json */; };
+		79084D352424D29B00C55CBD /* LottieLogo1_masked.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D012424D29900C55CBD /* LottieLogo1_masked.json */; };
+		79084D362424D29B00C55CBD /* GeometryTransformTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D022424D29A00C55CBD /* GeometryTransformTest.json */; };
+		79084D372424D29B00C55CBD /* Boat_Loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D032424D29A00C55CBD /* Boat_Loader.json */; };
+		79084D382424D29B00C55CBD /* setValueTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D042424D29A00C55CBD /* setValueTest.json */; };
+		79084D392424D29B00C55CBD /* TwitterHeartButton.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D052424D29A00C55CBD /* TwitterHeartButton.json */; };
+		79084D3A2424D29B00C55CBD /* IconTransitions.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D062424D29A00C55CBD /* IconTransitions.json */; };
+		79084D3B2424D29B00C55CBD /* LottieLogo2.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D072424D29A00C55CBD /* LottieLogo2.json */; };
+		79084D3C2424D29B00C55CBD /* 9squares-AlBoardman.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D082424D29A00C55CBD /* 9squares-AlBoardman.json */; };
+		79084D3D2424D29B00C55CBD /* FirstText.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D092424D29A00C55CBD /* FirstText.json */; };
+		79084D3E2424D29B00C55CBD /* TwitterHeart.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D0A2424D29B00C55CBD /* TwitterHeart.json */; };
+		79084D3F2424D29B00C55CBD /* PinJump.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D0B2424D29B00C55CBD /* PinJump.json */; };
+		79084D402424D29B00C55CBD /* vcTransition2.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D0C2424D29B00C55CBD /* vcTransition2.json */; };
+		79084D412424D29B00C55CBD /* T.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D0E2424D29B00C55CBD /* T.json */; };
+		79084D422424D29B00C55CBD /* A.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D0F2424D29B00C55CBD /* A.json */; };
+		79084D432424D29B00C55CBD /* X.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D102424D29B00C55CBD /* X.json */; };
+		79084D442424D29B00C55CBD /* BlinkingCursor.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D112424D29B00C55CBD /* BlinkingCursor.json */; };
+		79084D452424D29B00C55CBD /* M.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D122424D29B00C55CBD /* M.json */; };
+		79084D462424D29B00C55CBD /* L.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D132424D29B00C55CBD /* L.json */; };
+		79084D472424D29B00C55CBD /* Y.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D142424D29B00C55CBD /* Y.json */; };
+		79084D482424D29B00C55CBD /* U.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D152424D29B00C55CBD /* U.json */; };
+		79084D492424D29B00C55CBD /* K.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D162424D29B00C55CBD /* K.json */; };
+		79084D4A2424D29B00C55CBD /* R.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D172424D29B00C55CBD /* R.json */; };
+		79084D4B2424D29B00C55CBD /* G.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D182424D29B00C55CBD /* G.json */; };
+		79084D4C2424D29B00C55CBD /* F.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D192424D29B00C55CBD /* F.json */; };
+		79084D4D2424D29B00C55CBD /* S.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D1A2424D29B00C55CBD /* S.json */; };
+		79084D4E2424D29B00C55CBD /* J.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D1B2424D29B00C55CBD /* J.json */; };
+		79084D4F2424D29B00C55CBD /* I.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D1C2424D29B00C55CBD /* I.json */; };
+		79084D502424D29C00C55CBD /* E.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D1D2424D29B00C55CBD /* E.json */; };
+		79084D512424D29C00C55CBD /* Apostrophe.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D1E2424D29B00C55CBD /* Apostrophe.json */; };
+		79084D522424D29C00C55CBD /* P.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D1F2424D29B00C55CBD /* P.json */; };
+		79084D532424D29C00C55CBD /* Q.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D202424D29B00C55CBD /* Q.json */; };
+		79084D542424D29C00C55CBD /* D.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D212424D29B00C55CBD /* D.json */; };
+		79084D552424D29C00C55CBD /* Colon.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D222424D29B00C55CBD /* Colon.json */; };
+		79084D562424D29C00C55CBD /* H.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D232424D29B00C55CBD /* H.json */; };
+		79084D572424D29C00C55CBD /* C.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D242424D29B00C55CBD /* C.json */; };
+		79084D582424D29C00C55CBD /* V.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D252424D29B00C55CBD /* V.json */; };
+		79084D592424D29C00C55CBD /* Comma.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D262424D29B00C55CBD /* Comma.json */; };
+		79084D5A2424D29C00C55CBD /* O.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D272424D29B00C55CBD /* O.json */; };
+		79084D5B2424D29C00C55CBD /* Z.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D282424D29B00C55CBD /* Z.json */; };
+		79084D5C2424D29C00C55CBD /* N.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D292424D29B00C55CBD /* N.json */; };
+		79084D5D2424D29C00C55CBD /* W.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D2A2424D29B00C55CBD /* W.json */; };
+		79084D5E2424D29C00C55CBD /* B.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D2B2424D29B00C55CBD /* B.json */; };
+		79084D5F2424D29C00C55CBD /* keypathTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D2C2424D29B00C55CBD /* keypathTest.json */; };
+		79084D602424D29C00C55CBD /* HamburgerArrow.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D2D2424D29B00C55CBD /* HamburgerArrow.json */; };
 		791FF81220B2743000AD6B2D /* EvolutionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791FF81120B2743000AD6B2D /* EvolutionViewController.swift */; };
 		791FF81420B2748900AD6B2D /* EvolutionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791FF81320B2748900AD6B2D /* EvolutionCell.swift */; };
 		791FF81620B274B500AD6B2D /* EvolutionGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791FF81520B274B500AD6B2D /* EvolutionGround.swift */; };
@@ -250,6 +301,57 @@
 		3A0DAFE85DDB291EF6D64925 /* Pods-DemoSet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoSet.release.xcconfig"; path = "Pods/Target Support Files/Pods-DemoSet/Pods-DemoSet.release.xcconfig"; sourceTree = "<group>"; };
 		7907B25D1FDE8D4600BB9CD3 /* BinaryTreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTreeViewController.swift; sourceTree = "<group>"; };
 		7907B25F1FDE8D7700BB9CD3 /* BinaryTreeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTreeModel.swift; sourceTree = "<group>"; };
+		79084CFA2424D29800C55CBD /* Switch_States.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Switch_States.json; sourceTree = "<group>"; };
+		79084CFB2424D29800C55CBD /* LottieLogo1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieLogo1.json; sourceTree = "<group>"; };
+		79084CFC2424D29900C55CBD /* timeremap.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = timeremap.json; sourceTree = "<group>"; };
+		79084CFD2424D29900C55CBD /* vcTransition1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vcTransition1.json; sourceTree = "<group>"; };
+		79084CFE2424D29900C55CBD /* MotionCorpse-Jrcanest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "MotionCorpse-Jrcanest.json"; sourceTree = "<group>"; };
+		79084CFF2424D29900C55CBD /* Switch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Switch.json; sourceTree = "<group>"; };
+		79084D002424D29900C55CBD /* Watermelon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Watermelon.json; sourceTree = "<group>"; };
+		79084D012424D29900C55CBD /* LottieLogo1_masked.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieLogo1_masked.json; sourceTree = "<group>"; };
+		79084D022424D29A00C55CBD /* GeometryTransformTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GeometryTransformTest.json; sourceTree = "<group>"; };
+		79084D032424D29A00C55CBD /* Boat_Loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Boat_Loader.json; sourceTree = "<group>"; };
+		79084D042424D29A00C55CBD /* setValueTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = setValueTest.json; sourceTree = "<group>"; };
+		79084D052424D29A00C55CBD /* TwitterHeartButton.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TwitterHeartButton.json; sourceTree = "<group>"; };
+		79084D062424D29A00C55CBD /* IconTransitions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = IconTransitions.json; sourceTree = "<group>"; };
+		79084D072424D29A00C55CBD /* LottieLogo2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieLogo2.json; sourceTree = "<group>"; };
+		79084D082424D29A00C55CBD /* 9squares-AlBoardman.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "9squares-AlBoardman.json"; sourceTree = "<group>"; };
+		79084D092424D29A00C55CBD /* FirstText.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FirstText.json; sourceTree = "<group>"; };
+		79084D0A2424D29B00C55CBD /* TwitterHeart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TwitterHeart.json; sourceTree = "<group>"; };
+		79084D0B2424D29B00C55CBD /* PinJump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PinJump.json; sourceTree = "<group>"; };
+		79084D0C2424D29B00C55CBD /* vcTransition2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vcTransition2.json; sourceTree = "<group>"; };
+		79084D0E2424D29B00C55CBD /* T.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = T.json; sourceTree = "<group>"; };
+		79084D0F2424D29B00C55CBD /* A.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = A.json; sourceTree = "<group>"; };
+		79084D102424D29B00C55CBD /* X.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = X.json; sourceTree = "<group>"; };
+		79084D112424D29B00C55CBD /* BlinkingCursor.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BlinkingCursor.json; sourceTree = "<group>"; };
+		79084D122424D29B00C55CBD /* M.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = M.json; sourceTree = "<group>"; };
+		79084D132424D29B00C55CBD /* L.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = L.json; sourceTree = "<group>"; };
+		79084D142424D29B00C55CBD /* Y.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Y.json; sourceTree = "<group>"; };
+		79084D152424D29B00C55CBD /* U.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = U.json; sourceTree = "<group>"; };
+		79084D162424D29B00C55CBD /* K.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = K.json; sourceTree = "<group>"; };
+		79084D172424D29B00C55CBD /* R.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = R.json; sourceTree = "<group>"; };
+		79084D182424D29B00C55CBD /* G.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = G.json; sourceTree = "<group>"; };
+		79084D192424D29B00C55CBD /* F.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = F.json; sourceTree = "<group>"; };
+		79084D1A2424D29B00C55CBD /* S.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = S.json; sourceTree = "<group>"; };
+		79084D1B2424D29B00C55CBD /* J.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = J.json; sourceTree = "<group>"; };
+		79084D1C2424D29B00C55CBD /* I.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = I.json; sourceTree = "<group>"; };
+		79084D1D2424D29B00C55CBD /* E.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = E.json; sourceTree = "<group>"; };
+		79084D1E2424D29B00C55CBD /* Apostrophe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Apostrophe.json; sourceTree = "<group>"; };
+		79084D1F2424D29B00C55CBD /* P.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = P.json; sourceTree = "<group>"; };
+		79084D202424D29B00C55CBD /* Q.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Q.json; sourceTree = "<group>"; };
+		79084D212424D29B00C55CBD /* D.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = D.json; sourceTree = "<group>"; };
+		79084D222424D29B00C55CBD /* Colon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Colon.json; sourceTree = "<group>"; };
+		79084D232424D29B00C55CBD /* H.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = H.json; sourceTree = "<group>"; };
+		79084D242424D29B00C55CBD /* C.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = C.json; sourceTree = "<group>"; };
+		79084D252424D29B00C55CBD /* V.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = V.json; sourceTree = "<group>"; };
+		79084D262424D29B00C55CBD /* Comma.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Comma.json; sourceTree = "<group>"; };
+		79084D272424D29B00C55CBD /* O.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = O.json; sourceTree = "<group>"; };
+		79084D282424D29B00C55CBD /* Z.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Z.json; sourceTree = "<group>"; };
+		79084D292424D29B00C55CBD /* N.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = N.json; sourceTree = "<group>"; };
+		79084D2A2424D29B00C55CBD /* W.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = W.json; sourceTree = "<group>"; };
+		79084D2B2424D29B00C55CBD /* B.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = B.json; sourceTree = "<group>"; };
+		79084D2C2424D29B00C55CBD /* keypathTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = keypathTest.json; sourceTree = "<group>"; };
+		79084D2D2424D29B00C55CBD /* HamburgerArrow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HamburgerArrow.json; sourceTree = "<group>"; };
 		791FF81120B2743000AD6B2D /* EvolutionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolutionViewController.swift; sourceTree = "<group>"; };
 		791FF81320B2748900AD6B2D /* EvolutionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolutionCell.swift; sourceTree = "<group>"; };
 		791FF81520B274B500AD6B2D /* EvolutionGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolutionGround.swift; sourceTree = "<group>"; };
@@ -507,6 +609,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		79084D0D2424D29B00C55CBD /* TypeFace */ = {
+			isa = PBXGroup;
+			children = (
+				79084D0E2424D29B00C55CBD /* T.json */,
+				79084D0F2424D29B00C55CBD /* A.json */,
+				79084D102424D29B00C55CBD /* X.json */,
+				79084D112424D29B00C55CBD /* BlinkingCursor.json */,
+				79084D122424D29B00C55CBD /* M.json */,
+				79084D132424D29B00C55CBD /* L.json */,
+				79084D142424D29B00C55CBD /* Y.json */,
+				79084D152424D29B00C55CBD /* U.json */,
+				79084D162424D29B00C55CBD /* K.json */,
+				79084D172424D29B00C55CBD /* R.json */,
+				79084D182424D29B00C55CBD /* G.json */,
+				79084D192424D29B00C55CBD /* F.json */,
+				79084D1A2424D29B00C55CBD /* S.json */,
+				79084D1B2424D29B00C55CBD /* J.json */,
+				79084D1C2424D29B00C55CBD /* I.json */,
+				79084D1D2424D29B00C55CBD /* E.json */,
+				79084D1E2424D29B00C55CBD /* Apostrophe.json */,
+				79084D1F2424D29B00C55CBD /* P.json */,
+				79084D202424D29B00C55CBD /* Q.json */,
+				79084D212424D29B00C55CBD /* D.json */,
+				79084D222424D29B00C55CBD /* Colon.json */,
+				79084D232424D29B00C55CBD /* H.json */,
+				79084D242424D29B00C55CBD /* C.json */,
+				79084D252424D29B00C55CBD /* V.json */,
+				79084D262424D29B00C55CBD /* Comma.json */,
+				79084D272424D29B00C55CBD /* O.json */,
+				79084D282424D29B00C55CBD /* Z.json */,
+				79084D292424D29B00C55CBD /* N.json */,
+				79084D2A2424D29B00C55CBD /* W.json */,
+				79084D2B2424D29B00C55CBD /* B.json */,
+			);
+			path = TypeFace;
+			sourceTree = "<group>";
+		};
 		791FF81D20B3EA7C00AD6B2D /* PassWordProduce */ = {
 			isa = PBXGroup;
 			children = (
@@ -588,8 +727,37 @@
 				79C4130C230FEB9B0090ACCD /* 3B63A8C86AF3E15972D664A98D1610AB.gif */,
 				79C41306230E734B0090ACCD /* bwQ5-c1w8XoZ6jT3cSb0-g9.gif */,
 				7940BE29236963D60054960E /* 4da0e35c49aa37b70fd54a5b92447df0d9c259661a9865-t8562E_fw658.gif */,
+				79084D082424D29A00C55CBD /* 9squares-AlBoardman.json */,
+				79084D032424D29A00C55CBD /* Boat_Loader.json */,
+				79084D092424D29A00C55CBD /* FirstText.json */,
+				79084D022424D29A00C55CBD /* GeometryTransformTest.json */,
+				79084D2D2424D29B00C55CBD /* HamburgerArrow.json */,
+				79084D062424D29A00C55CBD /* IconTransitions.json */,
+				79084D2C2424D29B00C55CBD /* keypathTest.json */,
+				79084D012424D29900C55CBD /* LottieLogo1_masked.json */,
+				79084CFB2424D29800C55CBD /* LottieLogo1.json */,
+				79084D072424D29A00C55CBD /* LottieLogo2.json */,
+				79084CFE2424D29900C55CBD /* MotionCorpse-Jrcanest.json */,
+				79084D0B2424D29B00C55CBD /* PinJump.json */,
+				79084D042424D29A00C55CBD /* setValueTest.json */,
+				79084CFA2424D29800C55CBD /* Switch_States.json */,
+				79084CFF2424D29900C55CBD /* Switch.json */,
+				79084CFC2424D29900C55CBD /* timeremap.json */,
+				79084D0A2424D29B00C55CBD /* TwitterHeart.json */,
+				79084D052424D29A00C55CBD /* TwitterHeartButton.json */,
+				79084D0D2424D29B00C55CBD /* TypeFace */,
+				79084CFD2424D29900C55CBD /* vcTransition1.json */,
+				79084D0C2424D29B00C55CBD /* vcTransition2.json */,
+				79084D002424D29900C55CBD /* Watermelon.json */,
 			);
 			name = Resource;
+			sourceTree = "<group>";
+		};
+		793689702436DEB900F5D923 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Lib;
 			sourceTree = "<group>";
 		};
 		7948D9D420EF0985004D1B67 /* Wakeup */ = {
@@ -834,6 +1002,7 @@
 		79A923F01EEAA30D00D91121 /* DemoSet */ = {
 			isa = PBXGroup;
 			children = (
+				793689702436DEB900F5D923 /* Lib */,
 				7933A46920D1003100AE36D7 /* Resource */,
 				79B647D51F78AFA90002103E /* DemoSet.entitlements */,
 				79FB35021EEAA5540083ED79 /* Base */,
@@ -1383,7 +1552,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = Far;
 				TargetAttributes = {
 					797D3E1721F19102002D9E50 = {
@@ -1480,25 +1649,76 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79084D5A2424D29C00C55CBD /* O.json in Resources */,
+				79084D362424D29B00C55CBD /* GeometryTransformTest.json in Resources */,
+				79084D3C2424D29B00C55CBD /* 9squares-AlBoardman.json in Resources */,
 				79DCC16D1F6A72F300D6A6CE /* Second.storyboard in Resources */,
+				79084D422424D29B00C55CBD /* A.json in Resources */,
+				79084D392424D29B00C55CBD /* TwitterHeartButton.json in Resources */,
+				79084D322424D29B00C55CBD /* MotionCorpse-Jrcanest.json in Resources */,
 				79A923FC1EEAA30D00D91121 /* LaunchScreen.storyboard in Resources */,
 				795714302005C0F70007078A /* LineData.plist in Resources */,
+				79084D302424D29B00C55CBD /* timeremap.json in Resources */,
+				79084D492424D29B00C55CBD /* K.json in Resources */,
 				7988B0F3224CF9A2000120C3 /* 83.mp3 in Resources */,
 				79B26AB81F185F0300B54EC2 /* Icon2@3x.png in Resources */,
+				79084D512424D29C00C55CBD /* Apostrophe.json in Resources */,
+				79084D412424D29B00C55CBD /* T.json in Resources */,
+				79084D4F2424D29B00C55CBD /* I.json in Resources */,
+				79084D4D2424D29B00C55CBD /* S.json in Resources */,
+				79084D3A2424D29B00C55CBD /* IconTransitions.json in Resources */,
+				79084D5B2424D29C00C55CBD /* Z.json in Resources */,
+				79084D572424D29C00C55CBD /* C.json in Resources */,
 				7933A46B20D1004F00AE36D7 /* testGif.gif in Resources */,
 				79EB465620DC9CA8000CB1B9 /* testGif2.gif in Resources */,
+				79084D5C2424D29C00C55CBD /* N.json in Resources */,
+				79084D402424D29B00C55CBD /* vcTransition2.json in Resources */,
 				79A923F91EEAA30D00D91121 /* Assets.xcassets in Resources */,
 				7933A3D620BBE60800AE36D7 /* I18N.strings in Resources */,
+				79084D3F2424D29B00C55CBD /* PinJump.json in Resources */,
+				79084D3D2424D29B00C55CBD /* FirstText.json in Resources */,
+				79084D4A2424D29B00C55CBD /* R.json in Resources */,
+				79084D442424D29B00C55CBD /* BlinkingCursor.json in Resources */,
+				79084D4E2424D29B00C55CBD /* J.json in Resources */,
+				79084D372424D29B00C55CBD /* Boat_Loader.json in Resources */,
+				79084D382424D29B00C55CBD /* setValueTest.json in Resources */,
+				79084D432424D29B00C55CBD /* X.json in Resources */,
+				79084D592424D29C00C55CBD /* Comma.json in Resources */,
 				7940BE2A236963D60054960E /* 4da0e35c49aa37b70fd54a5b92447df0d9c259661a9865-t8562E_fw658.gif in Resources */,
+				79084D542424D29C00C55CBD /* D.json in Resources */,
+				79084D462424D29B00C55CBD /* L.json in Resources */,
+				79084D2E2424D29B00C55CBD /* Switch_States.json in Resources */,
+				79084D342424D29B00C55CBD /* Watermelon.json in Resources */,
 				79C4130A230FEB780090ACCD /* t01348fb6a07ef8447b.gif in Resources */,
 				79A923F71EEAA30D00D91121 /* Main.storyboard in Resources */,
+				79084D582424D29C00C55CBD /* V.json in Resources */,
+				79084D602424D29C00C55CBD /* HamburgerArrow.json in Resources */,
 				797D3E3821F1B6EC002D9E50 /* AppIntentVocablary.plist in Resources */,
+				79084D472424D29B00C55CBD /* Y.json in Resources */,
+				79084D312424D29B00C55CBD /* vcTransition1.json in Resources */,
+				79084D452424D29B00C55CBD /* M.json in Resources */,
+				79084D352424D29B00C55CBD /* LottieLogo1_masked.json in Resources */,
+				79084D562424D29C00C55CBD /* H.json in Resources */,
+				79084D5D2424D29C00C55CBD /* W.json in Resources */,
 				7957142F2005C0F70007078A /* StationData.plist in Resources */,
 				79C4131523167FE20090ACCD /* dic.txt in Resources */,
 				79B26AB61F185EF600B54EC2 /* Icon2@2x.png in Resources */,
 				79EB465E20DCFE9D000CB1B9 /* subways.sql in Resources */,
+				79084D5E2424D29C00C55CBD /* B.json in Resources */,
+				79084D3B2424D29B00C55CBD /* LottieLogo2.json in Resources */,
 				79C4130B230FEB780090ACCD /* bwQ5-g4puXiZ4zT1kS8a-8q.gif in Resources */,
+				79084D2F2424D29B00C55CBD /* LottieLogo1.json in Resources */,
+				79084D3E2424D29B00C55CBD /* TwitterHeart.json in Resources */,
+				79084D4B2424D29B00C55CBD /* G.json in Resources */,
+				79084D522424D29C00C55CBD /* P.json in Resources */,
+				79084D332424D29B00C55CBD /* Switch.json in Resources */,
+				79084D552424D29C00C55CBD /* Colon.json in Resources */,
+				79084D502424D29C00C55CBD /* E.json in Resources */,
 				79C4130D230FEB9B0090ACCD /* 3B63A8C86AF3E15972D664A98D1610AB.gif in Resources */,
+				79084D482424D29B00C55CBD /* U.json in Resources */,
+				79084D5F2424D29C00C55CBD /* keypathTest.json in Resources */,
+				79084D532424D29C00C55CBD /* Q.json in Resources */,
+				79084D4C2424D29B00C55CBD /* F.json in Resources */,
 				79C41307230E734B0090ACCD /* bwQ5-c1w8XoZ6jT3cSb0-g9.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1544,6 +1764,7 @@
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework",
 				"${BUILT_PRODUCTS_DIR}/iosMath/iosMath.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1557,6 +1778,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iosMath.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1989,15 +2211,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -2026,7 +2256,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = "";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -2040,15 +2270,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -2069,7 +2307,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = "";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -2084,6 +2322,10 @@
 				CODE_SIGN_ENTITLEMENTS = DemoSet/DemoSet.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = WUWMJYLBP4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DemoSet",
+				);
 				INFOPLIST_FILE = DemoSet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2107,6 +2349,10 @@
 				CODE_SIGN_ENTITLEMENTS = DemoSet/DemoSet.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = WUWMJYLBP4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DemoSet",
+				);
 				INFOPLIST_FILE = DemoSet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

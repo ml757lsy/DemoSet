@@ -114,7 +114,7 @@ class SortViewController: BaseViewController {
                         self.list[i] = self.list[j]
                         self.list[j] = temp
                     }
-                    Thread.sleep(forTimeInterval: 0.04)//延时表示
+                    Thread.sleep(forTimeInterval: 0.4)//延时表示
                     DispatchQueue.main.async {
                         self.secV.frame = self.columns[i].frame
                         self.aimV.frame = self.columns[j].frame

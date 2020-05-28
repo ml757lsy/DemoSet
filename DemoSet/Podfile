@@ -6,16 +6,15 @@ source 'https://github.com/CocoaPods/Specs'
 source 'https://github.com/ml757lsy/MLSpaces'
 
 target 'DemoSet' do
-#pod 'AFNetworking','~> 3.2.1'
-pod 'Alamofire'
+pod 'Alamofire','~> 5.1.0'
 pod 'HandyJSON','~> 5.0.0'
 pod 'SnapKit', '~> 4.2.0'
-#pod 'OpenCV', '~> 3.4.1'
 pod 'FMDB', '~> 2.7.2'
 pod 'FLEX', '~> 2.4.0'
 pod 'Kingfisher'
 pod 'YYImage','~> 1.0.4'
 pod 'Gilgamesh', '~> 0.1.1'
 pod 'MathEditor', '~> 0.3.0'
+pod 'lottie-ios'
 
 end

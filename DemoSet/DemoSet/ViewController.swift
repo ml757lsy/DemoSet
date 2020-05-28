@@ -291,6 +291,9 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             break
         case 50:
             aimController = PaintViewController()
+            break
+        case 51:
+            break
             
         default:
             break
