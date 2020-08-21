@@ -410,6 +410,21 @@ class QRCodeModule: NSObject {
         return view.toImage()
     }
     
+    /// 从图片读取二维码
+    /// - Parameter image: img
+    /// - Returns: [String]
+    class func readWith(image:UIImage) -> [String] {
+        let img:CIImage = image.ciImage!
+        let context = CIContext(options: nil)
+        let decter:CIDetector = CIDetector(ofType: CIDetectorTypeQRCode, context: context, options: [CIDetectorAccuracy:CIDetectorAccuracyHigh])!
+        let feture = decter.features(in: img)
+        var strings:[String] = []
+        for feat in feture as! [CIQRCodeFeature] {
+            let s = feat.messageString
+            strings.append(s!)
+        }
+        return strings
+    }
     
     //MARK:-
     class func other() {

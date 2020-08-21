@@ -11,7 +11,7 @@ import UIKit
 extension Character {
     
     var int:Int {
-        return Int(String(self)) ?? 0
+        return self.wholeNumberValue!
     }
     
 }

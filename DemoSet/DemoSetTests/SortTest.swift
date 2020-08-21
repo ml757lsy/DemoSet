@@ -24,11 +24,11 @@ class SortTest: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let s = SortViewController()
-        s.viewDidLoad()
-        s.insertSort()
-        s.quickSort()
-        s.compareSort()
+//        let s = SortViewController()
+//        s.viewDidLoad()
+//        s.insertSort()
+//        s.quickSort()
+//        s.compareSort()
         
     }
     

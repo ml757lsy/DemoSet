@@ -164,6 +164,14 @@ class AnimationViewController: BaseViewController {
         
     }
     
+    func pagetransform() {
+        let v1 = UIView.init(frame: CGRect.init(x: 200, y: 380, width: 100, height: 60))
+        v1.backgroundColor = UIColor.red
+        let v2 = UIView.init(frame: CGRect.init(x: 200, y: 380, width: 100, height: 60))
+        v2.backgroundColor = UIColor.green
+        
+    }
+    
     //MARK: - snapkit
     func snapkitAnimation() {
         let snpview = UIView.init()

@@ -338,6 +338,8 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
 //            }
 //        }
         
+        OCObject.init().loadModel()
+        
     }
     
     @objc func selectorTest() {
@@ -378,6 +380,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         let cell:HomeCollectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Homecell", for: indexPath) as! HomeCollectionCell
         cell.backgroundColor = UIColor.randomColor()
         cell.label.I18NLocalized(key: list[indexPath.row])
+        cell.startAnimation()
         return cell
     }
     
@@ -413,10 +416,17 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
 class HomeCollectionCell: UICollectionViewCell {
     //
     let label:UILabel = UILabel()
+    var gllayer:CAGradientLayer = CAGradientLayer()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         customInit()
+        initCaGradientLayer()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        gllayer.frame = CGRect.init(x: 0, y: 0, width: width, height: height)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -435,6 +445,41 @@ class HomeCollectionCell: UICollectionViewCell {
         }
         //其他需要国际化的地方
         enableI18N()
+    }
+    
+    func initCaGradientLayer() {
+        gllayer.startPoint = CGPoint.init(x: 0, y: 0)
+        gllayer.endPoint = CGPoint.init(x: 1, y: 1)
+        let colors = [UIColor.red.cgColor,UIColor.green.cgColor,UIColor.purple.cgColor];
+        gllayer.colors = colors;
+        let locations:[NSNumber] = [0.25,0.5,0.75]
+        gllayer.locations = locations
+    }
+    
+    func startAnimation() {
+        var labelStr = ""
+        labelStr = label.text ?? ""
+        let abtext = NSAttributedString.init(string: labelStr, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 18)])
+        let render = UIGraphicsImageRenderer.init(bounds: bounds)
+        let img = render.image { (context) in
+            abtext.draw(with: bounds, options: .usesLineFragmentOrigin, context: nil)
+        }
+        
+        let mask = CALayer()
+        mask.backgroundColor = UIColor.clear.cgColor
+        mask.frame = bounds
+        mask.contents = img.cgImage
+        gllayer.mask = mask
+        
+        layer.addSublayer(gllayer)
+        
+        let animation = CABasicAnimation.init(keyPath: "locations")
+        animation.fromValue = [0.125, 0.25, 0.375]
+        animation.toValue = [0.675,0.75,0.875]
+        animation.duration = 5
+        animation.repeatCount = Float.infinity
+        
+        gllayer.add(animation, forKey: nil)
     }
     
     override func refreshI18N(noti: NSNotification) {

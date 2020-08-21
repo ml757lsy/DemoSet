@@ -47,15 +47,85 @@ extension String {
         return Character(self.substring(with: Range.init(NSRange.init(location: index, length: 1), in: self)!))
     }
     
+    /// 转换为纯数字内容
+    /// - Returns: str
+    func googolString() -> String {
+        //-0-9.
+        var result = self
+        while result.hasPrefix("0") {
+            result.remove(at: startIndex)
+        }
+        
+        //-
+        var hasp = false
+        if result.hasPrefix("-") {
+            hasp = true
+        }
+        let c1 = "0123456789."
+        result = result.filter { (char) -> Bool in
+            return c1.contains(char)
+        }
+        
+        //.
+        let r = result.range(of: ".")
+        let d = r?.lowerBound.utf16Offset(in: result)
+        let c2 = "0123456789"
+        result = result.filter({ (char) -> Bool in
+            return c2.contains(char)
+        })
+        if d != nil {
+            result.insert(".", at: Index.init(utf16Offset: d!, in: result))
+        }
+        while result.hasPrefix("0") {
+            result.remove(at: startIndex)
+        }
+        if result.hasPrefix(".") {
+            result.insert("0", at: startIndex)
+        }
+        
+        if hasp {
+            result.insert("-", at: startIndex)
+        }
+        return result
+    }
+    
+    /// 算式化
+    /// - Returns: str
+    func formulaString() -> String {
+        let c = "01234567890.+-*/()"
+        return self.filter { (char) -> Bool in
+            return c.contains(char)
+        }
+    }
+    
+    func fistC() -> String {
+        var result = ""
+        var start = 0
+        var end = 0;
+        var i = 0;
+        for c in self {
+            i += 1;
+            if c == ")" {
+                end = i-1;
+                break
+            }
+            if c == "(" {
+                start = i;
+            }
+        }
+        result = self.substring(with: Range.init(NSRange.init(location: start, length: end-start), in: self)!)
+        
+        return result
+    }
+    
     /// 相乘
     ///
     /// - Parameters:
-    ///   - lhs: 左
     ///   - rhs: 右
     /// - Returns: 其他
-    static func * (lhs: String, rhs: String) -> String {
+    func multiply (rhs: String) -> String {
         var list:[[Int]] = []
-        for c1 in lhs {
+        for c1 in self {
             var nl:[Int] = []
             for c2 in rhs {
                 let n = c1.int * c2.int
@@ -97,7 +167,7 @@ extension String {
         
         return result
     }
-    
+                                                                                                                                                                                      
     /// 数字加
     ///
     /// - Parameter rhs: 另一个参数
@@ -217,7 +287,7 @@ extension String {
     ///
     /// - Parameter rhs: 被除数
     /// - Returns: 结果
-    func divid(rhs:String) -> String {
+    func divid(rhs:String, multiply:Int) -> String {
         
         var num = self
         let b = rhs

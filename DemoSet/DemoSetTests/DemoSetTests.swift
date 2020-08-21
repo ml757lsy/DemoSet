@@ -24,15 +24,15 @@ class DemoSetTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let v = ViewController()
-        print(v.view.subviews);
+//        let v = ViewController()
+//        print(v.view.subviews);
     }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
-            let v = MathViewController()
-            v.Fibinacci()
+//            let v = MathViewController()
+//            v.Fibinacci()
             // Put the code you want to measure the time of here.
         }
     }

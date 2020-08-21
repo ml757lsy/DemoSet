@@ -75,6 +75,8 @@
 		79200169219973A90057931D /* CalculatorBignumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79200168219973A90057931D /* CalculatorBignumberView.swift */; };
 		7924D1C91FD9364100CEECB6 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7924D1C81FD9364100CEECB6 /* UIImageView+Extension.swift */; };
 		792E5E901FF0F530007E7605 /* CasinoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792E5E8F1FF0F530007E7605 /* CasinoViewController.swift */; };
+		7931C0A22492294D005E3720 /* CasinoDicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7931C0A02492294D005E3720 /* CasinoDicViewController.swift */; };
+		7931C0A32492294D005E3720 /* CasinoDicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7931C0A12492294D005E3720 /* CasinoDicViewController.xib */; };
 		7931EC24238F74A90001FA76 /* PaintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7931EC23238F74A90001FA76 /* PaintViewController.swift */; };
 		7931EC26238F74B90001FA76 /* PaintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7931EC25238F74B90001FA76 /* PaintView.swift */; };
 		7933A3D120BBE33300AE36D7 /* I18NViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7933A3D020BBE33300AE36D7 /* I18NViewController.swift */; };
@@ -106,6 +108,7 @@
 		795853BC1EEFBB4000F214A5 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795853BB1EEFBB4000F214A5 /* UIView+Extension.swift */; };
 		796468101F9843E30091D671 /* MathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7964680F1F9843E30091D671 /* MathViewController.swift */; };
 		796468121F99CF6E0091D671 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796468111F99CF6E0091D671 /* UIColor+Extension.swift */; };
+		797AC5B524D80694001010A7 /* OCObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 797AC5B424D80694001010A7 /* OCObject.m */; };
 		797C7D4621A6B1BF001E3F4B /* SelfCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797C7D4521A6B1BF001E3F4B /* SelfCheckViewController.swift */; };
 		797D3E1321ED939D002D9E50 /* EmitterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797D3E1221ED939D002D9E50 /* EmitterViewController.swift */; };
 		797D3E1B21F19103002D9E50 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797D3E1A21F19103002D9E50 /* IntentHandler.swift */; };
@@ -366,6 +369,8 @@
 		79200168219973A90057931D /* CalculatorBignumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorBignumberView.swift; sourceTree = "<group>"; };
 		7924D1C81FD9364100CEECB6 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		792E5E8F1FF0F530007E7605 /* CasinoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasinoViewController.swift; sourceTree = "<group>"; };
+		7931C0A02492294D005E3720 /* CasinoDicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasinoDicViewController.swift; sourceTree = "<group>"; };
+		7931C0A12492294D005E3720 /* CasinoDicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CasinoDicViewController.xib; sourceTree = "<group>"; };
 		7931EC23238F74A90001FA76 /* PaintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintViewController.swift; sourceTree = "<group>"; };
 		7931EC25238F74B90001FA76 /* PaintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintView.swift; sourceTree = "<group>"; };
 		7933A3C720BBD97000AE36D7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -407,6 +412,8 @@
 		795853BB1EEFBB4000F214A5 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		7964680F1F9843E30091D671 /* MathViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathViewController.swift; sourceTree = "<group>"; };
 		796468111F99CF6E0091D671 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		797AC5B324D80694001010A7 /* OCObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCObject.h; sourceTree = "<group>"; };
+		797AC5B424D80694001010A7 /* OCObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCObject.m; sourceTree = "<group>"; };
 		797C7D4521A6B1BF001E3F4B /* SelfCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfCheckViewController.swift; sourceTree = "<group>"; };
 		797D3E1221ED939D002D9E50 /* EmitterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmitterViewController.swift; sourceTree = "<group>"; };
 		797D3E1821F19102002D9E50 /* SiriExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SiriExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -682,6 +689,8 @@
 			isa = PBXGroup;
 			children = (
 				792E5E8F1FF0F530007E7605 /* CasinoViewController.swift */,
+				7931C0A02492294D005E3720 /* CasinoDicViewController.swift */,
+				7931C0A12492294D005E3720 /* CasinoDicViewController.xib */,
 			);
 			name = Casino;
 			sourceTree = "<group>";
@@ -1103,6 +1112,8 @@
 		79B9DE881FFB8F980088702D /* OC */ = {
 			isa = PBXGroup;
 			children = (
+				797AC5B324D80694001010A7 /* OCObject.h */,
+				797AC5B424D80694001010A7 /* OCObject.m */,
 			);
 			name = OC;
 			sourceTree = "<group>";
@@ -1657,6 +1668,7 @@
 				79084D392424D29B00C55CBD /* TwitterHeartButton.json in Resources */,
 				79084D322424D29B00C55CBD /* MotionCorpse-Jrcanest.json in Resources */,
 				79A923FC1EEAA30D00D91121 /* LaunchScreen.storyboard in Resources */,
+				7931C0A32492294D005E3720 /* CasinoDicViewController.xib in Resources */,
 				795714302005C0F70007078A /* LineData.plist in Resources */,
 				79084D302424D29B00C55CBD /* timeremap.json in Resources */,
 				79084D492424D29B00C55CBD /* K.json in Resources */,
@@ -1904,6 +1916,7 @@
 				797D3E4521F9B303002D9E50 /* GoogolViewController.swift in Sources */,
 				791FF81C20B27EE800AD6B2D /* EvolutionAttribute.swift in Sources */,
 				79A923F41EEAA30D00D91121 /* ViewController.swift in Sources */,
+				7931C0A22492294D005E3720 /* CasinoDicViewController.swift in Sources */,
 				79FB35091EEAAB850083ED79 /* Cellular.swift in Sources */,
 				79EB465A20DCC768000CB1B9 /* AppStoreContentModel.swift in Sources */,
 				79C41319231E4C1A0090ACCD /* TalkRobotDicListViewController.swift in Sources */,
@@ -1951,6 +1964,7 @@
 				79EB467620E4B54E000CB1B9 /* PlayerManager.swift in Sources */,
 				79DCC16B1F6A69E400D6A6CE /* LocationModule.swift in Sources */,
 				79DB4BBB1F70B1B00014CA2D /* WaveViewController.swift in Sources */,
+				797AC5B524D80694001010A7 /* OCObject.m in Sources */,
 				79CB227B1F9744FB00C9FE1E /* GyroManager.swift in Sources */,
 				79EB466F20E0BC57000CB1B9 /* SubwayManager.swift in Sources */,
 				79EB467D20E4E820000CB1B9 /* SlideMenuViewController.swift in Sources */,
@@ -2104,7 +2118,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ml.myapp.SiriExtensionUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -2134,7 +2148,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ml.myapp.SiriExtensionUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -2165,7 +2179,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -2196,7 +2210,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -2320,7 +2334,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = DemoSet/DemoSet.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WUWMJYLBP4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2331,10 +2346,11 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ml.myapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "DemoSet/DemoSet-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -2347,7 +2363,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = DemoSet/DemoSet.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WUWMJYLBP4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2358,9 +2375,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ml.myapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "DemoSet/DemoSet-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -2376,7 +2394,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.my.DemoSetTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoSet.app/DemoSet";
 			};
 			name = Debug;
@@ -2392,7 +2410,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.my.DemoSetTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoSet.app/DemoSet";
 			};
 			name = Release;
@@ -2407,7 +2425,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.my.DemoSetUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = DemoSet;
 			};
 			name = Debug;
@@ -2422,7 +2440,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.my.DemoSetUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = DemoSet;
 			};
 			name = Release;
@@ -2450,7 +2468,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -2478,7 +2496,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

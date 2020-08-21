@@ -170,6 +170,9 @@ class ServentModel: FGOModel {
      r 曲度
      
      y=1/(a+b*exp(-x))
+     
+     y=K/(1+Exp(a-bx))
      */
+    
 }
 

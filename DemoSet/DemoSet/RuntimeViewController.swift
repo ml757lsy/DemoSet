@@ -15,7 +15,7 @@ class RuntimeClass {
     var info:AnyObject? = nil
     
     func sayHello() {
-        print("\(#function, #line)")
+//        print("\(#function, #line)")
     }
 }
 

@@ -105,21 +105,29 @@ class MathViewController: BaseViewController,UICollectionViewDelegate,UICollecti
     
     /// 大数相关
     func bignum() {
-        let n1 = "2222223"
-        let n2 = "159"
-        
-        let n3 = n1 * n2;
-        let n4 = n1.minus(rhs: n3)
-        let n5 = n1.add(rhs: n4)
-        let n6 = "9999".divid(rhs: "33").add(rhs: n5)
-        
-        print(n6)
+        let googol = GoogolViewController()
+        navigationController?.pushViewController(googol, animated: true)
     }
     
     //MARK: - fibinacci
     /// 计算斐波那契数
     @objc func Fibinacci() {
-        let index = 40
+        let value = ProcessInfo.processInfo.activeProcessorCount;
+        alert(message: "Core:\(value)")
+        
+        let queue = DispatchQueue.init(label: "matchq")
+        queue.async {
+            let m = self.getFibonacciNum(at: 42)
+            self.alert(message: "Queue:\(m)")
+        }
+        
+        let queue2 = DispatchQueue.init(label: "matchq2")
+        queue2.async {
+            let m2 = self.getFibonacciNum(at: 42)
+            self.alert(message: "q\(m2)")
+        }
+        
+        let index = 42
         
         let s = Date()
         let n = getFibonacciNum(at: index)
@@ -310,6 +318,12 @@ class MathViewController: BaseViewController,UICollectionViewDelegate,UICollecti
         let c = 100//拆分次数 每百次出现
         //第100次必定出现
     }
+    //MARK: - BBP计算π的第几位
+    func bbpC(index:NSInteger) -> NSInteger {
+        
+        
+        return 0
+    }
     
     
     //MARK: - 二叉树
@@ -347,6 +361,27 @@ class MathViewController: BaseViewController,UICollectionViewDelegate,UICollecti
         let choose = arc4random()%3;//选择
         let close = ((arc4random()%2+1)+choose)%3;
         //中
+    }
+    /*
+     BigDecimal calc16dPI(int d) {
+             return FOUR.multiply(calc16dSj(d, 1)).add(BigDecimal.valueOf(3)).subtract(TWO.multiply(calc16dSj(d, 4)).divideAndRemainder(ONE)[1]).subtract(calc16dSj(d, 5).divideAndRemainder(ONE)[1]).subtract(calc16dSj(d, 6).divideAndRemainder(ONE)[1]).divideAndRemainder(ONE)[1];
+         }
+
+         BigDecimal calc16dSj(int d, int j) {
+             int ACCURACY = d + 10;
+             BigDecimal part1 = BigDecimal.ZERO;
+             BigDecimal part2 = BigDecimal.ZERO;
+             for (int k = 0; k <= d; k++) {
+                 part1 = part1.add(SIXTEEN.pow(d - k).divideAndRemainder(EIGHT.multiply(BigDecimal.valueOf(k)).add(BigDecimal.valueOf(j)))[1].divide(EIGHT.multiply(BigDecimal.valueOf(k)).add(BigDecimal.valueOf(j)), ACCURACY, BigDecimal.ROUND_HALF_UP));
+             }
+
+             for (int k = d + 1; k < ACCURACY; k++) {
+                 part2 = part2.add(ONE.divide(SIXTEEN.pow(k - d).multiply(EIGHT.multiply(BigDecimal.valueOf(k)).add(BigDecimal.valueOf(j))), ACCURACY, BigDecimal.ROUND_HALF_UP));
+     */
+    
+    func thenumOfPi(index:NSInteger) -> NSInteger {
+        
+        return 1
     }
     
     func toLaTextVC() {
