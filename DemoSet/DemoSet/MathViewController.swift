@@ -318,6 +318,14 @@ class MathViewController: BaseViewController,UICollectionViewDelegate,UICollecti
         let c = 100//拆分次数 每百次出现
         //第100次必定出现
     }
+    //MARK: - 三门问题
+    func threedoor(count:NSInteger) {
+        for _ in 0...count {
+            let aim = arc4random()%3;
+            let firstChoose = arc4random()%3;
+            
+        }
+    }
     //MARK: - BBP计算π的第几位
     func bbpC(index:NSInteger) -> NSInteger {
         

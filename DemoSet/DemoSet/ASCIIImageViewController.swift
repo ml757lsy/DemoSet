@@ -25,6 +25,7 @@ class ASCIIImageViewController: BaseViewController {
         
         let label = UILabel()
         label.font = labelFont
+        label.textColor = .black
         label.lineBreakMode = NSLineBreakMode.byClipping
         label.numberOfLines = 0
         label.text = asciiArt

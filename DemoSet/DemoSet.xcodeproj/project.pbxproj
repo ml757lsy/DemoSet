@@ -61,6 +61,7 @@
 		79084D5E2424D29C00C55CBD /* B.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D2B2424D29B00C55CBD /* B.json */; };
 		79084D5F2424D29C00C55CBD /* keypathTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D2C2424D29B00C55CBD /* keypathTest.json */; };
 		79084D602424D29C00C55CBD /* HamburgerArrow.json in Resources */ = {isa = PBXBuildFile; fileRef = 79084D2D2424D29B00C55CBD /* HamburgerArrow.json */; };
+		79193604259C5C1200EFB36C /* DCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79193603259C5C1200EFB36C /* DCModel.swift */; };
 		791FF81220B2743000AD6B2D /* EvolutionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791FF81120B2743000AD6B2D /* EvolutionViewController.swift */; };
 		791FF81420B2748900AD6B2D /* EvolutionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791FF81320B2748900AD6B2D /* EvolutionCell.swift */; };
 		791FF81620B274B500AD6B2D /* EvolutionGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791FF81520B274B500AD6B2D /* EvolutionGround.swift */; };
@@ -192,6 +193,8 @@
 		79C41319231E4C1A0090ACCD /* TalkRobotDicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C41318231E4C1A0090ACCD /* TalkRobotDicListViewController.swift */; };
 		79C4131B231FB32F0090ACCD /* TalkRobotDicListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C4131A231FB32F0090ACCD /* TalkRobotDicListCell.swift */; };
 		79C4131D232240420090ACCD /* TalkRobotNewDialogueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C4131C232240420090ACCD /* TalkRobotNewDialogueViewController.swift */; };
+		79C59F552507687800FE4555 /* CRBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C59F542507687800FE4555 /* CRBaseModel.swift */; };
+		79C59F572507689100FE4555 /* CRCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C59F562507689100FE4555 /* CRCardModel.swift */; };
 		79CB226F1F94B0C500C9FE1E /* MaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CB226E1F94B0C500C9FE1E /* MaskViewController.swift */; };
 		79CB22711F94B0D900C9FE1E /* MaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CB22701F94B0D900C9FE1E /* MaskView.swift */; };
 		79CB22741F95EBCA00C9FE1E /* LotteryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CB22731F95EBCA00C9FE1E /* LotteryViewController.swift */; };
@@ -242,6 +245,7 @@
 		79EB468C20EE3A05000CB1B9 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB468B20EE3A05000CB1B9 /* CollectionViewController.swift */; };
 		79EEDCD121E2FB6A009E7906 /* TiledImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EEDCD021E2FB6A009E7906 /* TiledImageView.swift */; };
 		79EEDCD321E30CDF009E7906 /* LargeImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EEDCD221E30CDF009E7906 /* LargeImageViewController.swift */; };
+		79F8F27725CA8CFB00EA3C18 /* CalculatorHierarchyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F8F27625CA8CFB00EA3C18 /* CalculatorHierarchyViewController.swift */; };
 		79FB35061EEAA7190083ED79 /* CellularAutomatonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB35051EEAA7190083ED79 /* CellularAutomatonViewController.swift */; };
 		79FB35091EEAAB850083ED79 /* Cellular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB35081EEAAB850083ED79 /* Cellular.swift */; };
 /* End PBXBuildFile section */
@@ -355,6 +359,7 @@
 		79084D2B2424D29B00C55CBD /* B.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = B.json; sourceTree = "<group>"; };
 		79084D2C2424D29B00C55CBD /* keypathTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = keypathTest.json; sourceTree = "<group>"; };
 		79084D2D2424D29B00C55CBD /* HamburgerArrow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HamburgerArrow.json; sourceTree = "<group>"; };
+		79193603259C5C1200EFB36C /* DCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCModel.swift; sourceTree = "<group>"; };
 		791FF81120B2743000AD6B2D /* EvolutionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolutionViewController.swift; sourceTree = "<group>"; };
 		791FF81320B2748900AD6B2D /* EvolutionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolutionCell.swift; sourceTree = "<group>"; };
 		791FF81520B274B500AD6B2D /* EvolutionGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolutionGround.swift; sourceTree = "<group>"; };
@@ -508,6 +513,8 @@
 		79C41318231E4C1A0090ACCD /* TalkRobotDicListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkRobotDicListViewController.swift; sourceTree = "<group>"; };
 		79C4131A231FB32F0090ACCD /* TalkRobotDicListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkRobotDicListCell.swift; sourceTree = "<group>"; };
 		79C4131C232240420090ACCD /* TalkRobotNewDialogueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkRobotNewDialogueViewController.swift; sourceTree = "<group>"; };
+		79C59F542507687800FE4555 /* CRBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRBaseModel.swift; sourceTree = "<group>"; };
+		79C59F562507689100FE4555 /* CRCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRCardModel.swift; sourceTree = "<group>"; };
 		79CB226E1F94B0C500C9FE1E /* MaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskViewController.swift; sourceTree = "<group>"; };
 		79CB22701F94B0D900C9FE1E /* MaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskView.swift; sourceTree = "<group>"; };
 		79CB22731F95EBCA00C9FE1E /* LotteryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryViewController.swift; sourceTree = "<group>"; };
@@ -560,6 +567,7 @@
 		79EB468B20EE3A05000CB1B9 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		79EEDCD021E2FB6A009E7906 /* TiledImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TiledImageView.swift; sourceTree = "<group>"; };
 		79EEDCD221E30CDF009E7906 /* LargeImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeImageViewController.swift; sourceTree = "<group>"; };
+		79F8F27625CA8CFB00EA3C18 /* CalculatorHierarchyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorHierarchyViewController.swift; sourceTree = "<group>"; };
 		79FB35051EEAA7190083ED79 /* CellularAutomatonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellularAutomatonViewController.swift; sourceTree = "<group>"; };
 		79FB35081EEAAB850083ED79 /* Cellular.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cellular.swift; sourceTree = "<group>"; };
 		B57CB0D8E15F346CDBC020A0 /* Pods_DemoSet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoSet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -653,6 +661,14 @@
 			path = TypeFace;
 			sourceTree = "<group>";
 		};
+		791935FC259C5BC800EFB36C /* DistinyChild */ = {
+			isa = PBXGroup;
+			children = (
+				79193603259C5C1200EFB36C /* DCModel.swift */,
+			);
+			name = DistinyChild;
+			sourceTree = "<group>";
+		};
 		791FF81D20B3EA7C00AD6B2D /* PassWordProduce */ = {
 			isa = PBXGroup;
 			children = (
@@ -668,6 +684,7 @@
 				79200164219972B10057931D /* CalculatorViewController.swift */,
 				79200166219973040057931D /* CalculatorAbbreviationView.swift */,
 				79200168219973A90057931D /* CalculatorBignumberView.swift */,
+				79F8F27625CA8CFB00EA3C18 /* CalculatorHierarchyViewController.swift */,
 			);
 			name = Calculator;
 			sourceTree = "<group>";
@@ -1138,6 +1155,15 @@
 			name = LeetCode;
 			sourceTree = "<group>";
 		};
+		79C59F532507680D00FE4555 /* CardRoguelike */ = {
+			isa = PBXGroup;
+			children = (
+				79C59F542507687800FE4555 /* CRBaseModel.swift */,
+				79C59F562507689100FE4555 /* CRCardModel.swift */,
+			);
+			name = CardRoguelike;
+			sourceTree = "<group>";
+		};
 		79CB226D1F94B0AB00C9FE1E /* MaskView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1343,6 +1369,8 @@
 		79FB35031EEAA65D0083ED79 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				791935FC259C5BC800EFB36C /* DistinyChild */,
+				79C59F532507680D00FE4555 /* CardRoguelike */,
 				7931EC22238F74840001FA76 /* Paint */,
 				79C413112316555B0090ACCD /* LeetCode */,
 				79C4130E2315195D0090ACCD /* TalkRobot */,
@@ -1774,6 +1802,7 @@
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MathEditor/MathEditor.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/WeexSDK/WeexSDK.framework",
 				"${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework",
 				"${BUILT_PRODUCTS_DIR}/iosMath/iosMath.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
@@ -1788,6 +1817,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MathEditor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WeexSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iosMath.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
@@ -1934,6 +1964,7 @@
 				79B26A941F0A453C00B54EC2 /* AttackModel.swift in Sources */,
 				7984B14C22043204007AF5BA /* MinesweeperViewController.swift in Sources */,
 				796468101F9843E30091D671 /* MathViewController.swift in Sources */,
+				79193604259C5C1200EFB36C /* DCModel.swift in Sources */,
 				7907B2601FDE8D7700BB9CD3 /* BinaryTreeModel.swift in Sources */,
 				797D3E4121F703DC002D9E50 /* Mai.swift in Sources */,
 				79B26A8E1F0A428800B54EC2 /* FGOModel.swift in Sources */,
@@ -1952,6 +1983,7 @@
 				797D3E3F21F703C1002D9E50 /* Xue.swift in Sources */,
 				79C41313231655870090ACCD /* LeetcodeViewController.swift in Sources */,
 				79B647D41F7899FD0002103E /* NFCViewController.swift in Sources */,
+				79F8F27725CA8CFB00EA3C18 /* CalculatorHierarchyViewController.swift in Sources */,
 				79CB22771F97032000C9FE1E /* BannerViewController.swift in Sources */,
 				79E29D771FECD7B400EC4577 /* RuntimeViewController.swift in Sources */,
 				79EB468120E4ED43000CB1B9 /* MainViewController.swift in Sources */,
@@ -1963,10 +1995,12 @@
 				7955CEF11F8CBA25007F6DC2 /* BluetoothConnectionViewController.swift in Sources */,
 				79EB467620E4B54E000CB1B9 /* PlayerManager.swift in Sources */,
 				79DCC16B1F6A69E400D6A6CE /* LocationModule.swift in Sources */,
+				79C59F552507687800FE4555 /* CRBaseModel.swift in Sources */,
 				79DB4BBB1F70B1B00014CA2D /* WaveViewController.swift in Sources */,
 				797AC5B524D80694001010A7 /* OCObject.m in Sources */,
 				79CB227B1F9744FB00C9FE1E /* GyroManager.swift in Sources */,
 				79EB466F20E0BC57000CB1B9 /* SubwayManager.swift in Sources */,
+				79C59F572507689100FE4555 /* CRCardModel.swift in Sources */,
 				79EB467D20E4E820000CB1B9 /* SlideMenuViewController.swift in Sources */,
 				79DCC1731F6D0D1F00D6A6CE /* QRCodeViewController.swift in Sources */,
 				791FF81620B274B500AD6B2D /* EvolutionGround.swift in Sources */,

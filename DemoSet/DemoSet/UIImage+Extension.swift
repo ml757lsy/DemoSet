@@ -336,7 +336,7 @@ extension UIImage{
             
             let time = gifdic.value(forKey: "DelayTime")
             
-            imageArray.append(UIImage.init(cgImage: cg!))
+            imageArray.append(UIImage.init(cgImage: cg!).withRenderingMode(.alwaysOriginal))
             timeArray.append(time as! CGFloat)
             duration += time as! CGFloat
         }

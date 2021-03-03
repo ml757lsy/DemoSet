@@ -25,7 +25,7 @@ class BaseViewController: UIViewController {
     
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if event?.subtype == UIEvent.EventSubtype.motionShake && event?.type == UIEvent.EventType.motion {
-            AlertModule.showAlert(title: "", conetent: "", actionStr: ["设置","FLEX"]) { (index) in
+            AlertModule.showAlert(title: "Tool", conetent: "", actionStr: ["设置","FLEX"]) { (index) in
                 if index == 0 {
                     //设置
                 }else if index == 1 {

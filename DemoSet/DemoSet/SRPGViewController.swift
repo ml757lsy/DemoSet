@@ -10,10 +10,37 @@ import UIKit
 
 class SRPGViewController: BaseViewController {
 
+    var mapdata:[[Int]] = []
+    var mapview:[[UILabel]] = []
+    let w = 20;
+    let h = 20;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        astar()
+    }
+    
+    func astar () {
+        
+    }
+    
+    func layoutmap() {
+        for _ in 0..<h {
+            var line:[Int] = []
+            var linev:[UILabel] = []
+            for _ in 0..<w {
+                let n = arc4random()%5;
+                line.append(Int(n))
+                let label = UILabel()
+                label.text = "\(n)"
+                linev.append(label)
+            }
+            mapdata.append(line)
+            mapview.append(linev)
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {

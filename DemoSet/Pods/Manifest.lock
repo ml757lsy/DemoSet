@@ -12,12 +12,13 @@ PODS:
   - MathEditor (0.3.0):
     - iosMath (~> 0.9.3)
   - SnapKit (4.2.0)
+  - WeexSDK (0.28.0)
   - YYImage (1.0.4):
     - YYImage/Core (= 1.0.4)
   - YYImage/Core (1.0.4)
 
 DEPENDENCIES:
-  - Alamofire
+  - Alamofire (~> 4.7.3)
   - FLEX (~> 2.4.0)
   - FMDB (~> 2.7.2)
   - Gilgamesh (~> 0.1.1)
@@ -26,6 +27,7 @@ DEPENDENCIES:
   - lottie-ios
   - MathEditor (~> 0.3.0)
   - SnapKit (~> 4.2.0)
+  - WeexSDK
   - YYImage (~> 1.0.4)
 
 SPEC REPOS:
@@ -39,6 +41,7 @@ SPEC REPOS:
     - lottie-ios
     - MathEditor
     - SnapKit
+    - WeexSDK
     - YYImage
   https://github.com/ml757lsy/MLSpaces:
     - Gilgamesh
@@ -54,8 +57,9 @@ SPEC CHECKSUMS:
   lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
   MathEditor: 0571991a0850213891aead3c2aae6d4b8faa7ced
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  WeexSDK: 78861d2f8b78f67e30580c15a54f5b420456db39
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
 
-PODFILE CHECKSUM: efbf3415dacb686bd33ae04197d414d5392f3756
+PODFILE CHECKSUM: a25c8fb03acb80f3e81d4d539df0b2e22dd620df
 
 COCOAPODS: 1.8.4

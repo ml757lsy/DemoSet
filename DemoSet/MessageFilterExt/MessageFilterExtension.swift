@@ -40,6 +40,22 @@ extension MessageFilterExtension: ILMessageFilterQueryHandling {
                 
                 completion(response)
             }
+        case .junk:
+            do {
+                //
+            }
+        case .promotion:
+            do {
+                //
+            }
+        case .transaction:
+            do {
+                //
+            }
+        @unknown default:
+            let response = ILMessageFilterQueryResponse()
+            response.action = offlineAction
+            completion(response)
         }
     }
     

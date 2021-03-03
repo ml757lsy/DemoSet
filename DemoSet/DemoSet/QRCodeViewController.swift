@@ -127,12 +127,12 @@ class QRCodeViewController: BaseViewController,AVCaptureMetadataOutputObjectsDel
 //            session.stopRunning()
             let metadata = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
 
-            var points:[CGPoint] = []
-            for c in metadata.corners {
-                let p = CGPoint.init(dictionaryRepresentation: c as! CFDictionary)
-                points.append(p!)
-            }
-            update(corners: points)
+//            var points:[CGPoint] = []
+//            for c in metadata.corners {
+//                let p = CGPoint.init(dictionaryRepresentation: c as! CFDictionary)
+//                points.append(p!)
+//            }
+//            update(corners: points)
             //
             let data = metadata.stringValue
             

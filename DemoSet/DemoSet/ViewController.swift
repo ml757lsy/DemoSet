@@ -9,7 +9,7 @@
 import UIKit
 import Intents
 
-class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+class ViewController: BaseViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     private var list:[String] = []
     
     private let backImage = UIImageView()
@@ -380,7 +380,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         let cell:HomeCollectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Homecell", for: indexPath) as! HomeCollectionCell
         cell.backgroundColor = UIColor.randomColor()
         cell.label.I18NLocalized(key: list[indexPath.row])
-        cell.startAnimation()
+//        cell.startAnimation()
         return cell
     }
     
